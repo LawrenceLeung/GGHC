@@ -1,10 +1,10 @@
 // seashell inspired by http://www.generativeart.com/on/cic/papers2005/37.SemraArslanSelcuk.htm
 cyl_r=5;
-cyl_thk=.1;
+cyl_thk=1;
 cyl_fn=10;
 
 shell_rotations=2.2;
-shell_rotation_steps=30;
+shell_rotation_steps=60;
 shell_flare=2;
 shell_spire=1;
 shell_start_radius=1;
