@@ -50,7 +50,7 @@ void Timer1IntrHandler (void)
     LedState = 1;
   }
   LEDsSet(LedState);
-  ReadButtons();
+  // TODO ReadButtons();
 }
 
 /*************************************************************************
