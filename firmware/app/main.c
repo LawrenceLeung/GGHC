@@ -28,7 +28,7 @@
 
 Int32U CriticalSecCntr;
 
-volatile unsigned int LedState = 1; // LED is ON when corresponding bit is 1
+volatile unsigned int LedState = 0; // LED is ON when corresponding bit is 1
 
 void LEDsSet (unsigned int);
 
@@ -50,6 +50,7 @@ void Timer1IntrHandler (void)
     LedState = 1;
   }
   LEDsSet(LedState);
+  ReadButtons();
 }
 
 /*************************************************************************

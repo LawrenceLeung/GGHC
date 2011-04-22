@@ -2693,6 +2693,9 @@
       <name>$PROJ_DIR$\..\library\src\stm32f10x_gpio.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\library\src\stm32f10x_i2c.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\library\src\stm32f10x_lib.c</name>
     </file>
     <file>
@@ -2755,6 +2758,9 @@
   </group>
   <file>
     <name>$PROJ_DIR$\app\audio.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\app\jigbox.h</name>
   </file>
   <file>
     <name>$PROJ_DIR$\app\main.c</name>

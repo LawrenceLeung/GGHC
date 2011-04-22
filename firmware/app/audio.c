@@ -44,15 +44,15 @@ Int32U Dly = (Int32U)arg;
 }
 
 /*************************************************************************
- * Function Name: initAudioDevice
+ * Function Name: InitAudioDevice
  * Parameters: none
  *
  * Return: none
  *
- * Description: main
- *
+ * Description: Initializes the usb audio device. This turns on the USB
+ * interface and waits for a connection from the USB bus master.
  *************************************************************************/
-void initAudioDevice(void)
+void InitAudioDevice(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
   

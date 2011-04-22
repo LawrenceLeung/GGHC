@@ -40,4 +40,6 @@
 #include "audio_desc.h"
 #include "audio_class.h"
 
+#include "jigbox.h"
+
 #endif  // __INCLUDES_H

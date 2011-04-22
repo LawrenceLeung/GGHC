@@ -16,6 +16,7 @@ The base example chosen was the AudioDevice. If you need code from one of the ot
 .\App
 .\Module
 main.c
+stm32f10x_it.c
 
 To load the code to your target check that the correct build configuration is selected for your board. The drop down at the top of the Workspace pane should show the options:
 Dscvr 103RB flash debug

@@ -47,12 +47,12 @@
 #define MaxIndOfRealizeEp               ENP2_IN   // be careful this is very important const
 #define Ep0MaxSize                      8
 
-#define SpkEp         				          ENP1_OUT
-#define SpkEpMaxSize   				          (SampRerFrame * SubFrameSize)
+#define SpkEp         	                ENP1_OUT
+#define SpkEpMaxSize   	                (SampRerFrame * SubFrameSize)
 #define SpkDDInd                        0
 
-#define MicEp         				          ENP2_IN
-#define MicEpMaxSize   				          (SampRerFrame * SubFrameSize * 2)
+#define MicEp         	                ENP2_IN
+#define MicEpMaxSize   	                (SampRerFrame * SubFrameSize * 2)
 #define MicDDInd                        1
 
 /* Class defenitions*/
