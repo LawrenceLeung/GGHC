@@ -20,6 +20,9 @@ volatile Boolean SempEna,MicEna;
 Int32U  SempPeriod,DeltaPer,MicCurrBuffer;
 volatile pInt16S pSpkData,pMicData;
 volatile Int32U  SempPerCurrHold,Delta,MicSempCount,SempCount;
+
+volatile Boolean playNextFrame = FALSE;
+
 static union _Val
 {
   Int32S Data;
@@ -147,12 +150,12 @@ const Int32U VolumeMul [] =
 };
 
 #pragma data_alignment=4
-__no_init Int16S AudioSpkData[SampRerFrame * 3];
+__no_init Int16S AudioSpkData[SampPerFrame * 3];
 
 #pragma data_alignment=4
-__no_init Int16S AudioMicData1[SampRerFrame * 2];
+__no_init Int16S AudioMicData1[SampPerFrame * 2];
 #pragma data_alignment=4
-__no_init Int16S AudioMicData2[SampRerFrame * 2];
+__no_init Int16S AudioMicData2[SampPerFrame * 2];
 
 #pragma data_alignment=4
 Int8U AudioBuf[2];
@@ -161,7 +164,7 @@ Int8U   AudioRequest,AudioCS,AudioCN,AudioId;
 Int16U  AudioDataSize;
 
 Int16S  AudioFeat1Vol;
-Int32U  AudioSpkVolMul;
+Int32U  AudioSpkVolMul = 30; /* TODO, invent a volume control scheme */
 Boolean AudioFeat1Mute;
 
 Int16S  AudioFeat2Vol;
@@ -196,6 +199,7 @@ TIM1_OCInitTypeDef  TIM1_OCInitStructure;
   AudioFeat2Vol   = 0;
   pSpkData        = AudioSpkData;
   SempPerCurrHold = SempPeriod;
+  Delta = 0;
 
   // Get different on chips' clocks.
   RCC_GetClocksFreq(&RCC_Clocks);
@@ -289,8 +293,8 @@ TIM1_OCInitTypeDef  TIM1_OCInitStructure;
   TIM_DeInit(TIM2);
   // Time base configuration
   SempPeriod = RCC_Clocks.PCLK2_Frequency/SampFreq;
-  DeltaPer = (SempPeriod/(SampRerFrame*2)) + 1;
-  TIM_TimeBaseStructure.TIM_Period = SempPeriod;
+  DeltaPer = (SempPeriod/(SampPerFrame*2)) + 1;
+  TIM_TimeBaseStructure.TIM_Period = SempPeriod / 100;
   TIM_TimeBaseStructure.TIM_Prescaler = 0;      // max resolution
   TIM_TimeBaseStructure.TIM_ClockDivision = 0;
   TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
@@ -313,6 +317,9 @@ TIM1_OCInitTypeDef  TIM1_OCInitStructure;
 
   UsbClassAudioConfigure(NULL);
   UsbCoreInit();
+
+  playNextFrame = TRUE; // Signal that it is OK to load audio samples
+
 
 }
 
@@ -342,7 +349,7 @@ void UsbClassAudioConfigure (pUsbDevCtrl_t pDev)
       {
         pSpkData = AudioSpkData;
         Delta = 0;
-        USB_IO_Data(SpkEp,(pInt8U)pSpkData,SpkEpMaxSize,(void*)AudioInHadler);
+        USB_IO_Data(SpkEp,(pInt8U)pSpkData,SpkEpMaxSize,(void*)AudioInHandler);
       }
       if (pDev->AlternateSetting[USB_MIC_INTERFACE] == 1)
       {
@@ -361,7 +368,7 @@ void UsbClassAudioConfigure (pUsbDevCtrl_t pDev)
         USB_IO_Data( MicEp,
                      NULL,
                      0,
-                    (void*)AudioOutHadler);
+                    (void*)AudioOutHandler);
       }
       else
       {
@@ -372,7 +379,7 @@ void UsbClassAudioConfigure (pUsbDevCtrl_t pDev)
 }
 
 /*************************************************************************
- * Function Name: AudioInHadler
+ * Function Name: AudioInHandler
  * Parameters:  USB_Endpoint_t EP
  *
  * Return: none
@@ -381,7 +388,7 @@ void UsbClassAudioConfigure (pUsbDevCtrl_t pDev)
  *
  *************************************************************************/
 static
-void AudioInHadler (USB_Endpoint_t EP)
+void AudioInHandler (USB_Endpoint_t EP)
 {
   assert(SpkEp == EP);
 
@@ -396,11 +403,11 @@ void AudioInHadler (USB_Endpoint_t EP)
     if(SempEna)
     {
       // Adapt sample rate
-      if (Delta > (SampRerFrame * SubFrameSize))
+      if (Delta > (SampPerFrame * SubFrameSize))
       {
         SempPerCurrHold = SempPeriod - DeltaPer;
       }
-      else if (Delta < (SampRerFrame * SubFrameSize))
+      else if (Delta < (SampPerFrame * SubFrameSize))
       {
         SempPerCurrHold = SempPeriod + DeltaPer;
       }
@@ -432,11 +439,11 @@ void AudioInHadler (USB_Endpoint_t EP)
     Delta = 0;
   }
 
-  USB_IO_Data(SpkEp,(pInt8U)pSpkData,SpkEpMaxSize,(void*)AudioInHadler);
+  USB_IO_Data(SpkEp,(pInt8U)pSpkData,SpkEpMaxSize,(void*)AudioInHandler);
 }
 
 /*************************************************************************
- * Function Name: AudioOutHadler
+ * Function Name: AudioOutHandler
  * Parameters:  USB_Endpoint_t EP
  *
  * Return: none
@@ -445,7 +452,7 @@ void AudioInHadler (USB_Endpoint_t EP)
  *
  *************************************************************************/
 static
-void AudioOutHadler (USB_Endpoint_t EP)
+void AudioOutHandler (USB_Endpoint_t EP)
 {
 Int32U PacketLength;
 
@@ -467,7 +474,7 @@ Int32U PacketLength;
   USB_IO_Data( MicEp,
               (pInt8U)((MicCurrBuffer & 1)?AudioMicData1:AudioMicData2),
               PacketLength,
-              (void*)AudioOutHadler);
+              (void*)AudioOutHandler);
 }
 
 /*************************************************************************
@@ -490,6 +497,10 @@ union _Val MicTemp;
       // Get next input sample
       Val.Data = AudioSpkData[SempCount++];
       Delta   -= 2;
+      if (Delta < SampPerFrame) // There is room for one more frame
+      {
+        playNextFrame = TRUE;
+      }
       // Correct pointer to sample buffer
       if(SempCount >= sizeof(AudioSpkData)/sizeof(Int16U))
       {
@@ -563,14 +574,14 @@ union _Val MicTemp;
     *pMicData++ = MicTemp.DataHi;
     if(MicCurrBuffer & 1)
     {
-      if (pMicData >= (AudioMicData2 + (SampRerFrame * 2)))
+      if (pMicData >= (AudioMicData2 + (SampPerFrame * 2)))
       {
         MicEna = FALSE;
       }
     }
     else
     {
-      if (pMicData >= (AudioMicData1+(SampRerFrame * 2)))
+      if (pMicData >= (AudioMicData1+(SampPerFrame * 2)))
       {
         MicEna = FALSE;
       }
@@ -684,7 +695,7 @@ UsbCommStatus_t UsbClassAudioRequest (pUsbSetupPacket_t pSetup)
   switch (pSetup->mRequestType.Recipient)
   {
   case UsbRecipientInterface:
-    // Feature Unit requests only Imlement for interface 0
+    // Feature Unit requests only Implement for interface 0
     if ((pSetup->wIndex.Word == (FeatUnit1Id << 8)) ||
         (pSetup->wIndex.Word == (FeatUnit2Id << 8)))
     {
@@ -758,7 +769,7 @@ UsbCommStatus_t UsbClassAudioRequest (pUsbSetupPacket_t pSetup)
         break;
       }
     }
-    // Selector Unit requests only Imlement for interface 0
+    // Selector Unit requests only Implement for interface 0
     else if (pSetup->wIndex.Word == (SelUnit1ID << 8))
     {
       if(pSetup->wValue.Word == 0)
@@ -900,4 +911,70 @@ void UsbClassAudioData (USB_Endpoint_t EP)
     return;
   }
   USB_StatusHandler(CTRL_ENP_IN);
+}
+
+/** AudioMemoryBufPlay
+ * Takes a buffer with audio wave data and starts to play it
+ * through the headphone output. Once the buffer has started playing,
+ * timer2 will keep loading new data to the audio output until the entire
+ * buffer has been played. Pass a NULL pointer to stop the currently playing
+ * buffer.
+ *
+ * @param pSpkBuf
+ */
+
+void AudioMemoryBufPlay (Int16S pSpkBuf[SampPerFrame])
+{
+  int i;
+
+  if (pSpkBuf != NULL)
+  {
+    // AudioSpkData is a circular buffer
+    // Copy new buffer to AudioSpkData
+    for (i = 0; i < SampPerFrame; i++)
+    {
+      * pSpkData = pSpkBuf[i];
+      pSpkData++;
+      if(pSpkData >= AudioSpkData + sizeof(AudioSpkData)/sizeof(Int16U))
+      {
+        pSpkData = AudioSpkData;
+      }
+    }
+
+    if(SempEna)
+    {
+      // Adapt sample rate
+      if (Delta > (SampPerFrame * SubFrameSize))
+      {
+        SempPerCurrHold = SempPeriod - DeltaPer;
+      }
+      else if (Delta < (SampPerFrame * SubFrameSize))
+      {
+        SempPerCurrHold = SempPeriod + DeltaPer;
+      }
+      else
+      {
+        SempPerCurrHold = SempPeriod;
+      }
+    }
+    else
+    {
+      // Enable output
+      SempCount = 0;
+      SempEna   = TRUE;
+    }
+    ENTR_CRT_SECTION();
+    Delta  += SampPerFrame;
+    EXT_CRT_SECTION();
+  }
+  else
+  {
+    // reset all
+    pSpkData  = AudioSpkData;
+    SempCount = 0;
+    SempEna   = FALSE;
+    SempPerCurrHold = SempPeriod;
+    Delta = 0;
+  }
+
 }
