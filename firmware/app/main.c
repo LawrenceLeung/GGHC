@@ -29,6 +29,8 @@
 Int32U CriticalSecCntr;
 
 volatile unsigned int LedState = 0; // LED is ON when corresponding bit is 1
+volatile unsigned int LedTimer = LED_RATE; // LED blinks at this rate
+volatile Boolean LedUpdate = FALSE; // LED state should be updated if true
 
 void LEDsSet (unsigned int);
 
@@ -38,19 +40,27 @@ void LEDsSet (unsigned int);
  *
  * Return: none
  *
- * Description: Timer 1 interrupt handler
+ * Description: Timer 1 interrupt handler. Timer 1 is the system clock in
+ * this product. The base rate is 10ms (100 ticks per second). Various
+ * other software subsystems can be triggered from this timer. Do not
+ * directly call other software modules from this routine as this is an
+ * interrupt so needs to be kept short. If another system should be
+ * scheduled from here, set a global flag to trigger the other subsystem
+ * then check the flag in the main loop.
  *
  *************************************************************************/
 void Timer1IntrHandler (void)
 {
   // Clear update interrupt bit
   TIM1_ClearITPendingBit(TIM1_FLAG_Update);
-  if(((LedState <<= 1) > 0x8000) || (LedState == 0))
+  if(LedTimer-- == 0)
   {
-    LedState = 1;
+    LedState = !LedState;
+    LedTimer = LED_RATE; /* TODO This should be the metronome rate */
+    LedUpdate = TRUE;
   }
-  LEDsSet(LedState);
   // TODO ReadButtons();
+  // playNextFrame = TRUE;
 }
 
 /*************************************************************************
@@ -134,10 +144,13 @@ TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
 
   ENTR_CRT_SECTION();
 
-  // Init clock system
+  /* TODO refactor to move all initialization to a separate function to
+   * cleanup main()
+   */
+  // Initialize clock system
   Clk_Init();
 
-  // NVIC init
+  // NVIC initialize
 #ifndef  EMB_FLASH
   /* Set the Vector Table base location at 0x20000000 */
   NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x0);
@@ -147,7 +160,7 @@ TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
 #endif
   NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
 
-  // GPIO Init
+  // GPIO initialize
   // Enable GPIO clock and release reset
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA |
                          RCC_APB2Periph_GPIOB |
@@ -165,15 +178,15 @@ TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
   GPIO_Init(GPIOC, &GPIO_InitStructure);
   LEDsSet(LedState);
 
-  // Timer1 Init
+  // Timer1 initialize
   // Enable Timer1 clock and release reset
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
   RCC_APB2PeriphResetCmd(RCC_APB2Periph_TIM1,DISABLE);
 
-  // Set timer period 0.1 sec
+  // Set timer period 0.01 seconds
   TIM1_TimeBaseInitStruct.TIM1_Prescaler = 720;  // 10us resolution
   TIM1_TimeBaseInitStruct.TIM1_CounterMode = TIM1_CounterMode_Up;
-  TIM1_TimeBaseInitStruct.TIM1_Period = 10000;  // 100 ms
+  TIM1_TimeBaseInitStruct.TIM1_Period = 1000;  // 10ms
   TIM1_TimeBaseInitStruct.TIM1_ClockDivision = TIM1_CKD_DIV1;
   TIM1_TimeBaseInitStruct.TIM1_RepetitionCounter = 0;
   TIM1_TimeBaseInit(&TIM1_TimeBaseInitStruct);
@@ -194,8 +207,28 @@ TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
 
   EXT_CRT_SECTION();
 
+  InitAudioDevice();
+
   while(1)
   {
+    // TODO refactor this into a function in audio.c
+    if (playNextFrame)
+    {
+      int i = 0;
+      if (notes[i].noteOn)
+      {
+        AudioMemoryBufPlay(notes[i].noteVoiceBuffer);
+      }
+      playNextFrame = FALSE;
+    }
+    // end TODO
+
+    if (LedUpdate)
+    {
+      LEDsSet(LedState);
+      LedUpdate = FALSE;
+    }
+
   }
 }
 #ifdef  DEBUG

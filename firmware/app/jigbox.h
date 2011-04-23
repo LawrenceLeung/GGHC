@@ -77,4 +77,6 @@
 #define ACCEL_INT1_PORT GPIOC
 #define ACCEL_INT1_PIN GPIO_Pin_3
 
+#define LED_RATE 20 /* 20 ticks of TIM1 which is 1/5 second */
+
 #endif  /* __JIGBOX_H */

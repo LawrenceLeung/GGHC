@@ -1,7 +1,7 @@
 /***************************************************************************
  **
  **
- **    Master inlude file
+ **    Master include file
  **
  **    Used with ARM IAR C/C++ Compiler
  **
@@ -39,6 +39,7 @@
 
 #include "audio_desc.h"
 #include "audio_class.h"
+#include "audio.h"
 
 #include "jigbox.h"
 

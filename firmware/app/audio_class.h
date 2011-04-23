@@ -19,6 +19,8 @@
 #ifndef __AUDIO_CLASS_H
 #define __AUDIO_CLASS_H
 
+extern volatile Boolean playNextFrame;
+
 #define MinVol        0x8000
 
 #define Feat1MinVol   0xD000UL
@@ -96,7 +98,7 @@ void UsbAudioClassInit (void);
 void UsbClassAudioConfigure (pUsbDevCtrl_t pDev);
 
 /*************************************************************************
- * Function Name: AudioInHadler
+ * Function Name: AudioInHandler
  * Parameters:  USB_Endpoint_t EP
  *
  * Return: none
@@ -105,10 +107,10 @@ void UsbClassAudioConfigure (pUsbDevCtrl_t pDev);
  *
  *************************************************************************/
 static
-void AudioInHadler (USB_Endpoint_t EP);
+void AudioInHandler (USB_Endpoint_t EP);
 
 /*************************************************************************
- * Function Name: AudioOutHadler
+ * Function Name: AudioOutHandler
  * Parameters:  USB_Endpoint_t EP
  *
  * Return: none
@@ -117,7 +119,7 @@ void AudioInHadler (USB_Endpoint_t EP);
  *
  *************************************************************************/
 static
-void AudioOutHadler (USB_Endpoint_t EP);
+void AudioOutHandler (USB_Endpoint_t EP);
 
 /*************************************************************************
  * Function Name: Tim2Handler
@@ -164,5 +166,8 @@ UsbCommStatus_t UsbClassAudioRequest (pUsbSetupPacket_t pSetup);
  *************************************************************************/
 static
 void UsbClassAudioData (USB_Endpoint_t EP);
+
+void AudioMemoryBufPlay (Int16S pSpkBuf[SampPerFrame]);
+
 
 #endif //__AUDIO_CLASS_H

@@ -48,14 +48,14 @@
 #define Ep0MaxSize                      8
 
 #define SpkEp         	                ENP1_OUT
-#define SpkEpMaxSize   	                (SampRerFrame * SubFrameSize)
+#define SpkEpMaxSize   	                (SampPerFrame * SubFrameSize)
 #define SpkDDInd                        0
 
 #define MicEp         	                ENP2_IN
-#define MicEpMaxSize   	                (SampRerFrame * SubFrameSize * 2)
+#define MicEpMaxSize   	                (SampPerFrame * SubFrameSize * 2)
 #define MicDDInd                        1
 
-/* Class defenitions*/
+/* Class definitions*/
 #define USB_INTR_AUDIO_SAMP_TIMER_PRIORITY  1
 
 #define USB_CTRL_INTERFACE              0
@@ -63,10 +63,10 @@
 #define USB_MIC_INTERFACE               2
 
 #define SubFrameSize                    2
-#define SampRerFrame                    48
-#define SampFreq                        (SampRerFrame KHZ)
+#define SampPerFrame                    48
+#define SampFreq                        (SampPerFrame KHZ)
 
 
-/* Other defenitions */
+/* Other definitions */
 
 #endif //__USB_CNFG_H
