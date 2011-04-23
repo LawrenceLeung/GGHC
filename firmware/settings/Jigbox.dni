@@ -1,0 +1,37 @@
+[DebugChecksum]
+Checksum=-1991707313
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\app\audio.c}.64.1@1" 0 0 0 0 "" 0 ""
+Count=1
+[Aliases]
+Count=0
+SuppressDialog=0
