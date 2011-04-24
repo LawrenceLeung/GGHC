@@ -4,7 +4,8 @@ Checksum=-1107417780
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
 [DisAssemblyWindow]
-NumStates=_ 0
+NumStates=_ 1
+State 1=_ 1
 [InstructionProfiling]
 Enabled=_ 0
 [CodeCoverage]
@@ -21,19 +22,19 @@ LimitSize=0
 ByteLimit=50
 [BreakpointUsageDialog]
 Placement=_ 498 289 1249 605
-[Disassemble mode]
-mode=0
-[Breakpoints]
-Count=0
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
 Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Count=0
 [Aliases]
 A0=_ "E:\GGHCmac\firmware\app\stm32f10x_it.c" "C:\GGHC\firmware\app\stm32f10x_it.c"
 A1=_ "E:\GGHCmac\library\src\stm32f10x_tim.c" "C:\GGHC\library\src\stm32f10x_tim.c"
 Count=2
 SuppressDialog=0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""

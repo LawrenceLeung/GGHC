@@ -25,6 +25,7 @@
 #include <intrinsics.h>
 #include "includes.h"
 /* #include "stm32f10x_lib.h" */
+#include "stm32f10x_nvic.h" /* TODO Don't know why this isn't included in includes.h */
 
 Int32U CriticalSecCntr;
 
@@ -79,7 +80,7 @@ void Timer1IntrHandler (void)
  * then check the flag in the main loop.
  *
  *************************************************************************/
-void Timer3IntrHandler (void)
+void Tim3Handler (void)
 {
   // Clear update interrupt bit
   // TODO delete? TIM1_ClearITPendingBit(TIM1_FLAG_Update);
@@ -168,6 +169,8 @@ void main(void)
 GPIO_InitTypeDef GPIO_InitStructure;
 NVIC_InitTypeDef NVIC_InitStructure;
 TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
+TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
+
 
 #ifdef DEBUG
    debug();
@@ -227,7 +230,7 @@ TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
   // Enable update interrupt
   TIM1_ITConfig(TIM1_FLAG_Update,ENABLE);
 
-  NVIC_InitStructure.NVIC_IRQChannel = TIM1_UP_IRQChannel;
+  NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQChannel;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 7;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -257,14 +260,14 @@ TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
   // Enable update interrupt
   TIM_ITConfig(TIM3,TIM_FLAG_Update,ENABLE);
 
-  NVIC_InitStructure.NVIC_IRQChannel = TIM3_UP_IRQChannel;
+  NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQChannel;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 6;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
 
   // TIM2 enable counter
-  TIM_Cmd(TIM2, ENABLE);
+  TIM_Cmd(TIM3, ENABLE);
 
 
 
