@@ -32,6 +32,7 @@ Int32U CriticalSecCntr;
 volatile unsigned int LedState = 0; // LED is ON when corresponding bit is 1
 volatile unsigned int LedTimer = LED_RATE; // LED blinks at this rate
 volatile Boolean LedUpdate = FALSE; // LED state should be updated if true
+volatile Boolean ButtonUpdate = FALSE;  // Buttons should be read and variables updated if true
 
 void LEDsSet (unsigned int);
 
@@ -91,8 +92,8 @@ void Tim3Handler (void)
     LedTimer = LED_RATE; /* TODO This should be the metronome rate */
     LedUpdate = TRUE;
   }
-  // TODO ReadButtons();
-  // playNextFrame = TRUE;
+
+  ButtonUpdate = TRUE;
 }
 
 /*************************************************************************
@@ -151,7 +152,9 @@ void Clk_Init (void)
  *
  *************************************************************************/
 void LEDsSet (unsigned int State)
-{
+{ /* TODO I modified this so the input is a bool instead of a bit map */
+  /* This is incompatible with the example code! */
+  /* TODO Replace this code with the jigbox driver when it is done */
     GPIO_WriteBit(GPIOC,GPIO_Pin_12 ,(State)?Bit_RESET:Bit_SET);
 }
 
@@ -293,6 +296,12 @@ TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
     {
       LEDsSet(LedState);
       LedUpdate = FALSE;
+    }
+
+    if (ButtonUpdate)
+    {
+      //ReadButtons();
+      ButtonUpdate = FALSE;
     }
 
   }
