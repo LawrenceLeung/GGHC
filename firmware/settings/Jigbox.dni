@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=-354820873
+Checksum=1758239847
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -20,6 +20,14 @@ UseTrigger=1
 TriggerName=main
 LimitSize=0
 ByteLimit=50
+[BreakpointUsageDialog]
+Placement=_ 498 289 1249 605
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\app\main.c}.220.9@1" 1 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\app\main.c}.229.7@1" 1 0 0 0 "" 0 ""
+Count=2
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -27,12 +35,6 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[Disassemble mode]
-mode=0
-[Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\app\main.c}.220.9@1" 1 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\app\main.c}.175.3@1" 1 0 0 0 "" 0 ""
-Count=2
 [Aliases]
 Count=0
 SuppressDialog=0

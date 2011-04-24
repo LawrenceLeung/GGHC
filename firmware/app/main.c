@@ -88,7 +88,7 @@ void Clk_Init (void)
   // wait until the PLL is ready
   while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET);
   // 4. Set system clock dividers
-  RCC_USBCLKConfig(RCC_USBCLKSource_PLLCLK_1Div5);
+  // TODO RCC_USBCLKConfig(RCC_USBCLKSource_PLLCLK_1Div5);
   RCC_ADCCLKConfig(RCC_PCLK2_Div8);
   RCC_PCLK2Config(RCC_HCLK_Div1);
   RCC_PCLK1Config(RCC_HCLK_Div2);

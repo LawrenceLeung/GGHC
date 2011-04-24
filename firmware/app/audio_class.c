@@ -187,8 +187,10 @@ GPIO_InitTypeDef GPIO_InitStructure;
 ADC_InitTypeDef   ADC_InitStructure;
 RCC_ClocksTypeDef RCC_Clocks;
 NVIC_InitTypeDef NVIC_InitStructure;
+#ifdef TODO
 TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
 TIM1_OCInitTypeDef  TIM1_OCInitStructure;
+#endif
 
   // Init Audio Class variables
   SempEna         =\
@@ -221,6 +223,7 @@ TIM1_OCInitTypeDef  TIM1_OCInitStructure;
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
   RCC_APB2PeriphResetCmd(RCC_APB2Periph_TIM1,DISABLE);
 
+#ifdef TODO
   // Time base configuration
   TIM1_TimeBaseInitStruct.TIM1_Prescaler = 0;  // Max frequency
   TIM1_TimeBaseInitStruct.TIM1_CounterMode = TIM1_CounterMode_Up;
@@ -246,7 +249,8 @@ TIM1_OCInitTypeDef  TIM1_OCInitStructure;
 
   // TIM1 Main Output Enable
   TIM1_CtrlPWMOutputs(ENABLE);
-
+#endif
+  
   // ADC init PA1
   // Enable ADC clock
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);

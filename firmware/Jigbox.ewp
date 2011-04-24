@@ -686,11 +686,11 @@
         </option>
         <option>
           <name>IlinkIcfOverride</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkIcfFile</name>
-          <state>$TOOLKIT_DIR$\CONFIG\generic_cortex.icf</state>
+          <state>C:\GGHC\firmware\config\STM32F10x_FLASH.icf</state>
         </option>
         <option>
           <name>IlinkIcfFileSlave</name>
@@ -2663,10 +2663,7 @@
   <group>
     <name>Other</name>
     <file>
-      <name>$PROJ_DIR$\VirCOM_Driver_XP\iarvircomport.inf</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\readme.txt</name>
+      <name>$PROJ_DIR$\..\README.txt</name>
     </file>
   </group>
   <group>
