@@ -1,11 +1,10 @@
 [DebugChecksum]
-Checksum=1758239847
+Checksum=-1107417780
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
 [DisAssemblyWindow]
-NumStates=_ 1
-State 1=_ 1
+NumStates=_ 0
 [InstructionProfiling]
 Enabled=_ 0
 [CodeCoverage]
@@ -25,16 +24,16 @@ Placement=_ 498 289 1249 605
 [Disassemble mode]
 mode=0
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\app\main.c}.220.9@1" 1 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\app\main.c}.229.7@1" 1 0 0 0 "" 0 ""
-Count=2
+Count=0
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
 Category=_ 0
+[Aliases]
+A0=_ "E:\GGHCmac\firmware\app\stm32f10x_it.c" "C:\GGHC\firmware\app\stm32f10x_it.c"
+A1=_ "E:\GGHCmac\library\src\stm32f10x_tim.c" "C:\GGHC\library\src\stm32f10x_tim.c"
+Count=2
+SuppressDialog=0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[Aliases]
-Count=0
-SuppressDialog=0

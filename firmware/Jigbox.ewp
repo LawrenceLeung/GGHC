@@ -690,7 +690,7 @@
         </option>
         <option>
           <name>IlinkIcfFile</name>
-          <state>C:\GGHC\firmware\config\STM32F10x_FLASH.icf</state>
+          <state>$PROJ_DIR$\config\STM32F10x_FLASH.icf</state>
         </option>
         <option>
           <name>IlinkIcfFileSlave</name>

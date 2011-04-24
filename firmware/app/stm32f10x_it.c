@@ -25,6 +25,7 @@
 // TODO extern void USB_HIGH_ISR (void);
 extern void Tim2Handler (void);
 extern void Timer1IntrHandler (void);
+extern void Tim3Handler (void);
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -484,6 +485,7 @@ void TIM2_IRQHandler(void)
 *******************************************************************************/
 void TIM3_IRQHandler(void)
 {
+  Tim3Handler();
 }
 
 /*******************************************************************************

@@ -105,7 +105,7 @@ void InitAudioDevice(void)
   ENTR_CRT_SECTION();
 
   // Audio Device Class
- // UsbAudioClassInit();
+    UsbAudioClassInit();
 // Set STNBY pin
     GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_3;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;

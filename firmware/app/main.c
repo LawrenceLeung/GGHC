@@ -53,6 +53,37 @@ void Timer1IntrHandler (void)
 {
   // Clear update interrupt bit
   TIM1_ClearITPendingBit(TIM1_FLAG_Update);
+#ifdef TODO
+  if(LedTimer-- == 0)
+  {
+    LedState = !LedState;
+    LedTimer = LED_RATE; /* TODO This should be the metronome rate */
+    LedUpdate = TRUE;
+  }
+#endif
+  // TODO ReadButtons();
+  // playNextFrame = TRUE;
+}
+/*************************************************************************
+ * Function Name: Timer3IntrHandler
+ * Parameters: none
+ *
+ * Return: none
+ *
+ * Description: Timer 1 interrupt handler. Timer 1 is the system clock in
+ * this product. The base rate is 10ms (100 ticks per second). Various
+ * other software subsystems can be triggered from this timer. Do not
+ * directly call other software modules from this routine as this is an
+ * interrupt so needs to be kept short. If another system should be
+ * scheduled from here, set a global flag to trigger the other subsystem
+ * then check the flag in the main loop.
+ *
+ *************************************************************************/
+void Timer3IntrHandler (void)
+{
+  // Clear update interrupt bit
+  // TODO delete? TIM1_ClearITPendingBit(TIM1_FLAG_Update);
+  TIM3->SR &= (Int16U)~TIM1_FLAG_Update;
   if(LedTimer-- == 0)
   {
     LedState = !LedState;
@@ -120,7 +151,7 @@ void Clk_Init (void)
  *************************************************************************/
 void LEDsSet (unsigned int State)
 {
-    GPIO_WriteBit(GPIOC,GPIO_Pin_12 ,(State & (1<<1))?Bit_RESET:Bit_SET);
+    GPIO_WriteBit(GPIOC,GPIO_Pin_12 ,(State)?Bit_RESET:Bit_SET);
 }
 
 /*************************************************************************
@@ -204,6 +235,38 @@ TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
 
   // Enable timer counting
   TIM1_Cmd(ENABLE);
+
+
+  // Init Sample Timer - Timer3
+  // TIM3 clock enable
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
+  // Reset TIM3
+  TIM_DeInit(TIM3);
+  // Time base configuration
+
+  TIM_TimeBaseStructure.TIM_Period = 1000;  // 10ms
+  TIM_TimeBaseStructure.TIM_Prescaler = 720;      // 10uS
+  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
+  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+  TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
+
+  // Disable double buffer of the APR register
+  TIM_ARRPreloadConfig(TIM3, ENABLE);
+  // Clear update interrupt bit
+  TIM_ClearITPendingBit(TIM3,TIM_FLAG_Update);
+  // Enable update interrupt
+  TIM_ITConfig(TIM3,TIM_FLAG_Update,ENABLE);
+
+  NVIC_InitStructure.NVIC_IRQChannel = TIM3_UP_IRQChannel;
+  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 6;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  NVIC_Init(&NVIC_InitStructure);
+
+  // TIM2 enable counter
+  TIM_Cmd(TIM2, ENABLE);
+
+
 
   EXT_CRT_SECTION();
 
