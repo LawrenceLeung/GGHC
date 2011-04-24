@@ -2,13 +2,13 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>2010482829</fileChecksum>
+  <fileChecksum>2950245912</fileChecksum>
   <configuration>
     <name>DISCOVER</name>
     <outputs>
-      <file>$PROJ_DIR$\DISCOVER\Obj\misc.o</file>
-      <file>$PROJ_DIR$\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\iar\startup_stm32f10x_md_vl.s</file>
       <file>$PROJ_DIR$\DISCOVER\Obj\core_cm3.o</file>
+      <file>$PROJ_DIR$\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\iar\startup_stm32f10x_md_vl.s</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\misc.o</file>
       <file>$PROJ_DIR$\Libraries\CMSIS\CM3\CoreSupport\core_cm3.c</file>
       <file>$PROJ_DIR$\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c</file>
       <file>$PROJ_DIR$\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.c</file>
@@ -17,43 +17,44 @@
       <file>$PROJ_DIR$\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c</file>
       <file>$PROJ_DIR$\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c</file>
       <file>$PROJ_DIR$\Utilities\STM32vldiscovery.c</file>
+      <file>$PROJ_DIR$\..\app\jigbox.h</file>
       <file>$PROJ_DIR$\src\main.c</file>
       <file>$PROJ_DIR$\src\stm32f10x_it.c</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_exti.o</file>
       <file>$PROJ_DIR$\DISCOVER\Obj\system_stm32f10x.o</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\startup_stm32f10x_md_vl.o</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\DISCOVER.pbd</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_gpio.pbi</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_gpio.o</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_pwr.pbi</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_rcc.pbi</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\main.o</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\misc.pbi</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\system_stm32f10x.pbi</file>
-      <file>$PROJ_DIR$\DISCOVER\Exe\DISCOVER.out</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\STM32vldiscovery.pbi</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_it.pbi</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\STM32vldiscovery.o</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_pwr.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_rcc.o</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\core_cm3.pbi</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_it.o</file>
-      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_exti.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_exti.o</file>
       <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\startup_stm32f10x_md_vl.o</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\main.o</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\DISCOVER.pbd</file>
       <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
       <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_gpio.o</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_gpio.pbi</file>
       <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_pwr.pbi</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_rcc.pbi</file>
       <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\misc.pbi</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\system_stm32f10x.pbi</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\STM32vldiscovery.pbi</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\DISCOVER\Exe\DISCOVER.out</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_pwr.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\STM32vldiscovery.o</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_it.pbi</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_rcc.o</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_it.o</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\core_cm3.pbi</file>
+      <file>$PROJ_DIR$\DISCOVER\Obj\stm32f10x_exti.pbi</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 24</file>
+          <file> 32</file>
         </tool>
       </outputs>
     </file>
@@ -62,7 +63,7 @@
       <outputs>
         <tool>
           <name>AARM</name>
-          <file> 15</file>
+          <file> 17</file>
         </tool>
       </outputs>
     </file>
@@ -71,17 +72,17 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 32</file>
+          <file> 40</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 2</file>
+          <file> 0</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 38 39 35 40 37 36 30</file>
+          <file> 21 24 35 27 20 16 33</file>
         </tool>
       </inputs>
     </file>
@@ -90,11 +91,11 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 22</file>
+          <file> 28</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 0</file>
+          <file> 2</file>
         </tool>
       </outputs>
     </file>
@@ -103,7 +104,7 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 23</file>
+          <file> 29</file>
         </tool>
         <tool>
           <name>ICCARM</name>
@@ -116,11 +117,11 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 34</file>
+          <file> 41</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 13</file>
+          <file> 15</file>
         </tool>
       </outputs>
     </file>
@@ -129,11 +130,11 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 17</file>
+          <file> 23</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 18</file>
+          <file> 22</file>
         </tool>
       </outputs>
     </file>
@@ -142,11 +143,11 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 19</file>
+          <file> 25</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 29</file>
+          <file> 34</file>
         </tool>
       </outputs>
     </file>
@@ -155,11 +156,11 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 20</file>
+          <file> 26</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 31</file>
+          <file> 38</file>
         </tool>
       </outputs>
     </file>
@@ -168,11 +169,11 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 26</file>
+          <file> 30</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 28</file>
+          <file> 36</file>
         </tool>
       </outputs>
     </file>
@@ -181,11 +182,11 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 25</file>
+          <file> 31</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 21</file>
+          <file> 18</file>
         </tool>
       </outputs>
     </file>
@@ -194,14 +195,17 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 27</file>
+          <file> 37</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 33</file>
+          <file> 39</file>
         </tool>
       </outputs>
     </file>
+    <forcedrebuild>
+      <name>[REBUILD_ALL]</name>
+    </forcedrebuild>
   </configuration>
 </project>
 
