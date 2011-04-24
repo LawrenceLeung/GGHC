@@ -662,35 +662,35 @@
         </option>
         <option>
           <name>IlinkMapFile</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IlinkLogFile</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IlinkLogInitialization</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IlinkLogModule</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IlinkLogSection</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IlinkLogVeneer</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IlinkIcfOverride</name>
           <state>1</state>
         </option>
         <option>
+          <name>IlinkLogFile</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkLogInitialization</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkLogModule</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkLogSection</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkLogVeneer</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkIcfOverride</name>
+          <state>0</state>
+        </option>
+        <option>
           <name>IlinkIcfFile</name>
-          <state>$PROJ_DIR$\config\STM32F10x_FLASH.icf</state>
+          <state>$TOOLKIT_DIR$\CONFIG\generic_cortex.icf</state>
         </option>
         <option>
           <name>IlinkIcfFileSlave</name>
@@ -825,15 +825,15 @@
         </option>
         <option>
           <name>IlinkLogAutoLibSelect</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogRedirSymbols</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogUnusedFragments</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkCrcReverseByteOrder</name>
@@ -985,7 +985,7 @@
         </option>
         <option>
           <name>OGChipSelectEditMenu</name>
-          <state>STM32F10xxB	ST STM32F10xxB</state>
+          <state>STM32F100xB	ST STM32F100xB</state>
         </option>
         <option>
           <name>GenLowLevelInterface</name>
@@ -1548,27 +1548,27 @@
         </option>
         <option>
           <name>IlinkMapFile</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogFile</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogInitialization</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogModule</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogSection</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogVeneer</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkIcfOverride</name>
@@ -1711,15 +1711,15 @@
         </option>
         <option>
           <name>IlinkLogAutoLibSelect</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogRedirSymbols</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkLogUnusedFragments</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkCrcReverseByteOrder</name>
@@ -2661,18 +2661,6 @@
     </settings>
   </configuration>
   <group>
-    <name>HD44780</name>
-    <file>
-      <name>$PROJ_DIR$\module\drv_hd44780.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\module\drv_hd44780_cnfg.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\module\drv_hd44780_l.c</name>
-    </file>
-  </group>
-  <group>
     <name>Other</name>
     <file>
       <name>$PROJ_DIR$\VirCOM_Driver_XP\iarvircomport.inf</name>
@@ -2718,33 +2706,15 @@
       <file>
         <name>$PROJ_DIR$\app\audio_class.c</name>
       </file>
-      <file>
-        <name>$PROJ_DIR$\app\usb_desc.c</name>
-      </file>
     </group>
     <group>
       <name>Config</name>
-      <file>
-        <name>$PROJ_DIR$\app\usb_cnfg.h</name>
-      </file>
     </group>
     <group>
       <name>Core</name>
-      <file>
-        <name>$PROJ_DIR$\module\usb_buffer.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\app\usb_hooks.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\module\usb_t9.c</name>
-      </file>
     </group>
     <group>
       <name>HW</name>
-      <file>
-        <name>$PROJ_DIR$\module\usb_hw.c</name>
-      </file>
     </group>
   </group>
   <group>

@@ -105,7 +105,7 @@ void InitAudioDevice(void)
   ENTR_CRT_SECTION();
 
   // Audio Device Class
-  UsbAudioClassInit();
+ // UsbAudioClassInit();
 // Set STNBY pin
     GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_3;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
@@ -116,7 +116,7 @@ void InitAudioDevice(void)
     GPIO_WriteBit(GPIOC, GPIO_Pin_3, Bit_RESET);
     
   // Soft connection enable
-  USB_ConnectRes(TRUE);
+  //USB_ConnectRes(TRUE);
 
   EXT_CRT_SECTION();
   notes[0].frequency = 216; // Middle C

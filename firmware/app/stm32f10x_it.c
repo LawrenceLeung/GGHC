@@ -21,8 +21,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
-extern void USB_ISR (void);
-extern void USB_HIGH_ISR (void);
+//TODO extern void USB_ISR (void);
+// TODO extern void USB_HIGH_ISR (void);
 extern void Tim2Handler (void);
 extern void Timer1IntrHandler (void);
 
@@ -367,7 +367,7 @@ void ADC_IRQHandler(void)
 *******************************************************************************/
 void USB_HP_CAN_TX_IRQHandler(void)
 {
-  USB_HIGH_ISR();
+  // TODO delete ? USB_HIGH_ISR();
 }
 
 /*******************************************************************************
@@ -380,7 +380,7 @@ void USB_HP_CAN_TX_IRQHandler(void)
 *******************************************************************************/
 void USB_LP_CAN_RX0_IRQHandler(void)
 {
-   USB_ISR();
+   // TODO delete ? USB_ISR();
 }
 
 /*******************************************************************************

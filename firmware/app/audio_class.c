@@ -315,8 +315,8 @@ TIM1_OCInitTypeDef  TIM1_OCInitStructure;
   // TIM2 enable counter
   TIM_Cmd(TIM2, ENABLE);
 
-  UsbClassAudioConfigure(NULL);
-  UsbCoreInit();
+  //UsbClassAudioConfigure(NULL);
+  //UsbCoreInit();
 
   playNextFrame = TRUE; // Signal that it is OK to load audio samples
 
