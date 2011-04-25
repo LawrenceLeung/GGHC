@@ -24,6 +24,7 @@
  **************************************************************************/
 #include <intrinsics.h>
 #include "includes.h"
+#include "LED.h"
 /* #include "stm32f10x_lib.h" */
 #include "stm32f10x_nvic.h" /* TODO Don't know why this isn't included in includes.h */
 
@@ -188,6 +189,7 @@ NVIC_InitTypeDef NVIC_InitStructure;
 TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
 TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 
+static int LedCount = 0;
 
 #ifdef DEBUG
    debug();
@@ -332,6 +334,13 @@ TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
     {
       LEDsSet(LedState);
       LedUpdate = FALSE;
+      LEDOff(LedCount);
+      LedCount++;
+      if (LedCount == nLEDs)
+      {
+        LedCount = 0;
+      }
+      LEDOn(LedCount);
     }
 
     if (ButtonUpdate)

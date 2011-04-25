@@ -1,6 +1,7 @@
 #include "jigbox.h"
 #include "stm32f10x_rcc.h"
-#define nLEDs 9
+#include "LED.h"
+
 
 GPIO_TypeDef* GPIO_PORTS[nLEDs] = {EXT_LED1_PORT,
                                EXT_LED2_PORT,
