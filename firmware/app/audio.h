@@ -18,9 +18,11 @@
 #define __AUDIO_H
 
 
-#define NUMBER_OF_NOTES 5
+#define NUMBER_OF_NOTES 6 // Metronome plus 5 notes
 
 void InitAudioDevice(void);
+void metronome(void);
+void SetMetronomePeriod(unsigned long newPeriod);
 
 typedef struct oneNote
   {

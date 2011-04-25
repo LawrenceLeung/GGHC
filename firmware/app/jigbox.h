@@ -11,6 +11,8 @@
 #include "stm32f10x_map.h"
 #include "stm32f10x_gpio.h"
 
+extern volatile unsigned long sysTime;
+
 /* PUSH BUTTONS
  * There are 5 buttons for the pentatonic scale notes. As the mapping of 
  * buttons to notes maybe dynamic, the buttons are named 1-5 for the hardware 

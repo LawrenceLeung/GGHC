@@ -33,6 +33,7 @@ volatile unsigned int LedState = 0; // LED is ON when corresponding bit is 1
 volatile unsigned int LedTimer = LED_RATE; // LED blinks at this rate
 volatile Boolean LedUpdate = FALSE; // LED state should be updated if true
 volatile Boolean ButtonUpdate = FALSE;  // Buttons should be read and variables updated if true
+volatile unsigned long sysTime = 0;
 
 void LEDsSet (unsigned int);
 
@@ -86,6 +87,8 @@ void Tim3Handler (void)
   // Clear update interrupt bit
   // TODO delete? TIM1_ClearITPendingBit(TIM1_FLAG_Update);
   TIM3->SR &= (Int16U)~TIM1_FLAG_Update;
+  sysTime++;
+
   if(LedTimer-- == 0)
   {
     LedState = !LedState;
@@ -157,6 +160,17 @@ void LEDsSet (unsigned int State)
   /* TODO Replace this code with the jigbox driver when it is done */
     GPIO_WriteBit(GPIOC,GPIO_Pin_12 ,(State)?Bit_RESET:Bit_SET);
 }
+
+// TODO move and / or eliminate this
+Int16S silentSound[SampPerFrame]=
+{
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0
+};
 
 /*************************************************************************
  * Function Name: main
@@ -280,13 +294,33 @@ TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 
   while(1)
   {
+    metronome();
+
+    int i;
+    
+#ifdef TODO
+    i = 1; // Button 0 is reserved
+    if (buttons[i].pressed)
+    {
+      notes[i].noteOn = TRUE;
+    }
+    else
+    {
+      notes[i].noteOn = FALSE;
+    }
+#endif
+     i = 0; // Metronome channel
     // TODO refactor this into a function in audio.c
     if (playNextFrame)
     {
-      int i = 0;
+      // TODO Add a for loop to get all notes from all buttons.
       if (notes[i].noteOn)
       {
         AudioMemoryBufPlay(notes[i].noteVoiceBuffer);
+      }
+      else
+      {
+        AudioMemoryBufPlay(silentSound);
       }
       playNextFrame = FALSE;
     }

@@ -16,6 +16,8 @@
 
 Note notes[NUMBER_OF_NOTES];
 
+static unsigned long metronomePeriod;
+
 Int16S testSound[SampPerFrame]=
   {
 0,
@@ -67,6 +69,8 @@ Int16S testSound[SampPerFrame]=
 -530,
 -268
 };
+
+
 /*************************************************************************
  * Function Name: Dly100us
  * Parameters: Int32U Dly
@@ -85,6 +89,10 @@ Int32U Dly = (Int32U)arg;
   }
 }
 
+void SetMetronomePeriod(unsigned long newPeriod)
+{
+  metronomePeriod = newPeriod;
+}
 /*************************************************************************
  * Function Name: InitAudioDevice
  * Parameters: none
@@ -119,9 +127,42 @@ void InitAudioDevice(void)
   //USB_ConnectRes(TRUE);
 
   EXT_CRT_SECTION();
+  // Note 0 is the metronome note
   notes[0].frequency = 216; // Middle C
   notes[0].period = 100; // TODO
   notes[0].noteVoiceBuffer = testSound; // Sinewave buffer
   notes[0].noteOn = TRUE; // TODO start with it on just for test
 
+  // Note 1 maps to the first button.
+  notes[1].frequency = 216; // Middle C
+  notes[1].period = 100; // TODO
+  notes[1].noteVoiceBuffer = testSound; // Sinewave buffer
+  notes[1].noteOn = TRUE; // TODO start with it on just for test
+
+  metronomePeriod = 100;
+}
+
+void metronome(void)
+{
+  static unsigned long previousSysTime;
+  static Boolean metronomeUpBeat = FALSE;
+  unsigned long deltaSysTime;
+  const unsigned long metronomeUpPeriod = 10;
+
+  deltaSysTime = sysTime - previousSysTime;
+  
+  if (deltaSysTime > metronomePeriod)
+  {
+    notes[0].noteOn = TRUE;
+    metronomeUpBeat= TRUE;
+    previousSysTime = sysTime;
+  }
+  else
+  {
+    if (metronomeUpBeat && (deltaSysTime > metronomeUpPeriod))
+    {
+      notes[0].noteOn = FALSE;
+      metronomeUpBeat= FALSE;
+    }
+  }
 }
