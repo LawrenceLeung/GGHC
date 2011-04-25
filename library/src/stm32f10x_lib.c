@@ -101,15 +101,15 @@ void debug(void)
 
 /************************************* GPIO ***********************************/
 #ifdef _GPIOA
-  GPIOA = (GPIO_TypeDef *)  GPIOA_BASE;
+  //GPIOA = (GPIO_TypeDef *)  GPIOA_BASE;
 #endif /*_GPIOA */
 
 #ifdef _GPIOB
-  GPIOB = (GPIO_TypeDef *)  GPIOB_BASE;
+  //GPIOB = (GPIO_TypeDef *)  GPIOB_BASE;
 #endif /*_GPIOB */
 
 #ifdef _GPIOC
-  GPIOC = (GPIO_TypeDef *)  GPIOC_BASE;
+  //GPIOC = (GPIO_TypeDef *)  GPIOC_BASE;
 #endif /*_GPIOC */
 
 #ifdef _GPIOD

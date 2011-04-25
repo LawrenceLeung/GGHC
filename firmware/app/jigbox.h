@@ -17,7 +17,9 @@ These libs blow up on the discovery board.  We'll just use the stock discovery o
 #endif
 
 //TODO Horrid kludge while waiting for new library upgrade
-typedef Int16U uint16_t;
+#ifndef uint16_t
+typedef unsigned short uint16_t;
+#endif
 
 extern volatile unsigned long sysTime;
 

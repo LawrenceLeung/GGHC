@@ -291,6 +291,8 @@ TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
   EXT_CRT_SECTION();
 
   InitAudioDevice();
+  
+  LEDInit();
 
   while(1)
   {

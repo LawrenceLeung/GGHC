@@ -15,6 +15,8 @@
  *    $Revision: 1.4 $
  **************************************************************************/
 #include "audio_class.h"
+#include "includes.h"
+#include "jigbox.h"
 
 volatile Boolean SempEna,MicEna;
 Int32U  SempPeriod,DeltaPer,MicCurrBuffer;

@@ -756,25 +756,13 @@ typedef struct
   EXT EXTI_TypeDef            *EXTI;
 #endif /*_EXTI */
 
-#ifdef _GPIOA
-  EXT GPIO_TypeDef            *GPIOA;
-#endif /*_GPIOA */
-
-#ifdef _GPIOB
-  EXT GPIO_TypeDef            *GPIOB;
-#endif /*_GPIOB */
-
-#ifdef _GPIOC
-  EXT GPIO_TypeDef            *GPIOC;
-#endif /*_GPIOC */
-
-#ifdef _GPIOD
-  EXT GPIO_TypeDef            *GPIOD;
-#endif /*_GPIOD */
-
-#ifdef _GPIOE
-  EXT GPIO_TypeDef            *GPIOE;
-#endif /*_GPIOE */
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+#define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+#define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
+#define GPIOD               ((GPIO_TypeDef *) GPIOD_BASE)
+#define GPIOE               ((GPIO_TypeDef *) GPIOE_BASE)
+#define GPIOF               ((GPIO_TypeDef *) GPIOF_BASE)
+#define GPIOG               ((GPIO_TypeDef *) GPIOG_BASE)
 
 #ifdef _ADC1
   EXT ADC_TypeDef             *ADC1;

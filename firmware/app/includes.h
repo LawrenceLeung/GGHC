@@ -40,6 +40,7 @@
 #include "audio_desc.h"
 #include "audio_class.h"
 #include "audio.h"
+#include "LED.h"
 
 #include "jigbox.h"
 
