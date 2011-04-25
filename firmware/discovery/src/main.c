@@ -22,6 +22,7 @@
 #include "stm32F10x.h"
 #include "STM32vldiscovery.h"
 #include "jigbox.h"
+#include "buttons.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -52,6 +53,13 @@ int main(void)
 {
   /* Enable GPIOx Clock */
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
+  
+  LEDInit();
+  
+  LEDOn(0);
+  LEDOff(1);
+  LEDOn(2);
+  LEDOff(3);
   
   /* Initialise LEDs LD3&LD4, both off */
   STM32vldiscovery_LEDInit(LED3);
@@ -151,10 +159,14 @@ int main(void)
       /* BlinkSpeed: 0 */ 
       if(BlinkSpeed == 0)
           {
-            if(4 == (count % 8))
-            STM32vldiscovery_LEDOn(LED3);
-            if(0 == (count % 8))
-            STM32vldiscovery_LEDOff(LED3);
+            if(4 == (count % 8)){
+              STM32vldiscovery_LEDOn(LED3);
+              LEDOn(1);
+            }
+            if(0 == (count % 8)){
+              STM32vldiscovery_LEDOff(LED3);
+              LEDOff(1);
+            }
          }
            /* BlinkSpeed: 1 */ 
            if(BlinkSpeed == 1)
