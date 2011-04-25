@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>617184620</fileChecksum>
+  <fileChecksum>3175163922</fileChecksum>
   <configuration>
     <name>Dscvr 103RB flash debug</name>
     <outputs>
@@ -1536,7 +1536,7 @@
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 43 85 76 80 101 94 99 78 107 91 96 95 100 92 103 40 50 23 48</file>
+          <file> 43 0 85 76 80 101 94 99 78 107 91 96 95 100 92 103 40 50 23 48</file>
         </tool>
       </inputs>
     </file>
@@ -1556,15 +1556,19 @@
           <name>BICOMP</name>
           <file> 1</file>
         </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0</file>
+        </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 55 32 3 28 18 49</file>
+          <file> 55 32 3 28 18 49 25 110</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 55 32 3 28 18 49</file>
+          <file> 55 32 3 28 18 49 25 110</file>
         </tool>
       </inputs>
     </file>
@@ -1577,10 +1581,6 @@
         </tool>
       </outputs>
     </file>
-    <forcedrebuild>
-      <name>[MULTI_TOOL]</name>
-      <tool>ILINK</tool>
-    </forcedrebuild>
   </configuration>
 </project>
 

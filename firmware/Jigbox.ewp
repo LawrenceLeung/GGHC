@@ -2736,6 +2736,9 @@
     <name>$PROJ_DIR$\app\LED.c</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\app\LED.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\app\main.c</name>
   </file>
 </project>

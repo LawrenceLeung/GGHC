@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=2065352553
+Checksum=1363217433
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -22,6 +22,11 @@ LimitSize=0
 ByteLimit=50
 [BreakpointUsageDialog]
 Placement=_ 498 289 1249 605
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\app\main.c}.337.7@1" 1 0 0 0 "" 0 ""
+Count=1
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -29,10 +34,6 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[Disassemble mode]
-mode=0
-[Breakpoints]
-Count=0
 [Aliases]
 A0=_ "E:\GGHCmac\firmware\app\stm32f10x_it.c" "C:\GGHC\firmware\app\stm32f10x_it.c"
 A1=_ "E:\GGHCmac\library\src\stm32f10x_tim.c" "C:\GGHC\library\src\stm32f10x_tim.c"
