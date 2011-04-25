@@ -8,8 +8,13 @@
 #ifndef  __JIGBOX_H
 #define  __JIGBOX_H
 
+/**
+These libs blow up on the discovery board.  We'll just use the stock discovery ones for that board.
+*/
+#ifndef __STM32F100_Dicovery_H
 #include "stm32f10x_map.h"
 #include "stm32f10x_gpio.h"
+#endif
 
 extern volatile unsigned long sysTime;
 
