@@ -19,7 +19,12 @@
 #ifndef __AUDIO_CLASS_H
 #define __AUDIO_CLASS_H
 
-extern volatile Boolean playNextFrame;
+#include "stm32f10x_adc.h"
+#include "stm32f10x_rcc.h"
+#include "stm32f10x_tim.h"
+#include "misc.h"
+
+extern __IO Boolean playNextFrame;
 
 #define MinVol        0x8000
 

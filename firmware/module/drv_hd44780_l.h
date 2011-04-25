@@ -39,7 +39,7 @@
 #define LCD_LIGHT_OFF()           GPIO_WriteBit(LCD_LIGHT_PORT,LCD_LIGHT,Bit_RESET)
 
 /* Delay macro */
-#define HD44780_BUS_DLY()         for(volatile int dly = 30;dly;--dly)
+#define HD44780_BUS_DLY()         for(__IO int dly = 30;dly;--dly)
 
 void HD44780_IO_Init (void);
 void HD44780SetRS (Boolean Data);

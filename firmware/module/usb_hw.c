@@ -73,14 +73,14 @@ static const UsbEP_ExtData_t USB_CtrlEpExt1 =
 
 /*************************************************************************
  * Function Name: EpCtrlSet_EA
- * Parameters: volatile pInt32U pReg, Int32U Data
+ * Parameters: __IO pInt32U pReg, Int32U Data
  *
  * Return: none
  *
  * Description: Set EP Addr
  *
  *************************************************************************/
-void EpCtrlSet_EA(volatile pInt32U pReg, Int32U Data)
+void EpCtrlSet_EA(__IO pInt32U pReg, Int32U Data)
 {
   Data &= 0xF;
   Data |= *pReg & 0x0700 ;
@@ -90,7 +90,7 @@ void EpCtrlSet_EA(volatile pInt32U pReg, Int32U Data)
 
 /*************************************************************************
  * Function Name: EpCtrlGet_EA
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int16U
  *
@@ -98,21 +98,21 @@ void EpCtrlSet_EA(volatile pInt32U pReg, Int32U Data)
  *
  *************************************************************************/
 inline
-Int16U EpCtrlGet_EA(volatile pInt32U pReg)
+Int16U EpCtrlGet_EA(__IO pInt32U pReg)
 {
   return(*pReg & 0x0F);
 }
 
 /*************************************************************************
  * Function Name: EpCtrlSet_STAT_TX
- * Parameters: volatile pInt32U pReg, EpState_t Data
+ * Parameters: __IO pInt32U pReg, EpState_t Data
  *
  * Return: none
  *
  * Description: Set EP IN State
  *
  *************************************************************************/
-void EpCtrlSet_STAT_TX (volatile pInt32U pReg, EpState_t Data)
+void EpCtrlSet_STAT_TX (__IO pInt32U pReg, EpState_t Data)
 {
 Int32U State;
   // The EP can change state between read and write
@@ -144,7 +144,7 @@ Int32U State;
 
 /*************************************************************************
  * Function Name: EpCtrlGet_STAT_TX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -152,7 +152,7 @@ Int32U State;
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_STAT_TX (volatile pInt32U pReg)
+Int32U EpCtrlGet_STAT_TX (__IO pInt32U pReg)
 {
 Int32U Data = *pReg;
   return((Data & (0x3UL << 4)) >> 4);
@@ -160,14 +160,14 @@ Int32U Data = *pReg;
 
 /*************************************************************************
  * Function Name: EpCtrlSet_DTOG_TX
- * Parameters: volatile pInt32U pReg, Int32U Data
+ * Parameters: __IO pInt32U pReg, Int32U Data
  *
  * Return: none
  *
  * Description: Set EP DTOG_TX bit (IN)
  *
  *************************************************************************/
-void EpCtrlSet_DTOG_TX(volatile pInt32U pReg, Int32U Data)
+void EpCtrlSet_DTOG_TX(__IO pInt32U pReg, Int32U Data)
 {
   Data  = Data?(*pReg ^ (1UL<<6)):*pReg;
   Data &= ~0x7030;   // Clear the toggle bits without DTOG_TX (6)
@@ -177,14 +177,14 @@ void EpCtrlSet_DTOG_TX(volatile pInt32U pReg, Int32U Data)
 
 /*************************************************************************
  * Function Name: EpCtrlToggle_DTOG_TX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: none
  *
  * Description: Toggle EP DTOG_TX bit (IN)
  *
  *************************************************************************/
-void EpCtrlToggle_DTOG_TX(volatile pInt32U pReg)
+void EpCtrlToggle_DTOG_TX(__IO pInt32U pReg)
 {
 Int32U Data = *pReg | (1UL << 6);
   Data &= ~0x7030;   // Clear the toggle bits without DTOG_TX (6)
@@ -194,7 +194,7 @@ Int32U Data = *pReg | (1UL << 6);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_DTOG_TX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -202,21 +202,21 @@ Int32U Data = *pReg | (1UL << 6);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_DTOG_TX(volatile pInt32U pReg)
+Int32U EpCtrlGet_DTOG_TX(__IO pInt32U pReg)
 {
   return(((*pReg & (1UL<<6))?1:0));
 }
 
 /*************************************************************************
  * Function Name: EpCtrlClr_CTR_TX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: none
  *
  * Description: Clear EP CTR_TX bit (IN)
  *
  *************************************************************************/
-void EpCtrlClr_CTR_TX(volatile pInt32U pReg)
+void EpCtrlClr_CTR_TX(__IO pInt32U pReg)
 {
 Int32U Data = *pReg;
   Data &= ~(USB_CTRL_TOGGLE_MASK | 1UL << 7);
@@ -226,7 +226,7 @@ Int32U Data = *pReg;
 
 /*************************************************************************
  * Function Name: EpCtrlGet_CTR_TX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: UserFunc_t
  *
@@ -234,21 +234,21 @@ Int32U Data = *pReg;
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_CTR_TX(volatile pInt32U pReg)
+Int32U EpCtrlGet_CTR_TX(__IO pInt32U pReg)
 {
   return(((*pReg & (0x1UL << 7))?1:0));
 }
 
 /*************************************************************************
  * Function Name: EpCtrlSet_EP_KIND
- * Parameters: volatile pInt32U pReg, Int32U Data
+ * Parameters: __IO pInt32U pReg, Int32U Data
  *
  * Return: none
  *
  * Description: Set EP KIND bit
  *
  *************************************************************************/
-void EpCtrlSet_EP_KIND (volatile pInt32U pReg, Int32U Data)
+void EpCtrlSet_EP_KIND (__IO pInt32U pReg, Int32U Data)
 {
   Data  = Data ? (1UL << 8):0;
   Data |= *pReg & ~(USB_CTRL_TOGGLE_MASK | (1UL << 8));
@@ -258,7 +258,7 @@ void EpCtrlSet_EP_KIND (volatile pInt32U pReg, Int32U Data)
 
 /*************************************************************************
  * Function Name: EpCtrlGet_EP_KIND
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -266,21 +266,21 @@ void EpCtrlSet_EP_KIND (volatile pInt32U pReg, Int32U Data)
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_EP_KIND(volatile pInt32U pReg)
+Int32U EpCtrlGet_EP_KIND(__IO pInt32U pReg)
 {
   return(*pReg & (0x1UL << 8)?1:0);
 }
 
 /*************************************************************************
  * Function Name: EpCtrlSet_EP_TYPE
- * Parameters: volatile pInt32U pReg, EpType_t Data
+ * Parameters: __IO pInt32U pReg, EpType_t Data
  *
  * Return: none
  *
  * Description: Set EP type
  *
  *************************************************************************/
-void EpCtrlSet_EP_TYPE(volatile pInt32U pReg, EpType_t Data)
+void EpCtrlSet_EP_TYPE(__IO pInt32U pReg, EpType_t Data)
 {
 Int32U Type;
   Type = Data;
@@ -292,7 +292,7 @@ Int32U Type;
 
 /*************************************************************************
  * Function Name: EpCtrlGet_EP_TYPE
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -300,7 +300,7 @@ Int32U Type;
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_EP_TYPE(volatile pInt32U pReg)
+Int32U EpCtrlGet_EP_TYPE(__IO pInt32U pReg)
 {
 Int32U Data = *pReg;
   Data &= (3UL<<9);
@@ -309,7 +309,7 @@ Int32U Data = *pReg;
 
 /*************************************************************************
  * Function Name: EpCtrlGet_SETUP
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -317,7 +317,7 @@ Int32U Data = *pReg;
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_SETUP(volatile pInt32U pReg)
+Int32U EpCtrlGet_SETUP(__IO pInt32U pReg)
 {
 Int32U Data = *pReg & (0x1UL << 11);
   return(Data?1:0);
@@ -325,14 +325,14 @@ Int32U Data = *pReg & (0x1UL << 11);
 
 /*************************************************************************
  * Function Name: EpCtrlSet_STAT_RX
- * Parameters: volatile pInt32U pReg, EpState_t Data
+ * Parameters: __IO pInt32U pReg, EpState_t Data
  *
  * Return: none
  *
  * Description: Set EP STAT_RX (OUT)
  *
  *************************************************************************/
-void EpCtrlSet_STAT_RX (volatile pInt32U pReg, EpState_t Data)
+void EpCtrlSet_STAT_RX (__IO pInt32U pReg, EpState_t Data)
 {
 Int32U State;
   // The EP can change state between read and write
@@ -364,7 +364,7 @@ Int32U State;
 
 /*************************************************************************
  * Function Name: EpCtrlGet_STAT_RX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -372,7 +372,7 @@ Int32U State;
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_STAT_RX(volatile pInt32U pReg)
+Int32U EpCtrlGet_STAT_RX(__IO pInt32U pReg)
 {
 Int32U Data = *pReg &( 0x3UL << 12);
   return(Data >> 12);
@@ -380,14 +380,14 @@ Int32U Data = *pReg &( 0x3UL << 12);
 
 /*************************************************************************
  * Function Name: EpCtrlSet_DTOG_RX
- * Parameters: volatile pInt32U pReg, Int32U Data
+ * Parameters: __IO pInt32U pReg, Int32U Data
  *
  * Return: none
  *
  * Description: Set DTOG_RX bit
  *
  *************************************************************************/
-void EpCtrlSet_DTOG_RX(volatile pInt32U pReg, Int32U Data)
+void EpCtrlSet_DTOG_RX(__IO pInt32U pReg, Int32U Data)
 {
   Data  = Data?(*pReg ^ (1UL<<14)):*pReg;
   Data &= ~0x3070;   // Clear the toggle bits without DTOG_RX (14)
@@ -397,14 +397,14 @@ void EpCtrlSet_DTOG_RX(volatile pInt32U pReg, Int32U Data)
 
 /*************************************************************************
  * Function Name: EpCtrlToggle_DTOG_RX
- * Parameters: volatile Int16U pReg
+ * Parameters: __IO Int16U pReg
  *
  * Return: none
  *
  * Description: Toggle DTOG_RX bit
  *
  *************************************************************************/
-void EpCtrlToggle_DTOG_RX(volatile pInt32U pReg)
+void EpCtrlToggle_DTOG_RX(__IO pInt32U pReg)
 {
 Int32U Data = *pReg | (1UL << 14);
   Data &= ~0x3070;   // Clear the toggle bits without DTOG_TX (14)
@@ -414,7 +414,7 @@ Int32U Data = *pReg | (1UL << 14);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_DTOG_RX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -422,21 +422,21 @@ Int32U Data = *pReg | (1UL << 14);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_DTOG_RX(volatile pInt32U pReg)
+Int32U EpCtrlGet_DTOG_RX(__IO pInt32U pReg)
 {
   return(((*pReg & (1UL<<14))?1:0));
 }
 
 /*************************************************************************
  * Function Name: EpCtrlClr_CTR_RX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: none
  *
  * Description: Clear EP CTR_RX bit (OUT)
  *
  *************************************************************************/
-void EpCtrlClr_CTR_RX(volatile pInt32U pReg)
+void EpCtrlClr_CTR_RX(__IO pInt32U pReg)
 {
 Int32U Data = *pReg;
   Data &= ~(USB_CTRL_TOGGLE_MASK | 1UL << 15);
@@ -446,7 +446,7 @@ Int32U Data = *pReg;
 
 /*************************************************************************
  * Function Name: EpCtrlGet_CTR_RX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -454,7 +454,7 @@ Int32U Data = *pReg;
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_CTR_RX(volatile pInt32U pReg)
+Int32U EpCtrlGet_CTR_RX(__IO pInt32U pReg)
 {
   return(*pReg & (0x1UL << 15)?1:0);
 }
@@ -493,7 +493,7 @@ GPIO_InitTypeDef GPIO_InitStructure;
                          | RCC_APB2Periph_GPIOC
                          | RCC_APB2Periph_AFIO, ENABLE);
 
-  GPIO_PinRemapConfig(GPIO_Remap1_CAN,ENABLE);  // xxx
+  GPIO_PinRemapConfig(GPIO_Remap1_CAN1,ENABLE);  // xxx
   // Configure PA11, PA12 as USB lines
   GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_11 | GPIO_Pin_12;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
@@ -517,14 +517,14 @@ GPIO_InitTypeDef GPIO_InitStructure;
 
   // USB interrupt connect to NVIC
 #if USB_HIGH_PRIORITY_EVENT > 0
-  NVIC_InitStructure.NVIC_IRQChannel = USB_HP_CAN_TX_IRQChannel;
+  NVIC_InitStructure.NVIC_IRQChannel = USB_HP_CAN1_TX_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = USB_INTR_HIGH_PRIORITY;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
 #endif // USB_HIGH_PRIORITY_EVENT > 0
 
-  NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN_RX0_IRQChannel;
+  NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = USB_INTR_LOW_PRIORITY;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -745,7 +745,7 @@ USB_ErrorCodes_t USB_RealizeEp(const UsbStandardEpDescriptor_t * pEP_Desc,
 {
 USB_Endpoint_t EP;
 pEpCnfg_t pEP;
-volatile pInt32U pEpCtrlBaseAddr;
+__IO pInt32U pEpCtrlBaseAddr;
 Int16U Offset,Offset1;
 Int32U MaxPacketSizeTmp;
 

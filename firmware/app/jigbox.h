@@ -12,18 +12,13 @@
 These libs blow up on the discovery board.  We'll just use the stock discovery ones for that board.
 */
 #ifndef STM_DISCOVERY
-#include "stm32f10x_map.h"
+// TODO #include "stm32f10x_map.h"
 #include "stm32f10x_gpio.h"
 
-//TODO Horrid kludge while waiting for new library upgrade
-#ifndef uint16_t
-typedef unsigned short uint16_t;
-#endif
-
 #endif
 
 
-extern volatile unsigned long sysTime;
+extern __IO unsigned long sysTime;
 
 /* PUSH BUTTONS
  * There are 5 buttons for the pentatonic scale notes. As the mapping of 

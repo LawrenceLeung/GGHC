@@ -15,15 +15,16 @@
  *    $Revision: 1.4 $
  **************************************************************************/
 #include "audio_class.h"
+#include "stm32f10x_tim.h"
 #include "includes.h"
 #include "jigbox.h"
 
-volatile Boolean SempEna,MicEna;
+__IO Boolean SempEna,MicEna;
 Int32U  SempPeriod,DeltaPer,MicCurrBuffer;
-volatile pInt16S pSpkData,pMicData;
-volatile Int32U  SempPerCurrHold,Delta,MicSempCount,SempCount;
+__IO pInt16S pSpkData,pMicData;
+__IO Int32U  SempPerCurrHold,Delta,MicSempCount,SempCount;
 
-volatile Boolean playNextFrame = FALSE;
+__IO Boolean playNextFrame = FALSE;
 
 static union _Val
 {
@@ -190,8 +191,8 @@ ADC_InitTypeDef   ADC_InitStructure;
 RCC_ClocksTypeDef RCC_Clocks;
 NVIC_InitTypeDef NVIC_InitStructure;
 //#ifdef TODO
-TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
-TIM1_OCInitTypeDef  TIM1_OCInitStructure;
+//TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
+TIM_OCInitTypeDef  TIM1_OCInitStructure;
 //#endif
 
   // Init Audio Class variables
@@ -227,30 +228,30 @@ TIM1_OCInitTypeDef  TIM1_OCInitStructure;
 
 //#ifdef TODO
   // Time base configuration
-  TIM1_TimeBaseInitStruct.TIM1_Prescaler = 0;  // Max frequency
-  TIM1_TimeBaseInitStruct.TIM1_CounterMode = TIM1_CounterMode_Up;
-  TIM1_TimeBaseInitStruct.TIM1_Period = 0x3FF; // 10 bit resolution
-  TIM1_TimeBaseInitStruct.TIM1_ClockDivision = 0;
-  TIM1_TimeBaseInitStruct.TIM1_RepetitionCounter = 0;
-  TIM1_TimeBaseInit(&TIM1_TimeBaseInitStruct);
+  TIM_TimeBaseStructure.TIM_Prescaler = 0;  // Max frequency
+  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+  TIM_TimeBaseStructure.TIM_Period = 0x3FF; // 10 bit resolution
+  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
+  TIM_TimeBaseStructure.TIM_RepetitionCounter = 0;
+  TIM_TimeBaseInit(TIM1, &TIM_TimeBaseStructure);
 
   // Channel 1 Configuration in PWM mode
-  TIM1_OCInitStructure.TIM1_OCMode = TIM1_OCMode_PWM1;
-  TIM1_OCInitStructure.TIM1_OutputState = TIM1_OutputState_Enable;
-  TIM1_OCInitStructure.TIM1_OutputNState = TIM1_OutputNState_Enable;
-  TIM1_OCInitStructure.TIM1_Pulse = 0x200;
-  TIM1_OCInitStructure.TIM1_OCPolarity = TIM1_OCPolarity_Low;
-  TIM1_OCInitStructure.TIM1_OCNPolarity = TIM1_OCNPolarity_High;
-  TIM1_OCInitStructure.TIM1_OCIdleState = TIM1_OCIdleState_Set;
-  TIM1_OCInitStructure.TIM1_OCNIdleState = TIM1_OCIdleState_Reset;
-  TIM1_OC1Init(&TIM1_OCInitStructure);
+  TIM1_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
+  TIM1_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+  TIM1_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Enable;
+  TIM1_OCInitStructure.TIM_Pulse = 0x200;
+  TIM1_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low;
+  TIM1_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_High;
+  TIM1_OCInitStructure.TIM_OCIdleState = TIM_OCIdleState_Set;
+  TIM1_OCInitStructure.TIM_OCNIdleState = TIM_OCIdleState_Reset;
+  TIM_OC1Init(TIM1, &TIM1_OCInitStructure);
   // Double buffered
-  TIM1_ARRPreloadConfig(ENABLE);
+  TIM_ARRPreloadConfig(TIM1, ENABLE);
   // TIM1 counter enable
-  TIM1_Cmd(ENABLE);
+  TIM_Cmd(TIM1, ENABLE);
 
   // TIM1 Main Output Enable
-  TIM1_CtrlPWMOutputs(ENABLE);
+  TIM_CtrlPWMOutputs(TIM1, ENABLE);
 //#endif
   
   // ADC init PA1
@@ -313,7 +314,7 @@ TIM1_OCInitTypeDef  TIM1_OCInitStructure;
   // Enable update interrupt
   TIM_ITConfig(TIM2,TIM_FLAG_Update,ENABLE);
 
-  NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQChannel;
+  NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = USB_INTR_AUDIO_SAMP_TIMER_PRIORITY; // max priority
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -595,7 +596,7 @@ union _Val MicTemp;
   }
 
   TIM2->ARR = SempPerCurrHold; // reload output compare
-  TIM2->SR &= (Int16U)~TIM1_FLAG_Update;
+  TIM2->SR &= (uint16_t)~TIM_FLAG_Update;
 }
 
 /*************************************************************************

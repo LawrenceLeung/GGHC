@@ -22,7 +22,7 @@
 #include <intrinsics.h>
 #include <assert.h>
 
-#include "stm32f10x_lib.h"
+#include "stm32f10x.h"
 #include "arm_comm.h"
 
 #include "drv_hd44780_cnfg.h"

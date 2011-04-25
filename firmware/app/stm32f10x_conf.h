@@ -118,10 +118,10 @@
 
 /* In the following line adjust the value of External High Speed oscillator (HSE)
    used in your application */
-#define HSE_Value    ((u32)8000000) /* Value of the External oscillator in Hz*/
+#define HSE_Value    ((uint32_t)8000000) /* Value of the External oscillator in Hz*/
 
 /* Exported macro ------------------------------------------------------------*/
-#ifdef  DEBUG
+#ifdef USE_FULL_ASSERT
 /*******************************************************************************
 * Macro Name     : assert_param
 * Description    : The assert_param macro is used for function's parameters check.
@@ -132,9 +132,9 @@
 *                    If expr is true, it returns no value.
 * Return         : None
 *******************************************************************************/ 
-  #define assert_param(expr) ((expr) ? (void)0 : assert_failed((u8 *)__FILE__, __LINE__))
+  #define assert_param(expr) ((expr) ? (void)0 : assert_failed((uint8_t *)__FILE__, __LINE__))
 /* Exported functions ------------------------------------------------------- */
-  void assert_failed(u8* file, u32 line);
+  void assert_failed(uint8_t* file, uint32_t line);
 #else
   #define assert_param(expr) ((void)0)
 #endif /* DEBUG */

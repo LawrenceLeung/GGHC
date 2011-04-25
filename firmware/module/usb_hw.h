@@ -233,7 +233,7 @@ typedef struct _UsbEP_ExtData_t
 
 typedef struct _EpCnfg_t
 {
-  volatile pInt32U    pEpCtrl;
+  __IO pInt32U    pEpCtrl;
            EpSlot_t   EpSlot;
   Int32U              MaxSize;
   UsbEpTransferType_t EpType;
@@ -301,18 +301,18 @@ USB_HW_EXTERN EpCnfg_t EpCnfg[ENP_MAX_NUMB];
 
 /*************************************************************************
  * Function Name: EpCtrlSet_EA
- * Parameters: volatile pInt32U pReg, Int32U Data
+ * Parameters: __IO pInt32U pReg, Int32U Data
  *
  * Return: none
  *
  * Description: Set EP Addr
  *
  *************************************************************************/
-void EpCtrlSet_EA(volatile pInt32U pReg, Int32U Data);
+void EpCtrlSet_EA(__IO pInt32U pReg, Int32U Data);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_EA
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int16U
  *
@@ -320,22 +320,22 @@ void EpCtrlSet_EA(volatile pInt32U pReg, Int32U Data);
  *
  *************************************************************************/
 inline
-Int16U EpCtrlGet_EA(volatile pInt32U pReg);
+Int16U EpCtrlGet_EA(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlSet_STAT_TX
- * Parameters: volatile pInt32U pReg, EpState_t Data
+ * Parameters: __IO pInt32U pReg, EpState_t Data
  *
  * Return: none
  *
  * Description: Set EP IN State
  *
  *************************************************************************/
-void EpCtrlSet_STAT_TX (volatile pInt32U pReg, EpState_t Data);
+void EpCtrlSet_STAT_TX (__IO pInt32U pReg, EpState_t Data);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_STAT_TX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -343,33 +343,33 @@ void EpCtrlSet_STAT_TX (volatile pInt32U pReg, EpState_t Data);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_STAT_TX (volatile pInt32U pReg);
+Int32U EpCtrlGet_STAT_TX (__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlSet_DTOG_TX
- * Parameters: volatile pInt32U pReg, Int32U Data
+ * Parameters: __IO pInt32U pReg, Int32U Data
  *
  * Return: none
  *
  * Description: Set EP DTOG_TX bit (IN)
  *
  *************************************************************************/
-void EpCtrlSet_DTOG_TX(volatile pInt32U pReg, Int32U Data);
+void EpCtrlSet_DTOG_TX(__IO pInt32U pReg, Int32U Data);
 
 /*************************************************************************
  * Function Name: EpCtrlToggle_DTOG_TX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: none
  *
  * Description: Toggle EP DTOG_TX bit (IN)
  *
  *************************************************************************/
-void EpCtrlToggle_DTOG_TX(volatile pInt32U pReg);
+void EpCtrlToggle_DTOG_TX(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_DTOG_TX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -377,22 +377,22 @@ void EpCtrlToggle_DTOG_TX(volatile pInt32U pReg);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_DTOG_TX(volatile pInt32U pReg);
+Int32U EpCtrlGet_DTOG_TX(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlClr_CTR_TX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: none
  *
  * Description: Clear EP CTR_TX bit (IN)
  *
  *************************************************************************/
-void EpCtrlClr_CTR_TX(volatile pInt32U pReg);
+void EpCtrlClr_CTR_TX(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_CTR_TX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: UserFunc_t
  *
@@ -400,22 +400,22 @@ void EpCtrlClr_CTR_TX(volatile pInt32U pReg);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_CTR_TX(volatile pInt32U pReg);
+Int32U EpCtrlGet_CTR_TX(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlSet_EP_KIND
- * Parameters: volatile pInt32U pReg, Int32U Data
+ * Parameters: __IO pInt32U pReg, Int32U Data
  *
  * Return: none
  *
  * Description: Set EP KIND bit
  *
  *************************************************************************/
-void EpCtrlSet_EP_KIND (volatile pInt32U pReg, Int32U Data);
+void EpCtrlSet_EP_KIND (__IO pInt32U pReg, Int32U Data);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_EP_KIND
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -423,22 +423,22 @@ void EpCtrlSet_EP_KIND (volatile pInt32U pReg, Int32U Data);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_EP_KIND(volatile pInt32U pReg);
+Int32U EpCtrlGet_EP_KIND(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlSet_EP_TYPE
- * Parameters: volatile pInt32U pReg, EpType_t Data
+ * Parameters: __IO pInt32U pReg, EpType_t Data
  *
  * Return: none
  *
  * Description: Set EP type
  *
  *************************************************************************/
-void EpCtrlSet_EP_TYPE(volatile pInt32U pReg, EpType_t Data);
+void EpCtrlSet_EP_TYPE(__IO pInt32U pReg, EpType_t Data);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_EP_TYPE
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -446,11 +446,11 @@ void EpCtrlSet_EP_TYPE(volatile pInt32U pReg, EpType_t Data);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_EP_TYPE(volatile pInt32U pReg);
+Int32U EpCtrlGet_EP_TYPE(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_SETUP
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -458,22 +458,22 @@ Int32U EpCtrlGet_EP_TYPE(volatile pInt32U pReg);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_SETUP(volatile pInt32U pReg);
+Int32U EpCtrlGet_SETUP(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlSet_STAT_RX
- * Parameters: volatile pInt32U pReg, EpState_t Data
+ * Parameters: __IO pInt32U pReg, EpState_t Data
  *
  * Return: none
  *
  * Description: Set EP STAT_RX (OUT)
  *
  *************************************************************************/
-void EpCtrlSet_STAT_RX (volatile pInt32U pReg, EpState_t Data);
+void EpCtrlSet_STAT_RX (__IO pInt32U pReg, EpState_t Data);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_STAT_RX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -481,33 +481,33 @@ void EpCtrlSet_STAT_RX (volatile pInt32U pReg, EpState_t Data);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_STAT_RX(volatile pInt32U pReg);
+Int32U EpCtrlGet_STAT_RX(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlSet_DTOG_RX
- * Parameters: volatile pInt32U pReg, Int32U Data
+ * Parameters: __IO pInt32U pReg, Int32U Data
  *
  * Return: none
  *
  * Description: Set DTOG_RX bit
  *
  *************************************************************************/
-void EpCtrlSet_DTOG_RX(volatile pInt32U pReg, Int32U Data);
+void EpCtrlSet_DTOG_RX(__IO pInt32U pReg, Int32U Data);
 
 /*************************************************************************
  * Function Name: EpCtrlToggle_DTOG_RX
- * Parameters: volatile Int16U pReg
+ * Parameters: __IO Int16U pReg
  *
  * Return: none
  *
  * Description: Toggle DTOG_RX bit
  *
  *************************************************************************/
-void EpCtrlToggle_DTOG_RX(volatile pInt32U pReg);
+void EpCtrlToggle_DTOG_RX(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_DTOG_RX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -515,22 +515,22 @@ void EpCtrlToggle_DTOG_RX(volatile pInt32U pReg);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_DTOG_RX(volatile pInt32U pReg);
+Int32U EpCtrlGet_DTOG_RX(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlClr_CTR_RX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: none
  *
  * Description: Clear EP CTR_RX bit (OUT)
  *
  *************************************************************************/
-void EpCtrlClr_CTR_RX(volatile pInt32U pReg);
+void EpCtrlClr_CTR_RX(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: EpCtrlGet_CTR_RX
- * Parameters: volatile pInt32U pReg
+ * Parameters: __IO pInt32U pReg
  *
  * Return: Int32U
  *
@@ -538,7 +538,7 @@ void EpCtrlClr_CTR_RX(volatile pInt32U pReg);
  *
  *************************************************************************/
 inline
-Int32U EpCtrlGet_CTR_RX(volatile pInt32U pReg);
+Int32U EpCtrlGet_CTR_RX(__IO pInt32U pReg);
 
 /*************************************************************************
  * Function Name: USB_HwInit

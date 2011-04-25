@@ -16,7 +16,7 @@
 *******************************************************************************/
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x_lib.h"
+#include "stm32f10x.h"
 #include "stm32f10x_it.h"
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,17 +41,17 @@ const intvec_elem __vector_table[] =
 {
   { .__ptr = __sfe( "CSTACK" ) },
   __iar_program_start,
-  NMIException,
-  HardFaultException,
-  MemManageException,
-  BusFaultException,
-  UsageFaultException,
+  NMI_Handler,
+  HardFault_Handler,
+  MemManage_Handler,
+  BusFault_Handler,
+  UsageFault_Handler,
   0, 0, 0, 0,            /* Reserved */ 
-  SVCHandler,
-  DebugMonitor,
+  SVC_Handler,
+  DebugMon_Handler,
   0,                      /* Reserved */
-  PendSVC,
-  SysTickHandler,
+  PendSV_Handler,
+  SysTick_Handler,
   WWDG_IRQHandler,
   PVD_IRQHandler,
   TAMPER_IRQHandler,
@@ -71,10 +71,10 @@ const intvec_elem __vector_table[] =
   DMAChannel6_IRQHandler,
   DMAChannel7_IRQHandler,
   ADC_IRQHandler,
-  USB_HP_CAN_TX_IRQHandler,
-  USB_LP_CAN_RX0_IRQHandler,
-  CAN_RX1_IRQHandler,
-  CAN_SCE_IRQHandler,
+  USB_HP_CAN1_TX_IRQHandler,
+  USB_LP_CAN1_RX0_IRQHandler,
+  CAN1_RX1_IRQHandler,
+  CAN1_SCE_IRQHandler,
   EXTI9_5_IRQHandler,
   TIM1_BRK_IRQHandler,
   TIM1_UP_IRQHandler,

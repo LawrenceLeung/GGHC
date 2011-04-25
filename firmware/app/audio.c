@@ -85,7 +85,7 @@ void Dly100us(void *arg)
 Int32U Dly = (Int32U)arg;
   while(Dly--)
   {
-    for(volatile int i = LOOP_DLY_100US; i; i--);
+    for(__IO int i = LOOP_DLY_100US; i; i--);
   }
 }
 
@@ -106,7 +106,7 @@ void InitAudioDevice(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
   
-#ifdef DEBUG
+#ifdef USE_FULL_ASSERT
   debug();
 #endif
     

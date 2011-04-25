@@ -35,24 +35,24 @@ extern void Tim3Handler (void);
 /* Private functions ---------------------------------------------------------*/
 
 /*******************************************************************************
-* Function Name  : NMIException
+* Function Name  : NMI_Handler
 * Description    : This function handles NMI exception.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void NMIException(void)
+void NMI_Handler(void)
 {
 }
 
 /*******************************************************************************
-* Function Name  : HardFaultException
+* Function Name  : HardFault_Handler
 * Description    : This function handles Hard Fault exception.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void HardFaultException(void)
+void HardFault_Handler(void)
 {
   /* Go to infinite loop when Hard Fault exception occurs */
   while (1)
@@ -61,13 +61,13 @@ void HardFaultException(void)
 }
 
 /*******************************************************************************
-* Function Name  : MemManageException
+* Function Name  : MemManage_Handler
 * Description    : This function handles Memory Manage exception.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void MemManageException(void)
+void MemManage_Handler(void)
 {
   /* Go to infinite loop when Memory Manage exception occurs */
   while (1)
@@ -76,13 +76,13 @@ void MemManageException(void)
 }
 
 /*******************************************************************************
-* Function Name  : BusFaultException
+* Function Name  : BusFault_Handler
 * Description    : This function handles Bus Fault exception.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void BusFaultException(void)
+void BusFault_Handler(void)
 {
   /* Go to infinite loop when Bus Fault exception occurs */
   while (1)
@@ -91,13 +91,13 @@ void BusFaultException(void)
 }
 
 /*******************************************************************************
-* Function Name  : UsageFaultException
+* Function Name  : UsageFault_Handler
 * Description    : This function handles Usage Fault exception.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void UsageFaultException(void)
+void UsageFault_Handler(void)
 {
   /* Go to infinite loop when Usage Fault exception occurs */
   while (1)
@@ -106,46 +106,46 @@ void UsageFaultException(void)
 }
 
 /*******************************************************************************
-* Function Name  : DebugMonitor
+* Function Name  : DebugMon_Handler
 * Description    : This function handles Debug Monitor exception.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void DebugMonitor(void)
+void DebugMon_Handler(void)
 {
 }
 
 /*******************************************************************************
-* Function Name  : SVCHandler
+* Function Name  : SVC_Handler
 * Description    : This function handles SVCall exception.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void SVCHandler(void)
+void SVC_Handler(void)
 {
 }
 
 /*******************************************************************************
-* Function Name  : PendSVC
-* Description    : This function handles PendSVC exception.
+* Function Name  : PendSV_Handler
+* Description    : This function handles PendSV_Handler exception.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void PendSVC(void)
+void PendSV_Handler(void)
 {
 }
 
 /*******************************************************************************
-* Function Name  : SysTickHandler
+* Function Name  : SysTick_Handler
 * Description    : This function handles SysTick Handler.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void SysTickHandler(void)
+void SysTick_Handler(void)
 {
 }
 
@@ -359,50 +359,50 @@ void ADC_IRQHandler(void)
 }
 
 /*******************************************************************************
-* Function Name  : USB_HP_CAN_TX_IRQHandler
+* Function Name  : USB_HP_CAN1_TX_IRQHandler
 * Description    : This function handles USB High Priority or CAN TX interrupts 
 *                  requests.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void USB_HP_CAN_TX_IRQHandler(void)
+void USB_HP_CAN1_TX_IRQHandler(void)
 {
   // TODO delete ? USB_HIGH_ISR();
 }
 
 /*******************************************************************************
-* Function Name  : USB_LP_CAN_RX0_IRQHandler
+* Function Name  : USB_LP_CAN1_RX0_IRQHandler
 * Description    : This function handles USB Low Priority or CAN RX0 interrupts 
 *                  requests.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void USB_LP_CAN_RX0_IRQHandler(void)
+void USB_LP_CAN1_RX0_IRQHandler(void)
 {
    // TODO delete ? USB_ISR();
 }
 
 /*******************************************************************************
-* Function Name  : CAN_RX1_IRQHandler
+* Function Name  : CAN1_RX1_IRQHandler
 * Description    : This function handles CAN RX1 interrupt request.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void CAN_RX1_IRQHandler(void)
+void CAN1_RX1_IRQHandler(void)
 {
 }
 
 /*******************************************************************************
-* Function Name  : CAN_SCE_IRQHandler
+* Function Name  : CAN1_SCE_IRQHandler
 * Description    : This function handles CAN SCE interrupt request.
 * Input          : None
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void CAN_SCE_IRQHandler(void)
+void CAN1_SCE_IRQHandler(void)
 {
 }
 

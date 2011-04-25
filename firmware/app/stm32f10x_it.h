@@ -18,22 +18,22 @@
 #define __STM32F10x_IT_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x_lib.h"
+#include "stm32f10x.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 
-void NMIException(void);
-void HardFaultException(void);
-void MemManageException(void);
-void BusFaultException(void);
-void UsageFaultException(void);
-void DebugMonitor(void);
-void SVCHandler(void);
-void PendSVC(void);
-void SysTickHandler(void);
+void NMI_Handler(void);
+void HardFault_Handler(void);
+void MemManage_Handler(void);
+void BusFault_Handler(void);
+void UsageFault_Handler(void);
+void DebugMon_Handler(void);
+void SVC_Handler(void);
+void PendSV_Handler(void);
+void SysTick_Handler(void);
 void WWDG_IRQHandler(void);
 void PVD_IRQHandler(void);
 void TAMPER_IRQHandler(void);
@@ -53,10 +53,10 @@ void DMAChannel5_IRQHandler(void);
 void DMAChannel6_IRQHandler(void);
 void DMAChannel7_IRQHandler(void);
 void ADC_IRQHandler(void);
-void USB_HP_CAN_TX_IRQHandler(void);
-void USB_LP_CAN_RX0_IRQHandler(void);
-void CAN_RX1_IRQHandler(void);
-void CAN_SCE_IRQHandler(void);
+void USB_HP_CAN1_TX_IRQHandler(void);
+void USB_LP_CAN1_RX0_IRQHandler(void);
+void CAN1_RX1_IRQHandler(void);
+void CAN1_SCE_IRQHandler(void);
 void EXTI9_5_IRQHandler(void);
 void TIM1_BRK_IRQHandler(void);
 void TIM1_UP_IRQHandler(void);

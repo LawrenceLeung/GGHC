@@ -25,16 +25,17 @@
 #include <intrinsics.h>
 #include "includes.h"
 #include "LED.h"
-/* #include "stm32f10x_lib.h" */
-#include "stm32f10x_nvic.h" /* TODO Don't know why this isn't included in includes.h */
+/* #include "stm32f10x.h" */
+//#include "stm32f10x_nvic.h" /* TODO Don't know why this isn't included in includes.h */
+#include "stm32f10x_flash.h"
 
 Int32U CriticalSecCntr;
 
-volatile unsigned int LedState = 0; // LED is ON when corresponding bit is 1
-volatile unsigned int LedTimer = LED_RATE; // LED blinks at this rate
-volatile Boolean LedUpdate = FALSE; // LED state should be updated if true
-volatile Boolean ButtonUpdate = FALSE;  // Buttons should be read and variables updated if true
-volatile unsigned long sysTime = 0;
+__IO unsigned int LedState = 0; // LED is ON when corresponding bit is 1
+__IO unsigned int LedTimer = LED_RATE; // LED blinks at this rate
+__IO Boolean LedUpdate = FALSE; // LED state should be updated if true
+__IO Boolean ButtonUpdate = FALSE;  // Buttons should be read and variables updated if true
+__IO unsigned long sysTime = 0;
 
 void LEDsSet (unsigned int);
 
@@ -56,7 +57,7 @@ void LEDsSet (unsigned int);
 void Timer1IntrHandler (void)
 {
   // Clear update interrupt bit
-  TIM1_ClearITPendingBit(TIM1_FLAG_Update);
+  TIM_ClearITPendingBit(TIM1,TIM_FLAG_Update);
 #ifdef TODO
   if(LedTimer-- == 0)
   {
@@ -87,7 +88,8 @@ void Tim3Handler (void)
 {
   // Clear update interrupt bit
   // TODO delete? TIM1_ClearITPendingBit(TIM1_FLAG_Update);
-  TIM3->SR &= (Int16U)~TIM1_FLAG_Update;
+  TIM_ClearITPendingBit(TIM3,TIM_FLAG_Update);
+// TODO  TIM3->SR &= (Int16U)~TIM1_FLAG_Update;
   sysTime++;
 
   if(LedTimer-- == 0)
@@ -186,12 +188,12 @@ void main(void)
 {
 GPIO_InitTypeDef GPIO_InitStructure;
 NVIC_InitTypeDef NVIC_InitStructure;
-TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
+// TODO TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
 TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 
 static int LedCount = 0;
 
-#ifdef DEBUG
+#ifdef USE_FULL_ASSERT
    debug();
 #endif
 
@@ -231,6 +233,7 @@ static int LedCount = 0;
   GPIO_Init(GPIOC, &GPIO_InitStructure);
   LEDsSet(LedState);
 
+#ifdef TODO  
   // Timer1 initialize
   // Enable Timer1 clock and release reset
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
@@ -249,7 +252,7 @@ static int LedCount = 0;
   // Enable update interrupt
   TIM1_ITConfig(TIM1_FLAG_Update,ENABLE);
 
-  NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQChannel;
+  NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 7;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -258,7 +261,7 @@ static int LedCount = 0;
   // Enable timer counting
   TIM1_Cmd(ENABLE);
 
-
+#endif // TODO
   // Init Sample Timer - Timer3
   // TIM3 clock enable
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
@@ -279,7 +282,7 @@ static int LedCount = 0;
   // Enable update interrupt
   TIM_ITConfig(TIM3,TIM_FLAG_Update,ENABLE);
 
-  NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQChannel;
+  NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 6;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -351,7 +354,7 @@ static int LedCount = 0;
 
   }
 }
-#ifdef  DEBUG
+#ifdef USE_FULL_ASSERT
 /*******************************************************************************
 * Function Name  : assert_failed
 * Description    : Reports the name of the source file and the source line number
@@ -361,7 +364,7 @@ static int LedCount = 0;
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void assert_failed(u8* file, u32 line)
+void assert_failed(uint8_t* file, uint32_t line)
 { 
   /* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
