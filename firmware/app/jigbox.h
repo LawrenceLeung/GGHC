@@ -11,15 +11,17 @@
 /**
 These libs blow up on the discovery board.  We'll just use the stock discovery ones for that board.
 */
-#ifndef __STM32F100_Dicovery_H
+#ifndef STM_DISCOVERY
 #include "stm32f10x_map.h"
 #include "stm32f10x_gpio.h"
-#endif
 
 //TODO Horrid kludge while waiting for new library upgrade
 #ifndef uint16_t
 typedef unsigned short uint16_t;
 #endif
+
+#endif
+
 
 extern volatile unsigned long sysTime;
 

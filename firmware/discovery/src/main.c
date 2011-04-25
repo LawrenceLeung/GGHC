@@ -22,7 +22,7 @@
 #include "stm32F10x.h"
 #include "STM32vldiscovery.h"
 #include "jigbox.h"
-#include "buttons.h"
+#include "LED.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/

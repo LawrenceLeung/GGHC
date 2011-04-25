@@ -22,10 +22,14 @@
 #ifndef __STM32F100_Dicovery_H
 #define __STM32F100_Dicovery_H
 
+#ifdef STM_DISCOVERY
+
 #ifdef __cplusplus
  extern "C" {
 #endif 
 
+   
+   
 /* Includes ------------------------------------------------------------------*/
 #include "STM32f10x.h"
 
@@ -128,6 +132,7 @@ uint32_t STM32vldiscovery_PBGetState(Button_TypeDef Button);
 }
 #endif
 
+#endif /* STM_DISCOVERY*/
 
 #endif /* __STM32vldiscovery_H */
 

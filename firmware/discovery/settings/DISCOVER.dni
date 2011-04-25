@@ -1,11 +1,10 @@
 [DebugChecksum]
-Checksum=-1320788676
+Checksum=-1637753709
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
 [DisAssemblyWindow]
-NumStates=_ 1
-State 1=_ 1
+NumStates=_ 0
 [InstructionProfiling]
 Enabled=_ 0
 [CodeCoverage]
@@ -14,9 +13,6 @@ Enabled=_ 0
 LoggingEnabled=_ 0
 LogFile=_ ""
 Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [StackPlugin]
 Enabled=1
 OverflowWarningsEnabled=1
@@ -30,7 +26,12 @@ ByteLimit=50
 [Disassemble mode]
 mode=0
 [Breakpoints]
-Count=0
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\app\LED.c}.21.1@1" 1 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\app\LED.c}.3.1@1" 1 0 0 0 "" 0 ""
+Count=2
 [Aliases]
 Count=0
 SuppressDialog=0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""

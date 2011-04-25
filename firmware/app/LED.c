@@ -1,3 +1,7 @@
+#include "stm32F10x.h"
+#include "stm32f10x_gpio.h"
+#include "STM32vldiscovery.h"
+#include "stm32f10x_rcc.h"
 #include "jigbox.h"
 #include "stm32f10x_rcc.h"
 #include "LED.h"
