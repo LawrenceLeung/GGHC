@@ -16,6 +16,9 @@ These libs blow up on the discovery board.  We'll just use the stock discovery o
 #include "stm32f10x_gpio.h"
 #endif
 
+//TODO Horrid kludge while waiting for new library upgrade
+typedef Int16U uint16_t;
+
 extern volatile unsigned long sysTime;
 
 /* PUSH BUTTONS
@@ -55,6 +58,9 @@ extern volatile unsigned long sysTime;
  * GRN3 -> PB9/TIM4_CH4
  * BLU3 -> PA6/SPI2_MISO/ADC6/TIM3_CH1
  */
+
+// TODO Decide whether we are using RGB or single color, delete the other set of def's
+
 #define LED1_RED_PORT GPIOA
 #define LED1_RED_PIN GPIO_Pin_3
 #define LED1_BLU_PORT GPIOA
@@ -73,6 +79,27 @@ extern volatile unsigned long sysTime;
 #define LED3_BLU_PIN GPIO_Pin_9
 #define LED3_GRN_PORT GPIOA
 #define LED3_GRN_PIN GPIO_Pin_6
+
+// TODO Decide whether we are using RGB or single color, delete the other set of def's
+#define EXT_LED1_PORT GPIOA
+#define EXT_LED1_PIN GPIO_Pin_3
+#define EXT_LED2_PORT GPIOA
+#define EXT_LED2_PIN GPIO_Pin_9
+#define EXT_LED3_PORT GPIOA
+#define EXT_LED3_PIN GPIO_Pin_7
+#define EXT_LED4_PORT GPIOA
+#define EXT_LED4_PIN GPIO_Pin_2
+#define EXT_LED5_PORT GPIOB
+#define EXT_LED5_PIN GPIO_Pin_0
+#define EXT_LED6_PORT GPIOB
+#define EXT_LED6_PIN GPIO_Pin_1
+#define EXT_LED7_PORT GPIOB
+#define EXT_LED7_PIN GPIO_Pin_8
+#define EXT_LED8_PORT GPIOB
+#define EXT_LED8_PIN GPIO_Pin_9
+#define EXT_LED9_PORT GPIOA
+#define EXT_LED9_PIN GPIO_Pin_6
+
 
 /* ACCELEROMETER
  * The accelerometer is connected to the second I2C port
