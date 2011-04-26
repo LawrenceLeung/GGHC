@@ -1,0 +1,2301 @@
+Archive member included because of file (symbol)
+
+../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                              rel/main.o (QActive_start)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o) (QK_schedule_)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o) (QK_ceilingPrio_)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o) (QK_init)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+                              rel/bsp.o (QActive_postFIFO)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o) (QActive_get_)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+                              rel/philo.o (QActive_subscribe)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qeq_init.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o) (QEQueue_init)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+                              rel/bsp.o (QF_getVersion)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o) (QF_gc)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_log2.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o) (QF_log2Lkup)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+                              rel/bsp.o (QF_new_)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+                              rel/main.o (QF_poolInit)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+                              rel/main.o (QF_psInit)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                              rel/philo.o (QF_publish)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pwr2.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o) (QF_pwr2Lkup)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_tick.o)
+                              rel/bsp.o (QF_tick)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o) (QMPool_get)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_init.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o) (QMPool_init)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_put.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o) (QMPool_put)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_ctor.o)
+                              rel/philo.o (QTimeEvt_ctor)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+                              rel/philo.o (QTimeEvt_arm_)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o) (QHsm_init)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_dis.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o) (QHsm_dispatch)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_top.o)
+                              rel/philo.o (QHsm_top)
+../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qep.o)
+                              ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o) (QEP_reservedEvt_)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-atexit.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o (atexit)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o (exit)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o) (_global_impure_ptr)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o (__libc_fini_array)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-memset.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o (memset)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__atexit.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-atexit.o) (__register_exitproc)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__call_atexit.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o) (__call_exitprocs)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o) (__sf_fake_stdin)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fwalk.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o) (_fwalk)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o) (_malloc_r)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mlock.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o) (__malloc_lock)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o) (__sclose)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o) (fclose)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o) (_fflush_r)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o) (_free_r)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o) (_close_r)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(lseek.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o) (_lseek_r)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(read.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o) (_read_r)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o) (_sbrk_r)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(write.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o) (_write_r)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(_exit.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o) (_exit)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(malloc_vars.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o) (fake_heap_end)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(syscall_support.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(_exit.o) (__syscalls)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o) (__get_handle)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o) (devoptab_list)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strchr.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o) (strchr)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strcmp.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o) (strcmp)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strlen.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o) (strlen)
+c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strncmp.o)
+                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o) (strncmp)
+
+Allocating common symbols
+Common symbol       size              file
+
+QF_maxSignal_       0x1               ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+QF_intLockNest_     0x1               ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+QF_timeEvtListHead_
+                    0x4               ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+QK_readySet_        0x9               ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QF_pool_            0x3c              ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+QF_active_          0x100             ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+QK_ceilingPrio_     0x1               ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+QK_intNest_         0x1               ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QF_subscrList_      0x4               ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+QF_maxPool_         0x1               ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+TS_State            0x8               rel/stm3210c_eval_ioe.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crti.o
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crti.o
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crti.o
+ .data          0x00000000        0x4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+ .text          0x00000000       0x70 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+ .data          0x00000000        0x0 rel/bsp.o
+ .bss           0x00000000        0x0 rel/bsp.o
+ .data          0x00000000        0x0 rel/main.o
+ .text          0x00000000       0x38 rel/no_heap.o
+ .data          0x00000000        0x0 rel/no_heap.o
+ .bss           0x00000000        0x0 rel/no_heap.o
+ .rodata        0x00000000        0xc rel/no_heap.o
+ .data          0x00000000        0x0 rel/philo.o
+ .data          0x00000000        0x0 rel/table.o
+ .data          0x00000000        0x0 rel/startup_stm32f10x_cl.o
+ .bss           0x00000000        0x0 rel/startup_stm32f10x_cl.o
+ .text          0x00000000       0xa4 rel/core_cm3.o
+ .data          0x00000000        0x0 rel/core_cm3.o
+ .bss           0x00000000        0x0 rel/core_cm3.o
+ .data          0x00000000        0x0 rel/system_stm32f10x.o
+ .bss           0x00000000        0x0 rel/system_stm32f10x.o
+ .bss           0x00000000        0x0 rel/stm32_eval.o
+ .text          0x00000000      0xb1c rel/stm3210c_eval_ioe.o
+ .data          0x00000000        0x4 rel/stm3210c_eval_ioe.o
+ .bss           0x00000000        0xc rel/stm3210c_eval_ioe.o
+ COMMON         0x00000000        0x8 rel/stm3210c_eval_ioe.o
+ .data          0x00000000        0x0 rel/misc.o
+ .bss           0x00000000        0x0 rel/misc.o
+ .text          0x00000000      0x3c4 rel/stm32f10x_adc.o
+ .data          0x00000000        0x0 rel/stm32f10x_adc.o
+ .bss           0x00000000        0x0 rel/stm32f10x_adc.o
+ .text          0x00000000       0xe0 rel/stm32f10x_bkp.o
+ .data          0x00000000        0x0 rel/stm32f10x_bkp.o
+ .bss           0x00000000        0x0 rel/stm32f10x_bkp.o
+ .text          0x00000000      0x664 rel/stm32f10x_can.o
+ .data          0x00000000        0x0 rel/stm32f10x_can.o
+ .bss           0x00000000        0x0 rel/stm32f10x_can.o
+ .rodata        0x00000000        0x8 rel/stm32f10x_can.o
+ .text          0x00000000       0x5c rel/stm32f10x_crc.o
+ .data          0x00000000        0x0 rel/stm32f10x_crc.o
+ .bss           0x00000000        0x0 rel/stm32f10x_crc.o
+ .text          0x00000000      0x194 rel/stm32f10x_dac.o
+ .data          0x00000000        0x0 rel/stm32f10x_dac.o
+ .bss           0x00000000        0x0 rel/stm32f10x_dac.o
+ .text          0x00000000       0x38 rel/stm32f10x_dbgmcu.o
+ .data          0x00000000        0x0 rel/stm32f10x_dbgmcu.o
+ .bss           0x00000000        0x0 rel/stm32f10x_dbgmcu.o
+ .text          0x00000000      0x1e8 rel/stm32f10x_dma.o
+ .data          0x00000000        0x0 rel/stm32f10x_dma.o
+ .bss           0x00000000        0x0 rel/stm32f10x_dma.o
+ .data          0x00000000        0x0 rel/stm32f10x_exti.o
+ .bss           0x00000000        0x0 rel/stm32f10x_exti.o
+ .text          0x00000000      0x510 rel/stm32f10x_flash.o
+ .data          0x00000000        0x0 rel/stm32f10x_flash.o
+ .bss           0x00000000        0x0 rel/stm32f10x_flash.o
+ .text          0x00000000      0x498 rel/stm32f10x_fsmc.o
+ .data          0x00000000        0x0 rel/stm32f10x_fsmc.o
+ .bss           0x00000000        0x0 rel/stm32f10x_fsmc.o
+ .data          0x00000000        0x0 rel/stm32f10x_gpio.o
+ .bss           0x00000000        0x0 rel/stm32f10x_gpio.o
+ .text          0x00000000      0x3ec rel/stm32f10x_i2c.o
+ .data          0x00000000        0x0 rel/stm32f10x_i2c.o
+ .bss           0x00000000        0x0 rel/stm32f10x_i2c.o
+ .text          0x00000000       0x58 rel/stm32f10x_iwdg.o
+ .data          0x00000000        0x0 rel/stm32f10x_iwdg.o
+ .bss           0x00000000        0x0 rel/stm32f10x_iwdg.o
+ .text          0x00000000       0xc8 rel/stm32f10x_pwr.o
+ .data          0x00000000        0x0 rel/stm32f10x_pwr.o
+ .bss           0x00000000        0x0 rel/stm32f10x_pwr.o
+ .bss           0x00000000        0x0 rel/stm32f10x_rcc.o
+ .text          0x00000000      0x178 rel/stm32f10x_rtc.o
+ .data          0x00000000        0x0 rel/stm32f10x_rtc.o
+ .bss           0x00000000        0x0 rel/stm32f10x_rtc.o
+ .text          0x00000000      0x254 rel/stm32f10x_sdio.o
+ .data          0x00000000        0x0 rel/stm32f10x_sdio.o
+ .bss           0x00000000        0x0 rel/stm32f10x_sdio.o
+ .data          0x00000000        0x0 rel/stm32f10x_spi.o
+ .bss           0x00000000        0x0 rel/stm32f10x_spi.o
+ .text          0x00000000      0xd68 rel/stm32f10x_tim.o
+ .data          0x00000000        0x0 rel/stm32f10x_tim.o
+ .bss           0x00000000        0x0 rel/stm32f10x_tim.o
+ .data          0x00000000        0x0 rel/stm32f10x_usart.o
+ .bss           0x00000000        0x0 rel/stm32f10x_usart.o
+ .text          0x00000000       0x98 rel/stm32f10x_wwdg.o
+ .data          0x00000000        0x0 rel/stm32f10x_wwdg.o
+ .bss           0x00000000        0x0 rel/stm32f10x_wwdg.o
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+ .text          0x00000000       0x34 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+ .text          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qeq_init.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qeq_init.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+ .text          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_log2.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_log2.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_log2.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+ .text          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pwr2.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pwr2.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pwr2.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_tick.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_init.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_init.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_put.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_put.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_ctor.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_ctor.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_dis.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_dis.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_top.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_top.o)
+ .text          0x00000000        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qep.o)
+ .data          0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qep.o)
+ .bss           0x00000000        0x0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qep.o)
+ .text          0x00000000       0x10 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-atexit.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-atexit.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-atexit.o)
+ .text          0x00000000       0x1c c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+ .data          0x00000000       0xf4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+ .rodata        0x00000000        0x4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+ .rodata.str1.4
+                0x00000000        0x4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+ .text          0x00000000       0xac c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-memset.o)
+ .text          0x00000000       0xd0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__atexit.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__atexit.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__atexit.o)
+ .text          0x00000000      0x114 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__call_atexit.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__call_atexit.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__call_atexit.o)
+ .text          0x00000000      0x1d8 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+ .rodata        0x00000000       0x60 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+ .text          0x00000000       0xa4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fwalk.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fwalk.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fwalk.o)
+ .text          0x00000000      0x560 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+ .data          0x00000000      0x410 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+ .bss           0x00000000       0x34 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+ .text          0x00000000        0x8 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mlock.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mlock.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mlock.o)
+ .text          0x00000000       0x94 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+ .text          0x00000000       0xc8 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+ .text          0x00000000      0x170 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+ .text          0x00000000      0x25c c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+ .text          0x00000000       0x44 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o)
+ .text          0x00000000       0x50 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(lseek.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(lseek.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(lseek.o)
+ .text          0x00000000       0x50 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(read.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(read.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(read.o)
+ .text          0x00000000       0x58 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o)
+ .bss           0x00000000        0x4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o)
+ .text          0x00000000       0x50 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(write.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(write.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(write.o)
+ .text          0x00000000       0x10 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(_exit.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(_exit.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(_exit.o)
+ .text          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(malloc_vars.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(malloc_vars.o)
+ .bss           0x00000000        0x8 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(malloc_vars.o)
+ .text          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(syscall_support.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(syscall_support.o)
+ .bss           0x00000000        0x8 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(syscall_support.o)
+ .text          0x00000000       0x70 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+ .bss           0x00000000     0x1000 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+ .text          0x00000000      0x11c c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+ .data          0x00000000       0x44 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+ .rodata        0x00000000       0x5c c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+ .rodata.str1.4
+                0x00000000        0x8 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+ .text          0x00000000       0xa8 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strchr.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strchr.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strchr.o)
+ .text          0x00000000       0x54 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strcmp.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strcmp.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strcmp.o)
+ .text          0x00000000       0x54 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strlen.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strlen.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strlen.o)
+ .text          0x00000000       0x98 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strncmp.o)
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strncmp.o)
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strncmp.o)
+ .text          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtend.o
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtend.o
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtend.o
+ .eh_frame      0x00000000        0x4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtend.o
+ .jcr           0x00000000        0x4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtend.o
+ .text          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtn.o
+ .data          0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtn.o
+ .bss           0x00000000        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ROM              0x08000000         0x00040000         xr
+RAM              0x20000000         0x00010000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crti.o
+LOAD c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+LOAD c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+LOAD rel/bsp.o
+LOAD rel/main.o
+LOAD rel/no_heap.o
+LOAD rel/philo.o
+LOAD rel/table.o
+LOAD rel/startup_stm32f10x_cl.o
+LOAD rel/core_cm3.o
+LOAD rel/system_stm32f10x.o
+LOAD rel/stm32_eval.o
+LOAD rel/stm3210c_eval_lcd.o
+LOAD rel/stm3210c_eval_ioe.o
+LOAD rel/misc.o
+LOAD rel/stm32f10x_adc.o
+LOAD rel/stm32f10x_bkp.o
+LOAD rel/stm32f10x_can.o
+LOAD rel/stm32f10x_crc.o
+LOAD rel/stm32f10x_dac.o
+LOAD rel/stm32f10x_dbgmcu.o
+LOAD rel/stm32f10x_dma.o
+LOAD rel/stm32f10x_exti.o
+LOAD rel/stm32f10x_flash.o
+LOAD rel/stm32f10x_fsmc.o
+LOAD rel/stm32f10x_gpio.o
+LOAD rel/stm32f10x_i2c.o
+LOAD rel/stm32f10x_iwdg.o
+LOAD rel/stm32f10x_pwr.o
+LOAD rel/stm32f10x_rcc.o
+LOAD rel/stm32f10x_rtc.o
+LOAD rel/stm32f10x_sdio.o
+LOAD rel/stm32f10x_spi.o
+LOAD rel/stm32f10x_tim.o
+LOAD rel/stm32f10x_usart.o
+LOAD rel/stm32f10x_wwdg.o
+LOAD ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a
+LOAD ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a
+LOAD ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a
+START GROUP
+LOAD c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2\libgcc.a
+LOAD c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a
+LOAD c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a
+END GROUP
+LOAD c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtend.o
+LOAD c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtn.o
+                0x00000400                STACK_SIZE = 0x400
+                0x00000000                HEAP_SIZE = 0x0
+
+.isr_vector     0x08000000      0x154
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x154 rel/startup_stm32f10x_cl.o
+                0x08000000                g_pfnVectors
+                0x08000154                . = ALIGN (0x4)
+
+.eh_frame       0x08000154        0x0
+ .eh_frame      0x08000154        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+
+.text           0x08000154     0x43fc
+                0x08000154                . = ALIGN (0x4)
+ *(.text)
+ .text          0x08000154       0x54 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+ .text          0x080001a8      0x230 rel/bsp.o
+                0x080001a8                QF_onCleanup
+                0x080001ac                assert_failed
+                0x080001b0                Q_onAssert
+                0x080001b4                BSP_busyDelay
+                0x080001c8                BSP_displyPhilStat
+                0x080001e0                QK_onIdle
+                0x080001f8                QF_onStartup
+                0x08000260                BSP_init
+                0x08000338                EXTI0_IRQHandler
+                0x08000398                SysTick_Handler
+ .text          0x080003d8       0x90 rel/main.o
+                0x080003d8                main
+ .text          0x08000468      0x1f4 rel/philo.o
+                0x08000468                Philo_ctor
+ .text          0x0800065c      0x1b0 rel/table.o
+                0x0800065c                Table_ctor
+ .text          0x0800080c       0x84 rel/startup_stm32f10x_cl.o
+                0x0800080c                EXTI2_IRQHandler
+                0x0800080c                TIM8_TRG_COM_IRQHandler
+                0x0800080c                TIM8_CC_IRQHandler
+                0x0800080c                DebugMon_Handler
+                0x0800080c                TIM1_CC_IRQHandler
+                0x0800080c                TIM6_IRQHandler
+                0x0800080c                PVD_IRQHandler
+                0x0800080c                SDIO_IRQHandler
+                0x0800080c                NMI_Handler
+                0x0800080c                CAN2_RX1_IRQHandler
+                0x0800080c                EXTI3_IRQHandler
+                0x0800080c                I2C2_EV_IRQHandler
+                0x0800080c                UsageFault_Handler
+                0x0800080c                CAN2_SCE_IRQHandler
+                0x0800080c                ADC1_2_IRQHandler
+                0x0800080c                SPI1_IRQHandler
+                0x0800080c                TAMPER_IRQHandler
+                0x0800080c                CAN2_RX0_IRQHandler
+                0x0800080c                TIM8_UP_IRQHandler
+                0x0800080c                DMA2_Channel2_IRQHandler
+                0x0800080c                DMA1_Channel4_IRQHandler
+                0x0800080c                USART3_IRQHandler
+                0x0800080c                RTC_IRQHandler
+                0x0800080c                DMA1_Channel7_IRQHandler
+                0x0800080c                USBWakeUp_IRQHandler
+                0x0800080c                CAN1_RX1_IRQHandler
+                0x0800080c                UART5_IRQHandler
+                0x0800080c                ADC3_IRQHandler
+                0x0800080c                TIM4_IRQHandler
+                0x0800080c                DMA2_Channel1_IRQHandler
+                0x0800080c                I2C1_EV_IRQHandler
+                0x0800080c                DMA1_Channel6_IRQHandler
+                0x0800080c                UART4_IRQHandler
+                0x0800080c                TIM3_IRQHandler
+                0x0800080c                RCC_IRQHandler
+                0x0800080c                TIM1_TRG_COM_IRQHandler
+                0x0800080c                DMA1_Channel1_IRQHandler
+                0x0800080c                EXTI15_10_IRQHandler
+                0x0800080c                TIM7_IRQHandler
+                0x0800080c                CAN2_TX_IRQHandler
+                0x0800080c                TIM5_IRQHandler
+                0x0800080c                EXTI9_5_IRQHandler
+                0x0800080c                ETH_WKUP_IRQHandler
+                0x0800080c                SPI2_IRQHandler
+                0x0800080c                MemManage_Handler
+                0x0800080c                DMA2_Channel5_IRQHandler
+                0x0800080c                DMA1_Channel5_IRQHandler
+                0x0800080c                EXTI4_IRQHandler
+                0x0800080c                USB_LP_CAN1_RX0_IRQHandler
+                0x0800080c                USB_HP_CAN1_TX_IRQHandler
+                0x0800080c                DMA1_Channel3_IRQHandler
+                0x0800080c                FSMC_IRQHandler
+                0x0800080c                ETH_IRQHandler
+                0x0800080c                TIM1_UP_IRQHandler
+                0x0800080c                WWDG_IRQHandler
+                0x0800080c                TIM2_IRQHandler
+                0x0800080c                TIM1_BRK_IRQHandler
+                0x0800080c                EXTI1_IRQHandler
+                0x0800080c                RTCAlarm_IRQHandler
+                0x0800080c                DMA2_Channel4_5_IRQHandler
+                0x0800080c                USART2_IRQHandler
+                0x0800080c                I2C2_ER_IRQHandler
+                0x0800080c                DMA1_Channel2_IRQHandler
+                0x0800080c                TIM8_BRK_IRQHandler
+                0x0800080c                CAN1_SCE_IRQHandler
+                0x0800080c                FLASH_IRQHandler
+                0x0800080c                BusFault_Handler
+                0x0800080c                USART1_IRQHandler
+                0x0800080c                Spurious_Handler
+                0x0800080c                OTG_FS_IRQHandler
+                0x0800080c                SPI3_IRQHandler
+                0x0800080c                I2C1_ER_IRQHandler
+                0x0800080c                DMA2_Channel3_IRQHandler
+                0x08000828                Reset_Handler
+ .text          0x08000890      0x12c rel/system_stm32f10x.o
+                0x08000890                SystemInit
+ .text          0x080009bc      0x1c4 rel/stm32_eval.o
+                0x080009bc                STM_EVAL_LEDOn
+                0x080009d4                STM_EVAL_LEDOff
+                0x080009ec                STM_EVAL_LEDToggle
+                0x08000a0c                STM_EVAL_LEDInit
+                0x08000a48                STM_EVAL_COMInit
+                0x08000ac8                STM_EVAL_PBGetState
+                0x08000ae8                STM_EVAL_PBInit
+ .text          0x08000b80      0x9c4 rel/stm3210c_eval_lcd.o
+                0x08000b80                LCD_SetTextColor
+                0x08000b98                LCD_SetBackColor
+                0x08000bb0                LCD_CtrlLinesConfig
+                0x08000bdc                LCD_SPIConfig
+                0x08000c70                LCD_CtrlLinesWrite
+                0x08000c78                LCD_WriteRAM
+                0x08000cac                LCD_nCS_StartByte
+                0x08000cd8                LCD_WriteRegIndex
+                0x08000d20                LCD_WriteRAM_Prepare
+                0x08000d30                LCD_WriteRAMWord
+                0x08000d50                LCD_WriteReg
+                0x08000d9c                LCD_DisplayOff
+                0x08000da8                LCD_DisplayOn
+                0x08000db8                LCD_PowerOn
+                0x08000e68                LCD_SetCursor
+                0x08000e80                LCD_DrawCircle
+                0x08000fa8                LCD_DrawMonoPict
+                0x08001008                LCD_DrawLine
+                0x08001068                LCD_DrawRect
+                0x080010ac                LCD_DrawChar
+                0x08001110                LCD_DisplayChar
+                0x08001134                LCD_DisplayString
+                0x08001170                LCD_ClearLine
+                0x08001180                LCD_Clear
+                0x080011b4                LCD_SetDisplayWindow
+                0x08001204                LCD_WindowModeDisable
+                0x08001224                LCD_Setup
+                0x08001470                STM3210C_LCD_Init
+                0x08001478                LCD_ReadReg
+ .text          0x08001544       0xc8 rel/misc.o
+                0x08001544                NVIC_PriorityGroupConfig
+                0x08001558                NVIC_Init
+                0x080015b8                NVIC_SetVectorTable
+                0x080015d0                NVIC_SystemLPConfig
+                0x080015ec                SysTick_CLKSourceConfig
+ .text          0x0800160c       0xfc rel/stm32f10x_exti.o
+                0x0800160c                EXTI_DeInit
+                0x08001628                EXTI_Init
+                0x080016a0                EXTI_StructInit
+                0x080016b0                EXTI_GenerateSWInterrupt
+                0x080016c0                EXTI_GetFlagStatus
+                0x080016d4                EXTI_ClearFlag
+                0x080016e0                EXTI_GetITStatus
+                0x080016fc                EXTI_ClearITPendingBit
+ .text          0x08001708      0x290 rel/stm32f10x_gpio.o
+                0x08001708                GPIO_Init
+                0x080017a8                GPIO_StructInit
+                0x080017b8                GPIO_ReadInputDataBit
+                0x080017c4                GPIO_ReadInputData
+                0x080017cc                GPIO_ReadOutputDataBit
+                0x080017d8                GPIO_ReadOutputData
+                0x080017e0                GPIO_SetBits
+                0x080017e4                GPIO_ResetBits
+                0x080017e8                GPIO_WriteBit
+                0x080017f4                GPIO_Write
+                0x080017f8                GPIO_PinLockConfig
+                0x08001808                GPIO_EventOutputConfig
+                0x08001828                GPIO_EventOutputCmd
+                0x08001834                GPIO_PinRemapConfig
+                0x08001898                GPIO_EXTILineConfig
+                0x080018d0                GPIO_ETH_MediaInterfaceConfig
+                0x080018dc                GPIO_AFIODeInit
+                0x080018f0                GPIO_DeInit
+ .text          0x08001998      0x46c rel/stm32f10x_rcc.o
+                0x08001998                RCC_DeInit
+                0x080019e8                RCC_HSEConfig
+                0x08001a20                RCC_WaitForHSEStartUp
+                0x08001a50                RCC_AdjustHSICalibrationValue
+                0x08001a64                RCC_HSICmd
+                0x08001a70                RCC_PLLConfig
+                0x08001a84                RCC_PLLCmd
+                0x08001a90                RCC_PREDIV1Config
+                0x08001aac                RCC_PREDIV2Config
+                0x08001ac0                RCC_PLL2Config
+                0x08001ad4                RCC_PLL2Cmd
+                0x08001ae0                RCC_PLL3Config
+                0x08001af4                RCC_PLL3Cmd
+                0x08001b00                RCC_SYSCLKConfig
+                0x08001b14                RCC_GetSYSCLKSource
+                0x08001b24                RCC_HCLKConfig
+                0x08001b38                RCC_PCLK1Config
+                0x08001b4c                RCC_PCLK2Config
+                0x08001b60                RCC_ITConfig
+                0x08001b7c                RCC_OTGFSCLKConfig
+                0x08001b88                RCC_ADCCLKConfig
+                0x08001b9c                RCC_I2S2CLKConfig
+                0x08001ba8                RCC_I2S3CLKConfig
+                0x08001bb4                RCC_LSEConfig
+                0x08001bd4                RCC_LSICmd
+                0x08001be0                RCC_RTCCLKConfig
+                0x08001bf0                RCC_RTCCLKCmd
+                0x08001bfc                RCC_GetClocksFreq
+                0x08001cd8                RCC_AHBPeriphClockCmd
+                0x08001cf4                RCC_APB2PeriphClockCmd
+                0x08001d10                RCC_APB1PeriphClockCmd
+                0x08001d2c                RCC_AHBPeriphResetCmd
+                0x08001d48                RCC_APB2PeriphResetCmd
+                0x08001d64                RCC_APB1PeriphResetCmd
+                0x08001d80                RCC_BackupResetCmd
+                0x08001d8c                RCC_ClockSecuritySystemCmd
+                0x08001d98                RCC_MCOConfig
+                0x08001da4                RCC_GetFlagStatus
+                0x08001dd4                RCC_ClearFlag
+                0x08001de4                RCC_GetITStatus
+                0x08001df8                RCC_ClearITPendingBit
+ .text          0x08001e04      0x360 rel/stm32f10x_spi.o
+                0x08001e04                SPI_Init
+                0x08001e60                SPI_StructInit
+                0x08001e7c                I2S_StructInit
+                0x08001e90                SPI_Cmd
+                0x08001eac                I2S_Cmd
+                0x08001ec8                SPI_I2S_ITConfig
+                0x08001ee8                SPI_I2S_DMACmd
+                0x08001f00                SPI_I2S_SendData
+                0x08001f04                SPI_I2S_ReceiveData
+                0x08001f0c                SPI_NSSInternalSoftwareConfig
+                0x08001f28                SPI_SSOutputCmd
+                0x08001f44                SPI_DataSizeConfig
+                0x08001f5c                SPI_TransmitCRC
+                0x08001f68                SPI_CalculateCRC
+                0x08001f84                SPI_GetCRC
+                0x08001f90                SPI_GetCRCPolynomial
+                0x08001f98                SPI_BiDirectionalLineConfig
+                0x08001fb8                SPI_I2S_GetFlagStatus
+                0x08001fc4                SPI_I2S_ClearFlag
+                0x08001fcc                SPI_I2S_GetITStatus
+                0x08001ff8                SPI_I2S_ClearITPendingBit
+                0x08002008                I2S_Init
+                0x08002108                SPI_I2S_DeInit
+ .text          0x08002164      0x39c rel/stm32f10x_usart.o
+                0x08002164                USART_StructInit
+                0x08002180                USART_ClockInit
+                0x080021ac                USART_ClockStructInit
+                0x080021b8                USART_Cmd
+                0x080021d4                USART_ITConfig
+                0x0800220c                USART_DMACmd
+                0x08002224                USART_SetAddress
+                0x0800223c                USART_WakeUpConfig
+                0x08002254                USART_ReceiverWakeUpCmd
+                0x08002270                USART_LINBreakDetectLengthConfig
+                0x08002288                USART_LINCmd
+                0x080022a4                USART_SendData
+                0x080022ac                USART_ReceiveData
+                0x080022b4                USART_SendBreak
+                0x080022c0                USART_SetGuardTime
+                0x080022d4                USART_SetPrescaler
+                0x080022e8                USART_SmartCardCmd
+                0x08002304                USART_SmartCardNACKCmd
+                0x08002320                USART_HalfDuplexCmd
+                0x0800233c                USART_IrDAConfig
+                0x08002354                USART_IrDACmd
+                0x08002370                USART_GetFlagStatus
+                0x0800237c                USART_ClearFlag
+                0x08002384                USART_GetITStatus
+                0x080023cc                USART_ClearITPendingBit
+                0x080023dc                USART_Init
+                0x08002470                USART_DeInit
+ .text          0x08002500       0xa0 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                0x08002500                QK_getVersion
+                0x08002508                QActive_stop
+                0x08002510                QActive_start
+                0x08002570                QF_run
+                0x08002590                QF_stop
+                0x08002598                QF_init
+ .text          0x080025a0       0xcc ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+                0x080025a0                QK_schedule_
+ .text          0x0800266c       0x94 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+                0x0800266c                QActive_postFIFO
+ .text          0x08002700       0xb4 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+                0x08002700                QF_getQueueMargin
+                0x08002730                QActive_get_
+ .text          0x080027b4       0x6c ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+                0x080027b4                QActive_subscribe
+ .text          0x08002820       0x14 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qeq_init.o)
+                0x08002820                QEQueue_init
+ .text          0x08002834       0x70 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+                0x08002834                QF_getVersion
+                0x0800283c                QF_remove_
+                0x08002870                QF_add_
+ .text          0x080028a4       0x50 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+                0x080028a4                QF_gc
+ .text          0x080028f4       0x5c ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+                0x080028f4                QF_new_
+ .text          0x08002950       0x64 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+                0x08002950                QF_poolInit
+ .text          0x080029b4       0x14 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+                0x080029b4                QF_psInit
+ .text          0x080029c8       0xa4 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                0x080029c8                QF_publish
+ .text          0x08002a6c       0x64 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_tick.o)
+                0x08002a6c                QF_tick
+ .text          0x08002ad0       0x54 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+                0x08002ad0                QMPool_get
+                0x08002af0                QF_getPoolMargin
+ .text          0x08002b24       0x94 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_init.o)
+                0x08002b24                QMPool_init
+ .text          0x08002bb8       0x38 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_put.o)
+                0x08002bb8                QMPool_put
+ .text          0x08002bf0       0x28 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_ctor.o)
+                0x08002bf0                QTimeEvt_ctor
+ .text          0x08002c18       0x50 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+                0x08002c18                QTimeEvt_arm_
+ .text          0x08002c68       0x94 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+                0x08002c68                QHsm_init
+ .text          0x08002cfc      0x1dc ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_dis.o)
+                0x08002cfc                QHsm_dispatch
+ .text          0x08002ed8        0x4 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_top.o)
+                0x08002ed8                QHsm_top
+ .text          0x08002edc       0x70 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+                0x08002edc                __libc_fini_array
+                0x08002f04                __libc_init_array
+ *(.text*)
+ .text.QK_init  0x08002f4c       0x24 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+                0x08002f4c                QK_init
+ .text.PendSV_Handler
+                0x08002f70       0x24 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+                0x08002f70                PendSV_Handler
+ .text.SVC_Handler
+                0x08002f94        0x4 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+                0x08002f94                SVC_Handler
+ *(.rodata)
+ .rodata        0x08002f98       0x1c rel/philo.o
+                0x08002fa0                AO_Philo
+ .rodata        0x08002fb4        0xc rel/table.o
+                0x08002fbc                AO_Table
+ .rodata        0x08002fc0       0x14 rel/system_stm32f10x.o
+                0x08002fc0                SystemFrequency
+                0x08002fc4                SystemFrequency_SysClk
+                0x08002fc8                SystemFrequency_AHBClk
+                0x08002fcc                SystemFrequency_APB1Clk
+                0x08002fd0                SystemFrequency_APB2Clk
+ .rodata        0x08002fd4       0x5c rel/stm32_eval.o
+                0x08002fd4                GPIO_PIN
+                0x08002fdc                GPIO_CLK
+                0x08002fec                COM_POR_CLK
+                0x08002ff0                COM_USART_CLK
+                0x08002ff4                COM_TX_PIN
+                0x08002ff8                COM_RX_PIN
+                0x08002ffc                BUTTON_PIN
+                0x08003004                BUTTON_CLK
+                0x08003010                BUTTON_PORT_SOURCE
+                0x08003018                BUTTON_PIN_SOURCE
+                0x08003020                BUTTON_EXTI_LINE
+                0x08003028                BUTTON_IRQn
+ .rodata        0x08003030     0x11d0 rel/stm3210c_eval_lcd.o
+                0x08003030                ASCII_Table
+ .rodata        0x08004200        0xc ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+ .rodata        0x0800420c        0xc ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+ .rodata        0x08004218        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+ .rodata        0x08004220        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+ .rodata        0x08004228        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+ .rodata        0x08004230       0x10 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+ .rodata        0x08004240        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+ .rodata        0x08004248      0x100 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_log2.o)
+                0x08004248                QF_log2Lkup
+ .rodata        0x08004348        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+ .rodata        0x08004350        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+ .rodata        0x08004358        0xc ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+ .rodata        0x08004364       0xcc ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pwr2.o)
+                0x08004364                QF_pwr2Lkup
+                0x080043a8                QF_invPwr2Lkup
+                0x080043ec                QF_div8Lkup
+ .rodata        0x08004430        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+ .rodata        0x08004438        0xc ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_init.o)
+ .rodata        0x08004444        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_put.o)
+ .rodata        0x0800444c        0xc ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_ctor.o)
+ .rodata        0x08004458        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+ .rodata        0x08004460        0xc ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+ .rodata        0x0800446c        0xc ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_dis.o)
+ .rodata        0x08004478       0x10 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qep.o)
+                0x08004480                QEP_reservedEvt_
+ *(.rodata*)
+ .rodata.str1.1
+                0x08004488       0x6b rel/bsp.o
+ .rodata.str1.1
+                0x080044f3       0x1b rel/table.o
+ .rodata.str1.1
+                0x0800450e       0x15 rel/startup_stm32f10x_cl.o
+ .rodata.str1.1
+                0x08004523       0x15 rel/stm3210c_eval_lcd.o
+ *(.init)
+ .init          0x08004538        0x4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crti.o
+                0x08004538                _init
+ .init          0x0800453c        0x8 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtn.o
+ *(.fini)
+ .fini          0x08004544        0x4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crti.o
+                0x08004544                _fini
+ .fini          0x08004548        0x8 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtn.o
+                0x08004550                . = ALIGN (0x4)
+                0x08004550                _etext = .
+
+.glue_7         0x08004550        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x08004550        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x08004550        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x08004550        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.preinit_array  0x08004550        0x0
+                0x08004550                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x08004550                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x08004550        0x4
+                0x08004550                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array*)
+ .init_array    0x08004550        0x4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+                0x08004554                PROVIDE (__init_array_end, .)
+
+.fini_array     0x08004554        0x4
+                0x08004554                PROVIDE (__fini_array_start, .)
+ *(.fini_array*)
+ .fini_array    0x08004554        0x4 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x08004558                PROVIDE (__fini_array_end, .)
+
+.data           0x20000000       0x40 load address 0x08004558
+                0x08004558                __data_load = LOADADDR (.data)
+                0x20000000                __data_start = .
+ *(.data)
+ .data          0x20000000       0x24 rel/stm32_eval.o
+                0x20000000                GPIO_PORT
+                0x20000010                COM_PORT
+                0x20000014                COM_USART
+                0x20000018                BUTTON_PORT
+ .data          0x20000024        0x2 rel/stm3210c_eval_lcd.o
+ *fill*         0x20000026        0x2 00
+ .data          0x20000028       0x14 rel/stm32f10x_rcc.o
+ .data          0x2000003c        0x1 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                0x2000003c                QK_currPrio_
+ *(.data*)
+                0x20000040                . = ALIGN (0x4)
+ *fill*         0x2000003d        0x3 00
+                0x20000040                __data_end__ = .
+                0x20000040                _edata = __data_end__
+
+.jcr            0x20000040        0x0
+ .jcr           0x20000040        0x0 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+
+.bss            0x20000040      0x358 load address 0x08004598
+                0x20000040                __bss_start__ = .
+ *(.bss)
+ .bss           0x20000040       0x1c c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+ .bss           0x2000005c       0xd8 rel/main.o
+ .bss           0x20000134       0xe0 rel/philo.o
+ .bss           0x20000214       0x24 rel/table.o
+ .bss           0x20000238        0x2 rel/stm3210c_eval_lcd.o
+ .bss           0x2000023a        0x1 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_tick.o)
+ *(.bss*)
+ *(COMMON)
+ *fill*         0x2000023b        0x1 00
+ COMMON         0x2000023c        0xa ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                0x2000023c                QK_readySet_
+                0x20000245                QK_intNest_
+ COMMON         0x20000246        0x1 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+                0x20000246                QK_ceilingPrio_
+ *fill*         0x20000247        0x1 00
+ COMMON         0x20000248      0x104 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+                0x20000248                QF_intLockNest_
+                0x2000024c                QF_active_
+ COMMON         0x2000034c       0x3d ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+                0x2000034c                QF_pool_
+                0x20000388                QF_maxPool_
+ *fill*         0x20000389        0x3 00
+ COMMON         0x2000038c        0x8 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+                0x2000038c                QF_maxSignal_
+                0x20000390                QF_subscrList_
+ COMMON         0x20000394        0x4 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+                0x20000394                QF_timeEvtListHead_
+                0x20000398                . = ALIGN (0x4)
+                0x20000398                _ebss = .
+                0x20000398                __bss_end__ = .
+                0x20000398                PROVIDE (end, _ebss)
+                0x20000398                PROVIDE (_end, _ebss)
+                0x20000398                PROVIDE (__end__, _ebss)
+
+.heap           0x20000398        0x0 load address 0x08004598
+                0x20000398                __heap_start__ = .
+                0x20000398                . = (. + HEAP_SIZE)
+                0x20000398                . = ALIGN (0x4)
+                0x20000398                __heap_end__ = .
+
+.stack          0x20000398      0x400 load address 0x08004598
+                0x20000398                __stack_start__ = .
+                0x20000798                . = (. + STACK_SIZE)
+ *fill*         0x20000398      0x400 00
+                0x20000798                . = ALIGN (0x4)
+                0x20000798                __c_stack_top__ = .
+                0x20000798                __stack_end__ = .
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+OUTPUT(rel/dpp-qk.elf elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x25
+ .ARM.attributes
+                0x00000000       0x17 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crti.o
+ .ARM.attributes
+                0x00000017       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+ .ARM.attributes
+                0x0000003e       0x17 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+ .ARM.attributes
+                0x00000055       0x31 rel/bsp.o
+ .ARM.attributes
+                0x00000086       0x31 rel/main.o
+ .ARM.attributes
+                0x000000b7       0x31 rel/no_heap.o
+ .ARM.attributes
+                0x000000e8       0x31 rel/philo.o
+ .ARM.attributes
+                0x00000119       0x31 rel/table.o
+ .ARM.attributes
+                0x0000014a       0x31 rel/startup_stm32f10x_cl.o
+ .ARM.attributes
+                0x0000017b       0x31 rel/core_cm3.o
+ .ARM.attributes
+                0x000001ac       0x31 rel/system_stm32f10x.o
+ .ARM.attributes
+                0x000001dd       0x31 rel/stm32_eval.o
+ .ARM.attributes
+                0x0000020e       0x31 rel/stm3210c_eval_lcd.o
+ .ARM.attributes
+                0x0000023f       0x31 rel/stm3210c_eval_ioe.o
+ .ARM.attributes
+                0x00000270       0x31 rel/misc.o
+ .ARM.attributes
+                0x000002a1       0x31 rel/stm32f10x_adc.o
+ .ARM.attributes
+                0x000002d2       0x31 rel/stm32f10x_bkp.o
+ .ARM.attributes
+                0x00000303       0x31 rel/stm32f10x_can.o
+ .ARM.attributes
+                0x00000334       0x31 rel/stm32f10x_crc.o
+ .ARM.attributes
+                0x00000365       0x31 rel/stm32f10x_dac.o
+ .ARM.attributes
+                0x00000396       0x31 rel/stm32f10x_dbgmcu.o
+ .ARM.attributes
+                0x000003c7       0x31 rel/stm32f10x_dma.o
+ .ARM.attributes
+                0x000003f8       0x31 rel/stm32f10x_exti.o
+ .ARM.attributes
+                0x00000429       0x31 rel/stm32f10x_flash.o
+ .ARM.attributes
+                0x0000045a       0x31 rel/stm32f10x_fsmc.o
+ .ARM.attributes
+                0x0000048b       0x31 rel/stm32f10x_gpio.o
+ .ARM.attributes
+                0x000004bc       0x31 rel/stm32f10x_i2c.o
+ .ARM.attributes
+                0x000004ed       0x31 rel/stm32f10x_iwdg.o
+ .ARM.attributes
+                0x0000051e       0x31 rel/stm32f10x_pwr.o
+ .ARM.attributes
+                0x0000054f       0x31 rel/stm32f10x_rcc.o
+ .ARM.attributes
+                0x00000580       0x31 rel/stm32f10x_rtc.o
+ .ARM.attributes
+                0x000005b1       0x31 rel/stm32f10x_sdio.o
+ .ARM.attributes
+                0x000005e2       0x31 rel/stm32f10x_spi.o
+ .ARM.attributes
+                0x00000613       0x31 rel/stm32f10x_tim.o
+ .ARM.attributes
+                0x00000644       0x31 rel/stm32f10x_usart.o
+ .ARM.attributes
+                0x00000675       0x31 rel/stm32f10x_wwdg.o
+ .ARM.attributes
+                0x000006a6       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+ .ARM.attributes
+                0x000006d7       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+ .ARM.attributes
+                0x00000708       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+ .ARM.attributes
+                0x00000739       0x21 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+ .ARM.attributes
+                0x0000075a       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+ .ARM.attributes
+                0x0000078b       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+ .ARM.attributes
+                0x000007bc       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+ .ARM.attributes
+                0x000007ed       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qeq_init.o)
+ .ARM.attributes
+                0x0000081e       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+ .ARM.attributes
+                0x0000084f       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+ .ARM.attributes
+                0x00000880       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_log2.o)
+ .ARM.attributes
+                0x000008b1       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+ .ARM.attributes
+                0x000008e2       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+ .ARM.attributes
+                0x00000913       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+ .ARM.attributes
+                0x00000944       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+ .ARM.attributes
+                0x00000975       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pwr2.o)
+ .ARM.attributes
+                0x000009a6       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_tick.o)
+ .ARM.attributes
+                0x000009d7       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+ .ARM.attributes
+                0x00000a08       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_init.o)
+ .ARM.attributes
+                0x00000a39       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_put.o)
+ .ARM.attributes
+                0x00000a6a       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_ctor.o)
+ .ARM.attributes
+                0x00000a9b       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+ .ARM.attributes
+                0x00000acc       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+ .ARM.attributes
+                0x00000afd       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_dis.o)
+ .ARM.attributes
+                0x00000b2e       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_top.o)
+ .ARM.attributes
+                0x00000b5f       0x31 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qep.o)
+ .ARM.attributes
+                0x00000b90       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-atexit.o)
+ .ARM.attributes
+                0x00000bb7       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000bde       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000c05       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000c2c       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000c53       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x00000c7a       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__call_atexit.o)
+ .ARM.attributes
+                0x00000ca1       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+ .ARM.attributes
+                0x00000cc8       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fwalk.o)
+ .ARM.attributes
+                0x00000cef       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+ .ARM.attributes
+                0x00000d16       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mlock.o)
+ .ARM.attributes
+                0x00000d3d       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+ .ARM.attributes
+                0x00000d64       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+ .ARM.attributes
+                0x00000d8b       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+ .ARM.attributes
+                0x00000db2       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+ .ARM.attributes
+                0x00000dd9       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o)
+ .ARM.attributes
+                0x00000e00       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(lseek.o)
+ .ARM.attributes
+                0x00000e27       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(read.o)
+ .ARM.attributes
+                0x00000e4e       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o)
+ .ARM.attributes
+                0x00000e75       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(write.o)
+ .ARM.attributes
+                0x00000e9c       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(_exit.o)
+ .ARM.attributes
+                0x00000ec3       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(malloc_vars.o)
+ .ARM.attributes
+                0x00000eea       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(syscall_support.o)
+ .ARM.attributes
+                0x00000f11       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+ .ARM.attributes
+                0x00000f38       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+ .ARM.attributes
+                0x00000f5f       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strchr.o)
+ .ARM.attributes
+                0x00000f86       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strcmp.o)
+ .ARM.attributes
+                0x00000fad       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strlen.o)
+ .ARM.attributes
+                0x00000fd4       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strncmp.o)
+ .ARM.attributes
+                0x00000ffb       0x27 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtend.o
+ .ARM.attributes
+                0x00001022       0x17 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtn.o
+
+.comment        0x00000000       0x22
+ .comment       0x00000000       0x22 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+                                 0x23 (size before relaxing)
+ .comment       0x00000000       0x23 rel/bsp.o
+ .comment       0x00000000       0x23 rel/main.o
+ .comment       0x00000000       0x23 rel/no_heap.o
+ .comment       0x00000000       0x23 rel/philo.o
+ .comment       0x00000000       0x23 rel/table.o
+ .comment       0x00000000       0x23 rel/startup_stm32f10x_cl.o
+ .comment       0x00000000       0x23 rel/core_cm3.o
+ .comment       0x00000000       0x23 rel/system_stm32f10x.o
+ .comment       0x00000000       0x23 rel/stm32_eval.o
+ .comment       0x00000000       0x23 rel/stm3210c_eval_lcd.o
+ .comment       0x00000000       0x23 rel/stm3210c_eval_ioe.o
+ .comment       0x00000000       0x23 rel/misc.o
+ .comment       0x00000000       0x23 rel/stm32f10x_adc.o
+ .comment       0x00000000       0x23 rel/stm32f10x_bkp.o
+ .comment       0x00000000       0x23 rel/stm32f10x_can.o
+ .comment       0x00000000       0x23 rel/stm32f10x_crc.o
+ .comment       0x00000000       0x23 rel/stm32f10x_dac.o
+ .comment       0x00000000       0x23 rel/stm32f10x_dbgmcu.o
+ .comment       0x00000000       0x23 rel/stm32f10x_dma.o
+ .comment       0x00000000       0x23 rel/stm32f10x_exti.o
+ .comment       0x00000000       0x23 rel/stm32f10x_flash.o
+ .comment       0x00000000       0x23 rel/stm32f10x_fsmc.o
+ .comment       0x00000000       0x23 rel/stm32f10x_gpio.o
+ .comment       0x00000000       0x23 rel/stm32f10x_i2c.o
+ .comment       0x00000000       0x23 rel/stm32f10x_iwdg.o
+ .comment       0x00000000       0x23 rel/stm32f10x_pwr.o
+ .comment       0x00000000       0x23 rel/stm32f10x_rcc.o
+ .comment       0x00000000       0x23 rel/stm32f10x_rtc.o
+ .comment       0x00000000       0x23 rel/stm32f10x_sdio.o
+ .comment       0x00000000       0x23 rel/stm32f10x_spi.o
+ .comment       0x00000000       0x23 rel/stm32f10x_tim.o
+ .comment       0x00000000       0x23 rel/stm32f10x_usart.o
+ .comment       0x00000000       0x23 rel/stm32f10x_wwdg.o
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qeq_init.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_log2.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pwr2.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_tick.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_init.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_put.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_ctor.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_dis.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_top.o)
+ .comment       0x00000000       0x23 ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qep.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-atexit.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-memset.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__atexit.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__call_atexit.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fwalk.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mlock.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(lseek.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(read.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(write.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(_exit.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(malloc_vars.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(syscall_support.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strchr.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strcmp.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strlen.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strncmp.o)
+ .comment       0x00000000       0x23 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtend.o
+
+Cross Reference Table
+
+Symbol                                            File
+ADC1_2_IRQHandler                                 rel/startup_stm32f10x_cl.o
+ADC3_IRQHandler                                   rel/startup_stm32f10x_cl.o
+ADC_AnalogWatchdogCmd                             rel/stm32f10x_adc.o
+ADC_AnalogWatchdogSingleChannelConfig             rel/stm32f10x_adc.o
+ADC_AnalogWatchdogThresholdsConfig                rel/stm32f10x_adc.o
+ADC_AutoInjectedConvCmd                           rel/stm32f10x_adc.o
+ADC_ClearFlag                                     rel/stm32f10x_adc.o
+ADC_ClearITPendingBit                             rel/stm32f10x_adc.o
+ADC_Cmd                                           rel/stm32f10x_adc.o
+ADC_DMACmd                                        rel/stm32f10x_adc.o
+ADC_DeInit                                        rel/stm32f10x_adc.o
+ADC_DiscModeChannelCountConfig                    rel/stm32f10x_adc.o
+ADC_DiscModeCmd                                   rel/stm32f10x_adc.o
+ADC_ExternalTrigConvCmd                           rel/stm32f10x_adc.o
+ADC_ExternalTrigInjectedConvCmd                   rel/stm32f10x_adc.o
+ADC_ExternalTrigInjectedConvConfig                rel/stm32f10x_adc.o
+ADC_GetCalibrationStatus                          rel/stm32f10x_adc.o
+ADC_GetConversionValue                            rel/stm32f10x_adc.o
+ADC_GetDualModeConversionValue                    rel/stm32f10x_adc.o
+ADC_GetFlagStatus                                 rel/stm32f10x_adc.o
+ADC_GetITStatus                                   rel/stm32f10x_adc.o
+ADC_GetInjectedConversionValue                    rel/stm32f10x_adc.o
+ADC_GetResetCalibrationStatus                     rel/stm32f10x_adc.o
+ADC_GetSoftwareStartConvStatus                    rel/stm32f10x_adc.o
+ADC_GetSoftwareStartInjectedConvCmdStatus         rel/stm32f10x_adc.o
+ADC_ITConfig                                      rel/stm32f10x_adc.o
+ADC_Init                                          rel/stm32f10x_adc.o
+ADC_InjectedChannelConfig                         rel/stm32f10x_adc.o
+ADC_InjectedDiscModeCmd                           rel/stm32f10x_adc.o
+ADC_InjectedSequencerLengthConfig                 rel/stm32f10x_adc.o
+ADC_RegularChannelConfig                          rel/stm32f10x_adc.o
+ADC_ResetCalibration                              rel/stm32f10x_adc.o
+ADC_SetInjectedOffset                             rel/stm32f10x_adc.o
+ADC_SoftwareStartConvCmd                          rel/stm32f10x_adc.o
+ADC_SoftwareStartInjectedConvCmd                  rel/stm32f10x_adc.o
+ADC_StartCalibration                              rel/stm32f10x_adc.o
+ADC_StructInit                                    rel/stm32f10x_adc.o
+ADC_TempSensorVrefintCmd                          rel/stm32f10x_adc.o
+AO_Philo                                          rel/philo.o
+                                                  rel/main.o
+AO_Table                                          rel/table.o
+                                                  rel/philo.o
+                                                  rel/main.o
+                                                  rel/bsp.o
+ASCII_Table                                       rel/stm3210c_eval_lcd.o
+AddDevice                                         c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+BKP_ClearFlag                                     rel/stm32f10x_bkp.o
+BKP_ClearITPendingBit                             rel/stm32f10x_bkp.o
+BKP_DeInit                                        rel/stm32f10x_bkp.o
+BKP_GetFlagStatus                                 rel/stm32f10x_bkp.o
+BKP_GetITStatus                                   rel/stm32f10x_bkp.o
+BKP_ITConfig                                      rel/stm32f10x_bkp.o
+BKP_RTCOutputConfig                               rel/stm32f10x_bkp.o
+BKP_ReadBackupRegister                            rel/stm32f10x_bkp.o
+BKP_SetRTCCalibrationValue                        rel/stm32f10x_bkp.o
+BKP_TamperPinCmd                                  rel/stm32f10x_bkp.o
+BKP_TamperPinLevelConfig                          rel/stm32f10x_bkp.o
+BKP_WriteBackupRegister                           rel/stm32f10x_bkp.o
+BSP_busyDelay                                     rel/bsp.o
+                                                  rel/table.o
+                                                  rel/philo.o
+BSP_displyPhilStat                                rel/bsp.o
+                                                  rel/table.o
+BSP_init                                          rel/bsp.o
+                                                  rel/main.o
+BUTTON_CLK                                        rel/stm32_eval.o
+BUTTON_EXTI_LINE                                  rel/stm32_eval.o
+BUTTON_IRQn                                       rel/stm32_eval.o
+BUTTON_PIN                                        rel/stm32_eval.o
+BUTTON_PIN_SOURCE                                 rel/stm32_eval.o
+BUTTON_PORT                                       rel/stm32_eval.o
+BUTTON_PORT_SOURCE                                rel/stm32_eval.o
+BusFault_Handler                                  rel/startup_stm32f10x_cl.o
+CAN1_RX1_IRQHandler                               rel/startup_stm32f10x_cl.o
+CAN1_SCE_IRQHandler                               rel/startup_stm32f10x_cl.o
+CAN2_RX0_IRQHandler                               rel/startup_stm32f10x_cl.o
+CAN2_RX1_IRQHandler                               rel/startup_stm32f10x_cl.o
+CAN2_SCE_IRQHandler                               rel/startup_stm32f10x_cl.o
+CAN2_TX_IRQHandler                                rel/startup_stm32f10x_cl.o
+CAN_CancelTransmit                                rel/stm32f10x_can.o
+CAN_ClearFlag                                     rel/stm32f10x_can.o
+CAN_ClearITPendingBit                             rel/stm32f10x_can.o
+CAN_DBGFreeze                                     rel/stm32f10x_can.o
+CAN_DeInit                                        rel/stm32f10x_can.o
+CAN_FIFORelease                                   rel/stm32f10x_can.o
+CAN_FilterInit                                    rel/stm32f10x_can.o
+CAN_GetFlagStatus                                 rel/stm32f10x_can.o
+CAN_GetITStatus                                   rel/stm32f10x_can.o
+CAN_ITConfig                                      rel/stm32f10x_can.o
+CAN_Init                                          rel/stm32f10x_can.o
+CAN_MessagePending                                rel/stm32f10x_can.o
+CAN_Receive                                       rel/stm32f10x_can.o
+CAN_SlaveStartBank                                rel/stm32f10x_can.o
+CAN_Sleep                                         rel/stm32f10x_can.o
+CAN_StructInit                                    rel/stm32f10x_can.o
+CAN_Transmit                                      rel/stm32f10x_can.o
+CAN_TransmitStatus                                rel/stm32f10x_can.o
+CAN_WakeUp                                        rel/stm32f10x_can.o
+COM_PORT                                          rel/stm32_eval.o
+COM_POR_CLK                                       rel/stm32_eval.o
+COM_RX_PIN                                        rel/stm32_eval.o
+COM_TX_PIN                                        rel/stm32_eval.o
+COM_USART                                         rel/stm32_eval.o
+COM_USART_CLK                                     rel/stm32_eval.o
+CRC_CalcBlockCRC                                  rel/stm32f10x_crc.o
+CRC_CalcCRC                                       rel/stm32f10x_crc.o
+CRC_GetCRC                                        rel/stm32f10x_crc.o
+CRC_GetIDRegister                                 rel/stm32f10x_crc.o
+CRC_ResetDR                                       rel/stm32f10x_crc.o
+CRC_SetIDRegister                                 rel/stm32f10x_crc.o
+DAC_Cmd                                           rel/stm32f10x_dac.o
+DAC_DMACmd                                        rel/stm32f10x_dac.o
+DAC_DeInit                                        rel/stm32f10x_dac.o
+DAC_DualSoftwareTriggerCmd                        rel/stm32f10x_dac.o
+DAC_GetDataOutputValue                            rel/stm32f10x_dac.o
+DAC_Init                                          rel/stm32f10x_dac.o
+DAC_SetChannel1Data                               rel/stm32f10x_dac.o
+DAC_SetChannel2Data                               rel/stm32f10x_dac.o
+DAC_SetDualChannelData                            rel/stm32f10x_dac.o
+DAC_SoftwareTriggerCmd                            rel/stm32f10x_dac.o
+DAC_StructInit                                    rel/stm32f10x_dac.o
+DAC_WaveGenerationCmd                             rel/stm32f10x_dac.o
+DBGMCU_Config                                     rel/stm32f10x_dbgmcu.o
+DBGMCU_GetDEVID                                   rel/stm32f10x_dbgmcu.o
+DBGMCU_GetREVID                                   rel/stm32f10x_dbgmcu.o
+DMA1_Channel1_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA1_Channel2_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA1_Channel3_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA1_Channel4_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA1_Channel5_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA1_Channel6_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA1_Channel7_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA2_Channel1_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA2_Channel2_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA2_Channel3_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA2_Channel4_5_IRQHandler                        rel/startup_stm32f10x_cl.o
+DMA2_Channel5_IRQHandler                          rel/startup_stm32f10x_cl.o
+DMA_ClearFlag                                     rel/stm32f10x_dma.o
+DMA_ClearITPendingBit                             rel/stm32f10x_dma.o
+DMA_Cmd                                           rel/stm32f10x_dma.o
+DMA_DeInit                                        rel/stm32f10x_dma.o
+DMA_GetCurrDataCounter                            rel/stm32f10x_dma.o
+DMA_GetFlagStatus                                 rel/stm32f10x_dma.o
+DMA_GetITStatus                                   rel/stm32f10x_dma.o
+DMA_ITConfig                                      rel/stm32f10x_dma.o
+DMA_Init                                          rel/stm32f10x_dma.o
+DMA_StructInit                                    rel/stm32f10x_dma.o
+DebugMon_Handler                                  rel/startup_stm32f10x_cl.o
+ETH_IRQHandler                                    rel/startup_stm32f10x_cl.o
+ETH_WKUP_IRQHandler                               rel/startup_stm32f10x_cl.o
+EXTI0_IRQHandler                                  rel/bsp.o
+EXTI15_10_IRQHandler                              rel/startup_stm32f10x_cl.o
+EXTI1_IRQHandler                                  rel/startup_stm32f10x_cl.o
+EXTI2_IRQHandler                                  rel/startup_stm32f10x_cl.o
+EXTI3_IRQHandler                                  rel/startup_stm32f10x_cl.o
+EXTI4_IRQHandler                                  rel/startup_stm32f10x_cl.o
+EXTI9_5_IRQHandler                                rel/startup_stm32f10x_cl.o
+EXTI_ClearFlag                                    rel/stm32f10x_exti.o
+EXTI_ClearITPendingBit                            rel/stm32f10x_exti.o
+EXTI_DeInit                                       rel/stm32f10x_exti.o
+EXTI_GenerateSWInterrupt                          rel/stm32f10x_exti.o
+EXTI_GetFlagStatus                                rel/stm32f10x_exti.o
+EXTI_GetITStatus                                  rel/stm32f10x_exti.o
+EXTI_Init                                         rel/stm32f10x_exti.o
+                                                  rel/stm3210c_eval_ioe.o
+                                                  rel/stm32_eval.o
+                                                  rel/bsp.o
+EXTI_StructInit                                   rel/stm32f10x_exti.o
+FLASH_ClearFlag                                   rel/stm32f10x_flash.o
+FLASH_EnableWriteProtection                       rel/stm32f10x_flash.o
+FLASH_EraseAllPages                               rel/stm32f10x_flash.o
+FLASH_EraseOptionBytes                            rel/stm32f10x_flash.o
+FLASH_ErasePage                                   rel/stm32f10x_flash.o
+FLASH_GetFlagStatus                               rel/stm32f10x_flash.o
+FLASH_GetPrefetchBufferStatus                     rel/stm32f10x_flash.o
+FLASH_GetReadOutProtectionStatus                  rel/stm32f10x_flash.o
+FLASH_GetStatus                                   rel/stm32f10x_flash.o
+FLASH_GetUserOptionByte                           rel/stm32f10x_flash.o
+FLASH_GetWriteProtectionOptionByte                rel/stm32f10x_flash.o
+FLASH_HalfCycleAccessCmd                          rel/stm32f10x_flash.o
+FLASH_IRQHandler                                  rel/startup_stm32f10x_cl.o
+FLASH_ITConfig                                    rel/stm32f10x_flash.o
+FLASH_Lock                                        rel/stm32f10x_flash.o
+FLASH_PrefetchBufferCmd                           rel/stm32f10x_flash.o
+FLASH_ProgramHalfWord                             rel/stm32f10x_flash.o
+FLASH_ProgramOptionByteData                       rel/stm32f10x_flash.o
+FLASH_ProgramWord                                 rel/stm32f10x_flash.o
+FLASH_ReadOutProtection                           rel/stm32f10x_flash.o
+FLASH_SetLatency                                  rel/stm32f10x_flash.o
+FLASH_Unlock                                      rel/stm32f10x_flash.o
+FLASH_UserOptionByteConfig                        rel/stm32f10x_flash.o
+FLASH_WaitForLastOperation                        rel/stm32f10x_flash.o
+FSMC_ClearFlag                                    rel/stm32f10x_fsmc.o
+FSMC_ClearITPendingBit                            rel/stm32f10x_fsmc.o
+FSMC_GetECC                                       rel/stm32f10x_fsmc.o
+FSMC_GetFlagStatus                                rel/stm32f10x_fsmc.o
+FSMC_GetITStatus                                  rel/stm32f10x_fsmc.o
+FSMC_IRQHandler                                   rel/startup_stm32f10x_cl.o
+FSMC_ITConfig                                     rel/stm32f10x_fsmc.o
+FSMC_NANDCmd                                      rel/stm32f10x_fsmc.o
+FSMC_NANDDeInit                                   rel/stm32f10x_fsmc.o
+FSMC_NANDECCCmd                                   rel/stm32f10x_fsmc.o
+FSMC_NANDInit                                     rel/stm32f10x_fsmc.o
+FSMC_NANDStructInit                               rel/stm32f10x_fsmc.o
+FSMC_NORSRAMCmd                                   rel/stm32f10x_fsmc.o
+FSMC_NORSRAMDeInit                                rel/stm32f10x_fsmc.o
+FSMC_NORSRAMInit                                  rel/stm32f10x_fsmc.o
+FSMC_NORSRAMStructInit                            rel/stm32f10x_fsmc.o
+FSMC_PCCARDCmd                                    rel/stm32f10x_fsmc.o
+FSMC_PCCARDDeInit                                 rel/stm32f10x_fsmc.o
+FSMC_PCCARDInit                                   rel/stm32f10x_fsmc.o
+FSMC_PCCARDStructInit                             rel/stm32f10x_fsmc.o
+FindDevice                                        c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+GPIO_AFIODeInit                                   rel/stm32f10x_gpio.o
+GPIO_CLK                                          rel/stm32_eval.o
+GPIO_DeInit                                       rel/stm32f10x_gpio.o
+GPIO_ETH_MediaInterfaceConfig                     rel/stm32f10x_gpio.o
+GPIO_EXTILineConfig                               rel/stm32f10x_gpio.o
+                                                  rel/stm3210c_eval_ioe.o
+                                                  rel/stm32_eval.o
+GPIO_EventOutputCmd                               rel/stm32f10x_gpio.o
+GPIO_EventOutputConfig                            rel/stm32f10x_gpio.o
+GPIO_Init                                         rel/stm32f10x_gpio.o
+                                                  rel/stm3210c_eval_ioe.o
+                                                  rel/stm3210c_eval_lcd.o
+                                                  rel/stm32_eval.o
+GPIO_PIN                                          rel/stm32_eval.o
+GPIO_PORT                                         rel/stm32_eval.o
+GPIO_PinLockConfig                                rel/stm32f10x_gpio.o
+GPIO_PinRemapConfig                               rel/stm32f10x_gpio.o
+                                                  rel/stm3210c_eval_lcd.o
+                                                  rel/stm32_eval.o
+GPIO_ReadInputData                                rel/stm32f10x_gpio.o
+GPIO_ReadInputDataBit                             rel/stm32f10x_gpio.o
+                                                  rel/stm32_eval.o
+GPIO_ReadOutputData                               rel/stm32f10x_gpio.o
+GPIO_ReadOutputDataBit                            rel/stm32f10x_gpio.o
+GPIO_ResetBits                                    rel/stm32f10x_gpio.o
+GPIO_SetBits                                      rel/stm32f10x_gpio.o
+GPIO_StructInit                                   rel/stm32f10x_gpio.o
+GPIO_Write                                        rel/stm32f10x_gpio.o
+GPIO_WriteBit                                     rel/stm32f10x_gpio.o
+                                                  rel/stm3210c_eval_lcd.o
+GetDeviceOpTab                                    c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+HardFault_Handler                                 rel/startup_stm32f10x_cl.o
+I2C1_ER_IRQHandler                                rel/startup_stm32f10x_cl.o
+I2C1_EV_IRQHandler                                rel/startup_stm32f10x_cl.o
+I2C2_ER_IRQHandler                                rel/startup_stm32f10x_cl.o
+I2C2_EV_IRQHandler                                rel/startup_stm32f10x_cl.o
+I2C_ARPCmd                                        rel/stm32f10x_i2c.o
+I2C_AcknowledgeConfig                             rel/stm32f10x_i2c.o
+                                                  rel/stm3210c_eval_ioe.o
+I2C_CalculatePEC                                  rel/stm32f10x_i2c.o
+I2C_CheckEvent                                    rel/stm32f10x_i2c.o
+                                                  rel/stm3210c_eval_ioe.o
+I2C_ClearFlag                                     rel/stm32f10x_i2c.o
+I2C_ClearITPendingBit                             rel/stm32f10x_i2c.o
+I2C_Cmd                                           rel/stm32f10x_i2c.o
+                                                  rel/stm3210c_eval_ioe.o
+I2C_DMACmd                                        rel/stm32f10x_i2c.o
+I2C_DMALastTransferCmd                            rel/stm32f10x_i2c.o
+I2C_DeInit                                        rel/stm32f10x_i2c.o
+I2C_DualAddressCmd                                rel/stm32f10x_i2c.o
+I2C_FastModeDutyCycleConfig                       rel/stm32f10x_i2c.o
+I2C_GeneralCallCmd                                rel/stm32f10x_i2c.o
+I2C_GenerateSTART                                 rel/stm32f10x_i2c.o
+                                                  rel/stm3210c_eval_ioe.o
+I2C_GenerateSTOP                                  rel/stm32f10x_i2c.o
+                                                  rel/stm3210c_eval_ioe.o
+I2C_GetFlagStatus                                 rel/stm32f10x_i2c.o
+I2C_GetITStatus                                   rel/stm32f10x_i2c.o
+I2C_GetLastEvent                                  rel/stm32f10x_i2c.o
+I2C_GetPEC                                        rel/stm32f10x_i2c.o
+I2C_ITConfig                                      rel/stm32f10x_i2c.o
+I2C_Init                                          rel/stm32f10x_i2c.o
+                                                  rel/stm3210c_eval_ioe.o
+I2C_OwnAddress2Config                             rel/stm32f10x_i2c.o
+I2C_PECPositionConfig                             rel/stm32f10x_i2c.o
+I2C_ReadDataBuffer                                rel/stm3210c_eval_ioe.o
+I2C_ReadDeviceRegister                            rel/stm3210c_eval_ioe.o
+I2C_ReadRegister                                  rel/stm32f10x_i2c.o
+I2C_ReceiveData                                   rel/stm32f10x_i2c.o
+                                                  rel/stm3210c_eval_ioe.o
+I2C_SMBusAlertConfig                              rel/stm32f10x_i2c.o
+I2C_Send7bitAddress                               rel/stm32f10x_i2c.o
+                                                  rel/stm3210c_eval_ioe.o
+I2C_SendData                                      rel/stm32f10x_i2c.o
+                                                  rel/stm3210c_eval_ioe.o
+I2C_SoftwareResetCmd                              rel/stm32f10x_i2c.o
+                                                  rel/stm3210c_eval_ioe.o
+I2C_StretchClockCmd                               rel/stm32f10x_i2c.o
+I2C_StructInit                                    rel/stm32f10x_i2c.o
+I2C_TransmitPEC                                   rel/stm32f10x_i2c.o
+I2C_WriteDeviceRegister                           rel/stm3210c_eval_ioe.o
+I2S_Cmd                                           rel/stm32f10x_spi.o
+I2S_Init                                          rel/stm32f10x_spi.o
+I2S_StructInit                                    rel/stm32f10x_spi.o
+IOE_ClearGITPending                               rel/stm3210c_eval_ioe.o
+IOE_ClearIOITPending                              rel/stm3210c_eval_ioe.o
+IOE_Config                                        rel/stm3210c_eval_ioe.o
+IOE_FnctCmd                                       rel/stm3210c_eval_ioe.o
+IOE_GITCmd                                        rel/stm3210c_eval_ioe.o
+IOE_GITConfig                                     rel/stm3210c_eval_ioe.o
+IOE_GetGITStatus                                  rel/stm3210c_eval_ioe.o
+IOE_GetIOITStatus                                 rel/stm3210c_eval_ioe.o
+IOE_IOAFConfig                                    rel/stm3210c_eval_ioe.o
+IOE_IOEdgeConfig                                  rel/stm3210c_eval_ioe.o
+IOE_IOITConfig                                    rel/stm3210c_eval_ioe.o
+IOE_IOPinConfig                                   rel/stm3210c_eval_ioe.o
+IOE_ITConfig                                      rel/stm3210c_eval_ioe.o
+IOE_ITOutConfig                                   rel/stm3210c_eval_ioe.o
+IOE_IsOperational                                 rel/stm3210c_eval_ioe.o
+IOE_JoyStickGetState                              rel/stm3210c_eval_ioe.o
+IOE_ReadID                                        rel/stm3210c_eval_ioe.o
+IOE_ReadIOPin                                     rel/stm3210c_eval_ioe.o
+IOE_Reset                                         rel/stm3210c_eval_ioe.o
+IOE_TS_Config                                     rel/stm3210c_eval_ioe.o
+IOE_TS_GetState                                   rel/stm3210c_eval_ioe.o
+IOE_TempSens_Config                               rel/stm3210c_eval_ioe.o
+IOE_TempSens_GetData                              rel/stm3210c_eval_ioe.o
+IOE_WriteIOPin                                    rel/stm3210c_eval_ioe.o
+IWDG_Enable                                       rel/stm32f10x_iwdg.o
+IWDG_GetFlagStatus                                rel/stm32f10x_iwdg.o
+IWDG_ReloadCounter                                rel/stm32f10x_iwdg.o
+IWDG_SetPrescaler                                 rel/stm32f10x_iwdg.o
+IWDG_SetReload                                    rel/stm32f10x_iwdg.o
+IWDG_WriteAccessCmd                               rel/stm32f10x_iwdg.o
+LCD_Clear                                         rel/stm3210c_eval_lcd.o
+                                                  rel/bsp.o
+LCD_ClearLine                                     rel/stm3210c_eval_lcd.o
+LCD_CtrlLinesConfig                               rel/stm3210c_eval_lcd.o
+LCD_CtrlLinesWrite                                rel/stm3210c_eval_lcd.o
+LCD_DisplayChar                                   rel/stm3210c_eval_lcd.o
+                                                  rel/bsp.o
+LCD_DisplayOff                                    rel/stm3210c_eval_lcd.o
+LCD_DisplayOn                                     rel/stm3210c_eval_lcd.o
+LCD_DisplayString                                 rel/stm3210c_eval_lcd.o
+                                                  rel/bsp.o
+LCD_DrawChar                                      rel/stm3210c_eval_lcd.o
+LCD_DrawCircle                                    rel/stm3210c_eval_lcd.o
+LCD_DrawLine                                      rel/stm3210c_eval_lcd.o
+LCD_DrawMonoPict                                  rel/stm3210c_eval_lcd.o
+LCD_DrawRect                                      rel/stm3210c_eval_lcd.o
+LCD_PowerOn                                       rel/stm3210c_eval_lcd.o
+LCD_ReadReg                                       rel/stm3210c_eval_lcd.o
+LCD_SPIConfig                                     rel/stm3210c_eval_lcd.o
+LCD_SetBackColor                                  rel/stm3210c_eval_lcd.o
+                                                  rel/bsp.o
+LCD_SetCursor                                     rel/stm3210c_eval_lcd.o
+LCD_SetDisplayWindow                              rel/stm3210c_eval_lcd.o
+LCD_SetTextColor                                  rel/stm3210c_eval_lcd.o
+                                                  rel/bsp.o
+LCD_Setup                                         rel/stm3210c_eval_lcd.o
+LCD_WindowModeDisable                             rel/stm3210c_eval_lcd.o
+LCD_WriteRAM                                      rel/stm3210c_eval_lcd.o
+LCD_WriteRAMWord                                  rel/stm3210c_eval_lcd.o
+LCD_WriteRAM_Prepare                              rel/stm3210c_eval_lcd.o
+LCD_WriteReg                                      rel/stm3210c_eval_lcd.o
+LCD_WriteRegIndex                                 rel/stm3210c_eval_lcd.o
+LCD_nCS_StartByte                                 rel/stm3210c_eval_lcd.o
+MemManage_Handler                                 rel/startup_stm32f10x_cl.o
+NMI_Handler                                       rel/startup_stm32f10x_cl.o
+NVIC_Init                                         rel/misc.o
+                                                  rel/stm3210c_eval_ioe.o
+                                                  rel/stm32_eval.o
+                                                  rel/bsp.o
+NVIC_PriorityGroupConfig                          rel/misc.o
+NVIC_SetVectorTable                               rel/misc.o
+NVIC_SystemLPConfig                               rel/misc.o
+OTG_FS_IRQHandler                                 rel/startup_stm32f10x_cl.o
+PVD_IRQHandler                                    rel/startup_stm32f10x_cl.o
+PWR_BackupAccessCmd                               rel/stm32f10x_pwr.o
+PWR_ClearFlag                                     rel/stm32f10x_pwr.o
+PWR_DeInit                                        rel/stm32f10x_pwr.o
+PWR_EnterSTANDBYMode                              rel/stm32f10x_pwr.o
+PWR_EnterSTOPMode                                 rel/stm32f10x_pwr.o
+PWR_GetFlagStatus                                 rel/stm32f10x_pwr.o
+PWR_PVDCmd                                        rel/stm32f10x_pwr.o
+PWR_PVDLevelConfig                                rel/stm32f10x_pwr.o
+PWR_WakeUpPinCmd                                  rel/stm32f10x_pwr.o
+PendSV_Handler                                    ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+                                                  rel/startup_stm32f10x_cl.o
+Philo_ctor                                        rel/philo.o
+                                                  rel/main.o
+QActive_get_                                      ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+QActive_postFIFO                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_tick.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                                                  rel/philo.o
+                                                  rel/bsp.o
+QActive_start                                     ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                                                  rel/main.o
+QActive_stop                                      ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QActive_subscribe                                 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+                                                  rel/table.o
+                                                  rel/philo.o
+QEP_getVersion                                    ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qep.o)
+QEP_reservedEvt_                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qep.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_dis.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+QEQueue_init                                      ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qeq_init.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QF_active_                                        ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+QF_add_                                           ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QF_div8Lkup                                       ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pwr2.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+QF_gc                                             ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+QF_getPoolMargin                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+QF_getQueueMargin                                 ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+QF_getVersion                                     ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+                                                  rel/bsp.o
+QF_init                                           ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                                                  rel/main.o
+QF_intLockNest_                                   ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+QF_invPwr2Lkup                                    ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pwr2.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+QF_log2Lkup                                       ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_log2.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+QF_maxPool_                                       ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+QF_maxSignal_                                     ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+QF_new_                                           ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+                                                  rel/table.o
+                                                  rel/philo.o
+                                                  rel/bsp.o
+QF_onCleanup                                      rel/bsp.o
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QF_onStartup                                      rel/bsp.o
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QF_poolInit                                       ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+                                                  rel/main.o
+QF_pool_                                          ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+QF_psInit                                         ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+                                                  rel/main.o
+QF_publish                                        ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                                                  rel/table.o
+                                                  rel/philo.o
+QF_pwr2Lkup                                       ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pwr2.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+QF_remove_                                        ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QF_run                                            ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                                                  rel/main.o
+QF_stop                                           ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                                                  rel/table.o
+QF_subscrList_                                    ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_psini.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+QF_tick                                           ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_tick.o)
+                                                  rel/bsp.o
+QF_timeEvtListHead_                               ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_tick.o)
+QHsm_dispatch                                     ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_dis.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+QHsm_init                                         ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QHsm_top                                          ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_top.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+                                                  rel/table.o
+                                                  rel/philo.o
+QK_ceilingPrio_                                   ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+QK_currPrio_                                      ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+QK_getVersion                                     ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QK_init                                           ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QK_intNest_                                       ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                                                  rel/bsp.o
+QK_mutexLock                                      ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+QK_mutexUnlock                                    ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+QK_onIdle                                         rel/bsp.o
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QK_readySet_                                      ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QK_schedule_                                      ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_mutex.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+QMPool_get                                        ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+QMPool_init                                       ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_init.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+QMPool_put                                        ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_put.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+QTimeEvt_arm_                                     ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+                                                  rel/philo.o
+QTimeEvt_ctor                                     ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_ctor.o)
+                                                  rel/philo.o
+Q_onAssert                                        rel/bsp.o
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_dis.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqep_cortex-m3.a(qhsm_ini.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_arm.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qte_ctor.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_put.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_init.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qmp_get.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pspub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_pool.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_new.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_gc.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qf_act.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_sub.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_get_.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqf_cortex-m3.a(qa_fifo.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_sched.o)
+                                                  ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk.o)
+                                                  rel/table.o
+                                                  rel/philo.o
+                                                  rel/no_heap.o
+RCC_ADCCLKConfig                                  rel/stm32f10x_rcc.o
+RCC_AHBPeriphClockCmd                             rel/stm32f10x_rcc.o
+RCC_AHBPeriphResetCmd                             rel/stm32f10x_rcc.o
+RCC_APB1PeriphClockCmd                            rel/stm32f10x_rcc.o
+                                                  rel/stm3210c_eval_ioe.o
+                                                  rel/stm3210c_eval_lcd.o
+                                                  rel/stm32_eval.o
+RCC_APB1PeriphResetCmd                            rel/stm32f10x_rcc.o
+                                                  rel/stm32f10x_wwdg.o
+                                                  rel/stm32f10x_usart.o
+                                                  rel/stm32f10x_tim.o
+                                                  rel/stm32f10x_spi.o
+                                                  rel/stm32f10x_pwr.o
+                                                  rel/stm32f10x_i2c.o
+                                                  rel/stm32f10x_dac.o
+                                                  rel/stm32f10x_can.o
+                                                  rel/stm3210c_eval_ioe.o
+RCC_APB2PeriphClockCmd                            rel/stm32f10x_rcc.o
+                                                  rel/stm3210c_eval_ioe.o
+                                                  rel/stm3210c_eval_lcd.o
+                                                  rel/stm32_eval.o
+RCC_APB2PeriphResetCmd                            rel/stm32f10x_rcc.o
+                                                  rel/stm32f10x_usart.o
+                                                  rel/stm32f10x_tim.o
+                                                  rel/stm32f10x_spi.o
+                                                  rel/stm32f10x_gpio.o
+                                                  rel/stm32f10x_adc.o
+RCC_AdjustHSICalibrationValue                     rel/stm32f10x_rcc.o
+RCC_BackupResetCmd                                rel/stm32f10x_rcc.o
+                                                  rel/stm32f10x_bkp.o
+RCC_ClearFlag                                     rel/stm32f10x_rcc.o
+RCC_ClearITPendingBit                             rel/stm32f10x_rcc.o
+RCC_ClockSecuritySystemCmd                        rel/stm32f10x_rcc.o
+RCC_DeInit                                        rel/stm32f10x_rcc.o
+RCC_GetClocksFreq                                 rel/stm32f10x_rcc.o
+                                                  rel/stm32f10x_usart.o
+                                                  rel/stm32f10x_spi.o
+                                                  rel/stm32f10x_i2c.o
+RCC_GetFlagStatus                                 rel/stm32f10x_rcc.o
+RCC_GetITStatus                                   rel/stm32f10x_rcc.o
+RCC_GetSYSCLKSource                               rel/stm32f10x_rcc.o
+RCC_HCLKConfig                                    rel/stm32f10x_rcc.o
+RCC_HSEConfig                                     rel/stm32f10x_rcc.o
+RCC_HSICmd                                        rel/stm32f10x_rcc.o
+RCC_I2S2CLKConfig                                 rel/stm32f10x_rcc.o
+RCC_I2S3CLKConfig                                 rel/stm32f10x_rcc.o
+RCC_IRQHandler                                    rel/startup_stm32f10x_cl.o
+RCC_ITConfig                                      rel/stm32f10x_rcc.o
+RCC_LSEConfig                                     rel/stm32f10x_rcc.o
+RCC_LSICmd                                        rel/stm32f10x_rcc.o
+RCC_MCOConfig                                     rel/stm32f10x_rcc.o
+RCC_OTGFSCLKConfig                                rel/stm32f10x_rcc.o
+RCC_PCLK1Config                                   rel/stm32f10x_rcc.o
+RCC_PCLK2Config                                   rel/stm32f10x_rcc.o
+RCC_PLL2Cmd                                       rel/stm32f10x_rcc.o
+RCC_PLL2Config                                    rel/stm32f10x_rcc.o
+RCC_PLL3Cmd                                       rel/stm32f10x_rcc.o
+RCC_PLL3Config                                    rel/stm32f10x_rcc.o
+RCC_PLLCmd                                        rel/stm32f10x_rcc.o
+RCC_PLLConfig                                     rel/stm32f10x_rcc.o
+RCC_PREDIV1Config                                 rel/stm32f10x_rcc.o
+RCC_PREDIV2Config                                 rel/stm32f10x_rcc.o
+RCC_RTCCLKCmd                                     rel/stm32f10x_rcc.o
+RCC_RTCCLKConfig                                  rel/stm32f10x_rcc.o
+RCC_SYSCLKConfig                                  rel/stm32f10x_rcc.o
+RCC_WaitForHSEStartUp                             rel/stm32f10x_rcc.o
+RTCAlarm_IRQHandler                               rel/startup_stm32f10x_cl.o
+RTC_ClearFlag                                     rel/stm32f10x_rtc.o
+RTC_ClearITPendingBit                             rel/stm32f10x_rtc.o
+RTC_EnterConfigMode                               rel/stm32f10x_rtc.o
+RTC_ExitConfigMode                                rel/stm32f10x_rtc.o
+RTC_GetCounter                                    rel/stm32f10x_rtc.o
+RTC_GetDivider                                    rel/stm32f10x_rtc.o
+RTC_GetFlagStatus                                 rel/stm32f10x_rtc.o
+RTC_GetITStatus                                   rel/stm32f10x_rtc.o
+RTC_IRQHandler                                    rel/startup_stm32f10x_cl.o
+RTC_ITConfig                                      rel/stm32f10x_rtc.o
+RTC_SetAlarm                                      rel/stm32f10x_rtc.o
+RTC_SetCounter                                    rel/stm32f10x_rtc.o
+RTC_SetPrescaler                                  rel/stm32f10x_rtc.o
+RTC_WaitForLastTask                               rel/stm32f10x_rtc.o
+RTC_WaitForSynchro                                rel/stm32f10x_rtc.o
+RemoveDevice                                      c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+Reset_Handler                                     rel/startup_stm32f10x_cl.o
+SDIO_CEATAITCmd                                   rel/stm32f10x_sdio.o
+SDIO_ClearFlag                                    rel/stm32f10x_sdio.o
+SDIO_ClearITPendingBit                            rel/stm32f10x_sdio.o
+SDIO_ClockCmd                                     rel/stm32f10x_sdio.o
+SDIO_CmdStructInit                                rel/stm32f10x_sdio.o
+SDIO_CommandCompletionCmd                         rel/stm32f10x_sdio.o
+SDIO_DMACmd                                       rel/stm32f10x_sdio.o
+SDIO_DataConfig                                   rel/stm32f10x_sdio.o
+SDIO_DataStructInit                               rel/stm32f10x_sdio.o
+SDIO_DeInit                                       rel/stm32f10x_sdio.o
+SDIO_GetCommandResponse                           rel/stm32f10x_sdio.o
+SDIO_GetDataCounter                               rel/stm32f10x_sdio.o
+SDIO_GetFIFOCount                                 rel/stm32f10x_sdio.o
+SDIO_GetFlagStatus                                rel/stm32f10x_sdio.o
+SDIO_GetITStatus                                  rel/stm32f10x_sdio.o
+SDIO_GetPowerState                                rel/stm32f10x_sdio.o
+SDIO_GetResponse                                  rel/stm32f10x_sdio.o
+SDIO_IRQHandler                                   rel/startup_stm32f10x_cl.o
+SDIO_ITConfig                                     rel/stm32f10x_sdio.o
+SDIO_Init                                         rel/stm32f10x_sdio.o
+SDIO_ReadData                                     rel/stm32f10x_sdio.o
+SDIO_SendCEATACmd                                 rel/stm32f10x_sdio.o
+SDIO_SendCommand                                  rel/stm32f10x_sdio.o
+SDIO_SendSDIOSuspendCmd                           rel/stm32f10x_sdio.o
+SDIO_SetPowerState                                rel/stm32f10x_sdio.o
+SDIO_SetSDIOOperation                             rel/stm32f10x_sdio.o
+SDIO_SetSDIOReadWaitMode                          rel/stm32f10x_sdio.o
+SDIO_StartSDIOReadWait                            rel/stm32f10x_sdio.o
+SDIO_StopSDIOReadWait                             rel/stm32f10x_sdio.o
+SDIO_StructInit                                   rel/stm32f10x_sdio.o
+SDIO_WriteData                                    rel/stm32f10x_sdio.o
+SPI1_IRQHandler                                   rel/startup_stm32f10x_cl.o
+SPI2_IRQHandler                                   rel/startup_stm32f10x_cl.o
+SPI3_IRQHandler                                   rel/startup_stm32f10x_cl.o
+SPI_BiDirectionalLineConfig                       rel/stm32f10x_spi.o
+SPI_CalculateCRC                                  rel/stm32f10x_spi.o
+SPI_Cmd                                           rel/stm32f10x_spi.o
+                                                  rel/stm3210c_eval_lcd.o
+SPI_DataSizeConfig                                rel/stm32f10x_spi.o
+SPI_GetCRC                                        rel/stm32f10x_spi.o
+SPI_GetCRCPolynomial                              rel/stm32f10x_spi.o
+SPI_I2S_ClearFlag                                 rel/stm32f10x_spi.o
+SPI_I2S_ClearITPendingBit                         rel/stm32f10x_spi.o
+SPI_I2S_DMACmd                                    rel/stm32f10x_spi.o
+SPI_I2S_DeInit                                    rel/stm32f10x_spi.o
+                                                  rel/stm3210c_eval_lcd.o
+SPI_I2S_GetFlagStatus                             rel/stm32f10x_spi.o
+                                                  rel/stm3210c_eval_lcd.o
+SPI_I2S_GetITStatus                               rel/stm32f10x_spi.o
+SPI_I2S_ITConfig                                  rel/stm32f10x_spi.o
+SPI_I2S_ReceiveData                               rel/stm32f10x_spi.o
+                                                  rel/stm3210c_eval_lcd.o
+SPI_I2S_SendData                                  rel/stm32f10x_spi.o
+                                                  rel/stm3210c_eval_lcd.o
+SPI_Init                                          rel/stm32f10x_spi.o
+                                                  rel/stm3210c_eval_lcd.o
+SPI_NSSInternalSoftwareConfig                     rel/stm32f10x_spi.o
+SPI_SSOutputCmd                                   rel/stm32f10x_spi.o
+SPI_StructInit                                    rel/stm32f10x_spi.o
+SPI_TransmitCRC                                   rel/stm32f10x_spi.o
+STM3210C_LCD_Init                                 rel/stm3210c_eval_lcd.o
+                                                  rel/bsp.o
+STM_EVAL_COMInit                                  rel/stm32_eval.o
+STM_EVAL_LEDInit                                  rel/stm32_eval.o
+                                                  rel/bsp.o
+STM_EVAL_LEDOff                                   rel/stm32_eval.o
+                                                  rel/bsp.o
+STM_EVAL_LEDOn                                    rel/stm32_eval.o
+                                                  rel/bsp.o
+STM_EVAL_LEDToggle                                rel/stm32_eval.o
+STM_EVAL_PBGetState                               rel/stm32_eval.o
+STM_EVAL_PBInit                                   rel/stm32_eval.o
+SVC_Handler                                       ../../../../../ports/arm-cortex/qk/gnu/rel\libqk_cortex-m3.a(qk_port.o)
+                                                  rel/startup_stm32f10x_cl.o
+Spurious_Handler                                  rel/startup_stm32f10x_cl.o
+SysTick_CLKSourceConfig                           rel/misc.o
+SysTick_Handler                                   rel/bsp.o
+SystemFrequency                                   rel/system_stm32f10x.o
+SystemFrequency_AHBClk                            rel/system_stm32f10x.o
+SystemFrequency_APB1Clk                           rel/system_stm32f10x.o
+SystemFrequency_APB2Clk                           rel/system_stm32f10x.o
+SystemFrequency_SysClk                            rel/system_stm32f10x.o
+                                                  rel/bsp.o
+SystemInit                                        rel/system_stm32f10x.o
+                                                  rel/bsp.o
+TAMPER_IRQHandler                                 rel/startup_stm32f10x_cl.o
+TIM1_BRK_IRQHandler                               rel/startup_stm32f10x_cl.o
+TIM1_CC_IRQHandler                                rel/startup_stm32f10x_cl.o
+TIM1_TRG_COM_IRQHandler                           rel/startup_stm32f10x_cl.o
+TIM1_UP_IRQHandler                                rel/startup_stm32f10x_cl.o
+TIM2_IRQHandler                                   rel/startup_stm32f10x_cl.o
+TIM3_IRQHandler                                   rel/startup_stm32f10x_cl.o
+TIM4_IRQHandler                                   rel/startup_stm32f10x_cl.o
+TIM5_IRQHandler                                   rel/startup_stm32f10x_cl.o
+TIM6_IRQHandler                                   rel/startup_stm32f10x_cl.o
+TIM7_IRQHandler                                   rel/startup_stm32f10x_cl.o
+TIM8_BRK_IRQHandler                               rel/startup_stm32f10x_cl.o
+TIM8_CC_IRQHandler                                rel/startup_stm32f10x_cl.o
+TIM8_TRG_COM_IRQHandler                           rel/startup_stm32f10x_cl.o
+TIM8_UP_IRQHandler                                rel/startup_stm32f10x_cl.o
+TIM_ARRPreloadConfig                              rel/stm32f10x_tim.o
+TIM_BDTRConfig                                    rel/stm32f10x_tim.o
+TIM_BDTRStructInit                                rel/stm32f10x_tim.o
+TIM_CCPreloadControl                              rel/stm32f10x_tim.o
+TIM_CCxCmd                                        rel/stm32f10x_tim.o
+TIM_CCxNCmd                                       rel/stm32f10x_tim.o
+TIM_ClearFlag                                     rel/stm32f10x_tim.o
+TIM_ClearITPendingBit                             rel/stm32f10x_tim.o
+TIM_ClearOC1Ref                                   rel/stm32f10x_tim.o
+TIM_ClearOC2Ref                                   rel/stm32f10x_tim.o
+TIM_ClearOC3Ref                                   rel/stm32f10x_tim.o
+TIM_ClearOC4Ref                                   rel/stm32f10x_tim.o
+TIM_Cmd                                           rel/stm32f10x_tim.o
+TIM_CounterModeConfig                             rel/stm32f10x_tim.o
+TIM_CtrlPWMOutputs                                rel/stm32f10x_tim.o
+TIM_DMACmd                                        rel/stm32f10x_tim.o
+TIM_DMAConfig                                     rel/stm32f10x_tim.o
+TIM_DeInit                                        rel/stm32f10x_tim.o
+TIM_ETRClockMode1Config                           rel/stm32f10x_tim.o
+TIM_ETRClockMode2Config                           rel/stm32f10x_tim.o
+TIM_ETRConfig                                     rel/stm32f10x_tim.o
+TIM_EncoderInterfaceConfig                        rel/stm32f10x_tim.o
+TIM_ForcedOC1Config                               rel/stm32f10x_tim.o
+TIM_ForcedOC2Config                               rel/stm32f10x_tim.o
+TIM_ForcedOC3Config                               rel/stm32f10x_tim.o
+TIM_ForcedOC4Config                               rel/stm32f10x_tim.o
+TIM_GenerateEvent                                 rel/stm32f10x_tim.o
+TIM_GetCapture1                                   rel/stm32f10x_tim.o
+TIM_GetCapture2                                   rel/stm32f10x_tim.o
+TIM_GetCapture3                                   rel/stm32f10x_tim.o
+TIM_GetCapture4                                   rel/stm32f10x_tim.o
+TIM_GetCounter                                    rel/stm32f10x_tim.o
+TIM_GetFlagStatus                                 rel/stm32f10x_tim.o
+TIM_GetITStatus                                   rel/stm32f10x_tim.o
+TIM_GetPrescaler                                  rel/stm32f10x_tim.o
+TIM_ICInit                                        rel/stm32f10x_tim.o
+TIM_ICStructInit                                  rel/stm32f10x_tim.o
+TIM_ITConfig                                      rel/stm32f10x_tim.o
+TIM_ITRxExternalClockConfig                       rel/stm32f10x_tim.o
+TIM_InternalClockConfig                           rel/stm32f10x_tim.o
+TIM_OC1FastConfig                                 rel/stm32f10x_tim.o
+TIM_OC1Init                                       rel/stm32f10x_tim.o
+TIM_OC1NPolarityConfig                            rel/stm32f10x_tim.o
+TIM_OC1PolarityConfig                             rel/stm32f10x_tim.o
+TIM_OC1PreloadConfig                              rel/stm32f10x_tim.o
+TIM_OC2FastConfig                                 rel/stm32f10x_tim.o
+TIM_OC2Init                                       rel/stm32f10x_tim.o
+TIM_OC2NPolarityConfig                            rel/stm32f10x_tim.o
+TIM_OC2PolarityConfig                             rel/stm32f10x_tim.o
+TIM_OC2PreloadConfig                              rel/stm32f10x_tim.o
+TIM_OC3FastConfig                                 rel/stm32f10x_tim.o
+TIM_OC3Init                                       rel/stm32f10x_tim.o
+TIM_OC3NPolarityConfig                            rel/stm32f10x_tim.o
+TIM_OC3PolarityConfig                             rel/stm32f10x_tim.o
+TIM_OC3PreloadConfig                              rel/stm32f10x_tim.o
+TIM_OC4FastConfig                                 rel/stm32f10x_tim.o
+TIM_OC4Init                                       rel/stm32f10x_tim.o
+TIM_OC4PolarityConfig                             rel/stm32f10x_tim.o
+TIM_OC4PreloadConfig                              rel/stm32f10x_tim.o
+TIM_OCStructInit                                  rel/stm32f10x_tim.o
+TIM_PWMIConfig                                    rel/stm32f10x_tim.o
+TIM_PrescalerConfig                               rel/stm32f10x_tim.o
+TIM_SelectCCDMA                                   rel/stm32f10x_tim.o
+TIM_SelectCOM                                     rel/stm32f10x_tim.o
+TIM_SelectHallSensor                              rel/stm32f10x_tim.o
+TIM_SelectInputTrigger                            rel/stm32f10x_tim.o
+TIM_SelectMasterSlaveMode                         rel/stm32f10x_tim.o
+TIM_SelectOCxM                                    rel/stm32f10x_tim.o
+TIM_SelectOnePulseMode                            rel/stm32f10x_tim.o
+TIM_SelectOutputTrigger                           rel/stm32f10x_tim.o
+TIM_SelectSlaveMode                               rel/stm32f10x_tim.o
+TIM_SetAutoreload                                 rel/stm32f10x_tim.o
+TIM_SetClockDivision                              rel/stm32f10x_tim.o
+TIM_SetCompare1                                   rel/stm32f10x_tim.o
+TIM_SetCompare2                                   rel/stm32f10x_tim.o
+TIM_SetCompare3                                   rel/stm32f10x_tim.o
+TIM_SetCompare4                                   rel/stm32f10x_tim.o
+TIM_SetCounter                                    rel/stm32f10x_tim.o
+TIM_SetIC1Prescaler                               rel/stm32f10x_tim.o
+TIM_SetIC2Prescaler                               rel/stm32f10x_tim.o
+TIM_SetIC3Prescaler                               rel/stm32f10x_tim.o
+TIM_SetIC4Prescaler                               rel/stm32f10x_tim.o
+TIM_TIxExternalClockConfig                        rel/stm32f10x_tim.o
+TIM_TimeBaseInit                                  rel/stm32f10x_tim.o
+TIM_TimeBaseStructInit                            rel/stm32f10x_tim.o
+TIM_UpdateDisableConfig                           rel/stm32f10x_tim.o
+TIM_UpdateRequestConfig                           rel/stm32f10x_tim.o
+TS_State                                          rel/stm3210c_eval_ioe.o
+Table_ctor                                        rel/table.o
+                                                  rel/main.o
+TimeOut                                           rel/stm3210c_eval_ioe.o
+UART4_IRQHandler                                  rel/startup_stm32f10x_cl.o
+UART5_IRQHandler                                  rel/startup_stm32f10x_cl.o
+USART1_IRQHandler                                 rel/startup_stm32f10x_cl.o
+USART2_IRQHandler                                 rel/startup_stm32f10x_cl.o
+USART3_IRQHandler                                 rel/startup_stm32f10x_cl.o
+USART_ClearFlag                                   rel/stm32f10x_usart.o
+USART_ClearITPendingBit                           rel/stm32f10x_usart.o
+USART_ClockInit                                   rel/stm32f10x_usart.o
+USART_ClockStructInit                             rel/stm32f10x_usart.o
+USART_Cmd                                         rel/stm32f10x_usart.o
+                                                  rel/stm32_eval.o
+USART_DMACmd                                      rel/stm32f10x_usart.o
+USART_DeInit                                      rel/stm32f10x_usart.o
+USART_GetFlagStatus                               rel/stm32f10x_usart.o
+USART_GetITStatus                                 rel/stm32f10x_usart.o
+USART_HalfDuplexCmd                               rel/stm32f10x_usart.o
+USART_ITConfig                                    rel/stm32f10x_usart.o
+USART_Init                                        rel/stm32f10x_usart.o
+                                                  rel/stm32_eval.o
+USART_IrDACmd                                     rel/stm32f10x_usart.o
+USART_IrDAConfig                                  rel/stm32f10x_usart.o
+USART_LINBreakDetectLengthConfig                  rel/stm32f10x_usart.o
+USART_LINCmd                                      rel/stm32f10x_usart.o
+USART_ReceiveData                                 rel/stm32f10x_usart.o
+USART_ReceiverWakeUpCmd                           rel/stm32f10x_usart.o
+USART_SendBreak                                   rel/stm32f10x_usart.o
+USART_SendData                                    rel/stm32f10x_usart.o
+USART_SetAddress                                  rel/stm32f10x_usart.o
+USART_SetGuardTime                                rel/stm32f10x_usart.o
+USART_SetPrescaler                                rel/stm32f10x_usart.o
+USART_SmartCardCmd                                rel/stm32f10x_usart.o
+USART_SmartCardNACKCmd                            rel/stm32f10x_usart.o
+USART_StructInit                                  rel/stm32f10x_usart.o
+USART_WakeUpConfig                                rel/stm32f10x_usart.o
+USBWakeUp_IRQHandler                              rel/startup_stm32f10x_cl.o
+USB_HP_CAN1_TX_IRQHandler                         rel/startup_stm32f10x_cl.o
+USB_LP_CAN1_RX0_IRQHandler                        rel/startup_stm32f10x_cl.o
+UsageFault_Handler                                rel/startup_stm32f10x_cl.o
+WWDG_ClearFlag                                    rel/stm32f10x_wwdg.o
+WWDG_DeInit                                       rel/stm32f10x_wwdg.o
+WWDG_Enable                                       rel/stm32f10x_wwdg.o
+WWDG_EnableIT                                     rel/stm32f10x_wwdg.o
+WWDG_GetFlagStatus                                rel/stm32f10x_wwdg.o
+WWDG_IRQHandler                                   rel/startup_stm32f10x_cl.o
+WWDG_SetCounter                                   rel/stm32f10x_wwdg.o
+WWDG_SetPrescaler                                 rel/stm32f10x_wwdg.o
+WWDG_SetWindowValue                               rel/stm32f10x_wwdg.o
+_Jv_RegisterClasses                               c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+__LDREXB                                          rel/core_cm3.o
+__LDREXH                                          rel/core_cm3.o
+__LDREXW                                          rel/core_cm3.o
+__RBIT                                            rel/core_cm3.o
+__REV                                             rel/core_cm3.o
+__REV16                                           rel/core_cm3.o
+__REVSH                                           rel/core_cm3.o
+__STREXB                                          rel/core_cm3.o
+__STREXH                                          rel/core_cm3.o
+__STREXW                                          rel/core_cm3.o
+__alloc_handle                                    c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+__bss_end__                                       rel/startup_stm32f10x_cl.o
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+__bss_start__                                     rel/startup_stm32f10x_cl.o
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+__c_stack_top__                                   rel/startup_stm32f10x_cl.o
+__call_exitprocs                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__call_atexit.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o)
+__data_end__                                      rel/startup_stm32f10x_cl.o
+__data_load                                       rel/startup_stm32f10x_cl.o
+__data_start                                      rel/startup_stm32f10x_cl.o
+__deregister_frame_info                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+__dso_handle                                      c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+__end__                                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o)
+__fini_array_end                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+__fini_array_start                                c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+__fp_lock_all                                     c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+__fp_unlock_all                                   c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+__get_BASEPRI                                     rel/core_cm3.o
+__get_CONTROL                                     rel/core_cm3.o
+__get_FAULTMASK                                   rel/core_cm3.o
+__get_MSP                                         rel/core_cm3.o
+__get_PRIMASK                                     rel/core_cm3.o
+__get_PSP                                         rel/core_cm3.o
+__get_handle                                      c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(write.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(read.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(lseek.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o)
+__init_array_end                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+__init_array_start                                c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+__libc_fini_array                                 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+__libc_init_array                                 c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+                                                  rel/startup_stm32f10x_cl.o
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+__malloc_av_                                      c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+__malloc_current_mallinfo                         c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+__malloc_lock                                     c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mlock.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+__malloc_max_sbrked_mem                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+__malloc_max_total_mem                            c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+__malloc_sbrk_base                                c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+__malloc_top_pad                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+__malloc_trim_threshold                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+__malloc_unlock                                   c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mlock.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+__preinit_array_end                               c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+__preinit_array_start                             c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+__register_exitproc                               c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__atexit.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-atexit.o)
+__register_frame_info                             c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crtbegin.o
+__release_handle                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o)
+__sclose                                          c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+__set_BASEPRI                                     rel/core_cm3.o
+__set_CONTROL                                     rel/core_cm3.o
+__set_FAULTMASK                                   rel/core_cm3.o
+__set_MSP                                         rel/core_cm3.o
+__set_PRIMASK                                     rel/core_cm3.o
+__set_PSP                                         rel/core_cm3.o
+__sf_fake_stderr                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+__sf_fake_stdin                                   c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+__sf_fake_stdout                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+__sfmoreglue                                      c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+__sfp                                             c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+__sfp_lock_acquire                                c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fwalk.o)
+__sfp_lock_release                                c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fwalk.o)
+__sinit                                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+__sinit_lock_acquire                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+__sinit_lock_release                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+__sread                                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+__sseek                                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+__stack                                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+__swrite                                          c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+__syscalls                                        c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(syscall_support.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(_exit.o)
+_cleanup                                          c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+_cleanup_r                                        c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+_close_r                                          c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+_exit                                             c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(_exit.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o)
+_fclose_r                                         c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+_fflush_r                                         c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+_fini                                             c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crti.o
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+_free_r                                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+_fwalk                                            c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fwalk.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+_fwalk_reent                                      c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fwalk.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+_global_impure_ptr                                c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__call_atexit.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__atexit.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o)
+_impure_ptr                                       c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-impure.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+_init                                             c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/thumb/thumb2/crti.o
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-init.o)
+_lseek_r                                          c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(lseek.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+_mainCRTStartup                                   c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+_malloc_r                                         c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+_malloc_trim_r                                    c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+_read_r                                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(read.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+_sbrk_r                                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-freer.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-mallocr.o)
+_start                                            c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+_write_r                                          c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(write.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-stdio.o)
+assert_failed                                     rel/bsp.o
+                                                  rel/startup_stm32f10x_cl.o
+atexit                                            c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-atexit.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+calloc                                            rel/no_heap.o
+devoptab_list                                     c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(write.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(read.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(lseek.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(close.o)
+dotab_stdnull                                     c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+exit                                              c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-exit.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+fake_heap_end                                     c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(malloc_vars.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o)
+fake_heap_start                                   c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(malloc_vars.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(sbrk.o)
+fclose                                            c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fclose.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+fflush                                            c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-fflush.o)
+free                                              rel/no_heap.o
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__call_atexit.o)
+g_pfnVectors                                      rel/startup_stm32f10x_cl.o
+hardware_init_hook                                c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+main                                              rel/main.o
+                                                  rel/startup_stm32f10x_cl.o
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+malloc                                            rel/no_heap.o
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(handle_manager.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-__atexit.o)
+memset                                            c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-memset.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-findfp.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+setDefaultDevice                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+software_init_hook                                c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+start                                             c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2/crt0.o
+strchr                                            c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strchr.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+strcmp                                            c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strcmp.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+strlen                                            c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strlen.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+strncmp                                           c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libc.a(lib_a-strncmp.o)
+                                                  c:/tools/devkitpro/devkitarm/bin/../lib/gcc/arm-eabi/4.4.2/../../../../arm-eabi/lib/thumb/thumb2\libsysbase.a(iosupport.o)
+vMAC_IRQHandler                                   rel/startup_stm32f10x_cl.o

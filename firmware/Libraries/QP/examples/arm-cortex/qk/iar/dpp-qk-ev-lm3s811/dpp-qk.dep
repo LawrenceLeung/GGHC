@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>328662100</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\hw_i2c.h</file>
+      <file>$PROJ_DIR$\dbg\display96x16x1.o</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\dbg\table.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.h</file>
+      <file>$PROJ_DIR$\cmsis\core_cm3.h</file>
+      <file>$PROJ_DIR$\cmsis\lm3s_cmsis.h</file>
+      <file>$PROJ_DIR$\cmsis\startup_ewarm.c</file>
+      <file>$PROJ_DIR$\cmsis\core_cm3.c</file>
+      <file>$PROJ_DIR$\cmsis\system_lm3s.c</file>
+      <file>$PROJ_DIR$\cmsis\system_lm3s.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\dbg\libqep_cortex-m3.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\dbg\libqf_cortex-m3.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\dbg\libqk_cortex-m3.a</file>
+      <file>$PROJ_DIR$\dbg\main.o</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.30\arm\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qep.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qep_port.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\i2c.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\sysctl.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\hw_memmap.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qmpool.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\i2c.h</file>
+      <file>$PROJ_DIR$\dbg\core_cm3.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\debug.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.h</file>
+      <file>$PROJ_DIR$\dbg\osram96x16x1.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\debug.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qk.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qf.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qs_dummy.h</file>
+      <file>$PROJ_DIR$\dbg\startup.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.11\ARM\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</file>
+      <file>$PROJ_DIR$\dbg\dpp-qk.out</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\sysctl.h</file>
+      <file>$PROJ_DIR$\dbg\philo.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\dbg\startup_ewarm.o</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\dbg\philo.o</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_types.h</file>
+      <file>$PROJ_DIR$\dbg\osram96x16x1.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.41\arm\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qk_port.h</file>
+      <file>$PROJ_DIR$\bsp.h</file>
+      <file>$PROJ_DIR$\bsp.c</file>
+      <file>$PROJ_DIR$\display96x16x1.c</file>
+      <file>$PROJ_DIR$\display96x16x1.h</file>
+      <file>$PROJ_DIR$\dpp.h</file>
+      <file>$PROJ_DIR$\lm3s_config.h</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\philo.c</file>
+      <file>$PROJ_DIR$\table.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\gpio.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\sysctl.h</file>
+      <file>$PROJ_DIR$\dbg\startup_ewarm.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qassert.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\debug.h</file>
+      <file>$PROJ_DIR$\dbg\bsp.o</file>
+      <file>$PROJ_DIR$\dbg\dpp-qk.bin</file>
+      <file>$PROJ_DIR$\startup.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.40\arm\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qequeue.h</file>
+      <file>$PROJ_DIR$\dbg\bsp.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qevent.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\hw_types.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_i2c.h</file>
+      <file>$PROJ_DIR$\lm3s811.icf</file>
+      <file>$PROJ_DIR$\dbg\main.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qf_port.h</file>
+      <file>$PROJ_DIR$\dbg\system_lm3s.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\i2c.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qp_port.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qpset.h</file>
+      <file>$PROJ_DIR$\dbg\core_cm3.o</file>
+      <file>$PROJ_DIR$\dbg\display96x16x1.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_memmap.h</file>
+      <file>$PROJ_DIR$\dbg\dpp-qk.map</file>
+      <file>$PROJ_DIR$\dbg\system_lm3s.o</file>
+      <file>$PROJ_DIR$\dbg\table.o</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 36 89</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cmsis\startup_ewarm.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cmsis\core_cm3.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 39 34 57 58 59 60 61</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cmsis\system_lm3s.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 90</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 81</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 39 34 57 58 59 60 61 7 6 45 11 53</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.30\arm\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 22 76 67 63 24 64 27</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.11\ARM\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 22 76 26 74 20 21 27</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\dbg\dpp-qk.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 89</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 78 68 86 2 15 42 40 90 91 12 13 14 3 84 62 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.41\arm\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bsp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 68</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 83 80 45 39 19 0 34 57 58 59 60 61 18 75 32 47 30 72 23 85 31 66 52 48 7 6 11 51</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\display96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 7 6 0 39 34 57 58 59 60 61 45 11 51</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 15</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 83 80 45 39 19 0 34 57 58 59 60 61 18 75 32 47 30 72 23 85 31 66 52 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\philo.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 83 80 45 39 19 0 34 57 58 59 60 61 18 75 32 47 30 72 23 85 31 66 52 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\table.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 91</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 83 80 45 39 19 0 34 57 58 59 60 61 18 75 32 47 30 72 23 85 31 66 52 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\startup.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.40\arm\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 77 88 43 29 16 82 37 5</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\startup.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\hw_i2c.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.h</file>
+      <file>$PROJ_DIR$\cmsis\core_cm3.h</file>
+      <file>$PROJ_DIR$\cmsis\lm3s_cmsis.h</file>
+      <file>$PROJ_DIR$\cmsis\startup_ewarm.c</file>
+      <file>$PROJ_DIR$\cmsis\core_cm3.c</file>
+      <file>$PROJ_DIR$\cmsis\system_lm3s.c</file>
+      <file>$PROJ_DIR$\cmsis\system_lm3s.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\rel\libqep_cortex-m3.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\rel\libqf_cortex-m3.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\rel\libqk_cortex-m3.a</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.30\arm\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qep.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qep_port.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\i2c.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\sysctl.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\hw_memmap.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qmpool.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\i2c.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\debug.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\debug.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qk.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qf.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qs_dummy.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.11\ARM\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\sysctl.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_types.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qk_port.h</file>
+      <file>$PROJ_DIR$\rel\table.pbi</file>
+      <file>$PROJ_DIR$\rel\display96x16x1.o</file>
+      <file>$PROJ_DIR$\rel\osram96x16x1.o</file>
+      <file>$PROJ_DIR$\rel\philo.pbi</file>
+      <file>$PROJ_DIR$\rel\startup.pbi</file>
+      <file>$PROJ_DIR$\rel\dpp-qk.map</file>
+      <file>$PROJ_DIR$\rel\bsp.o</file>
+      <file>$PROJ_DIR$\rel\main.o</file>
+      <file>$PROJ_DIR$\rel\main.pbi</file>
+      <file>$PROJ_DIR$\rel\osram96x16x1.pbi</file>
+      <file>$PROJ_DIR$\rel\display96x16x1.pbi</file>
+      <file>$PROJ_DIR$\rel\table.o</file>
+      <file>$PROJ_DIR$\rel\startup_ewarm.pbi</file>
+      <file>$PROJ_DIR$\rel\core_cm3.pbi</file>
+      <file>$PROJ_DIR$\rel\core_cm3.o</file>
+      <file>$PROJ_DIR$\rel\bsp.pbi</file>
+      <file>$PROJ_DIR$\rel\philo.o</file>
+      <file>$PROJ_DIR$\rel\dpp-qk.bin</file>
+      <file>$PROJ_DIR$\rel\dpp-qk.out</file>
+      <file>$PROJ_DIR$\rel\startup.o</file>
+      <file>$PROJ_DIR$\rel\system_lm3s.o</file>
+      <file>$PROJ_DIR$\rel\startup_ewarm.o</file>
+      <file>$PROJ_DIR$\rel\system_lm3s.pbi</file>
+      <file>$PROJ_DIR$\bsp.h</file>
+      <file>$PROJ_DIR$\bsp.c</file>
+      <file>$PROJ_DIR$\display96x16x1.c</file>
+      <file>$PROJ_DIR$\display96x16x1.h</file>
+      <file>$PROJ_DIR$\dpp.h</file>
+      <file>$PROJ_DIR$\lm3s_config.h</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\philo.c</file>
+      <file>$PROJ_DIR$\table.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\gpio.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\sysctl.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qassert.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\debug.h</file>
+      <file>$PROJ_DIR$\startup.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.40\arm\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qequeue.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qevent.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\hw_types.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_i2c.h</file>
+      <file>$PROJ_DIR$\lm3s811.icf</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qf_port.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\i2c.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qp_port.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qpset.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_memmap.h</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 54 41</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cmsis\startup_ewarm.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cmsis\core_cm3.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 50</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 31 28 68 69 70 71 72</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cmsis\system_lm3s.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 56</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 58</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 31 28 68 69 70 71 72 5 4 34 9 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.30\arm\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 19 83 77 74 21 75 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.11\ARM\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 19 83 22 81 17 18 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\rel\dpp-qk.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 53</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 85 42 50 37 43 52 57 56 47 10 11 12 2 89 73 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bsp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 88 86 34 31 16 0 28 68 69 70 71 72 15 82 27 35 25 80 20 90 26 76 63 59 5 4 9 62</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\display96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 5 4 0 31 28 68 69 70 71 72 34 9 62</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 88 86 34 31 16 0 28 68 69 70 71 72 15 82 27 35 25 80 20 90 26 76 63 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\philo.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 88 86 34 31 16 0 28 68 69 70 71 72 15 82 27 35 25 80 20 90 26 76 63 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\table.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 88 86 34 31 16 0 28 68 69 70 71 72 15 82 27 35 25 80 20 90 26 76 63 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\startup.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.40\arm\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 84 91 33 24 13 87 30 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\startup.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Spy</name>
+    <outputs>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\hw_i2c.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.h</file>
+      <file>$PROJ_DIR$\spy\philo.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qs_port.h</file>
+      <file>$PROJ_DIR$\cmsis\core_cm3.h</file>
+      <file>$PROJ_DIR$\cmsis\lm3s_cmsis.h</file>
+      <file>$PROJ_DIR$\cmsis\startup_ewarm.c</file>
+      <file>$PROJ_DIR$\cmsis\core_cm3.c</file>
+      <file>$PROJ_DIR$\cmsis\system_lm3s.c</file>
+      <file>$PROJ_DIR$\cmsis\system_lm3s.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.30\arm\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qep.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qep_port.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\i2c.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\sysctl.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\hw_memmap.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qmpool.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\i2c.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\debug.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\debug.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qk.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qf.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.11\ARM\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\sysctl.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_types.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qk_port.h</file>
+      <file>$PROJ_DIR$\spy\dpp-qk.bin</file>
+      <file>$PROJ_DIR$\spy\startup.pbi</file>
+      <file>$PROJ_DIR$\spy\bsp.o</file>
+      <file>$PROJ_DIR$\spy\startup_ewarm.o</file>
+      <file>$PROJ_DIR$\spy\main.pbi</file>
+      <file>$PROJ_DIR$\spy\display96x16x1.pbi</file>
+      <file>$PROJ_DIR$\spy\bsp.pbi</file>
+      <file>$PROJ_DIR$\spy\philo.o</file>
+      <file>$PROJ_DIR$\spy\core_cm3.pbi</file>
+      <file>$PROJ_DIR$\spy\startup_ewarm.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qs.h</file>
+      <file>$PROJ_DIR$\spy\core_cm3.o</file>
+      <file>$PROJ_DIR$\spy\system_lm3s.pbi</file>
+      <file>$PROJ_DIR$\spy\dpp-qk.map</file>
+      <file>$PROJ_DIR$\spy\startup.o</file>
+      <file>$PROJ_DIR$\spy\table.pbi</file>
+      <file>$PROJ_DIR$\spy\main.o</file>
+      <file>$PROJ_DIR$\spy\osram96x16x1.pbi</file>
+      <file>$PROJ_DIR$\spy\table.o</file>
+      <file>$PROJ_DIR$\spy\display96x16x1.o</file>
+      <file>$PROJ_DIR$\spy\dpp-qk.out</file>
+      <file>$PROJ_DIR$\spy\osram96x16x1.o</file>
+      <file>$PROJ_DIR$\spy\system_lm3s.o</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\spy\libqep_cortex-m3.a</file>
+      <file>$PROJ_DIR$\bsp.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\spy\libqf_cortex-m3.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\spy\libqk_cortex-m3.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\spy\libqs_cortex-m3.a</file>
+      <file>$PROJ_DIR$\bsp.c</file>
+      <file>$PROJ_DIR$\display96x16x1.c</file>
+      <file>$PROJ_DIR$\display96x16x1.h</file>
+      <file>$PROJ_DIR$\dpp.h</file>
+      <file>$PROJ_DIR$\lm3s_config.h</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\philo.c</file>
+      <file>$PROJ_DIR$\table.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\gpio.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\sysctl.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qassert.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\driverlib\debug.h</file>
+      <file>$PROJ_DIR$\startup.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.40\arm\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qequeue.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\src\gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qevent.h</file>
+      <file>$TOOLKIT_DIR$\examples\Luminary\Stellaris\hw_types.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_i2c.h</file>
+      <file>$PROJ_DIR$\lm3s811.icf</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qf_port.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\i2c.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\ports\arm-cortex\qk\iar\qp_port.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\include\qpset.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_memmap.h</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 54 47</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cmsis\startup_ewarm.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cmsis\core_cm3.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 45</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 29 26 70 71 72 73 74</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cmsis\system_lm3s.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 56</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 29 26 70 71 72 73 74 7 6 32 11 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.30\arm\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 18 85 79 76 20 77 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.11\ARM\examples\Luminary\Stellaris\boards\ek-lm3s811\osram96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 18 85 21 83 16 17 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\spy\dpp-qk.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 34</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 87 36 45 53 50 41 37 56 52 57 59 60 61 2 91 75 30</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bsp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 90 88 32 29 15 0 26 70 71 72 73 74 14 84 5 44 33 24 82 19 92 25 78 65 58 7 6 11 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\display96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 53</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 7 6 0 29 26 70 71 72 73 74 32 11 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 50</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 90 88 32 29 15 0 26 70 71 72 73 74 14 84 5 44 33 24 82 19 92 25 78 65 58</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\philo.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 90 88 32 29 15 0 26 70 71 72 73 74 14 84 5 44 33 24 82 19 92 25 78 65 58</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\table.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 90 88 32 29 15 0 26 70 71 72 73 74 14 84 5 44 33 24 82 19 92 25 78 65 58</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\startup.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 48</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\tools\IAR\ARM_KS_5.40\arm\examples\TexasInstruments\Stellaris\boards\ek-lm3s811\drivers\osram96x16x1.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 86 93 31 23 12 89 28 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\startup.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

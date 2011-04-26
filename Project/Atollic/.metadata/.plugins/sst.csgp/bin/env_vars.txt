@@ -1,0 +1,4 @@
+C:\Program Files\Atollic\TrueSTUDIO STM32 Lite 2.1.0\ide\plugins\sst.tm_1.1.1.201104081447\CSHOME\
+C:\Program Files\Atollic\TrueSTUDIO STM32 Lite 2.1.0\ide\plugins\sst.csgp_1.0.3\CSHOME
+C:\Program Files\Atollic\TrueSTUDIO STM32 Lite 2.1.0\ARMTools
+X:\src\GGHC\Atollic\.metadata\.plugins\sst.tm

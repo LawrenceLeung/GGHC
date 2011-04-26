@@ -17,8 +17,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <limits.h>
-// TODO IAR only
-// #include <intrinsics.h>
+#include <intrinsics.h>
 #include <assert.h>
 
 #include <stdbool.h>

@@ -1,0 +1,40 @@
+
+------------------------------------
+  Logging start.  ## CURRENT TIME  : [4/26, 2011   10:9  52.578]  ## COMMAND LINE  : 
+cmd /C "gen_csini.exe"
+------------------------------------
+[STD-IN] : X:\src\GGHC\Atollic\.metadata\.plugins\sst.csgp\bin\env_vars.txt
+GUI is waiting for subprocess to be done...
+Execution done. EXIT CODE = 0
+  Logging finished.  ## CURRENT TIME  : [4/26, 2011   10:9  57.875]
+------------------------------------
+
+------------------------------------
+  Logging start.  ## CURRENT TIME  : [4/26, 2011   10:36  22.390]  ## COMMAND LINE  : 
+cmd /C "gen_csini.exe"
+------------------------------------
+[STD-IN] : X:\src\GGHC\Atollic\.metadata\.plugins\sst.csgp\bin\env_vars.txt
+GUI is waiting for subprocess to be done...
+Execution done. EXIT CODE = 0
+  Logging finished.  ## CURRENT TIME  : [4/26, 2011   10:36  28.46]
+------------------------------------
+
+------------------------------------
+  Logging start.  ## CURRENT TIME  : [4/26, 2011   10:36  55.328]  ## COMMAND LINE  : 
+cmd /C "gen_csini.exe"
+------------------------------------
+[STD-IN] : X:\src\GGHC\Atollic\.metadata\.plugins\sst.csgp\bin\env_vars.txt
+GUI is waiting for subprocess to be done...
+Execution done. EXIT CODE = 0
+  Logging finished.  ## CURRENT TIME  : [4/26, 2011   10:36  58.546]
+------------------------------------
+
+------------------------------------
+  Logging start.  ## CURRENT TIME  : [4/26, 2011   13:24  32.687]  ## COMMAND LINE  : 
+cmd /C "gen_csini.exe"
+------------------------------------
+[STD-IN] : X:\src\GGHC\Atollic\.metadata\.plugins\sst.csgp\bin\env_vars.txt
+GUI is waiting for subprocess to be done...
+Execution done. EXIT CODE = 0
+  Logging finished.  ## CURRENT TIME  : [4/26, 2011   13:25  8.312]
+------------------------------------

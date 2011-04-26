@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdtprojectproperties>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.IncludePaths">
+<language name="S,s,asm">
+<includepath>/Jigbox/QP/include</includepath>
+<includepath>/Jigbox/STLibs/library/inc</includepath>
+<includepath>/Jigbox/STLibs/CMSIS/CM3/DeviceSupport/ST/STM32F10x</includepath>
+<includepath>/Jigbox/STLibs/CMSIS/CM3/CoreSupport</includepath>
+
+</language>
+<language name="C Source File">
+<includepath>X:\src\GGHC\QP\include</includepath>
+<includepath>X:\src\GGHC/CMSIS/CM3/CoreSupport</includepath>
+<includepath>X:\src\GGHC/CMSIS/CM3/DeviceSupport/ST/STM32F10x</includepath>
+<includepath>X:\src\GGHC/library/inc</includepath>
+
+</language>
+<language name="C++ Source File">
+<includepath>/Jigbox/QP/include</includepath>
+<includepath>/Jigbox/STLibs/library/inc</includepath>
+<includepath>/Jigbox/STLibs/CMSIS/CM3/DeviceSupport/ST/STM32F10x</includepath>
+<includepath>/Jigbox/STLibs/CMSIS/CM3/CoreSupport</includepath>
+
+</language>
+<language name="Object File">
+
+</language>
+</section>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.Macros">
+<language name="S,s,asm">
+
+</language>
+<language name="C Source File">
+
+</language>
+<language name="C++ Source File">
+
+</language>
+<language name="Object File">
+
+</language>
+</section>
+</cdtprojectproperties>

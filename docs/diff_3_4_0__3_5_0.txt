@@ -1,0 +1,1578 @@
+Only in library/: Release_Notes_for_STM32F10x_StdPeriph_Driver.html
+diff -bur -I '^ *[/*].*' library/inc/stm32f10x_can.h Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_can.h
+--- library/inc/stm32f10x_can.h	2011-04-25 22:31:06.000000000 -0700
++++ Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_can.h	2011-04-26 13:49:08.000000000 -0700
+@@ -51,38 +52,51 @@
+ 
+ typedef struct
+ {
+-  uint16_t CAN_Prescaler;   /*!< Specifies the length of a time quantum. It ranges from 1 to 1024. */
++  uint16_t CAN_Prescaler;   /*!< Specifies the length of a time quantum. 
++                                 It ranges from 1 to 1024. */
+   
+   uint8_t CAN_Mode;         /*!< Specifies the CAN operating mode.
+-                                 This parameter can be a value of @ref CAN_operating_mode */
+-
+-  uint8_t CAN_SJW;          /*!< Specifies the maximum number of time quanta the CAN hardware
+-                                 is allowed to lengthen or shorten a bit to perform resynchronization.
+-                                 This parameter can be a value of @ref CAN_synchronisation_jump_width */
+-
+-  uint8_t CAN_BS1;          /*!< Specifies the number of time quanta in Bit Segment 1.
+-                                 This parameter can be a value of @ref CAN_time_quantum_in_bit_segment_1 */
++                                 This parameter can be a value of 
++                                @ref CAN_operating_mode */
+ 
+-  uint8_t CAN_BS2;          /*!< Specifies the number of time quanta in Bit Segment 2.
+-                                 This parameter can be a value of @ref CAN_time_quantum_in_bit_segment_2 */
+-  
+-  FunctionalState CAN_TTCM; /*!< Enable or disable the time triggered communication mode.
+-                                 This parameter can be set either to ENABLE or DISABLE. */
+-  
+-  FunctionalState CAN_ABOM;  /*!< Enable or disable the automatic bus-off management.
+-                                 This parameter can be set either to ENABLE or DISABLE. */
++  uint8_t CAN_SJW;          /*!< Specifies the maximum number of time quanta 
++                                 the CAN hardware is allowed to lengthen or 
++                                 shorten a bit to perform resynchronization.
++                                 This parameter can be a value of 
++                                 @ref CAN_synchronisation_jump_width */
++
++  uint8_t CAN_BS1;          /*!< Specifies the number of time quanta in Bit 
++                                 Segment 1. This parameter can be a value of 
++                                 @ref CAN_time_quantum_in_bit_segment_1 */
++
++  uint8_t CAN_BS2;          /*!< Specifies the number of time quanta in Bit 
++                                 Segment 2.
++                                 This parameter can be a value of 
++                                 @ref CAN_time_quantum_in_bit_segment_2 */
++  
++  FunctionalState CAN_TTCM; /*!< Enable or disable the time triggered 
++                                 communication mode. This parameter can be set 
++                                 either to ENABLE or DISABLE. */
++  
++  FunctionalState CAN_ABOM;  /*!< Enable or disable the automatic bus-off 
++                                  management. This parameter can be set either 
++                                  to ENABLE or DISABLE. */
+ 
+   FunctionalState CAN_AWUM;  /*!< Enable or disable the automatic wake-up mode. 
+-                                 This parameter can be set either to ENABLE or DISABLE. */
++                                  This parameter can be set either to ENABLE or 
++                                  DISABLE. */
+ 
+-  FunctionalState CAN_NART;  /*!< Enable or disable the no-automatic retransmission mode.
+-                                 This parameter can be set either to ENABLE or DISABLE. */
++  FunctionalState CAN_NART;  /*!< Enable or disable the no-automatic 
++                                  retransmission mode. This parameter can be 
++                                  set either to ENABLE or DISABLE. */
+ 
+   FunctionalState CAN_RFLM;  /*!< Enable or disable the Receive FIFO Locked mode.
+-                                 This parameter can be set either to ENABLE or DISABLE. */
++                                  This parameter can be set either to ENABLE 
++                                  or DISABLE. */
+ 
+   FunctionalState CAN_TXFP;  /*!< Enable or disable the transmit FIFO priority.
+-                                 This parameter can be set either to ENABLE or DISABLE. */
++                                  This parameter can be set either to ENABLE 
++                                  or DISABLE. */
+ } CAN_InitTypeDef;
+ 
+ /** 
+@@ -136,16 +150,20 @@
+   uint32_t ExtId;  /*!< Specifies the extended identifier.
+                         This parameter can be a value between 0 to 0x1FFFFFFF. */
+ 
+-  uint8_t IDE;     /*!< Specifies the type of identifier for the message that will be transmitted.
+-                        This parameter can be a value of @ref CAN_identifier_type */
+-
+-  uint8_t RTR;     /*!< Specifies the type of frame for the message that will be transmitted.
+-                        This parameter can be a value of @ref CAN_remote_transmission_request */
+-
+-  uint8_t DLC;     /*!< Specifies the length of the frame that will be transmitted.
+-                        This parameter can be a value between 0 to 8 */
++  uint8_t IDE;     /*!< Specifies the type of identifier for the message that 
++                        will be transmitted. This parameter can be a value 
++                        of @ref CAN_identifier_type */
++
++  uint8_t RTR;     /*!< Specifies the type of frame for the message that will 
++                        be transmitted. This parameter can be a value of 
++                        @ref CAN_remote_transmission_request */
++
++  uint8_t DLC;     /*!< Specifies the length of the frame that will be 
++                        transmitted. This parameter can be a value between 
++                        0 to 8 */
+ 
+-  uint8_t Data[8]; /*!< Contains the data to be transmitted. It ranges from 0 to 0xFF. */
++  uint8_t Data[8]; /*!< Contains the data to be transmitted. It ranges from 0 
++                        to 0xFF. */
+ } CanTxMsg;
+ 
+ /** 
+@@ -160,19 +178,23 @@
+   uint32_t ExtId;  /*!< Specifies the extended identifier.
+                         This parameter can be a value between 0 to 0x1FFFFFFF. */
+ 
+-  uint8_t IDE;     /*!< Specifies the type of identifier for the message that will be received.
+-                        This parameter can be a value of @ref CAN_identifier_type */
++  uint8_t IDE;     /*!< Specifies the type of identifier for the message that 
++                        will be received. This parameter can be a value of 
++                        @ref CAN_identifier_type */
+ 
+   uint8_t RTR;     /*!< Specifies the type of frame for the received message.
+-                        This parameter can be a value of @ref CAN_remote_transmission_request */
++                        This parameter can be a value of 
++                        @ref CAN_remote_transmission_request */
+ 
+   uint8_t DLC;     /*!< Specifies the length of the frame that will be received.
+                         This parameter can be a value between 0 to 8 */
+ 
+-  uint8_t Data[8]; /*!< Contains the data to be received. It ranges from 0 to 0xFF. */
++  uint8_t Data[8]; /*!< Contains the data to be received. It ranges from 0 to 
++                        0xFF. */
+ 
+-  uint8_t FMI;     /*!< Specifies the index of the filter the message stored in the mailbox passes through.
+-                        This parameter can be a value between 0 to 0xFF */
++  uint8_t FMI;     /*!< Specifies the index of the filter the message stored in 
++                        the mailbox passes through. This parameter can be a 
++                        value between 0 to 0xFF */
+ } CanRxMsg;
+ 
+ /**
+@@ -187,8 +209,8 @@
+   * @{
+   */
+ 
+-#define CANINITFAILED              ((uint8_t)0x00) /*!< CAN initialization failed */
+-#define CANINITOK                  ((uint8_t)0x01) /*!< CAN initialization failed */
++#define CAN_InitStatus_Failed              ((uint8_t)0x00) /*!< CAN initialization failed */
++#define CAN_InitStatus_Success             ((uint8_t)0x01) /*!< CAN initialization OK */
+ 
+ /**
+   * @}
+@@ -203,8 +225,40 @@
+ #define CAN_Mode_Silent             ((uint8_t)0x02)  /*!< silent mode */
+ #define CAN_Mode_Silent_LoopBack    ((uint8_t)0x03)  /*!< loopback combined with silent mode */
+ 
+-#define IS_CAN_MODE(MODE) (((MODE) == CAN_Mode_Normal) || ((MODE) == CAN_Mode_LoopBack)|| \
+-                           ((MODE) == CAN_Mode_Silent) || ((MODE) == CAN_Mode_Silent_LoopBack))
++#define IS_CAN_MODE(MODE) (((MODE) == CAN_Mode_Normal) || \
++                           ((MODE) == CAN_Mode_LoopBack)|| \
++                           ((MODE) == CAN_Mode_Silent) || \
++                           ((MODE) == CAN_Mode_Silent_LoopBack))
++/**
++  * @}
++  */
++
++
++/**
++  * @defgroup CAN_Operating_Mode 
++  * @{
++  */  
++#define CAN_OperatingMode_Initialization  ((uint8_t)0x00) /*!< Initialization mode */
++#define CAN_OperatingMode_Normal          ((uint8_t)0x01) /*!< Normal mode */
++#define CAN_OperatingMode_Sleep           ((uint8_t)0x02) /*!< sleep mode */
++
++
++#define IS_CAN_OPERATING_MODE(MODE) (((MODE) == CAN_OperatingMode_Initialization) ||\
++                                    ((MODE) == CAN_OperatingMode_Normal)|| \
++																		((MODE) == CAN_OperatingMode_Sleep))
++/**
++  * @}
++  */
++  
++/**
++  * @defgroup CAN_Mode_Status
++  * @{
++  */  
++
++#define CAN_ModeStatus_Failed    ((uint8_t)0x00)                /*!< CAN entering the specific mode failed */
++#define CAN_ModeStatus_Success   ((uint8_t)!CAN_ModeStatus_Failed)   /*!< CAN entering the specific mode Succeed */
++
++
+ /**
+   * @}
+   */
+@@ -295,7 +349,7 @@
+   * @{
+   */
+ 
+-#define CAN_FilterMode_IdMask       ((uint8_t)0x00)  /*!< id/mask mode */
++#define CAN_FilterMode_IdMask       ((uint8_t)0x00)  /*!< identifier/mask mode */
+ #define CAN_FilterMode_IdList       ((uint8_t)0x01)  /*!< identifier list mode */
+ 
+ #define IS_CAN_FILTER_MODE(MODE) (((MODE) == CAN_FilterMode_IdMask) || \
+@@ -322,11 +376,10 @@
+   * @{
+   */
+ 
+-#define CAN_FilterFIFO0             ((uint8_t)0x00)  /*!< Filter FIFO 0 assignment for filter x */
+-#define CAN_FilterFIFO1             ((uint8_t)0x01)  /*!< Filter FIFO 1 assignment for filter x */
++#define CAN_Filter_FIFO0             ((uint8_t)0x00)  /*!< Filter FIFO 0 assignment for filter x */
++#define CAN_Filter_FIFO1             ((uint8_t)0x01)  /*!< Filter FIFO 1 assignment for filter x */
+ #define IS_CAN_FILTER_FIFO(FIFO) (((FIFO) == CAN_FilterFIFO0) || \
+                                   ((FIFO) == CAN_FilterFIFO1))
+-
+ /**
+   * @}
+   */
+@@ -356,10 +409,10 @@
+   * @{
+   */
+ 
+-#define CAN_ID_STD                 ((uint32_t)0x00000000)  /*!< Standard Id */
+-#define CAN_ID_EXT                 ((uint32_t)0x00000004)  /*!< Extended Id */
+-#define IS_CAN_IDTYPE(IDTYPE) (((IDTYPE) == CAN_ID_STD) || ((IDTYPE) == CAN_ID_EXT))
+-
++#define CAN_Id_Standard             ((uint32_t)0x00000000)  /*!< Standard Id */
++#define CAN_Id_Extended             ((uint32_t)0x00000004)  /*!< Extended Id */
++#define IS_CAN_IDTYPE(IDTYPE) (((IDTYPE) == CAN_Id_Standard) || \
++                               ((IDTYPE) == CAN_Id_Extended))
+ /**
+   * @}
+   */
+@@ -368,9 +421,9 @@
+   * @{
+   */
+ 
+-#define CAN_RTR_DATA                ((uint32_t)0x00000000)  /*!< Data frame */
+-#define CAN_RTR_REMOTE              ((uint32_t)0x00000002)  /*!< Remote frame */
+-#define IS_CAN_RTR(RTR) (((RTR) == CAN_RTR_DATA) || ((RTR) == CAN_RTR_REMOTE))
++#define CAN_RTR_Data                ((uint32_t)0x00000000)  /*!< Data frame */
++#define CAN_RTR_Remote              ((uint32_t)0x00000002)  /*!< Remote frame */
++#define IS_CAN_RTR(RTR) (((RTR) == CAN_RTR_Data) || ((RTR) == CAN_RTR_Remote))
+ 
+ /**
+   * @}
+@@ -380,10 +433,10 @@
+   * @{
+   */
+ 
+-#define CANTXFAILED                 ((uint8_t)0x00) /*!< CAN transmission failed */
+-#define CANTXOK                     ((uint8_t)0x01) /*!< CAN transmission succeeded */
+-#define CANTXPENDING                ((uint8_t)0x02) /*!< CAN transmission pending */
+-#define CAN_NO_MB                   ((uint8_t)0x04) /*!< CAN cell did not provide an empty mailbox */
++#define CAN_TxStatus_Failed         ((uint8_t)0x00)/*!< CAN transmission failed */
++#define CAN_TxStatus_Ok             ((uint8_t)0x01) /*!< CAN transmission succeeded */
++#define CAN_TxStatus_Pending        ((uint8_t)0x02) /*!< CAN transmission pending */
++#define CAN_TxStatus_NoMailBox      ((uint8_t)0x04) /*!< CAN cell did not provide an empty mailbox */
+ 
+ /**
+   * @}
+@@ -393,8 +446,8 @@
+   * @{
+   */
+ 
+-#define CAN_FIFO0                 ((uint8_t)0x00) /*!< CAN FIFO0 used to receive */
+-#define CAN_FIFO1                 ((uint8_t)0x01) /*!< CAN FIFO1 used to receive */
++#define CAN_FIFO0                 ((uint8_t)0x00) /*!< CAN FIFO 0 used to receive */
++#define CAN_FIFO1                 ((uint8_t)0x01) /*!< CAN FIFO 1 used to receive */
+ 
+ #define IS_CAN_FIFO(FIFO) (((FIFO) == CAN_FIFO0) || ((FIFO) == CAN_FIFO1))
+ 
+@@ -406,8 +459,8 @@
+   * @{
+   */
+ 
+-#define CANSLEEPFAILED              ((uint8_t)0x00) /*!< CAN did not enter the sleep mode */
+-#define CANSLEEPOK                  ((uint8_t)0x01) /*!< CAN entered the sleep mode */
++#define CAN_Sleep_Failed     ((uint8_t)0x00) /*!< CAN did not enter the sleep mode */
++#define CAN_Sleep_Ok         ((uint8_t)0x01) /*!< CAN entered the sleep mode */
+ 
+ /**
+   * @}
+@@ -417,8 +470,27 @@
+   * @{
+   */
+ 
+-#define CANWAKEUPFAILED             ((uint8_t)0x00) /*!< CAN did not leave the sleep mode */
+-#define CANWAKEUPOK                 ((uint8_t)0x01) /*!< CAN leaved the sleep mode */
++#define CAN_WakeUp_Failed        ((uint8_t)0x00) /*!< CAN did not leave the sleep mode */
++#define CAN_WakeUp_Ok            ((uint8_t)0x01) /*!< CAN leaved the sleep mode */
++
++/**
++  * @}
++  */
++
++/**
++  * @defgroup   CAN_Error_Code_constants
++  * @{
++  */  
++                                                                
++#define CAN_ErrorCode_NoErr           ((uint8_t)0x00) /*!< No Error */ 
++#define	CAN_ErrorCode_StuffErr        ((uint8_t)0x10) /*!< Stuff Error */ 
++#define	CAN_ErrorCode_FormErr         ((uint8_t)0x20) /*!< Form Error */ 
++#define	CAN_ErrorCode_ACKErr          ((uint8_t)0x30) /*!< Acknowledgment Error */ 
++#define	CAN_ErrorCode_BitRecessiveErr ((uint8_t)0x40) /*!< Bit Recessive Error */ 
++#define	CAN_ErrorCode_BitDominantErr  ((uint8_t)0x50) /*!< Bit Dominant Error */ 
++#define	CAN_ErrorCode_CRCErr          ((uint8_t)0x60) /*!< CRC Error  */ 
++#define	CAN_ErrorCode_SoftwareSetErr  ((uint8_t)0x70) /*!< Software Set Error */ 
++
+ 
+ /**
+   * @}
+@@ -517,8 +589,8 @@
+                              ((IT) == CAN_IT_WKU)   || ((IT) == CAN_IT_SLK))
+ 
+ #define IS_CAN_CLEAR_IT(IT) (((IT) == CAN_IT_TME)    || ((IT) == CAN_IT_FF0)    ||\
+-                             ((IT) == CAN_IT_FOV0)   || ((IT) == CAN_IT_FF1)    ||\
+-                             ((IT) == CAN_IT_FOV1)   || ((IT) == CAN_IT_EWG)    ||\
++                             ((IT) == CAN_IT_FOV0)|| ((IT) == CAN_IT_FF1)    ||\
++                             ((IT) == CAN_IT_FOV1)|| ((IT) == CAN_IT_EWG)    ||\
+                              ((IT) == CAN_IT_EPV)    || ((IT) == CAN_IT_BOF)    ||\
+                              ((IT) == CAN_IT_LEC)    || ((IT) == CAN_IT_ERR)    ||\
+                              ((IT) == CAN_IT_WKU)    || ((IT) == CAN_IT_SLK))
+@@ -527,6 +599,30 @@
+   * @}
+   */
+ 
++/** @defgroup CAN_Legacy 
++  * @{
++  */
++#define CANINITFAILED               CAN_InitStatus_Failed
++#define CANINITOK                   CAN_InitStatus_Success
++#define CAN_FilterFIFO0             CAN_Filter_FIFO0
++#define CAN_FilterFIFO1             CAN_Filter_FIFO1
++#define CAN_ID_STD                  CAN_Id_Standard           
++#define CAN_ID_EXT                  CAN_Id_Extended
++#define CAN_RTR_DATA                CAN_RTR_Data         
++#define CAN_RTR_REMOTE              CAN_RTR_Remote
++#define CANTXFAILE                  CAN_TxStatus_Failed
++#define CANTXOK                     CAN_TxStatus_Ok
++#define CANTXPENDING                CAN_TxStatus_Pending
++#define CAN_NO_MB                   CAN_TxStatus_NoMailBox
++#define CANSLEEPFAILED              CAN_Sleep_Failed
++#define CANSLEEPOK                  CAN_Sleep_Ok
++#define CANWAKEUPFAILED             CAN_WakeUp_Failed        
++#define CANWAKEUPOK                 CAN_WakeUp_Ok        
++
++/**
++  * @}
++  */
++
+ /**
+   * @}
+   */
+@@ -542,22 +638,40 @@
+ /** @defgroup CAN_Exported_Functions
+   * @{
+   */
+-
++/*  Function used to set the CAN configuration to the default reset state *****/ 
+ void CAN_DeInit(CAN_TypeDef* CANx);
++
++/* Initialization and Configuration functions *********************************/ 
+ uint8_t CAN_Init(CAN_TypeDef* CANx, CAN_InitTypeDef* CAN_InitStruct);
+ void CAN_FilterInit(CAN_FilterInitTypeDef* CAN_FilterInitStruct);
+ void CAN_StructInit(CAN_InitTypeDef* CAN_InitStruct);
+ void CAN_SlaveStartBank(uint8_t CAN_BankNumber); 
+-void CAN_ITConfig(CAN_TypeDef* CANx, uint32_t CAN_IT, FunctionalState NewState);
++void CAN_DBGFreeze(CAN_TypeDef* CANx, FunctionalState NewState);
++void CAN_TTComModeCmd(CAN_TypeDef* CANx, FunctionalState NewState);
++
++/* Transmit functions *********************************************************/
+ uint8_t CAN_Transmit(CAN_TypeDef* CANx, CanTxMsg* TxMessage);
+ uint8_t CAN_TransmitStatus(CAN_TypeDef* CANx, uint8_t TransmitMailbox);
+ void CAN_CancelTransmit(CAN_TypeDef* CANx, uint8_t Mailbox);
++
++/* Receive functions **********************************************************/
++void CAN_Receive(CAN_TypeDef* CANx, uint8_t FIFONumber, CanRxMsg* RxMessage);
+ void CAN_FIFORelease(CAN_TypeDef* CANx, uint8_t FIFONumber);
+ uint8_t CAN_MessagePending(CAN_TypeDef* CANx, uint8_t FIFONumber);
+-void CAN_Receive(CAN_TypeDef* CANx, uint8_t FIFONumber, CanRxMsg* RxMessage);
+-void CAN_DBGFreeze(CAN_TypeDef* CANx, FunctionalState NewState);
++
++
++/* Operation modes functions **************************************************/
++uint8_t CAN_OperatingModeRequest(CAN_TypeDef* CANx, uint8_t CAN_OperatingMode);
+ uint8_t CAN_Sleep(CAN_TypeDef* CANx);
+ uint8_t CAN_WakeUp(CAN_TypeDef* CANx);
++
++/* Error management functions *************************************************/
++uint8_t CAN_GetLastErrorCode(CAN_TypeDef* CANx);
++uint8_t CAN_GetReceiveErrorCounter(CAN_TypeDef* CANx);
++uint8_t CAN_GetLSBTransmitErrorCounter(CAN_TypeDef* CANx);
++
++/* Interrupts and flags management functions **********************************/
++void CAN_ITConfig(CAN_TypeDef* CANx, uint32_t CAN_IT, FunctionalState NewState);
+ FlagStatus CAN_GetFlagStatus(CAN_TypeDef* CANx, uint32_t CAN_FLAG);
+ void CAN_ClearFlag(CAN_TypeDef* CANx, uint32_t CAN_FLAG);
+ ITStatus CAN_GetITStatus(CAN_TypeDef* CANx, uint32_t CAN_IT);
+diff -bur -I '^ *[/*].*' library/inc/stm32f10x_dma.h Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_dma.h
+--- library/inc/stm32f10x_dma.h	2011-04-25 22:31:06.000000000 -0700
++++ Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_dma.h	2011-04-26 13:49:08.000000000 -0700
+@@ -413,10 +414,10 @@
+ void DMA_ITConfig(DMA_Channel_TypeDef* DMAy_Channelx, uint32_t DMA_IT, FunctionalState NewState);
+ void DMA_SetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx, uint16_t DataNumber); 
+ uint16_t DMA_GetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx);
+-FlagStatus DMA_GetFlagStatus(uint32_t DMA_FLAG);
+-void DMA_ClearFlag(uint32_t DMA_FLAG);
+-ITStatus DMA_GetITStatus(uint32_t DMA_IT);
+-void DMA_ClearITPendingBit(uint32_t DMA_IT);
++FlagStatus DMA_GetFlagStatus(uint32_t DMAy_FLAG);
++void DMA_ClearFlag(uint32_t DMAy_FLAG);
++ITStatus DMA_GetITStatus(uint32_t DMAy_IT);
++void DMA_ClearITPendingBit(uint32_t DMAy_IT);
+ 
+ #ifdef __cplusplus
+ }
+diff -bur -I '^ *[/*].*' library/inc/stm32f10x_fsmc.h Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_fsmc.h
+--- library/inc/stm32f10x_fsmc.h	2011-04-25 22:31:06.000000000 -0700
++++ Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_fsmc.h	2011-04-26 13:49:08.000000000 -0700
+@@ -76,7 +77,7 @@
+                                              to the memory before getting the first data.
+                                              The value of this parameter depends on the memory type as shown below:
+                                               - It must be set to 0 in case of a CRAM
+-                                              - It is don’t care in asynchronous NOR, SRAM or ROM accesses
++                                              - It is don't care in asynchronous NOR, SRAM or ROM accesses
+                                               - It may assume a value between 0 and 0xF in NOR Flash memories
+                                                 with synchronous burst mode enable */
+ 
+diff -bur -I '^ *[/*].*' library/inc/stm32f10x_gpio.h Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_gpio.h
+--- library/inc/stm32f10x_gpio.h	2011-04-25 22:31:06.000000000 -0700
++++ Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_gpio.h	2011-04-26 13:49:08.000000000 -0700
+@@ -195,7 +196,7 @@
+ #define GPIO_Remap_SWJ_NoJTRST      ((uint32_t)0x00300100)  /*!< Full SWJ Enabled (JTAG-DP + SW-DP) but without JTRST */
+ #define GPIO_Remap_SWJ_JTAGDisable  ((uint32_t)0x00300200)  /*!< JTAG-DP Disabled and SW-DP Enabled */
+ #define GPIO_Remap_SWJ_Disable      ((uint32_t)0x00300400)  /*!< Full SWJ Disabled (JTAG-DP + SW-DP) */
+-#define GPIO_Remap_SPI3             ((uint32_t)0x00201000)  /*!< SPI3/I2S3 Alternate Function mapping (only for Connectivity line devices) */
++#define GPIO_Remap_SPI3             ((uint32_t)0x00201100)  /*!< SPI3/I2S3 Alternate Function mapping (only for Connectivity line devices) */
+ #define GPIO_Remap_TIM2ITR1_PTP_SOF ((uint32_t)0x00202000)  /*!< Ethernet PTP output or USB OTG SOF (Start of Frame) connected
+                                                                  to TIM2 Internal Trigger 1 for calibration
+                                                                  (only for Connectivity line devices) */
+diff -bur -I '^ *[/*].*' library/inc/stm32f10x_i2c.h Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_i2c.h
+--- library/inc/stm32f10x_i2c.h	2011-04-25 22:31:06.000000000 -0700
++++ Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_i2c.h	2011-04-26 13:49:08.000000000 -0700
+@@ -190,6 +191,18 @@
+   * @}
+   */ 
+ 
++/** @defgroup I2C_NCAK_position 
++  * @{
++  */
++
++#define I2C_NACKPosition_Next           ((uint16_t)0x0800)
++#define I2C_NACKPosition_Current        ((uint16_t)0xF7FF)
++#define IS_I2C_NACK_POSITION(POSITION)  (((POSITION) == I2C_NACKPosition_Next) || \
++                                         ((POSITION) == I2C_NACKPosition_Current))
++/**
++  * @}
++  */ 
++
+ /** @defgroup I2C_interrupts_definition 
+   * @{
+   */
+@@ -536,6 +549,7 @@
+ void I2C_Send7bitAddress(I2C_TypeDef* I2Cx, uint8_t Address, uint8_t I2C_Direction);
+ uint16_t I2C_ReadRegister(I2C_TypeDef* I2Cx, uint8_t I2C_Register);
+ void I2C_SoftwareResetCmd(I2C_TypeDef* I2Cx, FunctionalState NewState);
++void I2C_NACKPositionConfig(I2C_TypeDef* I2Cx, uint16_t I2C_NACKPosition);
+ void I2C_SMBusAlertConfig(I2C_TypeDef* I2Cx, uint16_t I2C_SMBusAlert);
+ void I2C_TransmitPEC(I2C_TypeDef* I2Cx, FunctionalState NewState);
+ void I2C_PECPositionConfig(I2C_TypeDef* I2Cx, uint16_t I2C_PECPosition);
+diff -bur -I '^ *[/*].*' library/inc/stm32f10x_tim.h Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_tim.h
+--- library/inc/stm32f10x_tim.h	2011-04-25 22:31:06.000000000 -0700
++++ Atollic/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_tim.h	2011-04-26 13:49:08.000000000 -0700
+@@ -669,42 +670,42 @@
+   * @{
+   */
+ 
+-#define TIM_DMABurstLength_1Byte           ((uint16_t)0x0000)
+-#define TIM_DMABurstLength_2Bytes          ((uint16_t)0x0100)
+-#define TIM_DMABurstLength_3Bytes          ((uint16_t)0x0200)
+-#define TIM_DMABurstLength_4Bytes          ((uint16_t)0x0300)
+-#define TIM_DMABurstLength_5Bytes          ((uint16_t)0x0400)
+-#define TIM_DMABurstLength_6Bytes          ((uint16_t)0x0500)
+-#define TIM_DMABurstLength_7Bytes          ((uint16_t)0x0600)
+-#define TIM_DMABurstLength_8Bytes          ((uint16_t)0x0700)
+-#define TIM_DMABurstLength_9Bytes          ((uint16_t)0x0800)
+-#define TIM_DMABurstLength_10Bytes         ((uint16_t)0x0900)
+-#define TIM_DMABurstLength_11Bytes         ((uint16_t)0x0A00)
+-#define TIM_DMABurstLength_12Bytes         ((uint16_t)0x0B00)
+-#define TIM_DMABurstLength_13Bytes         ((uint16_t)0x0C00)
+-#define TIM_DMABurstLength_14Bytes         ((uint16_t)0x0D00)
+-#define TIM_DMABurstLength_15Bytes         ((uint16_t)0x0E00)
+-#define TIM_DMABurstLength_16Bytes         ((uint16_t)0x0F00)
+-#define TIM_DMABurstLength_17Bytes         ((uint16_t)0x1000)
+-#define TIM_DMABurstLength_18Bytes         ((uint16_t)0x1100)
+-#define IS_TIM_DMA_LENGTH(LENGTH) (((LENGTH) == TIM_DMABurstLength_1Byte) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_2Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_3Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_4Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_5Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_6Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_7Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_8Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_9Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_10Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_11Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_12Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_13Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_14Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_15Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_16Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_17Bytes) || \
+-                                   ((LENGTH) == TIM_DMABurstLength_18Bytes))
++#define TIM_DMABurstLength_1Transfer           ((uint16_t)0x0000)
++#define TIM_DMABurstLength_2Transfers          ((uint16_t)0x0100)
++#define TIM_DMABurstLength_3Transfers          ((uint16_t)0x0200)
++#define TIM_DMABurstLength_4Transfers          ((uint16_t)0x0300)
++#define TIM_DMABurstLength_5Transfers          ((uint16_t)0x0400)
++#define TIM_DMABurstLength_6Transfers          ((uint16_t)0x0500)
++#define TIM_DMABurstLength_7Transfers          ((uint16_t)0x0600)
++#define TIM_DMABurstLength_8Transfers          ((uint16_t)0x0700)
++#define TIM_DMABurstLength_9Transfers          ((uint16_t)0x0800)
++#define TIM_DMABurstLength_10Transfers         ((uint16_t)0x0900)
++#define TIM_DMABurstLength_11Transfers         ((uint16_t)0x0A00)
++#define TIM_DMABurstLength_12Transfers         ((uint16_t)0x0B00)
++#define TIM_DMABurstLength_13Transfers         ((uint16_t)0x0C00)
++#define TIM_DMABurstLength_14Transfers         ((uint16_t)0x0D00)
++#define TIM_DMABurstLength_15Transfers         ((uint16_t)0x0E00)
++#define TIM_DMABurstLength_16Transfers         ((uint16_t)0x0F00)
++#define TIM_DMABurstLength_17Transfers         ((uint16_t)0x1000)
++#define TIM_DMABurstLength_18Transfers         ((uint16_t)0x1100)
++#define IS_TIM_DMA_LENGTH(LENGTH) (((LENGTH) == TIM_DMABurstLength_1Transfer) || \
++                                   ((LENGTH) == TIM_DMABurstLength_2Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_3Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_4Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_5Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_6Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_7Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_8Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_9Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_10Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_11Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_12Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_13Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_14Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_15Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_16Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_17Transfers) || \
++                                   ((LENGTH) == TIM_DMABurstLength_18Transfers))
+ /**
+   * @}
+   */ 
+@@ -1008,6 +1009,32 @@
+   * @}
+   */ 
+ 
++/** @defgroup TIM_Legacy 
++  * @{
++  */
++
++#define TIM_DMABurstLength_1Byte           TIM_DMABurstLength_1Transfer
++#define TIM_DMABurstLength_2Bytes          TIM_DMABurstLength_2Transfers
++#define TIM_DMABurstLength_3Bytes          TIM_DMABurstLength_3Transfers
++#define TIM_DMABurstLength_4Bytes          TIM_DMABurstLength_4Transfers
++#define TIM_DMABurstLength_5Bytes          TIM_DMABurstLength_5Transfers
++#define TIM_DMABurstLength_6Bytes          TIM_DMABurstLength_6Transfers
++#define TIM_DMABurstLength_7Bytes          TIM_DMABurstLength_7Transfers
++#define TIM_DMABurstLength_8Bytes          TIM_DMABurstLength_8Transfers
++#define TIM_DMABurstLength_9Bytes          TIM_DMABurstLength_9Transfers
++#define TIM_DMABurstLength_10Bytes         TIM_DMABurstLength_10Transfers
++#define TIM_DMABurstLength_11Bytes         TIM_DMABurstLength_11Transfers
++#define TIM_DMABurstLength_12Bytes         TIM_DMABurstLength_12Transfers
++#define TIM_DMABurstLength_13Bytes         TIM_DMABurstLength_13Transfers
++#define TIM_DMABurstLength_14Bytes         TIM_DMABurstLength_14Transfers
++#define TIM_DMABurstLength_15Bytes         TIM_DMABurstLength_15Transfers
++#define TIM_DMABurstLength_16Bytes         TIM_DMABurstLength_16Transfers
++#define TIM_DMABurstLength_17Bytes         TIM_DMABurstLength_17Transfers
++#define TIM_DMABurstLength_18Bytes         TIM_DMABurstLength_18Transfers
++/**
++  * @}
++  */
++
+ /**
+   * @}
+   */
+diff -bur -I '^ *[/*].*' library/src/stm32f10x_can.c Atollic/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_can.c
+--- library/src/stm32f10x_can.c	2011-04-25 22:31:06.000000000 -0700
++++ Atollic/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_can.c	2011-04-26 13:49:08.000000000 -0700
+@@ -71,7 +72,14 @@
+ /* Flags in ESR register */
+ #define CAN_FLAGS_ESR              ((uint32_t)0x00F00000) 
+ 
++/* Mailboxes definition */
++#define CAN_TXMAILBOX_0                   ((uint8_t)0x00)
++#define CAN_TXMAILBOX_1                   ((uint8_t)0x01)
++#define CAN_TXMAILBOX_2                   ((uint8_t)0x02) 
++
+ 
++
++#define CAN_MODE_MASK              ((uint32_t) 0x00000003)
+ /**
+   * @}
+   */
+@@ -143,7 +153,7 @@
+   */
+ uint8_t CAN_Init(CAN_TypeDef* CANx, CAN_InitTypeDef* CAN_InitStruct)
+ {
+-  uint8_t InitStatus = CANINITFAILED;
++  uint8_t InitStatus = CAN_InitStatus_Failed;
+   uint32_t wait_ack = 0x00000000;
+   /* Check the parameters */
+   assert_param(IS_CAN_ALL_PERIPH(CANx));
+@@ -171,10 +181,10 @@
+     wait_ack++;
+   }
+ 
+-  /* ...and check acknowledged */
++  /* Check acknowledge */
+   if ((CANx->MSR & CAN_MSR_INAK) != CAN_MSR_INAK)
+   {
+-    InitStatus = CANINITFAILED;
++    InitStatus = CAN_InitStatus_Failed;
+   }
+   else 
+   {
+@@ -239,15 +249,17 @@
+     }
+ 
+     /* Set the bit timing register */
+-    CANx->BTR = (uint32_t)((uint32_t)CAN_InitStruct->CAN_Mode << 30) | ((uint32_t)CAN_InitStruct->CAN_SJW << 24) |
+-               ((uint32_t)CAN_InitStruct->CAN_BS1 << 16) | ((uint32_t)CAN_InitStruct->CAN_BS2 << 20) |
++    CANx->BTR = (uint32_t)((uint32_t)CAN_InitStruct->CAN_Mode << 30) | \
++                ((uint32_t)CAN_InitStruct->CAN_SJW << 24) | \
++                ((uint32_t)CAN_InitStruct->CAN_BS1 << 16) | \
++                ((uint32_t)CAN_InitStruct->CAN_BS2 << 20) | \
+                ((uint32_t)CAN_InitStruct->CAN_Prescaler - 1);
+ 
+     /* Request leave initialisation */
+     CANx->MCR &= ~(uint32_t)CAN_MCR_INRQ;
+ 
+    /* Wait the acknowledge */
+-   wait_ack = 0x00;
++   wait_ack = 0;
+ 
+    while (((CANx->MSR & CAN_MSR_INAK) == CAN_MSR_INAK) && (wait_ack != INAK_TIMEOUT))
+    {
+@@ -257,11 +269,11 @@
+     /* ...and check acknowledged */
+     if ((CANx->MSR & CAN_MSR_INAK) == CAN_MSR_INAK)
+     {
+-      InitStatus = CANINITFAILED;
++      InitStatus = CAN_InitStatus_Failed;
+     }
+     else
+     {
+-      InitStatus = CANINITOK ;
++      InitStatus = CAN_InitStatus_Success ;
+     }
+   }
+ 
+@@ -286,7 +299,7 @@
+   assert_param(IS_CAN_FILTER_FIFO(CAN_FilterInitStruct->CAN_FilterFIFOAssignment));
+   assert_param(IS_FUNCTIONAL_STATE(CAN_FilterInitStruct->CAN_FilterActivation));
+ 
+-  filter_number_bit_pos = ((uint32_t)0x00000001) << CAN_FilterInitStruct->CAN_FilterNumber;
++  filter_number_bit_pos = ((uint32_t)1) << CAN_FilterInitStruct->CAN_FilterNumber;
+ 
+   /* Initialisation mode for the filter */
+   CAN1->FMR |= FMR_FINIT;
+@@ -340,13 +353,13 @@
+   }
+ 
+   /* Filter FIFO assignment */
+-  if (CAN_FilterInitStruct->CAN_FilterFIFOAssignment == CAN_FilterFIFO0)
++  if (CAN_FilterInitStruct->CAN_FilterFIFOAssignment == CAN_Filter_FIFO0)
+   {
+     /* FIFO 0 assignation for the filter */
+     CAN1->FFA1R &= ~(uint32_t)filter_number_bit_pos;
+   }
+ 
+-  if (CAN_FilterInitStruct->CAN_FilterFIFOAssignment == CAN_FilterFIFO1)
++  if (CAN_FilterInitStruct->CAN_FilterFIFOAssignment == CAN_Filter_FIFO1)
+   {
+     /* FIFO 1 assignation for the filter */
+     CAN1->FFA1R |= (uint32_t)filter_number_bit_pos;
+@@ -371,26 +384,37 @@
+ void CAN_StructInit(CAN_InitTypeDef* CAN_InitStruct)
+ {
+   /* Reset CAN init structure parameters values */
++  
+   /* Initialize the time triggered communication mode */
+   CAN_InitStruct->CAN_TTCM = DISABLE;
++  
+   /* Initialize the automatic bus-off management */
+   CAN_InitStruct->CAN_ABOM = DISABLE;
++  
+   /* Initialize the automatic wake-up mode */
+   CAN_InitStruct->CAN_AWUM = DISABLE;
++  
+   /* Initialize the no automatic retransmission */
+   CAN_InitStruct->CAN_NART = DISABLE;
++  
+   /* Initialize the receive FIFO locked mode */
+   CAN_InitStruct->CAN_RFLM = DISABLE;
++  
+   /* Initialize the transmit FIFO priority */
+   CAN_InitStruct->CAN_TXFP = DISABLE;
++  
+   /* Initialize the CAN_Mode member */
+   CAN_InitStruct->CAN_Mode = CAN_Mode_Normal;
++  
+   /* Initialize the CAN_SJW member */
+   CAN_InitStruct->CAN_SJW = CAN_SJW_1tq;
++  
+   /* Initialize the CAN_BS1 member */
+   CAN_InitStruct->CAN_BS1 = CAN_BS1_4tq;
++  
+   /* Initialize the CAN_BS2 member */
+   CAN_InitStruct->CAN_BS2 = CAN_BS2_3tq;
++  
+   /* Initialize the CAN_Prescaler member */
+   CAN_InitStruct->CAN_Prescaler = 1;
+ }
+@@ -405,11 +429,14 @@
+ {
+   /* Check the parameters */
+   assert_param(IS_CAN_BANKNUMBER(CAN_BankNumber));
+-  /* enter Initialisation mode for the filter */
++  
++  /* Enter Initialisation mode for the filter */
+   CAN1->FMR |= FMR_FINIT;
++  
+   /* Select the start slave bank */
+   CAN1->FMR &= (uint32_t)0xFFFFC0F1 ;
+   CAN1->FMR |= (uint32_t)(CAN_BankNumber)<<8;
++  
+   /* Leave Initialisation mode for the filter */
+   CAN1->FMR &= ~FMR_FINIT;
+ }
+@@ -415,46 +442,68 @@
+ }
+ 
+ /**
+-  * @brief  Enables or disables the specified CANx interrupts.
++  * @brief  Enables or disables the DBG Freeze for CAN.
+   * @param  CANx: where x can be 1 or 2 to to select the CAN peripheral.
+-  * @param  CAN_IT: specifies the CAN interrupt sources to be enabled or disabled.
+-  *   This parameter can be: 
+-  *        -CAN_IT_TME, 
+-  *        -CAN_IT_FMP0, 
+-  *        -CAN_IT_FF0,
+-  *        -CAN_IT_FOV0, 
+-  *        -CAN_IT_FMP1, 
+-  *        -CAN_IT_FF1,
+-  *        -CAN_IT_FOV1, 
+-  *        -CAN_IT_EWG, 
+-  *        -CAN_IT_EPV,
+-  *        -CAN_IT_LEC, 
+-  *        -CAN_IT_ERR, 
+-  *        -CAN_IT_WKU or 
+-  *        -CAN_IT_SLK.
+-  * @param  NewState: new state of the CAN interrupts.
+-  *   This parameter can be: ENABLE or DISABLE.
++  * @param  NewState: new state of the CAN peripheral. This parameter can 
++  *                   be: ENABLE or DISABLE.
+   * @retval None.
+   */
+-void CAN_ITConfig(CAN_TypeDef* CANx, uint32_t CAN_IT, FunctionalState NewState)
++void CAN_DBGFreeze(CAN_TypeDef* CANx, FunctionalState NewState)
+ {
+   /* Check the parameters */
+   assert_param(IS_CAN_ALL_PERIPH(CANx));
+-  assert_param(IS_CAN_IT(CAN_IT));
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+ 
+   if (NewState != DISABLE)
+   {
+-    /* Enable the selected CANx interrupt */
+-    CANx->IER |= CAN_IT;
++    /* Enable Debug Freeze  */
++    CANx->MCR |= MCR_DBF;
+   }
+   else
+   {
+-    /* Disable the selected CANx interrupt */
+-    CANx->IER &= ~CAN_IT;
++    /* Disable Debug Freeze */
++    CANx->MCR &= ~MCR_DBF;
+   }
+ }
+ 
++
++/**
++  * @brief  Enables or disabes the CAN Time TriggerOperation communication mode.
++  * @param  CANx:      where x can be 1 or 2 to to select the CAN peripheral.
++  * @param  NewState : Mode new state , can be one of @ref FunctionalState.
++  * @note   when enabled, Time stamp (TIME[15:0]) value is sent in the last 
++  *         two data bytes of the 8-byte message: TIME[7:0] in data byte 6 
++  *         and TIME[15:8] in data byte 7 
++  * @note   DLC must be programmed as 8 in order Time Stamp (2 bytes) to be 
++  *         sent over the CAN bus.  
++  * @retval None
++  */
++void CAN_TTComModeCmd(CAN_TypeDef* CANx, FunctionalState NewState)
++{
++  /* Check the parameters */
++  assert_param(IS_CAN_ALL_PERIPH(CANx));
++  assert_param(IS_FUNCTIONAL_STATE(NewState));
++  if (NewState != DISABLE)
++  {
++    /* Enable the TTCM mode */
++    CANx->MCR |= CAN_MCR_TTCM;
++
++    /* Set TGT bits */
++    CANx->sTxMailBox[0].TDTR |= ((uint32_t)CAN_TDT0R_TGT);
++    CANx->sTxMailBox[1].TDTR |= ((uint32_t)CAN_TDT1R_TGT);
++    CANx->sTxMailBox[2].TDTR |= ((uint32_t)CAN_TDT2R_TGT);
++  }
++  else
++  {
++    /* Disable the TTCM mode */
++    CANx->MCR &= (uint32_t)(~(uint32_t)CAN_MCR_TTCM);
++
++    /* Reset TGT bits */
++    CANx->sTxMailBox[0].TDTR &= ((uint32_t)~CAN_TDT0R_TGT);
++    CANx->sTxMailBox[1].TDTR &= ((uint32_t)~CAN_TDT1R_TGT);
++    CANx->sTxMailBox[2].TDTR &= ((uint32_t)~CAN_TDT2R_TGT);
++  }
++}
+ /**
+   * @brief  Initiates the transmission of a message.
+   * @param  CANx: where x can be 1 or 2 to to select the CAN peripheral.
+@@ -487,26 +536,27 @@
+   }
+   else
+   {
+-    transmit_mailbox = CAN_NO_MB;
++    transmit_mailbox = CAN_TxStatus_NoMailBox;
+   }
+ 
+-  if (transmit_mailbox != CAN_NO_MB)
++  if (transmit_mailbox != CAN_TxStatus_NoMailBox)
+   {
+     /* Set up the Id */
+     CANx->sTxMailBox[transmit_mailbox].TIR &= TMIDxR_TXRQ;
+-    if (TxMessage->IDE == CAN_ID_STD)
++    if (TxMessage->IDE == CAN_Id_Standard)
+     {
+       assert_param(IS_CAN_STDID(TxMessage->StdId));  
+-      CANx->sTxMailBox[transmit_mailbox].TIR |= ((TxMessage->StdId << 21) | TxMessage->RTR);
++      CANx->sTxMailBox[transmit_mailbox].TIR |= ((TxMessage->StdId << 21) | \
++                                                  TxMessage->RTR);
+     }
+     else
+     {
+       assert_param(IS_CAN_EXTID(TxMessage->ExtId));
+-      CANx->sTxMailBox[transmit_mailbox].TIR |= ((TxMessage->ExtId<<3) | TxMessage->IDE | 
++      CANx->sTxMailBox[transmit_mailbox].TIR |= ((TxMessage->ExtId << 3) | \
++                                                  TxMessage->IDE | \
+                                                TxMessage->RTR);
+     }
+     
+-
+     /* Set up the DLC */
+     TxMessage->DLC &= (uint8_t)0x0000000F;
+     CANx->sTxMailBox[transmit_mailbox].TDTR &= (uint32_t)0xFFFFFFF0;
+@@ -535,45 +588,50 @@
+   */
+ uint8_t CAN_TransmitStatus(CAN_TypeDef* CANx, uint8_t TransmitMailbox)
+ {
+-  /* RQCP, TXOK and TME bits */
+-  uint8_t state = 0;
++  uint32_t state = 0;
++
+   /* Check the parameters */
+   assert_param(IS_CAN_ALL_PERIPH(CANx));
+   assert_param(IS_CAN_TRANSMITMAILBOX(TransmitMailbox));
++ 
+   switch (TransmitMailbox)
+   {
+-    case (0): state |= (uint8_t)((CANx->TSR & CAN_TSR_RQCP0) << 2);
+-      state |= (uint8_t)((CANx->TSR & CAN_TSR_TXOK0) >> 0);
+-      state |= (uint8_t)((CANx->TSR & CAN_TSR_TME0) >> 26);
+-      break;
+-    case (1): state |= (uint8_t)((CANx->TSR & CAN_TSR_RQCP1) >> 6);
+-      state |= (uint8_t)((CANx->TSR & CAN_TSR_TXOK1) >> 8);
+-      state |= (uint8_t)((CANx->TSR & CAN_TSR_TME1) >> 27);
+-      break;
+-    case (2): state |= (uint8_t)((CANx->TSR & CAN_TSR_RQCP2) >> 14);
+-      state |= (uint8_t)((CANx->TSR & CAN_TSR_TXOK2) >> 16);
+-      state |= (uint8_t)((CANx->TSR & CAN_TSR_TME2) >> 28);
++    case (CAN_TXMAILBOX_0): 
++      state =   CANx->TSR &  (CAN_TSR_RQCP0 | CAN_TSR_TXOK0 | CAN_TSR_TME0);
++      break;
++    case (CAN_TXMAILBOX_1): 
++      state =   CANx->TSR &  (CAN_TSR_RQCP1 | CAN_TSR_TXOK1 | CAN_TSR_TME1);
++      break;
++    case (CAN_TXMAILBOX_2): 
++      state =   CANx->TSR &  (CAN_TSR_RQCP2 | CAN_TSR_TXOK2 | CAN_TSR_TME2);
+       break;
+     default:
+-      state = CANTXFAILED;
++      state = CAN_TxStatus_Failed;
+       break;
+   }
+   switch (state)
+   {
+       /* transmit pending  */
+-    case (0x0): state = CANTXPENDING;
++    case (0x0): state = CAN_TxStatus_Pending;
+       break;
+       /* transmit failed  */
+-    case (0x5): state = CANTXFAILED;
++     case (CAN_TSR_RQCP0 | CAN_TSR_TME0): state = CAN_TxStatus_Failed;
+       break;
+-      /* transmit succedeed  */
+-    case (0x7): state = CANTXOK;
++     case (CAN_TSR_RQCP1 | CAN_TSR_TME1): state = CAN_TxStatus_Failed;
+       break;
+-    default:
+-      state = CANTXFAILED;
++     case (CAN_TSR_RQCP2 | CAN_TSR_TME2): state = CAN_TxStatus_Failed;
++      break;
++      /* transmit succeeded  */
++    case (CAN_TSR_RQCP0 | CAN_TSR_TXOK0 | CAN_TSR_TME0):state = CAN_TxStatus_Ok;
++      break;
++    case (CAN_TSR_RQCP1 | CAN_TSR_TXOK1 | CAN_TSR_TME1):state = CAN_TxStatus_Ok;
++      break;
++    case (CAN_TSR_RQCP2 | CAN_TSR_TXOK2 | CAN_TSR_TME2):state = CAN_TxStatus_Ok;
++      break;
++    default: state = CAN_TxStatus_Failed;
+       break;
+   }
+-  return state;
++  return (uint8_t) state;
+ }
+ 
+ /**
+@@ -590,19 +648,71 @@
+   /* abort transmission */
+   switch (Mailbox)
+   {
+-    case (0): CANx->TSR |= CAN_TSR_ABRQ0;
++    case (CAN_TXMAILBOX_0): CANx->TSR |= CAN_TSR_ABRQ0;
+       break;
+-    case (1): CANx->TSR |= CAN_TSR_ABRQ1;
++    case (CAN_TXMAILBOX_1): CANx->TSR |= CAN_TSR_ABRQ1;
+       break;
+-    case (2): CANx->TSR |= CAN_TSR_ABRQ2;
++    case (CAN_TXMAILBOX_2): CANx->TSR |= CAN_TSR_ABRQ2;
+       break;
+     default:
+       break;
+   }
+ }
+ 
++
+ /**
+-  * @brief  Releases a FIFO.
++  * @brief  Receives a message.
++  * @param  CANx:       where x can be 1 or 2 to to select the CAN peripheral.
++  * @param  FIFONumber: Receive FIFO number, CAN_FIFO0 or CAN_FIFO1.
++  * @param  RxMessage:  pointer to a structure receive message which contains 
++  *                     CAN Id, CAN DLC, CAN datas and FMI number.
++  * @retval None.
++  */
++void CAN_Receive(CAN_TypeDef* CANx, uint8_t FIFONumber, CanRxMsg* RxMessage)
++{
++  /* Check the parameters */
++  assert_param(IS_CAN_ALL_PERIPH(CANx));
++  assert_param(IS_CAN_FIFO(FIFONumber));
++  /* Get the Id */
++  RxMessage->IDE = (uint8_t)0x04 & CANx->sFIFOMailBox[FIFONumber].RIR;
++  if (RxMessage->IDE == CAN_Id_Standard)
++  {
++    RxMessage->StdId = (uint32_t)0x000007FF & (CANx->sFIFOMailBox[FIFONumber].RIR >> 21);
++  }
++  else
++  {
++    RxMessage->ExtId = (uint32_t)0x1FFFFFFF & (CANx->sFIFOMailBox[FIFONumber].RIR >> 3);
++  }
++  
++  RxMessage->RTR = (uint8_t)0x02 & CANx->sFIFOMailBox[FIFONumber].RIR;
++  /* Get the DLC */
++  RxMessage->DLC = (uint8_t)0x0F & CANx->sFIFOMailBox[FIFONumber].RDTR;
++  /* Get the FMI */
++  RxMessage->FMI = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDTR >> 8);
++  /* Get the data field */
++  RxMessage->Data[0] = (uint8_t)0xFF & CANx->sFIFOMailBox[FIFONumber].RDLR;
++  RxMessage->Data[1] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDLR >> 8);
++  RxMessage->Data[2] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDLR >> 16);
++  RxMessage->Data[3] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDLR >> 24);
++  RxMessage->Data[4] = (uint8_t)0xFF & CANx->sFIFOMailBox[FIFONumber].RDHR;
++  RxMessage->Data[5] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDHR >> 8);
++  RxMessage->Data[6] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDHR >> 16);
++  RxMessage->Data[7] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDHR >> 24);
++  /* Release the FIFO */
++  /* Release FIFO0 */
++  if (FIFONumber == CAN_FIFO0)
++  {
++    CANx->RF0R |= CAN_RF0R_RFOM0;
++  }
++  /* Release FIFO1 */
++  else /* FIFONumber == CAN_FIFO1 */
++  {
++    CANx->RF1R |= CAN_RF1R_RFOM1;
++  }
++}
++
++/**
++  * @brief  Releases the specified FIFO.
+   * @param  CANx: where x can be 1 or 2 to to select the CAN peripheral. 
+   * @param  FIFONumber: FIFO to release, CAN_FIFO0 or CAN_FIFO1.
+   * @retval None.
+@@ -651,71 +761,90 @@
+   return message_pending;
+ }
+ 
++
+ /**
+-  * @brief  Receives a message.
+-  * @param  CANx: where x can be 1 or 2 to to select the CAN peripheral.
+-  * @param  FIFONumber: Receive FIFO number, CAN_FIFO0 or CAN_FIFO1.
+-  * @param  RxMessage: pointer to a structure receive message which 
+-  *   contains CAN Id, CAN DLC, CAN datas and FMI number.
+-  * @retval None.
++  * @brief   Select the CAN Operation mode.
++  * @param CAN_OperatingMode : CAN Operating Mode. This parameter can be one 
++  *                            of @ref CAN_OperatingMode_TypeDef enumeration.
++  * @retval status of the requested mode which can be 
++  *         - CAN_ModeStatus_Failed    CAN failed entering the specific mode 
++  *         - CAN_ModeStatus_Success   CAN Succeed entering the specific mode 
++
+   */
+-void CAN_Receive(CAN_TypeDef* CANx, uint8_t FIFONumber, CanRxMsg* RxMessage)
++uint8_t CAN_OperatingModeRequest(CAN_TypeDef* CANx, uint8_t CAN_OperatingMode)
+ {
++  uint8_t status = CAN_ModeStatus_Failed;
++  
++  /* Timeout for INAK or also for SLAK bits*/
++  uint32_t timeout = INAK_TIMEOUT; 
++
+   /* Check the parameters */
+   assert_param(IS_CAN_ALL_PERIPH(CANx));
+-  assert_param(IS_CAN_FIFO(FIFONumber));
+-  /* Get the Id */
+-  RxMessage->IDE = (uint8_t)0x04 & CANx->sFIFOMailBox[FIFONumber].RIR;
+-  if (RxMessage->IDE == CAN_ID_STD)
++  assert_param(IS_CAN_OPERATING_MODE(CAN_OperatingMode));
++
++  if (CAN_OperatingMode == CAN_OperatingMode_Initialization)
+   {
+-    RxMessage->StdId = (uint32_t)0x000007FF & (CANx->sFIFOMailBox[FIFONumber].RIR >> 21);
++    /* Request initialisation */
++    CANx->MCR = (uint32_t)((CANx->MCR & (uint32_t)(~(uint32_t)CAN_MCR_SLEEP)) | CAN_MCR_INRQ);
++
++    /* Wait the acknowledge */
++    while (((CANx->MSR & CAN_MODE_MASK) != CAN_MSR_INAK) && (timeout != 0))
++    {
++      timeout--;
++    }
++    if ((CANx->MSR & CAN_MODE_MASK) != CAN_MSR_INAK)
++    {
++      status = CAN_ModeStatus_Failed;
+   }
+   else
+   {
+-    RxMessage->ExtId = (uint32_t)0x1FFFFFFF & (CANx->sFIFOMailBox[FIFONumber].RIR >> 3);
++      status = CAN_ModeStatus_Success;
+   }
++  }
++  else  if (CAN_OperatingMode == CAN_OperatingMode_Normal)
++  {
++    /* Request leave initialisation and sleep mode  and enter Normal mode */
++    CANx->MCR &= (uint32_t)(~(CAN_MCR_SLEEP|CAN_MCR_INRQ));
+   
+-  RxMessage->RTR = (uint8_t)0x02 & CANx->sFIFOMailBox[FIFONumber].RIR;
+-  /* Get the DLC */
+-  RxMessage->DLC = (uint8_t)0x0F & CANx->sFIFOMailBox[FIFONumber].RDTR;
+-  /* Get the FMI */
+-  RxMessage->FMI = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDTR >> 8);
+-  /* Get the data field */
+-  RxMessage->Data[0] = (uint8_t)0xFF & CANx->sFIFOMailBox[FIFONumber].RDLR;
+-  RxMessage->Data[1] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDLR >> 8);
+-  RxMessage->Data[2] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDLR >> 16);
+-  RxMessage->Data[3] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDLR >> 24);
+-  RxMessage->Data[4] = (uint8_t)0xFF & CANx->sFIFOMailBox[FIFONumber].RDHR;
+-  RxMessage->Data[5] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDHR >> 8);
+-  RxMessage->Data[6] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDHR >> 16);
+-  RxMessage->Data[7] = (uint8_t)0xFF & (CANx->sFIFOMailBox[FIFONumber].RDHR >> 24);
+-  /* Release the FIFO */
+-  CAN_FIFORelease(CANx, FIFONumber);
+-}
+-
+-/**
+-  * @brief  Enables or disables the DBG Freeze for CAN.
+-  * @param  CANx: where x can be 1 or 2 to to select the CAN peripheral.
+-  * @param  NewState: new state of the CAN peripheral.
+-  *   This parameter can be: ENABLE or DISABLE.
+-  * @retval None.
+-  */
+-void CAN_DBGFreeze(CAN_TypeDef* CANx, FunctionalState NewState)
+-{
+-  /* Check the parameters */
+-  assert_param(IS_CAN_ALL_PERIPH(CANx));
+-  assert_param(IS_FUNCTIONAL_STATE(NewState));
++    /* Wait the acknowledge */
++    while (((CANx->MSR & CAN_MODE_MASK) != 0) && (timeout!=0))
++    {
++      timeout--;
++    }
++    if ((CANx->MSR & CAN_MODE_MASK) != 0)
++    {
++      status = CAN_ModeStatus_Failed;
++    }
++    else
++    {
++      status = CAN_ModeStatus_Success;
++    }
++  }
++  else  if (CAN_OperatingMode == CAN_OperatingMode_Sleep)
++  {
++    /* Request Sleep mode */
++    CANx->MCR = (uint32_t)((CANx->MCR & (uint32_t)(~(uint32_t)CAN_MCR_INRQ)) | CAN_MCR_SLEEP);
+   
+-  if (NewState != DISABLE)
++    /* Wait the acknowledge */
++    while (((CANx->MSR & CAN_MODE_MASK) != CAN_MSR_SLAK) && (timeout!=0))
+   {
+-    /* Enable Debug Freeze  */
+-    CANx->MCR |= MCR_DBF;
++      timeout--;
++    }
++    if ((CANx->MSR & CAN_MODE_MASK) != CAN_MSR_SLAK)
++    {
++      status = CAN_ModeStatus_Failed;
+   }
+   else
+   {
+-    /* Disable Debug Freeze */
+-    CANx->MCR &= ~MCR_DBF;
++      status = CAN_ModeStatus_Success;
++    }
++  }
++  else
++  {
++    status = CAN_ModeStatus_Failed;
+   }
++
++  return  (uint8_t) status;
+ }
+ 
+ /**
+@@ -725,7 +855,7 @@
+   */
+ uint8_t CAN_Sleep(CAN_TypeDef* CANx)
+ {
+-  uint8_t sleepstatus = CANSLEEPFAILED;
++  uint8_t sleepstatus = CAN_Sleep_Failed;
+   
+   /* Check the parameters */
+   assert_param(IS_CAN_ALL_PERIPH(CANx));
+@@ -737,9 +867,9 @@
+   if ((CANx->MSR & (CAN_MSR_SLAK|CAN_MSR_INAK)) == CAN_MSR_SLAK)
+   {
+     /* Sleep mode not entered */
+-    sleepstatus =  CANSLEEPOK;
++    sleepstatus =  CAN_Sleep_Ok;
+   }
+-  /* At this step, sleep mode status */
++  /* return sleep mode status */
+    return (uint8_t)sleepstatus;
+ }
+ 
+@@ -751,7 +882,7 @@
+ uint8_t CAN_WakeUp(CAN_TypeDef* CANx)
+ {
+   uint32_t wait_slak = SLAK_TIMEOUT;
+-  uint8_t wakeupstatus = CANWAKEUPFAILED;
++  uint8_t wakeupstatus = CAN_WakeUp_Failed;
+   
+   /* Check the parameters */
+   assert_param(IS_CAN_ALL_PERIPH(CANx));
+@@ -766,10 +897,10 @@
+   }
+   if((CANx->MSR & CAN_MSR_SLAK) != CAN_MSR_SLAK)
+   {
+-   /* Sleep mode exited */
+-    wakeupstatus = CANWAKEUPOK;
++   /* wake up done : Sleep mode exited */
++    wakeupstatus = CAN_WakeUp_Ok;
+   }
+-  /* At this step, sleep mode status */
++  /* return wakeup status */
+   return (uint8_t)wakeupstatus;
+ }
+ 
+@@ -773,6 +904,120 @@
+   return (uint8_t)wakeupstatus;
+ }
+ 
++
++/**
++  * @brief  Returns the CANx's last error code (LEC).
++  * @param  CANx:          where x can be 1 or 2 to to select the CAN peripheral.  
++  * @retval CAN_ErrorCode: specifies the Error code : 
++  *                        - CAN_ERRORCODE_NoErr            No Error  
++  *                        - CAN_ERRORCODE_StuffErr         Stuff Error
++  *                        - CAN_ERRORCODE_FormErr          Form Error
++  *                        - CAN_ERRORCODE_ACKErr           Acknowledgment Error
++  *                        - CAN_ERRORCODE_BitRecessiveErr  Bit Recessive Error
++  *                        - CAN_ERRORCODE_BitDominantErr   Bit Dominant Error
++  *                        - CAN_ERRORCODE_CRCErr           CRC Error
++  *                        - CAN_ERRORCODE_SoftwareSetErr   Software Set Error  
++  */
++ 
++uint8_t CAN_GetLastErrorCode(CAN_TypeDef* CANx)
++{
++  uint8_t errorcode=0;
++  
++  /* Check the parameters */
++  assert_param(IS_CAN_ALL_PERIPH(CANx));
++  
++  /* Get the error code*/
++  errorcode = (((uint8_t)CANx->ESR) & (uint8_t)CAN_ESR_LEC);
++  
++  /* Return the error code*/
++  return errorcode;
++}
++/**
++  * @brief  Returns the CANx Receive Error Counter (REC).
++  * @note   In case of an error during reception, this counter is incremented 
++  *         by 1 or by 8 depending on the error condition as defined by the CAN 
++  *         standard. After every successful reception, the counter is 
++  *         decremented by 1 or reset to 120 if its value was higher than 128. 
++  *         When the counter value exceeds 127, the CAN controller enters the 
++  *         error passive state.  
++  * @param  CANx: where x can be 1 or 2 to to select the CAN peripheral.  
++  * @retval CAN Receive Error Counter. 
++  */
++uint8_t CAN_GetReceiveErrorCounter(CAN_TypeDef* CANx)
++{
++  uint8_t counter=0;
++  
++  /* Check the parameters */
++  assert_param(IS_CAN_ALL_PERIPH(CANx));
++  
++  /* Get the Receive Error Counter*/
++  counter = (uint8_t)((CANx->ESR & CAN_ESR_REC)>> 24);
++  
++  /* Return the Receive Error Counter*/
++  return counter;
++}
++
++
++/**
++  * @brief  Returns the LSB of the 9-bit CANx Transmit Error Counter(TEC).
++  * @param  CANx:   where x can be 1 or 2 to to select the CAN peripheral.  
++  * @retval LSB of the 9-bit CAN Transmit Error Counter. 
++  */
++uint8_t CAN_GetLSBTransmitErrorCounter(CAN_TypeDef* CANx)
++{
++  uint8_t counter=0;
++  
++  /* Check the parameters */
++  assert_param(IS_CAN_ALL_PERIPH(CANx));
++  
++  /* Get the LSB of the 9-bit CANx Transmit Error Counter(TEC) */
++  counter = (uint8_t)((CANx->ESR & CAN_ESR_TEC)>> 16);
++  
++  /* Return the LSB of the 9-bit CANx Transmit Error Counter(TEC) */
++  return counter;
++}
++
++
++/**
++  * @brief  Enables or disables the specified CANx interrupts.
++  * @param  CANx:   where x can be 1 or 2 to to select the CAN peripheral.
++  * @param  CAN_IT: specifies the CAN interrupt sources to be enabled or disabled.
++  *                 This parameter can be: 
++  *                 - CAN_IT_TME, 
++  *                 - CAN_IT_FMP0, 
++  *                 - CAN_IT_FF0,
++  *                 - CAN_IT_FOV0, 
++  *                 - CAN_IT_FMP1, 
++  *                 - CAN_IT_FF1,
++  *                 - CAN_IT_FOV1, 
++  *                 - CAN_IT_EWG, 
++  *                 - CAN_IT_EPV,
++  *                 - CAN_IT_LEC, 
++  *                 - CAN_IT_ERR, 
++  *                 - CAN_IT_WKU or 
++  *                 - CAN_IT_SLK.
++  * @param  NewState: new state of the CAN interrupts.
++  *                   This parameter can be: ENABLE or DISABLE.
++  * @retval None.
++  */
++void CAN_ITConfig(CAN_TypeDef* CANx, uint32_t CAN_IT, FunctionalState NewState)
++{
++  /* Check the parameters */
++  assert_param(IS_CAN_ALL_PERIPH(CANx));
++  assert_param(IS_CAN_IT(CAN_IT));
++  assert_param(IS_FUNCTIONAL_STATE(NewState));
++
++  if (NewState != DISABLE)
++  {
++    /* Enable the selected CANx interrupt */
++    CANx->IER |= CAN_IT;
++  }
++  else
++  {
++    /* Disable the selected CANx interrupt */
++    CANx->IER &= ~CAN_IT;
++  }
++}
+ /**
+   * @brief  Checks whether the specified CAN flag is set or not.
+   * @param  CANx: where x can be 1 or 2 to to select the CAN peripheral.
+@@ -1021,9 +1266,8 @@
+ 	     itstatus = CheckITStatus(CANx->ESR, CAN_ESR_LEC);  
+ 	      break;
+       case CAN_IT_ERR:
+-               /* Check CAN_MSR_ERRI, CAN_ESR_EWGF, CAN_ESR_EPVF, CAN_ESR_BOFF and CAN_ESR_LEC  bits */
+-	      itstatus = CheckITStatus(CANx->ESR, CAN_ESR_EWGF|CAN_ESR_EPVF|CAN_ESR_BOFF|CAN_ESR_LEC); 
+-              itstatus |= CheckITStatus(CANx->MSR, CAN_MSR_ERRI); 
++               /* Check CAN_MSR_ERRI bit */ 
++               itstatus = CheckITStatus(CANx->MSR, CAN_MSR_ERRI); 
+ 	      break;
+       default :
+                /* in case of error, return RESET */
+@@ -1098,17 +1342,20 @@
+       case CAN_IT_EWG:
+               /* Clear CAN_MSR_ERRI (rc_w1) */
+ 	      CANx->MSR = CAN_MSR_ERRI;
+-              /* Note : the corresponding Flag is cleared by hardware depending of the CAN Bus status*/ 
++              /* Note : the corresponding Flag is cleared by hardware depending 
++                        of the CAN Bus status*/ 
+ 	      break;
+       case CAN_IT_EPV:
+               /* Clear CAN_MSR_ERRI (rc_w1) */
+ 	      CANx->MSR = CAN_MSR_ERRI; 
+-              /* Note : the corresponding Flag is cleared by hardware depending of the CAN Bus status*/
++              /* Note : the corresponding Flag is cleared by hardware depending 
++                        of the CAN Bus status*/
+ 	      break;
+       case CAN_IT_BOF:
+               /* Clear CAN_MSR_ERRI (rc_w1) */ 
+ 	      CANx->MSR = CAN_MSR_ERRI; 
+-              /* Note : the corresponding Flag is cleared by hardware depending of the CAN Bus status*/
++              /* Note : the corresponding Flag is cleared by hardware depending 
++                        of the CAN Bus status*/
+ 	      break;
+       case CAN_IT_LEC:
+               /*  Clear LEC bits */
+@@ -1121,7 +1368,8 @@
+ 	      CANx->ESR = RESET; 
+               /* Clear CAN_MSR_ERRI (rc_w1) */
+ 	      CANx->MSR = CAN_MSR_ERRI; 
+-	      /* Note : BOFF, EPVF and EWGF Flags are cleared by hardware depending of the CAN Bus status*/
++	      /* Note : BOFF, EPVF and EWGF Flags are cleared by hardware depending 
++                  of the CAN Bus status*/
+ 	      break;
+       default :
+ 	      break;
+@@ -1151,6 +1399,7 @@
+   return pendingbitstatus;
+ }
+ 
++
+ /**
+   * @}
+   */
+diff -bur -I '^ *[/*].*' library/src/stm32f10x_dac.c Atollic/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.c
+--- library/src/stm32f10x_dac.c	2011-04-25 22:31:06.000000000 -0700
++++ Atollic/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.c	2011-04-26 13:49:08.000000000 -0700
+@@ -126,8 +127,8 @@
+   tmpreg1 = DAC->CR;
+   /* Clear BOFFx, TENx, TSELx, WAVEx and MAMPx bits */
+   tmpreg1 &= ~(CR_CLEAR_MASK << DAC_Channel);
+-  /* Configure for the selected DAC channel: buffer output, trigger, wave genration,
+-     mask/amplitude for wave genration */
++  /* Configure for the selected DAC channel: buffer output, trigger, wave generation,
++     mask/amplitude for wave generation */
+   /* Set TSELx and TENx bits according to DAC_Trigger value */
+   /* Set WAVEx bits according to DAC_WaveGeneration value */
+   /* Set MAMPx bits according to DAC_LFSRUnmask_TriangleAmplitude value */ 
+diff -bur -I '^ *[/*].*' library/src/stm32f10x_dma.c Atollic/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.c
+--- library/src/stm32f10x_dma.c	2011-04-25 22:31:06.000000000 -0700
++++ Atollic/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.c	2011-04-26 13:49:08.000000000 -0700
+@@ -427,17 +428,18 @@
+   *     @arg DMA2_FLAG_TC5: DMA2 Channel5 transfer complete flag.
+   *     @arg DMA2_FLAG_HT5: DMA2 Channel5 half transfer flag.
+   *     @arg DMA2_FLAG_TE5: DMA2 Channel5 transfer error flag.
+-  * @retval The new state of DMA_FLAG (SET or RESET).
++  * @retval The new state of DMAy_FLAG (SET or RESET).
+   */
+-FlagStatus DMA_GetFlagStatus(uint32_t DMA_FLAG)
++FlagStatus DMA_GetFlagStatus(uint32_t DMAy_FLAG)
+ {
+   FlagStatus bitstatus = RESET;
+   uint32_t tmpreg = 0;
++  
+   /* Check the parameters */
+-  assert_param(IS_DMA_GET_FLAG(DMA_FLAG));
++  assert_param(IS_DMA_GET_FLAG(DMAy_FLAG));
+ 
+-  /* Calculate the used DMA */
+-  if ((DMA_FLAG & FLAG_Mask) != (uint32_t)RESET)
++  /* Calculate the used DMAy */
++  if ((DMAy_FLAG & FLAG_Mask) != (uint32_t)RESET)
+   {
+     /* Get DMA2 ISR register value */
+     tmpreg = DMA2->ISR ;
+@@ -448,10 +450,10 @@
+     tmpreg = DMA1->ISR ;
+   }
+ 
+-  /* Check the status of the specified DMA flag */
+-  if ((tmpreg & DMA_FLAG) != (uint32_t)RESET)
++  /* Check the status of the specified DMAy flag */
++  if ((tmpreg & DMAy_FLAG) != (uint32_t)RESET)
+   {
+-    /* DMA_FLAG is set */
++    /* DMAy_FLAG is set */
+     bitstatus = SET;
+   }
+   else
+@@ -518,21 +520,21 @@
+   *     @arg DMA2_FLAG_TE5: DMA2 Channel5 transfer error flag.
+   * @retval None
+   */
+-void DMA_ClearFlag(uint32_t DMA_FLAG)
++void DMA_ClearFlag(uint32_t DMAy_FLAG)
+ {
+   /* Check the parameters */
+-  assert_param(IS_DMA_CLEAR_FLAG(DMA_FLAG));
+-  /* Calculate the used DMA */
++  assert_param(IS_DMA_CLEAR_FLAG(DMAy_FLAG));
+ 
+-  if ((DMA_FLAG & FLAG_Mask) != (uint32_t)RESET)
++  /* Calculate the used DMAy */
++  if ((DMAy_FLAG & FLAG_Mask) != (uint32_t)RESET)
+   {
+-    /* Clear the selected DMA flags */
+-    DMA2->IFCR = DMA_FLAG;
++    /* Clear the selected DMAy flags */
++    DMA2->IFCR = DMAy_FLAG;
+   }
+   else
+   {
+-    /* Clear the selected DMA flags */
+-    DMA1->IFCR = DMA_FLAG;
++    /* Clear the selected DMAy flags */
++    DMA1->IFCR = DMAy_FLAG;
+   }
+ }
+ 
+@@ -588,31 +590,32 @@
+   *     @arg DMA2_IT_TC5: DMA2 Channel5 transfer complete interrupt.
+   *     @arg DMA2_IT_HT5: DMA2 Channel5 half transfer interrupt.
+   *     @arg DMA2_IT_TE5: DMA2 Channel5 transfer error interrupt.
+-  * @retval The new state of DMA_IT (SET or RESET).
++  * @retval The new state of DMAy_IT (SET or RESET).
+   */
+-ITStatus DMA_GetITStatus(uint32_t DMA_IT)
++ITStatus DMA_GetITStatus(uint32_t DMAy_IT)
+ {
+   ITStatus bitstatus = RESET;
+   uint32_t tmpreg = 0;
++
+   /* Check the parameters */
+-  assert_param(IS_DMA_GET_IT(DMA_IT));
++  assert_param(IS_DMA_GET_IT(DMAy_IT));
+ 
+   /* Calculate the used DMA */
+-  if ((DMA_IT & FLAG_Mask) != (uint32_t)RESET)
++  if ((DMAy_IT & FLAG_Mask) != (uint32_t)RESET)
+   {
+     /* Get DMA2 ISR register value */
+-    tmpreg = DMA2->ISR ;
++    tmpreg = DMA2->ISR;
+   }
+   else
+   {
+     /* Get DMA1 ISR register value */
+-    tmpreg = DMA1->ISR ;
++    tmpreg = DMA1->ISR;
+   }
+ 
+-  /* Check the status of the specified DMA interrupt */
+-  if ((tmpreg & DMA_IT) != (uint32_t)RESET)
++  /* Check the status of the specified DMAy interrupt */
++  if ((tmpreg & DMAy_IT) != (uint32_t)RESET)
+   {
+-    /* DMA_IT is set */
++    /* DMAy_IT is set */
+     bitstatus = SET;
+   }
+   else
+@@ -678,21 +681,21 @@
+   *     @arg DMA2_IT_TE5: DMA2 Channel5 transfer error interrupt.
+   * @retval None
+   */
+-void DMA_ClearITPendingBit(uint32_t DMA_IT)
++void DMA_ClearITPendingBit(uint32_t DMAy_IT)
+ {
+   /* Check the parameters */
+-  assert_param(IS_DMA_CLEAR_IT(DMA_IT));
++  assert_param(IS_DMA_CLEAR_IT(DMAy_IT));
+ 
+-  /* Calculate the used DMA */
+-  if ((DMA_IT & FLAG_Mask) != (uint32_t)RESET)
++  /* Calculate the used DMAy */
++  if ((DMAy_IT & FLAG_Mask) != (uint32_t)RESET)
+   {
+-    /* Clear the selected DMA interrupt pending bits */
+-    DMA2->IFCR = DMA_IT;
++    /* Clear the selected DMAy interrupt pending bits */
++    DMA2->IFCR = DMAy_IT;
+   }
+   else
+   {
+-    /* Clear the selected DMA interrupt pending bits */
+-    DMA1->IFCR = DMA_IT;
++    /* Clear the selected DMAy interrupt pending bits */
++    DMA1->IFCR = DMAy_IT;
+   }
+ }
+ 
+diff -bur -I '^ *[/*].*' library/src/stm32f10x_i2c.c Atollic/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.c
+--- library/src/stm32f10x_i2c.c	2011-04-25 22:31:06.000000000 -0700
++++ Atollic/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.c	2011-04-26 13:49:08.000000000 -0700
+@@ -672,6 +673,46 @@
+ }
+ 
+ /**
++  * @brief  Selects the specified I2C NACK position in master receiver mode.
++  *         This function is useful in I2C Master Receiver mode when the number
++  *         of data to be received is equal to 2. In this case, this function 
++  *         should be called (with parameter I2C_NACKPosition_Next) before data 
++  *         reception starts,as described in the 2-byte reception procedure 
++  *         recommended in Reference Manual in Section: Master receiver.                
++  * @param  I2Cx: where x can be 1 or 2 to select the I2C peripheral.
++  * @param  I2C_NACKPosition: specifies the NACK position. 
++  *   This parameter can be one of the following values:
++  *     @arg I2C_NACKPosition_Next: indicates that the next byte will be the last
++  *          received byte.  
++  *     @arg I2C_NACKPosition_Current: indicates that current byte is the last 
++  *          received byte.
++  *            
++  * @note    This function configures the same bit (POS) as I2C_PECPositionConfig() 
++  *          but is intended to be used in I2C mode while I2C_PECPositionConfig() 
++  *          is intended to used in SMBUS mode. 
++  *            
++  * @retval None
++  */
++void I2C_NACKPositionConfig(I2C_TypeDef* I2Cx, uint16_t I2C_NACKPosition)
++{
++  /* Check the parameters */
++  assert_param(IS_I2C_ALL_PERIPH(I2Cx));
++  assert_param(IS_I2C_NACK_POSITION(I2C_NACKPosition));
++  
++  /* Check the input parameter */
++  if (I2C_NACKPosition == I2C_NACKPosition_Next)
++  {
++    /* Next byte in shift register is the last received byte */
++    I2Cx->CR1 |= I2C_NACKPosition_Next;
++  }
++  else
++  {
++    /* Current byte in shift register is the last received byte */
++    I2Cx->CR1 &= I2C_NACKPosition_Current;
++  }
++}
++
++/**
+   * @brief  Drives the SMBusAlert pin high or low for the specified I2C.
+   * @param  I2Cx: where x can be 1 or 2 to select the I2C peripheral.
+   * @param  I2C_SMBusAlert: specifies SMBAlert pin level. 

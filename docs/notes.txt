@@ -1,0 +1,9 @@
+Atollic True Studio Lite
+Eclipse-based
+ftp://ftp.atollic.com/pub/TrueSTUDIO/installers/TrueSTUDIO_STM32_Lite_win32_v2.1.0_20110426-1135.exe
+Has ST-LINK driver that is a GDB server
+
+devkitPRO and devkitInsight
+see http://state-machine.com/arm/index.php
+http://sourceforge.net/projects/devkitpro/files/devkitARM/
+http://sourceforge.net/projects/devkitpro/files/devkitARM/devkitARM_r32-win32.exe/download
