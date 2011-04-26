@@ -2731,6 +2731,9 @@
     <name>$PROJ_DIR$\app\audio.h</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\app\DDS.c</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\app\jigbox.h</name>
   </file>
   <file>
