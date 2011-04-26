@@ -164,7 +164,7 @@
         <debug>1</debug>
         <option>
           <name>CCDefines</name>
-          <state>EMB_FLASH</state>
+          <state>USE_STDPERIPH_DRIVER</state>
           <state>STM32F10X_HD</state>
         </option>
         <option>
@@ -296,7 +296,6 @@
           <name>CCIncludePath2</name>
           <state>$PROJ_DIR$\</state>
           <state>$PROJ_DIR$\app\</state>
-          <state>$PROJ_DIR$\board\</state>
           <state>$PROJ_DIR$\module\</state>
           <state>$PROJ_DIR$\..\library\inc</state>
           <state>$PROJ_DIR$\..\CMSIS\CM3\DeviceSupport\ST\STM32F10x</state>
@@ -2698,30 +2697,9 @@
     </file>
   </group>
   <group>
-    <name>USB</name>
-    <group>
-      <name>Class</name>
-      <file>
-        <name>$PROJ_DIR$\app\audio_class.c</name>
-      </file>
-    </group>
-    <group>
-      <name>Config</name>
-    </group>
-    <group>
-      <name>Core</name>
-    </group>
-    <group>
-      <name>HW</name>
-    </group>
-  </group>
-  <group>
     <name>Vectors</name>
     <file>
       <name>$PROJ_DIR$\app\stm32f10x_it.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\app\stm32f10x_vector.c</name>
     </file>
   </group>
   <file>
@@ -2731,19 +2709,22 @@
     <name>$PROJ_DIR$\app\audio.h</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\app\DDS.c</name>
+    <name>$PROJ_DIR$\app\audio_class.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\app\jigbox.h</name>
+    <name>$PROJ_DIR$\app\DDS.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\app\LED.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\app\LED.h</name>
+    <name>$PROJ_DIR$\app\main.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\app\main.c</name>
+    <name>$PROJ_DIR$\app\system_stm32f10x.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\app\systick.c</name>
   </file>
 </project>
 

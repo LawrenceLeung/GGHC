@@ -10,70 +10,24 @@
  *
  *    $Revision: 1.1.2.1 $
  **************************************************************************/
-#include "includes.h"
+#include "jigbox.h"
 
-#define LOOP_DLY_100US  450
+#define LOOP_DLY_100US 450
 
 Note notes[NUMBER_OF_NOTES];
 
-static unsigned long metronomePeriod;
+static uint32_t metronomePeriod;
 
-Int16S testSound[SampPerFrame]=
-  {
-0,
-267,
-529,
-783,
-1023,
-1246,
-1447,
-1623,
-1772,
-1891,
-1977,
-2029,
-2047,
-2029,
-1977,
-1891,
-1772,
-1623,
-1447,
-1246,
-1023,
-783,
-529,
-267,
-0,
--268,
--530,
--784,
--1024,
--1247,
--1448,
--1624,
--1773,
--1892,
--1978,
--2030,
--2047,
--2030,
--1978,
--1892,
--1773,
--1624,
--1448,
--1247,
--1024,
--784,
--530,
--268
+int16_t testSound[SampPerFrame] = {
+    0, 267, 529, 783, 1023, 1246, 1447, 1623, 1772, 1891, 1977, 2029, 2047,
+    2029, 1977, 1891, 1772, 1623, 1447, 1246, 1023, 783, 529, 267, 0, -268,
+    -530, -784, -1024, -1247, -1448, -1624, -1773, -1892, -1978, -2030, -2047,
+    -2030, -1978, -1892, -1773, -1624, -1448, -1247, -1024, -784, -530, -268
 };
-
 
 /*************************************************************************
  * Function Name: Dly100us
- * Parameters: Int32U Dly
+ * Parameters: uint32_t Dly
  *
  * Return: none
  *
@@ -82,17 +36,20 @@ Int16S testSound[SampPerFrame]=
  *************************************************************************/
 void Dly100us(void *arg)
 {
-Int32U Dly = (Int32U)arg;
-  while(Dly--)
-  {
-    for(__IO int i = LOOP_DLY_100US; i; i--);
-  }
+    uint32_t Dly = (uint32_t)arg;
+    while(Dly--)
+    {
+        for(__IO int i = LOOP_DLY_100US; i; i--)
+        {
+        }
+    }
 }
 
-void SetMetronomePeriod(unsigned long newPeriod)
+void SetMetronomePeriod(uint32_t newPeriod)
 {
-  metronomePeriod = newPeriod;
+    metronomePeriod = newPeriod;
 }
+
 /*************************************************************************
  * Function Name: InitAudioDevice
  * Parameters: none
@@ -104,65 +61,65 @@ void SetMetronomePeriod(unsigned long newPeriod)
  *************************************************************************/
 void InitAudioDevice(void)
 {
-  GPIO_InitTypeDef GPIO_InitStructure;
-  
-#ifdef USE_FULL_ASSERT
-  debug();
-#endif
-    
-  ENTR_CRT_SECTION();
+    GPIO_InitTypeDef GPIO_InitStructure;
 
-  // Audio Device Class
+#ifdef USE_FULL_ASSERT
+    debug();
+#endif
+
+    ENTR_CRT_SECTION();
+
+    // Audio Device Class
     UsbAudioClassInit();
-// Set STNBY pin
-    GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_3;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    // Set STNBY pin
+    GPIO_InitStructure.GPIO_Pin   =  GPIO_Pin_3;
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOC, &GPIO_InitStructure);
 
     // Chip on
     GPIO_WriteBit(GPIOC, GPIO_Pin_3, Bit_RESET);
-    
-  // Soft connection enable
-  //USB_ConnectRes(TRUE);
 
-  EXT_CRT_SECTION();
-  // Note 0 is the metronome note
-  notes[0].frequency = 216; // Middle C
-  notes[0].period = 100; // TODO
-  notes[0].noteVoiceBuffer = testSound; // Sinewave buffer
-  notes[0].noteOn = TRUE; // TODO start with it on just for test
+    // Soft connection enable
+    //USB_ConnectRes(true);
 
-  // Note 1 maps to the first button.
-  notes[1].frequency = 216; // Middle C
-  notes[1].period = 100; // TODO
-  notes[1].noteVoiceBuffer = testSound; // Sinewave buffer
-  notes[1].noteOn = TRUE; // TODO start with it on just for test
+    EXT_CRT_SECTION();
+    // Note 0 is the metronome note
+    notes[0].frequency       = 216; // Middle C
+    notes[0].period          = 100; // TODO
+    notes[0].noteVoiceBuffer = testSound; // Sinewave buffer
+    notes[0].noteOn          = true; // TODO start with it on just for test
 
-  metronomePeriod = 100;
+    // Note 1 maps to the first button.
+    notes[1].frequency       = 216; // Middle C
+    notes[1].period          = 100; // TODO
+    notes[1].noteVoiceBuffer = testSound; // Sinewave buffer
+    notes[1].noteOn          = true; // TODO start with it on just for test
+
+    metronomePeriod          = 100;
 }
 
 void metronome(void)
 {
-  static unsigned long previousSysTime;
-  static Boolean metronomeUpBeat = FALSE;
-  unsigned long deltaSysTime;
-  const unsigned long metronomeUpPeriod = 10;
+    static uint32_t previousSysTime;
+    static bool metronomeUpBeat      = false;
+    uint32_t deltaSysTime;
+    const uint32_t metronomeUpPeriod = 10;
 
-  deltaSysTime = sysTime - previousSysTime;
-  
-  if (deltaSysTime > metronomePeriod)
-  {
-    notes[0].noteOn = TRUE;
-    metronomeUpBeat= TRUE;
-    previousSysTime = sysTime;
-  }
-  else
-  {
-    if (metronomeUpBeat && (deltaSysTime > metronomeUpPeriod))
+    deltaSysTime = sysTime - previousSysTime;
+
+    if (deltaSysTime > metronomePeriod)
     {
-      notes[0].noteOn = FALSE;
-      metronomeUpBeat= FALSE;
+        notes[0].noteOn = true;
+        metronomeUpBeat = true;
+        previousSysTime = sysTime;
     }
-  }
+    else
+    {
+        if (metronomeUpBeat && (deltaSysTime > metronomeUpPeriod))
+        {
+            notes[0].noteOn = false;
+            metronomeUpBeat = false;
+        }
+    }
 }

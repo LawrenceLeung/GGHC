@@ -1,30 +1,7 @@
-/*************************************************************************
- *
- *    Used with ICCARM and AARM.
- *
- *    (c) Copyright IAR Systems 2005
- *
- *    File name   : audio_class.h
- *    Description : AUDIO CLASS definitions
- *
- *    History :
- *    1. Date        : November 29, 2005
- *       Author      : Stanimir Bonev
- *       Description : Create
- *
- *    $Revision: 1.4 $
- **************************************************************************/
-#include "includes.h"
-
 #ifndef __AUDIO_CLASS_H
 #define __AUDIO_CLASS_H
 
-#include "stm32f10x_adc.h"
-#include "stm32f10x_rcc.h"
-#include "stm32f10x_tim.h"
-#include "misc.h"
-
-extern __IO Boolean playNextFrame;
+extern __IO bool playNextFrame;
 
 #define MinVol        0x8000
 
@@ -81,52 +58,6 @@ typedef enum
 #define PITCH_CONTROL                       0x02
 
 /*************************************************************************
- * Function Name: UsbAudioClassInit
- * Parameters: none
- *
- * Return: none
- *
- * Description: USB Class Audio Init
- *
- *************************************************************************/
-void UsbAudioClassInit (void);
-
-/*************************************************************************
- * Function Name: UsbClassAudioConfigure
- * Parameters:  pUsbDevCtrl_t pDev
- *
- * Return: none
- *
- * Description: USB Class Audio configure
- *
- *************************************************************************/
-void UsbClassAudioConfigure (pUsbDevCtrl_t pDev);
-
-/*************************************************************************
- * Function Name: AudioInHandler
- * Parameters:  USB_Endpoint_t EP
- *
- * Return: none
- *
- * Description: USB Class Audio Out EP handler
- *
- *************************************************************************/
-static
-void AudioInHandler (USB_Endpoint_t EP);
-
-/*************************************************************************
- * Function Name: AudioOutHandler
- * Parameters:  USB_Endpoint_t EP
- *
- * Return: none
- *
- * Description: USB Class Audio In EP handler
- *
- *************************************************************************/
-static
-void AudioOutHandler (USB_Endpoint_t EP);
-
-/*************************************************************************
  * Function Name: Tim2Handler
  * Parameters: none
  *
@@ -135,30 +66,18 @@ void AudioOutHandler (USB_Endpoint_t EP);
  * Description: Timer 2 interrupt handler
  *		
  *************************************************************************/
-__ramfunc
 void Tim2Handler (void);
 
 /*************************************************************************
  * Function Name: AudioFeatureGetReg
- * Parameters:  Int32U CS, Int32U Id
+ * Parameters:  uint32_t CS, uint32_t Id
  *
- * Return: Boolean
+ * Return: bool
  *
  * Description:
  *
  *************************************************************************/
-static Boolean AudioFeatureGetReg (Int32U CS, Int32U Id);
-
-/*************************************************************************
- * Function Name: UsbClassAudioRequest
- * Parameters:  pUsbSetupPacket_t pSetup
- *
- * Return: UsbCommStatus_t
- *
- * Description: USB Class Audio Requests
- *
- *************************************************************************/
-UsbCommStatus_t UsbClassAudioRequest (pUsbSetupPacket_t pSetup);
+static bool AudioFeatureGetReg (uint32_t CS, uint32_t Id);
 
 /*************************************************************************
  * Function Name: UsbClassAudioData
@@ -169,10 +88,7 @@ UsbCommStatus_t UsbClassAudioRequest (pUsbSetupPacket_t pSetup);
  * Description: USB Class Audio Data receive
  *
  *************************************************************************/
-static
-void UsbClassAudioData (USB_Endpoint_t EP);
-
-void AudioMemoryBufPlay (Int16S pSpkBuf[SampPerFrame]);
+void AudioMemoryBufPlay (int16_t pSpkBuf[SampPerFrame]);
 
 
 #endif //__AUDIO_CLASS_H

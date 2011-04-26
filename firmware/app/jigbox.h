@@ -8,18 +8,31 @@
 #ifndef  __JIGBOX_H
 #define  __JIGBOX_H
 
-/**
-These libs blow up on the discovery board.  We'll just use the stock discovery ones for that board.
-*/
-#ifndef STM_DISCOVERY
-// TODO #include "stm32f10x_map.h"
+#ifndef USE_STDPERIPH_DRIVER
+#   define USE_STDPERIPH_DRIVER
 #endif
-#include "stm32f10x_gpio.h"
 
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <intrinsics.h>
+#include <assert.h>
 
+#include <stdbool.h>
 
+#include "stm32f10x.h"
 
-extern __IO unsigned long sysTime;
+// #include "drv_hd44780_cnfg.h"
+// #include "drv_hd44780_l.h"
+// #include "drv_hd44780.h"
+
+#include "audio.h"
+#include "LED.h"
+#include "DDS.h"
+#include "systick.h"
+
 
 /* PUSH BUTTONS
  * There are 5 buttons for the pentatonic scale notes. As the mapping of 
@@ -112,5 +125,8 @@ extern __IO unsigned long sysTime;
 #define ACCEL_INT1_PIN GPIO_Pin_3
 
 #define LED_RATE 20 /* 20 ticks of TIM1 which is 1/5 second */
+
+// call this to catch an error
+extern void abort(void);
 
 #endif  /* __JIGBOX_H */
