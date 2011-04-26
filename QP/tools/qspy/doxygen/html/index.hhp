@@ -1,0 +1,59 @@
+[OPTIONS]
+Compiled file=../../qspy.chm
+Compatibility=1.1
+Full-text search=Yes
+Contents file=index.hhc
+Default Window=main
+Default topic=index.html
+Index file=index.hhk
+Language=0x409 English (United States)
+Title=QSPY
+
+[WINDOWS]
+main="QSPY","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
+
+[FILES]
+index.html
+pages.html
+win32_2mingw_2com_8cpp_source.html
+win32_2vc2008_2com_8cpp_source.html
+linux_2gnu_2com_8cpp_source.html
+dict_8cpp_source.html
+dict_8h_source.html
+getopt_8c_source.html
+getopt_8h_source.html
+hal_8h_source.html
+main_8cpp_source.html
+qs_8h_source.html
+qspy_8cpp_source.html
+qspy_8h_source.html
+stdint_8h_source.html
+win32_2mingw_2tcp_8cpp_source.html
+win32_2vc2008_2tcp_8cpp_source.html
+linux_2gnu_2tcp_8cpp_source.html
+qs_8h.html
+qspy_human_format.html
+qspy_matlab.html
+rev_page.html
+annotated.html
+classes.html
+functions.html
+functions_func.html
+functions_vars.html
+class_q_s.html
+class_q_s-members.html
+files.html
+globals.html
+globals_vars.html
+globals_type.html
+globals_enum.html
+globals_eval.html
+globals_defs.html
+tabs.css
+tab_a.png
+tab_b.png
+tab_h.png
+tab_s.png
+nav_h.png
+nav_f.png
+bc_s.png

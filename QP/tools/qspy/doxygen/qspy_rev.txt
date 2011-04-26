@@ -1,0 +1,13 @@
+/**
+\page rev_page_qspy QSPY Revision History
+
+\section qspy_4_1_06 Version 4.1.06 (Product) Release date: Feb 09, 2011
+
+This is the intial standalone release of the QSPY host application.
+QSPY is still available in the QP/C and QP/C++ distributions, but
+other rapid prototyping platforms (such as mbed or Arduino) do not
+use the standard QP distributions and have no easy access to the
+QSPY tool. For these users, this pre-compiled standalone release
+is more convenient.
+
+*/

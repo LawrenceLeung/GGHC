@@ -1,0 +1,21 @@
+# options: -translation lf -encoding utf-8
+
+D:/software/qpcpp/tools/qspy/setup/gpl.txt 0A471B9C-96D3-464D-9776-D4C420B72E75 zlib
+D:/software/qpcpp/tools/qspy/setup/readme.txt 36E2E08B-C158-4563-9450-2461F358FA97 zlib
+D:/software/qpcpp/tools/qspy/source/dict.cpp 9FDA5BFB-0628-4017-900C-957CA2E588F6 zlib
+D:/software/qpcpp/tools/qspy/source/getopt.c C22750D4-4203-4708-B969-AA2E67908054 zlib
+D:/software/qpcpp/tools/qspy/source/main.cpp 1478B42F-4506-4158-81C9-4DA8EBF9F2BE zlib
+D:/software/qpcpp/tools/qspy/source/qspy.cpp B9709788-266B-4ADE-B739-55FEEE2CAA63 zlib
+D:/software/qpcpp/qpcpp.chm 326DEBF8-2995-4FDE-9074-96468756561E zlib
+D:/software/qpcpp/tools/qspy/include/dict.h A8EF6C8F-4991-462D-888A-58976A6854AE zlib
+D:/software/qpcpp/tools/qspy/include/getopt.h BB361DAE-3F28-40A1-A249-E89625FB5C67 zlib
+D:/software/qpcpp/tools/qspy/include/hal.h ABA9250C-4916-4061-B7C6-2AD798A67003 zlib
+D:/software/qpcpp/tools/qspy/include/qs.h 1BE879A1-170E-461E-81CD-C8572F827E6D zlib
+D:/software/qpcpp/tools/qspy/include/qspy.h 340AC8AE-C05F-41E8-9BE4-52FEDA08D39D zlib
+D:/software/qpcpp/tools/qspy/matlab/philo_queues.m 1EB7BDD4-66D5-41D1-A0CD-6C6326FF36CB zlib
+D:/software/qpcpp/tools/qspy/matlab/philo_timing.m C078CB2C-A3DC-4EA3-AB8A-8CA7D85A7E4B zlib
+D:/software/qpcpp/tools/qspy/matlab/qspy.m 52445CD8-7524-4530-BD97-31876BE74B57 zlib
+D:/software/qpcpp/tools/qspy/win32/mingw/com.cpp 8B98487C-7A2E-4664-81D2-B155AB264D36 zlib
+D:/software/qpcpp/tools/qspy/win32/mingw/make.bat 79B18464-3698-4746-BA7B-44087B685E22 zlib
+D:/software/qpcpp/tools/qspy/win32/mingw/tcp.cpp 4F5F9CAA-49C1-4A9D-89E1-194094A6B2FB zlib
+D:/software/qpcpp/tools/qspy/win32/mingw/rel/qspy.exe 0C94280E-B532-4220-837A-B84E3E04CC3D zlib

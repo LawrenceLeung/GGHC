@@ -1,0 +1,142 @@
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set IAR_ARM=c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>make_cortex-m3.bat
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>rem @echo off 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>setlocal
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>if "c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart" == "" set IAR_ARM="C:\tools\IAR\ARM_KS_6.10" 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set PATH="c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\bin;c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\common\bin;"c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\arm\bin";C:\Program Files\STMicroelectronics\st_toolset\asm;C:\Program Files\Parallels\Parallels Tools\Applications;C:\Program Files\Atmel\AVR Tools\AVR Toolchain\bin;C:\WinAVR-20100110\bin;C:\WinAVR-20100110\utils\bin;C:\WinAVR-20080610\bin;C:\WinAVR-20080610\utils\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\VISA\WinNTBin;C:\VXIPNP\WinNT\Bin;C:\Program Files\TortoiseSVN\bin;C:\VXIPNP\WinNT\Bin\;C:\Program Files\Agilent\IO Libraries Suite\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\VXIPNP\winnt\agvisa;E:\Program Files\Microchip\MPLAB IDE\VDI;C:\Program Files\HI-TECH Software\PICC\PRO\9.60\bin;C:\Program Files\HI-TECH Software\PICC\PRO\9.65\bin;C:\Program Files\HI-TECH Software\HI-TIDE\3.15\bin;C:\Program Files\Microchip\MPLAB IDE\VDI;C:\Program Files\Microchip\MPLAB C32 Suite\bin;C:\Program Files\HI-TECH Software\PICC\9.70\bin;C:\Program Files\Texas Instruments\CC Essentials 2.0\eclipse\plugins\com.ti.eem.wrapper_2.0.0 " 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set CC=iccarm 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set ASM=iasmarm 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set LIB=iarchive 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set QP_INCDIR=..\..\..\..\include 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set QP_PRTDIR=. 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set ARM_CORE=cortex-m3 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>if "" == "" (
+echo default selected  
+ set BINDIR=.\dbg  
+ set CCFLAGS=-D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz  
+ set ASMFLAGS=-s+ -w+ -r --cpu cortex-m3 --fpu None -Ic:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\  
+) 
+default selected
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>if "" == "rel" (
+echo rel selected  
+ set BINDIR=.\rel  
+ set CCFLAGS=-D NDEBUG --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz  
+ set ASMFLAGS=-s+ -w+ -r --cpu cortex-m3 --fpu None -Ic:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\  
+) 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>if "" == "spy" (
+echo spy selected  
+ set BINDIR=.\spy  
+ set CCFLAGS=-D Q_SPY -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz  
+ set ASMFLAGS=-s+ -w+ -r --cpu cortex-m3 --fpu None -Ic:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\  
+) 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set LIBDIR=.\dbg 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set LIBFLAGS= 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set SRCDIR=..\..\..\..\qep\source 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>set CCINC=-I. -I..\..\..\..\include -I..\..\..\..\qep\source 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qep\source -o.\dbg\ ..\..\..\..\qep\source\qep.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qep\source -o.\dbg\ ..\..\..\..\qep\source\qfsm_ini.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qep\source -o.\dbg\ ..\..\..\..\qep\source\qfsm_dis.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qep\source -o.\dbg\ ..\..\..\..\qep\source\qhsm_ini.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qep\source -o.\dbg\ ..\..\..\..\qep\source\qhsm_dis.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qep\source -o.\dbg\ ..\..\..\..\qep\source\qhsm_top.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qep\source -o.\dbg\ ..\..\..\..\qep\source\qhsm_in.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>erase .\dbg\libqep_cortex-m3.a 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iarchive  -o.\dbg\libqep_cortex-m3.a .\dbg\qep.o .\dbg\qfsm_ini.o .\dbg\qfsm_dis.o .\dbg\qhsm_ini.o .\dbg\qhsm_dis.o .\dbg\qhsm_top.o .\dbg\qhsm_in.o 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qa_defer.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qa_fifo.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qa_lifo.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qa_get_.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qa_sub.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qa_usub.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qa_usuba.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qeq_fifo.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qeq_get.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qeq_init.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qeq_lifo.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qf_act.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qf_gc.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qf_log2.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qf_new.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qf_pool.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qf_psini.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qf_pspub.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qf_pwr2.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qf_tick.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qmp_get.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qmp_init.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qmp_put.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qte_ctor.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qte_arm.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qte_darm.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qf\source -o.\dbg\ ..\..\..\..\qf\source\qte_rarm.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>erase .\dbg\libqf_cortex-m3.a 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iarchive  -o.\dbg\libqf_cortex-m3.a .\dbg\qa_defer.o .\dbg\qa_fifo.o .\dbg\qa_lifo.o .\dbg\qa_get_.o .\dbg\qa_sub.o .\dbg\qa_usub.o .\dbg\qa_usuba.o .\dbg\qeq_fifo.o .\dbg\qeq_get.o .\dbg\qeq_init.o .\dbg\qeq_lifo.o .\dbg\qf_act.o .\dbg\qf_gc.o .\dbg\qf_log2.o .\dbg\qf_new.o .\dbg\qf_pool.o .\dbg\qf_psini.o .\dbg\qf_pspub.o .\dbg\qf_pwr2.o .\dbg\qf_tick.o .\dbg\qmp_get.o .\dbg\qmp_init.o .\dbg\qmp_put.o .\dbg\qte_ctor.o .\dbg\qte_arm.o .\dbg\qte_darm.o .\dbg\qte_rarm.o 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qk\source -o.\dbg\ ..\..\..\..\qk\source\qk.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qk\source -o.\dbg\ ..\..\..\..\qk\source\qk_sched.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iccarm -D DEBUG --debug --endian little --cpu cortex-m3 -e --fpu None --dlib_config c:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\c\DLib_Config_Normal.h --diag_suppress Pa050 -Ohz -I. -I..\..\..\..\include -I..\..\..\..\qk\source -o.\dbg\ ..\..\..\..\qk\source\qk_mutex.c 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iasmarm -s+ -w+ -r --cpu cortex-m3 --fpu None -Ic:\Program Files\IAR Systems\Embedded Workbench 6.0 Kickstart\ARM\INC\   -o .\dbg\qk_port.o src\qk_port.s 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>erase .\dbg\libqk_cortex-m3.a 
+
+X:\src\GGHC\QP\ports\arm-cortex\qk\iar>iarchive  .\dbg\libqk_cortex-m3.a .\dbg\qk.o .\dbg\qk_sched.o .\dbg\qk_mutex.o .\dbg\qk_port.o 
