@@ -2,6 +2,18 @@ Atollic True Studio Lite
 Eclipse-based
 ftp://ftp.atollic.com/pub/TrueSTUDIO/installers/TrueSTUDIO_STM32_Lite_win32_v2.1.0_20110426-1135.exe
 Has ST-LINK driver that is a GDB server
+"C:\Program Files\Atollic\TrueSTUDIO STM32 Lite 2.1.0\Servers\ST-LINK_gdbserver\ST-LINK_gdbserver.exe" -p 61234 -l 1 -d
+=> Starting server with the following options: 
+        Persistant Mode            : Disabled 
+        LogFile Name               : debug_log.txt
+        Logging Level              : 1
+        Listen Port Number         : 61234
+        Status Refresh Delay       : 15s
+        Verbose Mode               : Disabled 
+        SWD Debug                  : Enabled 
+Talks to gdb 7.2
+"C:\Program Files\Atollic\TrueSTUDIO STM32 Lite 2.1.0\ARMTools\bin\arm-atollic-eabi-gdb" -q -nw -i mi -l 600 X:\src\GGHC\Atollic\Debug\Jigbox.elf 
+
 
 devkitPRO and devkitInsight
 see http://state-machine.com/arm/index.php
