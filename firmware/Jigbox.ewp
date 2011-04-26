@@ -1055,6 +1055,7 @@
           <name>CCDefines</name>
           <state>EMB_FLASH</state>
           <state>STM32F10X_MD_VL</state>
+          <state>STM_DISCOVERY</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -1188,6 +1189,8 @@
           <state>$PROJ_DIR$\board\</state>
           <state>$PROJ_DIR$\module\</state>
           <state>$PROJ_DIR$\..\library\inc</state>
+          <state>$PROJ_DIR$\..\CMSIS\CM3\DeviceSupport\ST\STM32F10x</state>
+          <state>$PROJ_DIR$\..\CMSIS\CM3\CoreSupport\</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>

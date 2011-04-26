@@ -122,7 +122,9 @@ void Clk_Init (void)
   // wait until the HSE is ready
   while(RCC_GetFlagStatus(RCC_FLAG_HSERDY) == RESET);
   // 3. Init PLL
+#ifndef STM_DISCOVERY
   RCC_PLLConfig(RCC_PLLSource_HSE_Div1,RCC_PLLMul_9); // 72MHz
+#endif
   RCC_PLLCmd(ENABLE);
   // wait until the PLL is ready
   while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET);

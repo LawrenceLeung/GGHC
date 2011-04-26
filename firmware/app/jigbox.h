@@ -13,9 +13,10 @@ These libs blow up on the discovery board.  We'll just use the stock discovery o
 */
 #ifndef STM_DISCOVERY
 // TODO #include "stm32f10x_map.h"
+#endif
 #include "stm32f10x_gpio.h"
 
-#endif
+
 
 
 extern __IO unsigned long sysTime;
