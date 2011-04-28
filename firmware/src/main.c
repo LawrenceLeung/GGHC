@@ -51,16 +51,6 @@ void LEDsSet (unsigned int State)
     GPIO_WriteBit(GPIOC,GPIO_Pin_12 ,(State)?Bit_RESET:Bit_SET);
 }
 
-// TODO move and / or eliminate this
-int16_t silentSound[SampPerFrame]=
-{
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0
-};
 
 void Initialize(void)
 {
@@ -109,16 +99,6 @@ void Initialize(void)
 
 }
 
-void PlayFrame(int voice)
-{
-    // TODO Add a for loop to get all notes from all buttons.
-    if(notes[voice].noteOn){
-        AudioMemoryBufPlay(notes[voice].noteVoiceBuffer);
-    }else{
-        AudioMemoryBufPlay(silentSound);
-    }
-}
-
 /*************************************************************************
  * Function Name: main
  * Parameters: none
@@ -149,15 +129,19 @@ static int LedCount = 0;
       }
       else
       {
-  	    notes[i+1].noteOn = false;
+        notes[i+1].noteOn = false;
       }
     }
 
     i = 0; // Metronome voice
-    // TODO refactor this into a function in audio.c
+
     if (playNextFrame)
     {
-      PlayFrame(i);
+      for(i = 0; i < 2 /* TODO NUMBER_OF_NOTES */ ; i++)
+      {
+        MixFrame(i);
+      }
+      PlayFrame();
       playNextFrame = false;
     }
     // end TODO

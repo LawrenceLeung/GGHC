@@ -17,17 +17,11 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <limits.h>
-// TODO IAR only
-// #include <intrinsics.h>
 #include <assert.h>
 
 #include <stdbool.h>
 
 #include "stm32f10x.h"
-
-// #include "drv_hd44780_cnfg.h"
-// #include "drv_hd44780_l.h"
-// #include "drv_hd44780.h"
 
 #include "audio.h"
 #include "LED.h"

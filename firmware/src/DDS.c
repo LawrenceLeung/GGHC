@@ -21,7 +21,7 @@ void DDS_setFrequency(DDS_Context *context, float originalFrequency, float desir
 }
 
 // Return the next sample for the given context.
-int16_t DDS_nextSample(DDS_Context *context)
+audioBuf_t DDS_nextSample(DDS_Context *context)
 {
     // round index to nearest sample index
     DDS_FixedPoint roundedIndex = context->accumulator;

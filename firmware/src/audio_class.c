@@ -156,11 +156,6 @@ void UsbAudioClassInit(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
     ADC_InitTypeDef ADC_InitStructure;
-//TODO del NVIC_InitTypeDef NVIC_InitStructure;
-    //#ifdef TODO
-    //TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
-//TODO del  TIM_OCInitTypeDef TIM1_OCInitStructure;
-    //#endif
 
     // Init Audio Class variables
     SempEna          \

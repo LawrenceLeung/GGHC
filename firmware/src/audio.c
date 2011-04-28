@@ -12,6 +12,7 @@
  **************************************************************************/
 #include "jigbox.h"
 #include "audio_class.h"
+#include "voices.h"
 
 #define LOOP_DLY_100US 450
 
@@ -19,11 +20,31 @@ Note notes[NUMBER_OF_NOTES];
 
 static uint32_t metronomePeriod;
 
-int16_t testSound[SampPerFrame] = {
+audioBuf_t testSound[SampPerFrame] = {
     0, 267, 529, 783, 1023, 1246, 1447, 1623, 1772, 1891, 1977, 2029, 2047,
     2029, 1977, 1891, 1772, 1623, 1447, 1246, 1023, 783, 529, 267, 0, -268,
     -530, -784, -1024, -1247, -1448, -1624, -1773, -1892, -1978, -2030, -2047,
     -2030, -1978, -1892, -1773, -1624, -1448, -1247, -1024, -784, -530, -268
+};
+
+audioBuf_t silentSound[SampPerFrame]=
+{
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0
+};
+
+audioBuf_t mixBuffer[SampPerFrame]=
+{
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0
 };
 
 /*************************************************************************
@@ -64,6 +85,13 @@ void SetMetronomePeriod(uint32_t newPeriod)
 void InitAudioDevice(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
+    DDS_Context contextNote1;
+    DDS_Context contextNote2;
+    DDS_Context contextNote3;
+    DDS_Context contextNote4;
+    DDS_Context contextNote5;
+
+    DDS_initializeContext(&contextNote1, voice1, 16384 );
 
 
     // Audio Device Class
@@ -77,8 +105,7 @@ void InitAudioDevice(void)
     // Chip on
     GPIO_WriteBit(GPIOC, GPIO_Pin_3, Bit_RESET);
 
-    // Soft connection enable
-    //USB_ConnectRes(true);
+    // TODO Maybe the noteVoiceBuffer is redundant as it is replaced by the context
 
     // Note 0 is the metronome note
     notes[0].frequency       = 216; // Middle C
@@ -89,8 +116,11 @@ void InitAudioDevice(void)
     // Note 1 maps to the first button.
     notes[1].frequency       = 216; // Middle C
     notes[1].period          = 100; // TODO
-    notes[1].noteVoiceBuffer = testSound; // Sinewave buffer
+    notes[1].noteVoiceBuffer = voice1; // Sinewave buffer
     notes[1].noteOn          = true; // TODO start with it on just for test
+    notes[1].context = contextNote1;
+
+    DDS_setFrequency(&(notes[1].context), 8000, 16000, 8000);
 
     metronomePeriod          = 100;
     playNextFrame = true; // Kick off the audio playing
@@ -120,4 +150,23 @@ void metronome(void)
             metronomeUpBeat = false;
         }
     }
+}
+
+void MixFrame(int voice)
+{
+	int i;
+    // TODO Add a for loop to get all notes from all buttons.
+    if(notes[voice].noteOn)
+    {
+    	for (i=0; i < SampPerFrame; i++)
+    	{
+
+          mixBuffer[i] += DDS_nextSample(&(notes[voice].context));
+    	}
+    }
+}
+
+void PlayFrame(void)
+{
+    AudioMemoryBufPlay(mixBuffer);
 }
