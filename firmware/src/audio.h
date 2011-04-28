@@ -9,6 +9,7 @@ void metronome(void);
 void SetMetronomePeriod(unsigned long newPeriod);
 void PlayFrame(void);
 void MixFrame(int voice);
+void ClearMixBuf(void);
 
 typedef struct oneNote
 {

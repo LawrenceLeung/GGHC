@@ -137,6 +137,7 @@ static int LedCount = 0;
 
     if (playNextFrame)
     {
+      ClearMixBuf();
       for(i = 0; i < 2 /* TODO NUMBER_OF_NOTES */ ; i++)
       {
         MixFrame(i);

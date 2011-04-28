@@ -91,24 +91,24 @@
 #define LED3_GRN_PIN GPIO_Pin_6
 
 // TODO Decide whether we are using RGB or single color, delete the other set of def's
-#define EXT_LED1_PORT GPIOA
-#define EXT_LED1_PIN GPIO_Pin_3
+#define EXT_LED1_PORT GPIOB
+#define EXT_LED1_PIN GPIO_Pin_15
 #define EXT_LED2_PORT GPIOA
-#define EXT_LED2_PIN GPIO_Pin_9
+#define EXT_LED2_PIN GPIO_Pin_3
 #define EXT_LED3_PORT GPIOA
-#define EXT_LED3_PIN GPIO_Pin_7
+#define EXT_LED3_PIN GPIO_Pin_9
 #define EXT_LED4_PORT GPIOA
 #define EXT_LED4_PIN GPIO_Pin_2
 #define EXT_LED5_PORT GPIOB
-#define EXT_LED5_PIN GPIO_Pin_0
+#define EXT_LED5_PIN GPIO_Pin_14
 #define EXT_LED6_PORT GPIOB
 #define EXT_LED6_PIN GPIO_Pin_1
 #define EXT_LED7_PORT GPIOB
 #define EXT_LED7_PIN GPIO_Pin_8
 #define EXT_LED8_PORT GPIOB
 #define EXT_LED8_PIN GPIO_Pin_9
-#define EXT_LED9_PORT GPIOA
-#define EXT_LED9_PIN GPIO_Pin_6
+#define EXT_LED9_PORT GPIOB
+#define EXT_LED9_PIN GPIO_Pin_0
 
 
 /* ACCELEROMETER

@@ -152,18 +152,36 @@ void metronome(void)
     }
 }
 
+void ClearMixBuf(void)
+{
+  int i;
+  for (i=0; i < SampPerFrame; i++)
+  {
+    mixBuffer[i] = 0;
+  }
+}
+
 void MixFrame(int voice)
 {
-	int i;
-    // TODO Add a for loop to get all notes from all buttons.
-    if(notes[voice].noteOn)
-    {
-    	for (i=0; i < SampPerFrame; i++)
-    	{
+  int i;
 
-          mixBuffer[i] += DDS_nextSample(&(notes[voice].context));
-    	}
+  if(notes[voice].noteOn)
+  {
+    if (voice != 0)
+    {
+      for (i=0; i < SampPerFrame; i++)
+      {
+        mixBuffer[i] += DDS_nextSample(&(notes[voice].context));
+      }
     }
+    else
+    {
+      for (i=0; i < SampPerFrame; i++)
+      {
+        mixBuffer[i] += notes[voice].noteVoiceBuffer[i];
+      }
+    }
+  }
 }
 
 void PlayFrame(void)
