@@ -156,7 +156,6 @@ void UsbAudioClassInit(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
     ADC_InitTypeDef ADC_InitStructure;
-    RCC_ClocksTypeDef RCC_Clocks;
 //TODO del NVIC_InitTypeDef NVIC_InitStructure;
     //#ifdef TODO
     //TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
@@ -173,9 +172,6 @@ void UsbAudioClassInit(void)
     pSpkData        = AudioSpkData;
     SempPerCurrHold = SempPeriod;
     Delta           = 0;
-
-    // Get different on chips' clocks.
-    RCC_GetClocksFreq(&RCC_Clocks);
 
     // PWM DAC (TIM2) 10 bit PA8
     // Enable GPIO clock and release reset

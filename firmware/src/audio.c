@@ -100,16 +100,17 @@ void metronome(void)
 {
     static uint32_t previousSysTime;
     static bool metronomeUpBeat      = false;
-    uint32_t deltaSysTime;
+    uint32_t deltaSysTime, currentSysTime;
     const uint32_t metronomeUpPeriod = 10;
 
-    deltaSysTime = systemTime() - previousSysTime;
+    currentSysTime = systemTime();
+    deltaSysTime = currentSysTime - previousSysTime;
 
     if (deltaSysTime > metronomePeriod)
     {
         notes[0].noteOn = true;
         metronomeUpBeat = true;
-        previousSysTime = systemTime();
+        previousSysTime = currentSysTime;
     }
     else
     {

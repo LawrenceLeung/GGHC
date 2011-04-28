@@ -10,6 +10,6 @@ void Clk_Init(void);
 extern volatile bool LedUpdate;
 extern volatile bool ButtonUpdate;
 
-extern uint32_t SempPeriod;
+extern uint32_t SempPeriod, DeltaPer;
 
 #endif /* TIMER_H_ */

@@ -83,6 +83,7 @@ static int LedCount = 0;
   // Initialize clock system
   Clk_Init();
   InitTimers();
+  Init_SysTick();
 
   // NVIC initialize
 #ifndef  EMB_FLASH

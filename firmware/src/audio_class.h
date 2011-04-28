@@ -15,7 +15,7 @@ extern __IO bool playNextFrame;
 
 #define SubFrameSize                    2
 #define SampPerFrame                    48
-#define SampFreq                        (SampPerFrame KHZ)
+#define SampFreq                        (SampPerFrame) // kHz
 #define SpkEp         	                ENP1_OUT
 #define SpkEpMaxSize   	                (SampPerFrame * SubFrameSize)
 #define SpkDDInd                        0

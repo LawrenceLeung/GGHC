@@ -7,6 +7,7 @@
 #define SYS_TICK_USEC 10000
 
 extern void Init_SysTick(void);
+extern void incSystemTime();
 
 // function to be called from the main loop to do an inefficient but timed delay
 // ONLY CALL THIS FROM MAIN LOOP!

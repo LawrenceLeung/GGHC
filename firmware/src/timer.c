@@ -1,5 +1,5 @@
 #include "jigbox.h"
-
+#include "audio_class.h"
 volatile uint16_t LedTimer = LED_RATE; // LED blinks at this rate
 volatile bool LedUpdate = false; // LED state should be updated if true
 volatile bool ButtonUpdate = false;  // Buttons should be read and variables updated if true
@@ -36,6 +36,7 @@ void TIM3_IRQHandler(void)
     }
 
     ButtonUpdate = true;
+    incSystemTime();
 }
 
 /*************************************************************************
@@ -113,6 +114,8 @@ void InitTimers(void)
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
     TIM_OCInitTypeDef TIM1_OCInitStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
+    RCC_ClocksTypeDef RCC_Clocks;
+
     // Timer1 initialize
     // Enable Timer1 clock and release reset
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
@@ -197,9 +200,12 @@ void InitTimers(void)
     // Reset TIM2
     TIM_DeInit(TIM2);
     // Time base configuration
-// TODO    SempPeriod                              = RCC_Clocks.PCLK2_Frequency/SampFreq;
-// TODO    DeltaPer                                = (SempPeriod/(SampPerFrame*2)) + 1;
-    TIM_TimeBaseStructure.TIM_Period        = SempPeriod / 100;
+    // Get different on chips' clocks.
+    RCC_GetClocksFreq(&RCC_Clocks);
+
+    SempPeriod                              = RCC_Clocks.PCLK2_Frequency/SampFreq;
+    DeltaPer                                = (SempPeriod/(SampPerFrame*2)) + 1;
+    TIM_TimeBaseStructure.TIM_Period        = SempPeriod / 1000;
     TIM_TimeBaseStructure.TIM_Prescaler     = 0; // max resolution
     TIM_TimeBaseStructure.TIM_ClockDivision = 0;
     TIM_TimeBaseStructure.TIM_CounterMode   = TIM_CounterMode_Up;

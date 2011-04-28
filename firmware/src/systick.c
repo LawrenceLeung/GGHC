@@ -2,6 +2,9 @@
 #include "jigbox.h"
 static uint32_t volatile mainLoopDelay;
 
+// TODO Just temp till I figure out the system tick
+static uint32_t systemTick = 0;
+
 /* Interrupt Handler */
 /**
   * @brief  This function handles SysTick Handler.
@@ -15,13 +18,18 @@ void SysTick_Handler(void)
     /* other work here */
 }
 
+// TODO This does not work as expected, kludging because I need to make progress :(
 // returns the SysTick value
 uint32_t systemTime(void)
 {
-    return SysTick->VAL;
+	// TODO return SysTick->VAL;
+    return systemTick;
 }
 
-
+void incSystemTime(void)
+{
+	systemTick++;
+}
 void Init_SysTick(void)
 {
     mainLoopDelay = 0;
