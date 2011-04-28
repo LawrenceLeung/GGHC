@@ -120,7 +120,7 @@ void InitAudioDevice(void)
     notes[1].noteOn          = true; // TODO start with it on just for test
     notes[1].context = contextNote1;
 
-    DDS_setFrequency(&(notes[1].context), 8000, 16000, 8000);
+    DDS_setFrequency(&(notes[1].context), 216, 216, 8000);
 
     metronomePeriod          = 100;
     playNextFrame = true; // Kick off the audio playing
@@ -165,22 +165,29 @@ void MixFrame(int voice)
 {
   int i;
 
-  if(notes[voice].noteOn)
-  {
     if (voice != 0)
     {
-      for (i=0; i < SampPerFrame; i++)
+      if(notes[voice].noteOn)
       {
-        mixBuffer[i] += DDS_nextSample(&(notes[voice].context));
+        for (i=0; i < SampPerFrame; i++)
+        {
+          mixBuffer[i] += DDS_nextSample(&(notes[voice].context));
+        }
       }
+      else
+        {
+          DDS_restart(&(notes[voice].context));
+        }
     }
     else
-    {
-      for (i=0; i < SampPerFrame; i++)
+    { /* Voice 0 is always the metronome */
+      if(notes[voice].noteOn)
       {
-        mixBuffer[i] += notes[voice].noteVoiceBuffer[i];
+        for (i=0; i < SampPerFrame; i++)
+        {
+          mixBuffer[i] += notes[voice].noteVoiceBuffer[i];
+        }
       }
-    }
   }
 }
 

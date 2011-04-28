@@ -39,3 +39,8 @@ audioBuf_t DDS_nextSample(DDS_Context *context)
 #endif
     return retval;
 }
+
+void DDS_restart(DDS_Context *context)
+{
+  context->accumulator.full = 0;
+}

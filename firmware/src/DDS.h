@@ -39,4 +39,7 @@ void DDS_setFrequency(DDS_Context *context, float originalFrequency, float desir
 // Return the next sample for the given context.
 audioBuf_t DDS_nextSample(DDS_Context *context);
 
+// Reset the context back to the start of the source buffer
+void DDS_restart(DDS_Context *context);
+
 #endif
