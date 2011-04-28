@@ -7,7 +7,7 @@
 extern const int buttonDebounceTime;
 
 typedef struct button {
-  int pressed;
+  bool pressed;
   uint32_t debounceTime;
 } button_t;
 

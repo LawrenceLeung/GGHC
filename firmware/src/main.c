@@ -109,6 +109,16 @@ void Initialize(void)
 
 }
 
+void PlayFrame(int voice)
+{
+    // TODO Add a for loop to get all notes from all buttons.
+    if(notes[voice].noteOn){
+        AudioMemoryBufPlay(notes[voice].noteVoiceBuffer);
+    }else{
+        AudioMemoryBufPlay(silentSound);
+    }
+}
+
 /*************************************************************************
  * Function Name: main
  * Parameters: none
@@ -130,31 +140,24 @@ static int LedCount = 0;
     metronome();
 
     int i;
-    
-#ifdef TODO
-    i = 1; // Button 0 is reserved
-    if (buttons[i].pressed)
+
+    for (i=0; i < nBUTTONS; i++)
     {
-      notes[i].noteOn = true;
-    }
-    else
-    {
-      notes[i].noteOn = false;
-    }
-#endif
-     i = 0; // Metronome channel
-    // TODO refactor this into a function in audio.c
-    if (playNextFrame)
-    {
-      // TODO Add a for loop to get all notes from all buttons.
-      if (notes[i].noteOn)
+      if (buttons[i].pressed)
       {
-        AudioMemoryBufPlay(notes[i].noteVoiceBuffer);
+        notes[i+1].noteOn = true;
       }
       else
       {
-        AudioMemoryBufPlay(silentSound);
+  	    notes[i+1].noteOn = false;
       }
+    }
+
+    i = 0; // Metronome voice
+    // TODO refactor this into a function in audio.c
+    if (playNextFrame)
+    {
+      PlayFrame(i);
       playNextFrame = false;
     }
     // end TODO
@@ -175,7 +178,7 @@ static int LedCount = 0;
 
     if (ButtonUpdate)
     {
-      //ReadButtons();
+      ButtonsRead();
       ButtonUpdate = false;
     }
 
