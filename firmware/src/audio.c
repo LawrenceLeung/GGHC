@@ -11,6 +11,7 @@
  *    $Revision: 1.1.2.1 $
  **************************************************************************/
 #include "jigbox.h"
+#include "audio_class.h"
 
 #define LOOP_DLY_100US 450
 
@@ -37,9 +38,10 @@ int16_t testSound[SampPerFrame] = {
 void Dly100us(void *arg)
 {
     uint32_t Dly = (uint32_t)arg;
+    __IO int i;
     while(Dly--)
     {
-        for(__IO int i = LOOP_DLY_100US; i; i--)
+        for(i = LOOP_DLY_100US; i; i--)
         {
         }
     }
@@ -63,11 +65,6 @@ void InitAudioDevice(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
 
-#ifdef USE_FULL_ASSERT
-    debug();
-#endif
-
-    ENTR_CRT_SECTION();
 
     // Audio Device Class
     UsbAudioClassInit();
@@ -83,7 +80,6 @@ void InitAudioDevice(void)
     // Soft connection enable
     //USB_ConnectRes(true);
 
-    EXT_CRT_SECTION();
     // Note 0 is the metronome note
     notes[0].frequency       = 216; // Middle C
     notes[0].period          = 100; // TODO
@@ -106,13 +102,13 @@ void metronome(void)
     uint32_t deltaSysTime;
     const uint32_t metronomeUpPeriod = 10;
 
-    deltaSysTime = sysTime - previousSysTime;
+    deltaSysTime = systemTime() - previousSysTime;
 
     if (deltaSysTime > metronomePeriod)
     {
         notes[0].noteOn = true;
         metronomeUpBeat = true;
-        previousSysTime = sysTime;
+        previousSysTime = systemTime();
     }
     else
     {

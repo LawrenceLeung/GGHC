@@ -1,14 +1,26 @@
 #include "systick.h"
-
+#include "jigbox.h"
 static uint32_t volatile mainLoopDelay;
 
 /* Interrupt Handler */
+/**
+  * @brief  This function handles SysTick Handler.
+  * @param  None
+  * @retval None
+  */
 void SysTick_Handler(void)
 {
     if (mainLoopDelay != 0)
         mainLoopDelay--;
     /* other work here */
 }
+
+// returns the SysTick value
+uint32_t systemTime(void)
+{
+    return SysTick->VAL;
+}
+
 
 void Init_SysTick(void)
 {
@@ -17,7 +29,7 @@ void Init_SysTick(void)
     /* Setup SysTick Timer for desired interrupt rate */
     if (SysTick_Config(SystemCoreClock / SYS_TICK_USEC))
     {
-        abort();
+        assert(0);
     }
 }
 

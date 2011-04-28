@@ -27,10 +27,11 @@
 
 uint32_t CriticalSecCntr;
 
-__IO unsigned int LedState = 0; // LED is ON when corresponding bit is 1
-__IO unsigned int LedTimer = LED_RATE; // LED blinks at this rate
-__IO bool LedUpdate = false; // LED state should be updated if true
-__IO bool ButtonUpdate = false;  // Buttons should be read and variables updated if true
+// TODO check if this even needs to be global.
+bool LedState = 0; // LED is ON when corresponding bit is 1
+
+// TODO Del __IO bool LedUpdate = false; // LED state should be updated if true
+// TODO Del __IO bool ButtonUpdate = false;  // Buttons should be read and variables updated if true
 
 void LEDsSet (unsigned int);
 
@@ -70,23 +71,18 @@ int16_t silentSound[SampPerFrame]=
  * Description: main
  *
  *************************************************************************/
-void main(void)
+int main(void)
 {
 GPIO_InitTypeDef GPIO_InitStructure;
 
 static int LedCount = 0;
-
-#ifdef USE_FULL_ASSERT
-   debug();
-#endif
-
-  ENTR_CRT_SECTION();
 
   /* TODO refactor to move all initialization to a separate function to
    * cleanup main()
    */
   // Initialize clock system
   Clk_Init();
+  InitTimers();
 
   // NVIC initialize
 #ifndef  EMB_FLASH
@@ -115,8 +111,6 @@ static int LedCount = 0;
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;  //GPIO_Pin_12
   GPIO_Init(GPIOC, &GPIO_InitStructure);
   LEDsSet(LedState);
-
-  EXT_CRT_SECTION();
 
   InitAudioDevice();
   
@@ -159,6 +153,7 @@ static int LedCount = 0;
     if (LedUpdate)
     {
       LEDsSet(LedState);
+      LedState = !LedState; // Toggle the Olimex onboard LED
       LedUpdate = false;
       LEDOff(LedCount);
       LedCount++;
@@ -176,6 +171,7 @@ static int LedCount = 0;
     }
 
   }
+  return 1;
 }
 #ifdef USE_FULL_ASSERT
 /*******************************************************************************

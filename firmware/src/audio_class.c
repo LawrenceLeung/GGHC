@@ -134,18 +134,14 @@ const uint32_t VolumeMul [] =
     130762,
 };
 
-#pragma data_alignment=4
-__no_init int16_t AudioSpkData[SampPerFrame * 3];
+int16_t AudioSpkData[SampPerFrame * 3];
 
-#pragma data_alignment=4
-__no_init int16_t AudioMicData1[SampPerFrame * 2];
-#pragma data_alignment=4
-__no_init int16_t AudioMicData2[SampPerFrame * 2];
+int16_t AudioMicData1[SampPerFrame * 2];
+int16_t AudioMicData2[SampPerFrame * 2];
 
-#pragma data_alignment=4
-Int8U AudioBuf[2];
+uint8_t AudioBuf[2];
 
-Int8U AudioRequest,AudioCS,AudioCN,AudioId;
+uint8_t AudioRequest,AudioCS,AudioCN,AudioId;
 uint16_t AudioDataSize;
 
 int16_t AudioFeat1Vol;
@@ -161,10 +157,10 @@ void UsbAudioClassInit(void)
     GPIO_InitTypeDef GPIO_InitStructure;
     ADC_InitTypeDef ADC_InitStructure;
     RCC_ClocksTypeDef RCC_Clocks;
-    NVIC_InitTypeDef NVIC_InitStructure;
+//TODO del NVIC_InitTypeDef NVIC_InitStructure;
     //#ifdef TODO
     //TIM1_TimeBaseInitTypeDef TIM1_TimeBaseInitStruct;
-    TIM_OCInitTypeDef TIM1_OCInitStructure;
+//TODO del  TIM_OCInitTypeDef TIM1_OCInitStructure;
     //#endif
 
     // Init Audio Class variables
@@ -247,6 +243,7 @@ void UsbAudioClassInit(void)
     playNextFrame = true; // Signal that it is OK to load audio samples
 }
 
+#ifdef TODO
 /*************************************************************************
  * Function Name: UsbClassAudioConfigure
  * Parameters:  pUsbDevCtrl_t pDev
@@ -400,7 +397,7 @@ void AudioOutHandler(USB_Endpoint_t EP)
                 PacketLength,
                 (void*)AudioOutHandler);
 }
-
+#endif
 /*************************************************************************
  * Function Name: Tim2Handler
  * Parameters: none
@@ -413,7 +410,6 @@ void AudioOutHandler(USB_Endpoint_t EP)
 
 void Tim2Handler(void)
 {
-    union _Val MicTemp;
     if (SempEna)
     {
         if(Delta > 1)
@@ -469,6 +465,7 @@ void Tim2Handler(void)
 
     if(MicEna)
     {
+#ifdef TODO
         if(!AudioFeat2Mute && AudioMicVolMul)
         {
             // Get ADC sample and remove offset
@@ -511,12 +508,15 @@ void Tim2Handler(void)
                 MicEna = false;
             }
         }
+#endif
     }
 
     TIM2->ARR = SempPerCurrHold; // reload output compare
     TIM2->SR &= (uint16_t) ~TIM_FLAG_Update;
 }
 
+
+#ifdef TODO
 /*************************************************************************
  * Function Name: AudioFeatureGetReg
  * Parameters:  uint32_t CS, uint32_t Id
@@ -608,6 +608,7 @@ bool AudioFeatureGetReg(uint32_t CS, uint32_t Id)
     }
     return true;
 }
+
 
 /*************************************************************************
  * Function Name: UsbClassAudioRequest
@@ -845,7 +846,7 @@ void UsbClassAudioData(USB_Endpoint_t EP)
     }
     USB_StatusHandler(CTRL_ENP_IN);
 }
-
+#endif
 /** AudioMemoryBufPlay
  * Takes a buffer with audio wave data and starts to play it
  * through the headphone output. Once the buffer has started playing,
@@ -896,9 +897,7 @@ void AudioMemoryBufPlay(int16_t pSpkBuf[SampPerFrame])
             SempCount = 0;
             SempEna   = true;
         }
-        ENTR_CRT_SECTION();
         Delta += SampPerFrame;
-        EXT_CRT_SECTION();
     }
     else
     {

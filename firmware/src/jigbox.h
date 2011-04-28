@@ -33,6 +33,7 @@
 #include "LED.h"
 #include "DDS.h"
 #include "systick.h"
+#include "timer.h"
 
 
 /* PUSH BUTTONS

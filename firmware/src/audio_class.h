@@ -13,6 +13,13 @@ extern __IO bool playNextFrame;
 #define Feat2MaxVol   0x0600UL
 #define Feat2ResVol   0x0001UL
 
+#define SubFrameSize                    2
+#define SampPerFrame                    48
+#define SampFreq                        (SampPerFrame KHZ)
+#define SpkEp         	                ENP1_OUT
+#define SpkEpMaxSize   	                (SampPerFrame * SubFrameSize)
+#define SpkDDInd                        0
+
 typedef enum
 {
   FeatUnit1Id = 1, FeatUnit2Id,
@@ -57,6 +64,8 @@ typedef enum
 #define SAMPLING_FREQ_CONTROL               0x01
 #define PITCH_CONTROL                       0x02
 
+void UsbAudioClassInit(void);
+
 /*************************************************************************
  * Function Name: Tim2Handler
  * Parameters: none
@@ -67,17 +76,6 @@ typedef enum
  *		
  *************************************************************************/
 void Tim2Handler (void);
-
-/*************************************************************************
- * Function Name: AudioFeatureGetReg
- * Parameters:  uint32_t CS, uint32_t Id
- *
- * Return: bool
- *
- * Description:
- *
- *************************************************************************/
-static bool AudioFeatureGetReg (uint32_t CS, uint32_t Id);
 
 /*************************************************************************
  * Function Name: UsbClassAudioData

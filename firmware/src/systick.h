@@ -13,9 +13,6 @@ extern void Init_SysTick(void);
 extern void delay(uint32_t ticks);
 
 // returns the SysTick value
-__INLINE uint32_t sysTime(void)
-{
-    return SysTick->VAL;
-}
+uint32_t systemTime(void);
 
 #endif

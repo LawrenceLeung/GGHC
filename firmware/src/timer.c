@@ -1,28 +1,9 @@
-/*************************************************************************
- * SysTick interrupt handler. SysTick is the system clock in
- * this product. The base rate is 10ms (100 ticks per second). Various
- * other software subsystems can be triggered from this timer. Do not
- * directly call other software modules from this routine as this is an
- * interrupt so needs to be kept short. If another system should be
- * scheduled from here, set a global flag to trigger the other subsystem
- * then check the flag in the main loop.
- *
- *************************************************************************/
-void SysTick_Handler(void)
-{
-    // Clear update interrupt bit
-    TIM_ClearITPendingBit(TIM1,TIM_FLAG_Update);
-#ifdef TODO
-    if(LedTimer-- == 0)
-    {
-        LedState  = !LedState;
-        LedTimer  = LED_RATE; /* TODO This should be the metronome rate */
-        LedUpdate = true;
-    }
-#endif
-    // TODO ReadButtons();
-    // playNextFrame = true;
-}
+#include "jigbox.h"
+
+volatile uint16_t LedTimer = LED_RATE; // LED blinks at this rate
+volatile bool LedUpdate = false; // LED state should be updated if true
+volatile bool ButtonUpdate = false;  // Buttons should be read and variables updated if true
+
 
 /*************************************************************************
  * Function Name: Timer3IntrHandler
@@ -45,11 +26,11 @@ void Tim3Handler(void)
     // TODO delete? TIM1_ClearITPendingBit(TIM1_FLAG_Update);
     TIM_ClearITPendingBit(TIM3,TIM_FLAG_Update);
     // TODO  TIM3->SR &= (uint16_t)~TIM1_FLAG_Update;
-    sysTime++;
+    // TODO sysTime++;
+    static unsigned int LedTimer = LED_RATE; // LED blinks at this rate
 
     if(LedTimer-- == 0)
     {
-        LedState  = !LedState;
         LedTimer  = LED_RATE; /* TODO This should be the metronome rate */
         LedUpdate = true;
     }
@@ -112,11 +93,14 @@ void Clk_Init(void)
 void InitTimers(void)
 {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+    TIM_OCInitTypeDef TIM1_OCInitStructure;
+    NVIC_InitTypeDef NVIC_InitStructure;
     // Timer1 initialize
     // Enable Timer1 clock and release reset
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
     RCC_APB2PeriphResetCmd(RCC_APB2Periph_TIM1,DISABLE);
 
+#ifdef TODO
     // Set timer period 0.01 seconds
     TIM1_TimeBaseInitStruct.TIM1_Prescaler         = 720; // 10us resolution
     TIM1_TimeBaseInitStruct.TIM1_CounterMode       = TIM1_CounterMode_Up;
@@ -132,7 +116,7 @@ void InitTimers(void)
 
     // Enable timer counting
     TIM1_Cmd(ENABLE);
-
+#endif // TODO
     // Init Sample Timer - Timer3
     // TIM3 clock enable
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
@@ -195,8 +179,8 @@ void InitTimers(void)
     // Reset TIM2
     TIM_DeInit(TIM2);
     // Time base configuration
-    SempPeriod                              = RCC_Clocks.PCLK2_Frequency/SampFreq;
-    DeltaPer                                = (SempPeriod/(SampPerFrame*2)) + 1;
+// TODO    SempPeriod                              = RCC_Clocks.PCLK2_Frequency/SampFreq;
+// TODO    DeltaPer                                = (SempPeriod/(SampPerFrame*2)) + 1;
     TIM_TimeBaseStructure.TIM_Period        = SempPeriod / 100;
     TIM_TimeBaseStructure.TIM_Prescaler     = 0; // max resolution
     TIM_TimeBaseStructure.TIM_ClockDivision = 0;
@@ -211,7 +195,7 @@ void InitTimers(void)
     TIM_ITConfig(TIM2,TIM_FLAG_Update,ENABLE);
 
     NVIC_InitStructure.NVIC_IRQChannel                   = TIM2_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = USB_INTR_AUDIO_SAMP_TIMER_PRIORITY; // max priority
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1; // max priority
     NVIC_InitStructure.NVIC_IRQChannelSubPriority        = 0;
     NVIC_InitStructure.NVIC_IRQChannelCmd                = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
@@ -219,14 +203,17 @@ void InitTimers(void)
     TIM_Cmd(TIM2, ENABLE);
 }
 
+#ifdef TODO // Already defined in systick.c
 void Init_SysTick(void)
 {
 }
-
+#endif
 void Init_AudioSampleTimer(void)
 {
+	// TODO Move code from generic InitTimers to here
 }
 
 void Init_AudioPWMTimer(void)
 {
+	// TODO Move code from generic InitTimers to here
 }
