@@ -408,7 +408,7 @@ void AudioOutHandler(USB_Endpoint_t EP)
  *
  *************************************************************************/
 
-void Tim2Handler(void)
+void TIM2_IRQHandler(void)
 {
     if (SempEna)
     {

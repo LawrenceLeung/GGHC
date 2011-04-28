@@ -6,12 +6,12 @@ volatile bool ButtonUpdate = false;  // Buttons should be read and variables upd
 
 
 /*************************************************************************
- * Function Name: Timer3IntrHandler
+ * Function Name: TIM3_IRQHandler
  * Parameters: none
  *
  * Return: none
  *
- * Description: Timer 1 interrupt handler. Timer 1 is the system clock in
+ * Description: Timer 3 interrupt handler. Timer 3 is the system clock in
  * this product. The base rate is 10ms (100 ticks per second). Various
  * other software subsystems can be triggered from this timer. Do not
  * directly call other software modules from this routine as this is an
@@ -20,7 +20,7 @@ volatile bool ButtonUpdate = false;  // Buttons should be read and variables upd
  * then check the flag in the main loop.
  *
  *************************************************************************/
-void Tim3Handler(void)
+void TIM3_IRQHandler(void)
 {
     // Clear update interrupt bit
     // TODO delete? TIM1_ClearITPendingBit(TIM1_FLAG_Update);
@@ -37,6 +37,24 @@ void Tim3Handler(void)
 
     ButtonUpdate = true;
 }
+
+/*************************************************************************
+ * Function Name: TIM1_IRQHandler
+ * Parameters: none
+ *
+ * Return: none
+ *
+ * Description: Timer 1 is used as a source for the PWM's. It should not be
+ * set to interrupt but this code is here to aid debugging
+ *
+ *************************************************************************/
+void TIM1_UP_IRQHandler(void)
+{
+    // Clear update interrupt bit
+    // TODO Should never get here as timer1 should generate no interrupts
+    TIM_ClearITPendingBit(TIM1,TIM_FLAG_Update);
+}
+
 
 /*************************************************************************
  * Function Name: Clk_Init

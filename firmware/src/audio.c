@@ -93,6 +93,7 @@ void InitAudioDevice(void)
     notes[1].noteOn          = true; // TODO start with it on just for test
 
     metronomePeriod          = 100;
+    playNextFrame = true; // Kick off the audio playing
 }
 
 void metronome(void)
