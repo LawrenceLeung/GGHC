@@ -34,6 +34,7 @@
 #include "DDS.h"
 #include "systick.h"
 #include "timer.h"
+#include "buttons.h"
 
 
 /* PUSH BUTTONS

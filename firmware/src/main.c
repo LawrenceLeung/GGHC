@@ -62,6 +62,53 @@ int16_t silentSound[SampPerFrame]=
   0, 0, 0, 0, 0, 0, 0, 0
 };
 
+void Initialize(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+
+	/* TODO refactor to move all initialization to a separate function to
+	 * cleanup main()
+	 */
+	// Initialize clock system
+	Clk_Init();
+	InitTimers();
+	Init_SysTick();
+
+	// NVIC initialize
+	#ifndef  EMB_FLASH
+	/* Set the Vector Table base location at 0x20000000 */
+	//  TODO del NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x0);
+	#else  /* VECT_TAB_FLASH  */
+	/* Set the Vector Table base location at 0x08000000 */
+	// TODO del  NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
+	#endif
+	//  TODO del NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
+
+	// GPIO initialize
+	// Enable GPIO clock and release reset
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA |
+						   RCC_APB2Periph_GPIOB |
+						   RCC_APB2Periph_GPIOC,
+						   ENABLE);
+	RCC_APB2PeriphResetCmd(RCC_APB2Periph_GPIOA |
+						   RCC_APB2Periph_GPIOB |
+						   RCC_APB2Periph_GPIOC,
+						   DISABLE);
+
+	// Assign PC12 to LED
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;  //GPIO_Pin_12
+	GPIO_Init(GPIOC, &GPIO_InitStructure);
+	LEDsSet(LedState);
+
+	InitAudioDevice();
+
+	LEDInit();
+	ButtonsInit();
+
+}
+
 /*************************************************************************
  * Function Name: main
  * Parameters: none
@@ -73,49 +120,10 @@ int16_t silentSound[SampPerFrame]=
  *************************************************************************/
 int main(void)
 {
-GPIO_InitTypeDef GPIO_InitStructure;
 
 static int LedCount = 0;
 
-  /* TODO refactor to move all initialization to a separate function to
-   * cleanup main()
-   */
-  // Initialize clock system
-  Clk_Init();
-  InitTimers();
-  Init_SysTick();
-
-  // NVIC initialize
-#ifndef  EMB_FLASH
-  /* Set the Vector Table base location at 0x20000000 */
-//  TODO del NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x0);
-#else  /* VECT_TAB_FLASH  */
-  /* Set the Vector Table base location at 0x08000000 */
-// TODO del  NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
-#endif
-//  TODO del NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
-
-  // GPIO initialize
-  // Enable GPIO clock and release reset
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA |
-                         RCC_APB2Periph_GPIOB |
-                         RCC_APB2Periph_GPIOC,
-                         ENABLE);
-  RCC_APB2PeriphResetCmd(RCC_APB2Periph_GPIOA |
-                         RCC_APB2Periph_GPIOB |
-                         RCC_APB2Periph_GPIOC,
-                         DISABLE);
-
-  // Assign PC12 to LED
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;  //GPIO_Pin_12
-  GPIO_Init(GPIOC, &GPIO_InitStructure);
-  LEDsSet(LedState);
-
-  InitAudioDevice();
-  
-  LEDInit();
+  Initialize();
 
   while(1)
   {
