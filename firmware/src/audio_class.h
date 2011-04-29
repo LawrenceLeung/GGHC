@@ -1,7 +1,7 @@
 #ifndef __AUDIO_CLASS_H
 #define __AUDIO_CLASS_H
 
-extern __IO bool playNextFrame;
+// extern __IO bool playNextFrame;
 
 #define MinVol        0x8000
 

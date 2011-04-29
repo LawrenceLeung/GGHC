@@ -25,9 +25,10 @@
 #include "jigbox.h"
 #include "audio_class.h"
 
-uint32_t CriticalSecCntr;
+bool LedState = 0; // LED is ON when corresponding bit is 1
 
-static bool LedState = 0; // LED is ON when corresponding bit is 1
+// TODO Del __IO bool LedUpdate = false; // LED state should be updated if true
+// TODO Del __IO bool ButtonUpdate = false;  // Buttons should be read and variables updated if true
 
 void LEDsSet (unsigned int);
 
@@ -41,19 +42,27 @@ void LEDsSet (unsigned int);
  *
  *************************************************************************/
 void LEDsSet (unsigned int State)
-{
+{ /* TODO I modified this so the input is a bool instead of a bit map */
+  /* This is incompatible with the example code! */
+  /* TODO Replace this code with the jigbox driver when it is done */
     GPIO_WriteBit(GPIOC,GPIO_Pin_12 ,(State)?Bit_RESET:Bit_SET);
 }
 
-
 void Initialize(void)
 {
-	GPIO_InitTypeDef GPIO_InitStructure;
-
 	// Initialize clock system
 	Clk_Init();
 	InitTimers();
-	Init_SysTick();
+
+	// NVIC initialize
+	#ifndef  EMB_FLASH
+	/* Set the Vector Table base location at 0x20000000 */
+	//  TODO del NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x0);
+	#else  /* VECT_TAB_FLASH  */
+	/* Set the Vector Table base location at 0x08000000 */
+	// TODO del  NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
+	#endif
+	//  TODO del NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
 
 	// GPIO initialize
 	// Enable GPIO clock and release reset
@@ -65,6 +74,8 @@ void Initialize(void)
 						   RCC_APB2Periph_GPIOB |
 						   RCC_APB2Periph_GPIOC,
 						   DISABLE);
+
+	GPIO_InitTypeDef GPIO_InitStructure;
 
 	// Assign PC12 to LED
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
@@ -80,21 +91,50 @@ void Initialize(void)
 
 }
 
-/*************************************************************************
- * Function Name: main
- * Parameters: none
- *
- * Return: none
- *
- * Description: main
- *
- *************************************************************************/
+#define N_ACTIVE_OBJECTS 2
+#define MAX_EVENTS_PER_ACTIVE_OBJECT 10
+
+// static QEvent const *l_tableQueueSto[N_PHILO];
+static QSubscrList   l_subscrSto[MAX_PUB_SIG];
+static QEvent const *l_activeObjQueueSto[N_ACTIVE_OBJECTS][MAX_EVENTS_PER_ACTIVE_OBJECT];
+
+static union SmallEvent {
+    void *min_size;
+    /* other event types to go into this pool */
+} l_smlPoolSto[2*N_ACTIVE_OBJECTS];              /* storage for the small event pool */
+
 int main(void)
 {
-
-static int LedCount = 0;
-
+  /* init hardware */
   Initialize();
+#if 0
+  /* instantiate active objects */
+  AO1_ctor();
+  AO2_ctor();
+  /* initialize the framework and the underlying RT kernel */
+  QF_init();     
+  // init publish-subscribe
+  QF_psInit(l_subscrSto, Q_DIM(l_subscrSto));
+  // initialize event pools...
+  QF_poolInit(l_smlPoolSto, sizeof(l_smlPoolSto), sizeof(l_smlPoolSto[0]));
+
+  // start the active objects...
+  QActive_start(AO1, 0, /*priority*/,
+                    l_activeObjQueueSto[0], Q_DIM(l_activeObjQueueSto[0]),
+                    (void *)0, 0, (QEvent *)0);
+  QActive_start(AO2, 1, /*priority*/,
+                    l_activeObjQueueSto[1], Q_DIM(l_activeObjQueueSto[1]),
+                    (void *)0, 0, (QEvent *)0);
+  QF_run();                                     /* run the QF application */
+
+  return 0;
+} /* main */
+
+  // pressing any button turns on a corresponding tone
+  // for (i=0; i < nBUTTONS; i++)
+  // {
+  //     notes[i+1].noteOn = buttons[i].pressed;
+  // }
 
   while(1)
   {
@@ -102,31 +142,20 @@ static int LedCount = 0;
 
     int i;
 
-    for (i=0; i < nBUTTONS; i++)
-    {
-      if (buttons[i].pressed)
-      {
-        notes[i+1].noteOn = true;
-      }
-      else
-      {
-        notes[i+1].noteOn = false;
-      }
-    }
 
     i = 0; // Metronome voice
 
     if (playNextFrame)
     {
       ClearMixBuf();
-      for(i = 0; i < NUMBER_OF_NOTES; i++)
+      for(i = 0; i < 2 /* TODO NUMBER_OF_NOTES */ ; i++)
       {
         MixFrame(i);
       }
       PlayFrame();
       playNextFrame = false;
     }
-
+    // end TODO
 
     if (LedUpdate)
     {
@@ -149,26 +178,9 @@ static int LedCount = 0;
     }
 
   }
+#endif
+
+
   return 1;
 }
-#ifdef USE_FULL_ASSERT
-/*******************************************************************************
-* Function Name  : assert_failed
-* Description    : Reports the name of the source file and the source line number
-*                  where the assert_param error has occurred.
-* Input          : - file: pointer to the source file name
-*                  - line: assert_param error line source number
-* Output         : None
-* Return         : None
-*******************************************************************************/
-void assert_failed(uint8_t* file, uint32_t line)
-{ 
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
 
-  /* Infinite loop */
-  while (1)
-  {
-  }
-}
-#endif

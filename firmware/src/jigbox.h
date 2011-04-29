@@ -18,15 +18,15 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <assert.h>
-
 #include <stdbool.h>
 
 #include "stm32f10x.h"
+#include "qp_port.h"
+#include "bsp.h"
 
 #include "audio.h"
 #include "LED.h"
 #include "DDS.h"
-#include "systick.h"
 #include "timer.h"
 #include "buttons.h"
 
@@ -125,5 +125,27 @@
 
 // call this to catch an error
 extern void abort(void);
+
+typedef enum JigboxSignals {
+  // published signals
+  EV_BUTTON_PRESSED_SIG = Q_USER_SIG,     /* published by button debouncer to signal the press of a button */
+  EV_BUTTON_RELEASED_SIG,
+  EV_HIT_SIG,           /* accelerometer listener detected a hit event */
+  TERMINATE_SIG,          /* published by BSP to terminate the application */
+  MAX_PUB_SIG,                                /* the last published signal */
+
+   // non-published signals
+  EV_START_NOTE_SIG,
+  EV_STOP_NOTE_SIG,
+  EV_NOTE_DONE_SIG,
+
+  MAX_SIG                                               /* the last signal */
+} JigboxSignal;
+
+typedef struct {
+    QEvent super;                                    /* derives from QEvent */
+    // stuff
+} JigboxEvt;
+
 
 #endif  /* __JIGBOX_H */

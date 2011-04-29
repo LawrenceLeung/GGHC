@@ -29,7 +29,7 @@ void ButtonsInit()
   {
     GPIO_InitStructure.GPIO_Pin = BUTTON_PINS[i];
     GPIO_Init(BUTTON_PORTS[i], &GPIO_InitStructure);
-    buttons[i].debounceTime = systemTime();
+    buttons[i].debounceTime = systemTime;
     buttons[i].pressed = false;
   }
 }
@@ -42,9 +42,9 @@ void ButtonsRead()
   { /* Each button pulls input low when pressed */
     pressed = (GPIO_ReadInputDataBit(BUTTON_PORTS[i], BUTTON_PINS[i]) == 0);
     if (pressed != buttons[i].pressed &&
-        systemTime() - buttons[i].debounceTime > buttonDebounceTime)
+        systemTime - buttons[i].debounceTime > buttonDebounceTime)
     {
-      buttons[i].debounceTime = systemTime();
+      buttons[i].debounceTime = systemTime;
       buttons[i].pressed = pressed;
     }
   }
