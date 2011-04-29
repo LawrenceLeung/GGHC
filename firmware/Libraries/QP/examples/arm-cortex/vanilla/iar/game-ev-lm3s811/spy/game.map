@@ -1,0 +1,667 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.10.2.52244/W32 for ARM              28/Feb/2011  13:44:12 #
+# Copyright 2007-2010 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev- #
+#                    lm3s811\spy\game.out                                     #
+#    Map file     =  D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev- #
+#                    lm3s811\spy\game.map                                     #
+#    Command line =  D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev- #
+#                    lm3s811\spy\bsp.o D:\software\qpc\examples\arm-cortex\va #
+#                    nilla\iar\game-ev-lm3s811\spy\core_cm3.o                 #
+#                    D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev- #
+#                    lm3s811\spy\display96x16x1.o                             #
+#                    D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev- #
+#                    lm3s811\spy\main.o D:\software\qpc\examples\arm-cortex\v #
+#                    anilla\iar\game-ev-lm3s811\spy\mine1.o                   #
+#                    D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev- #
+#                    lm3s811\spy\mine2.o D:\software\qpc\examples\arm-cortex\ #
+#                    vanilla\iar\game-ev-lm3s811\spy\missile.o                #
+#                    D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev- #
+#                    lm3s811\spy\ship.o D:\software\qpc\examples\arm-cortex\v #
+#                    anilla\iar\game-ev-lm3s811\spy\startup_ewarm.o           #
+#                    D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev- #
+#                    lm3s811\spy\system_lm3s.o D:\software\qpc\examples\arm-c #
+#                    ortex\vanilla\iar\game-ev-lm3s811\spy\tunnel.o           #
+#                    D:\software\qpc\ports\arm-cortex\vanilla\iar\spy\libqep_ #
+#                    cortex-m3.a D:\software\qpc\ports\arm-cortex\vanilla\iar #
+#                    \spy\libqf_cortex-m3.a D:\software\qpc\ports\arm-cortex\ #
+#                    vanilla\iar\spy\libqs_cortex-m3.a --redirect             #
+#                    _Printf=_PrintfTiny --redirect _Scanf=_ScanfSmall -o     #
+#                    D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev- #
+#                    lm3s811\spy\game.out --map D:\software\qpc\examples\arm- #
+#                    cortex\vanilla\iar\game-ev-lm3s811\spy\game.map          #
+#                    --config D:\software\qpc\examples\arm-cortex\vanilla\iar #
+#                    \game-ev-lm3s811\lm3s811.icf --semihosting --entry       #
+#                    __iar_program_start                                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x00000000-0x0000ffff] { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0000ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20001fff] { rw, block HEAP };
+
+  Section          Kind        Address    Size  Object
+  -------          ----        -------    ----  ------
+"A1":                                     0xf0
+  .intvec          const    0x00000000    0xf0  startup_ewarm.o [1]
+                          - 0x000000f0    0xf0
+
+"P1":                                   0x54a4
+  .text            ro code  0x000000f0   0xf44  tunnel.o [1]
+  .text            ro code  0x00001034    0x28  qte_ctor.o [5]
+  .text            ro code  0x0000105c   0x524  mine1.o [1]
+  .text            ro code  0x00001580   0x524  mine2.o [1]
+  .text            ro code  0x00001aa4   0x120  qhsm_ini.o [4]
+  .text            ro code  0x00001bc4    0x98  qa_sub.o [5]
+  .text            ro code  0x00001c5c   0x1a4  qs.o [6]
+  .text            ro code  0x00001e00   0x33c  qs_.o [6]
+  .text            ro code  0x0000213c   0x6d4  bsp.o [1]
+  .text            ro code  0x00002810    0x16  tunnel.o [1]
+  .text            ro code  0x00002826    0x22  zero_init3.o [7]
+  .text            ro code  0x00002848    0xb0  qvanilla.o [5]
+  .text            ro code  0x000028f8    0x84  qte_arm.o [5]
+  .text            ro code  0x0000297c    0xa0  qte_darm.o [5]
+  .text            ro code  0x00002a1c    0xcc  qa_fifo.o [5]
+  .text            ro code  0x00002ae8    0x16  tunnel.o [1]
+  .text            ro code  0x00002afe    0x16  tunnel.o [1]
+  .text            ro code  0x00002b14   0x39e  qhsm_dis.o [4]
+  .text            ro code  0x00002eb2    0x12  startup_ewarm.o [1]
+  .text            ro code  0x00002ec4    0x8c  qf_new.o [5]
+  .text            ro code  0x00002f50    0x38  ABImemset48.o [7]
+  .text            ro code  0x00002f88     0x6  ABImemclr4.o [7]
+  .text            ro code  0x00002f90    0xf0  qf_tick.o [5]
+  .text            ro code  0x00003080    0xc0  qf_pspub.o [5]
+  .text            ro code  0x00003140   0x2a4  system_lm3s.o [1]
+  .text            ro code  0x000033e4   0x548  display96x16x1.o [1]
+  .text            ro code  0x0000392c    0x60  qs_blk.o [6]
+  .text            ro code  0x0000398c    0x66  ABImemset.o [7]
+  .text            ro code  0x000039f4    0xf4  qa_get_.o [5]
+  .text            ro code  0x00003ae8    0xa0  qf_gc.o [5]
+  .text            ro code  0x00003b88    0x4c  qeq_init.o [5]
+  .text            ro code  0x00003bd4    0x68  qf_act.o [5]
+  .text            ro code  0x00003c3c    0x78  ABImemmove.o [7]
+  .text            ro code  0x00003cb4    0x70  ABImemcpy.o [7]
+  .text            ro code  0x00003d24    0x68  qmp_get.o [5]
+  .text            ro code  0x00003d8c    0x74  qmp_put.o [5]
+  .text            ro code  0x00003e00   0x3f8  ship.o [1]
+  .text            ro code  0x000041f8   0x2bc  missile.o [1]
+  .text            ro code  0x000044b4   0x25c  main.o [1]
+  .text            ro code  0x00004710    0x60  qf_pool.o [5]
+  .text            ro code  0x00004770     0xc  qf_psini.o [5]
+  .text            ro code  0x0000477c    0xbc  qmp_init.o [5]
+  .rodata          const    0x00004838   0x1dc  display96x16x1.o [1]
+  .rodata          const    0x00004a14   0x100  qf_log2.o [5]
+  .rodata          const    0x00004b14    0x74  display96x16x1.o [1]
+  .rodata          const    0x00004b88    0x5c  system_lm3s.o [1]
+  .rodata          const    0x00004be4    0x50  display96x16x1.o [1]
+  .rodata          const    0x00004c34    0x50  tunnel.o [1]
+  .rodata          const    0x00004c84    0x4c  tunnel.o [1]
+  .rodata          const    0x00004cd0    0x48  bsp.o [1]
+  .rodata          const    0x00004d18    0x48  mine1.o [1]
+  .rodata          const    0x00004d60    0x48  mine2.o [1]
+  .rodata          const    0x00004da8    0x44  qf_pwr2.o [5]
+  .rodata          const    0x00004dec    0x44  qf_pwr2.o [5]
+  .rodata          const    0x00004e30    0x44  qf_pwr2.o [5]
+  .rodata          const    0x00004e74    0x38  tunnel.o [1]
+  .text            ro code  0x00004eac    0x2c  data_init3.o [7]
+  .iar.init_table  const    0x00004ed8    0x10  - Linker created -
+  .rodata          const    0x00004ee8    0x1c  tunnel.o [1]
+  .rodata          const    0x00004f04    0x1c  tunnel.o [1]
+  .rodata          const    0x00004f20    0x18  ship.o [1]
+  .rodata          const    0x00004f38    0x18  tunnel.o [1]
+  .rodata          const    0x00004f50    0x18  tunnel.o [1]
+  .rodata          const    0x00004f68    0x18  tunnel.o [1]
+  .text            ro code  0x00004f80    0x16  cmain.o [7]
+  .text            ro code  0x00004f96     0x4  low_level_init.o [3]
+  .text            ro code  0x00004f9a     0x8  exit.o [3]
+  .text            ro code  0x00004fa4     0xa  cexit.o [7]
+  .text            ro code  0x00004fb0    0x14  exit.o [8]
+  .rodata          const    0x00004fc4    0x14  main.o [1]
+  .rodata          const    0x00004fd8    0x14  main.o [1]
+  .rodata          const    0x00004fec    0x14  main.o [1]
+  .rodata          const    0x00005000    0x14  mine1.o [1]
+  .rodata          const    0x00005014    0x14  mine1.o [1]
+  .rodata          const    0x00005028    0x14  mine1.o [1]
+  .rodata          const    0x0000503c    0x14  mine2.o [1]
+  .rodata          const    0x00005050    0x14  mine2.o [1]
+  .rodata          const    0x00005064    0x14  mine2.o [1]
+  .rodata          const    0x00005078    0x14  missile.o [1]
+  .rodata          const    0x0000508c    0x14  missile.o [1]
+  .rodata          const    0x000050a0    0x14  missile.o [1]
+  .rodata          const    0x000050b4    0x14  missile.o [1]
+  .rodata          const    0x000050c8    0x14  ship.o [1]
+  .rodata          const    0x000050dc    0x14  tunnel.o [1]
+  .rodata          const    0x000050f0    0x14  tunnel.o [1]
+  .rodata          const    0x00005104    0x14  tunnel.o [1]
+  .rodata          const    0x00005118    0x14  tunnel.o [1]
+  .rodata          const    0x0000512c    0x10  main.o [1]
+  .rodata          const    0x0000513c    0x10  main.o [1]
+  .rodata          const    0x0000514c    0x10  main.o [1]
+  .rodata          const    0x0000515c    0x10  main.o [1]
+  .rodata          const    0x0000516c    0x10  main.o [1]
+  .rodata          const    0x0000517c    0x10  main.o [1]
+  .rodata          const    0x0000518c    0x10  mine1.o [1]
+  .rodata          const    0x0000519c    0x10  mine1.o [1]
+  .rodata          const    0x000051ac    0x10  mine1.o [1]
+  .rodata          const    0x000051bc    0x10  mine1.o [1]
+  .rodata          const    0x000051cc    0x10  mine1.o [1]
+  .rodata          const    0x000051dc    0x10  mine1.o [1]
+  .rodata          const    0x000051ec    0x10  mine2.o [1]
+  .rodata          const    0x000051fc    0x10  mine2.o [1]
+  .rodata          const    0x0000520c    0x10  mine2.o [1]
+  .rodata          const    0x0000521c    0x10  mine2.o [1]
+  .rodata          const    0x0000522c    0x10  mine2.o [1]
+  .rodata          const    0x0000523c    0x10  mine2.o [1]
+  .rodata          const    0x0000524c    0x10  missile.o [1]
+  .rodata          const    0x0000525c    0x10  missile.o [1]
+  .rodata          const    0x0000526c    0x10  missile.o [1]
+  .rodata          const    0x0000527c    0x10  ship.o [1]
+  .rodata          const    0x0000528c    0x10  ship.o [1]
+  .rodata          const    0x0000529c    0x10  ship.o [1]
+  .rodata          const    0x000052ac    0x10  ship.o [1]
+  .rodata          const    0x000052bc    0x10  ship.o [1]
+  .rodata          const    0x000052cc    0x10  ship.o [1]
+  .rodata          const    0x000052dc    0x10  ship.o [1]
+  .rodata          const    0x000052ec    0x10  ship.o [1]
+  .rodata          const    0x000052fc    0x10  tunnel.o [1]
+  .rodata          const    0x0000530c    0x10  tunnel.o [1]
+  .rodata          const    0x0000531c    0x10  tunnel.o [1]
+  .rodata          const    0x0000532c    0x10  tunnel.o [1]
+  .rodata          const    0x0000533c    0x10  tunnel.o [1]
+  .rodata          const    0x0000534c    0x10  tunnel.o [1]
+  .rodata          const    0x0000535c    0x10  tunnel.o [1]
+  .rodata          const    0x0000536c    0x10  tunnel.o [1]
+  .rodata          const    0x0000537c    0x10  tunnel.o [1]
+  .rodata          const    0x0000538c     0xc  mine1.o [1]
+  .rodata          const    0x00005398     0xc  mine1.o [1]
+  .rodata          const    0x000053a4     0xc  mine1.o [1]
+  .rodata          const    0x000053b0     0xc  mine1.o [1]
+  .rodata          const    0x000053bc     0xc  mine1.o [1]
+  .rodata          const    0x000053c8     0xc  mine1.o [1]
+  .rodata          const    0x000053d4     0xc  mine2.o [1]
+  .rodata          const    0x000053e0     0xc  mine2.o [1]
+  .rodata          const    0x000053ec     0xc  mine2.o [1]
+  .rodata          const    0x000053f8     0xc  mine2.o [1]
+  .rodata          const    0x00005404     0xc  mine2.o [1]
+  .rodata          const    0x00005410     0xc  mine2.o [1]
+  .rodata          const    0x0000541c     0xc  missile.o [1]
+  .rodata          const    0x00005428     0xc  tunnel.o [1]
+  .rodata          const    0x00005434     0xc  tunnel.o [1]
+  .rodata          const    0x00005440     0xc  tunnel.o [1]
+  .rodata          const    0x0000544c     0xc  tunnel.o [1]
+  .rodata          const    0x00005458     0xc  qf_pspub.o [5]
+  .rodata          const    0x00005464     0xc  qvanilla.o [5]
+  .rodata          const    0x00005470     0xc  qhsm_dis.o [4]
+  .rodata          const    0x0000547c     0xc  qhsm_ini.o [4]
+  .rodata          const    0x00005488     0xc  qte_ctor.o [5]
+  .rodata          const    0x00005494     0xc  qmp_init.o [5]
+  .text            ro code  0x000054a0     0xc  cstartup_M.o [7]
+  .rodata          const    0x000054ac     0x8  display96x16x1.o [1]
+  .rodata          const    0x000054b4     0x8  display96x16x1.o [1]
+  .rodata          const    0x000054bc     0x8  display96x16x1.o [1]
+  .rodata          const    0x000054c4     0x8  display96x16x1.o [1]
+  .rodata          const    0x000054cc     0x8  ship.o [1]
+  .rodata          const    0x000054d4     0x8  tunnel.o [1]
+  .rodata          const    0x000054dc     0x8  tunnel.o [1]
+  .rodata          const    0x000054e4     0x8  tunnel.o [1]
+  .rodata          const    0x000054ec     0x8  tunnel.o [1]
+  .rodata          const    0x000054f4     0x8  tunnel.o [1]
+  .rodata          const    0x000054fc     0x8  tunnel.o [1]
+  .rodata          const    0x00005504     0x8  qa_fifo.o [5]
+  .rodata          const    0x0000550c     0x8  qf_new.o [5]
+  .rodata          const    0x00005514     0x8  qf_pool.o [5]
+  .rodata          const    0x0000551c     0x8  qa_sub.o [5]
+  .rodata          const    0x00005524     0x8  qte_arm.o [5]
+  .rodata          const    0x0000552c     0x8  qf_act.o [5]
+  .rodata          const    0x00005534     0x8  qf_gc.o [5]
+  .rodata          const    0x0000553c     0x8  qa_get_.o [5]
+  .rodata          const    0x00005544     0x8  qep.o [4]
+  .rodata          const    0x0000554c     0x8  qmp_put.o [5]
+  .rodata          const    0x00005554     0x4  bsp.o [1]
+  .rodata          const    0x00005558     0x4  bsp.o [1]
+  .rodata          const    0x0000555c     0x4  mine1.o [1]
+  .rodata          const    0x00005560     0x4  mine1.o [1]
+  .rodata          const    0x00005564     0x4  mine2.o [1]
+  .rodata          const    0x00005568     0x4  mine2.o [1]
+  .rodata          const    0x0000556c     0x4  missile.o [1]
+  .rodata          const    0x00005570     0x4  ship.o [1]
+  .rodata          const    0x00005574     0x4  tunnel.o [1]
+  .rodata          const    0x00005578     0x4  tunnel.o [1]
+  .rodata          const    0x0000557c     0x4  tunnel.o [1]
+  .rodata          const    0x00005580     0x4  tunnel.o [1]
+  .rodata          const    0x00005584     0x4  tunnel.o [1]
+  .rodata          const    0x00005588     0x4  tunnel.o [1]
+  .rodata          const    0x0000558c     0x4  tunnel.o [1]
+  .text            ro code  0x00005590     0x4  qhsm_top.o [4]
+                          - 0x00005594  0x54a4
+
+"P2", part 1 of 2:                       0xb4c
+  .bss             zero     0x20000000   0x600  bsp.o [1]
+  .bss             zero     0x20000600   0x100  qf_act.o [5]
+  .bss             zero     0x20000700    0xc0  tunnel.o [1]
+  .bss             zero     0x200007c0    0xc0  tunnel.o [1]
+  .bss             zero     0x20000880    0x84  tunnel.o [1]
+  .bss             zero     0x20000904    0x44  main.o [1]
+  .bss             zero     0x20000948    0x40  main.o [1]
+  .bss             zero     0x20000988    0x40  qf_pool.o [5]
+  .bss             zero     0x200009c8    0x34  main.o [1]
+  .bss             zero     0x200009fc    0x28  main.o [1]
+  .bss             zero     0x20000a24    0x28  mine1.o [1]
+  .bss             zero     0x20000a4c    0x28  mine2.o [1]
+  .bss             zero     0x20000a74    0x20  ship.o [1]
+  .bss             zero     0x20000a94    0x20  qs.o [6]
+  .bss             zero     0x20000ab4    0x1c  missile.o [1]
+  .bss             zero     0x20000ad0    0x10  qs.o [6]
+  .bss             zero     0x20000ae0     0xc  main.o [1]
+  .bss             zero     0x20000aec     0xc  qvanilla.o [5]
+  .bss             zero     0x20000af8     0x8  main.o [1]
+  .bss             zero     0x20000b00     0x8  qf_psini.o [5]
+  .bss             zero     0x20000b08     0x4  bsp.o [1]
+  .bss             zero     0x20000b0c     0x4  bsp.o [1]
+  .bss             zero     0x20000b10     0x4  bsp.o [1]
+  .bss             zero     0x20000b14     0x4  bsp.o [1]
+  .bss             zero     0x20000b18     0x4  bsp.o [1]
+  .bss             zero     0x20000b1c     0x4  display96x16x1.o [1]
+  .bss             zero     0x20000b20     0x4  system_lm3s.o [1]
+  .bss             zero     0x20000b24     0x4  tunnel.o [1]
+  .bss             zero     0x20000b28     0x4  qs_.o [6]
+  .bss             zero     0x20000b2c     0x4  qs_.o [6]
+  .bss             zero     0x20000b30     0x4  qs_.o [6]
+  .bss             zero     0x20000b34     0x4  qs_.o [6]
+  .bss             zero     0x20000b38     0x4  qs_.o [6]
+  .bss             zero     0x20000b3c     0x4  qs_.o [6]
+  .bss             zero     0x20000b40     0x4  qte_arm.o [5]
+  .bss             zero     0x20000b44     0x1  bsp.o [1]
+  .bss             zero     0x20000b45     0x1  display96x16x1.o [1]
+  .bss             zero     0x20000b46     0x1  display96x16x1.o [1]
+  .bss             zero     0x20000b47     0x1  mine1.o [1]
+  .bss             zero     0x20000b48     0x1  mine2.o [1]
+  .bss             zero     0x20000b49     0x1  qf_tick.o [5]
+                          - 0x20000b4a   0xb4a
+
+"P2", part 2 of 2:                       0x258
+  .noinit          uninit   0x20000b4c   0x258  startup_ewarm.o [1]
+                          - 0x20000da4   0x258
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0xb4a:
+          0x20000000  0xb4a
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev-lm3s811\spy: [1]
+    bsp.o               1 748       80    1 557
+    display96x16x1.o    1 352      704        6
+    main.o                604      156      244
+    mine1.o             1 316      308       41
+    mine2.o             1 316      308       41
+    missile.o             700      144       28
+    ship.o              1 016      184       32
+    startup_ewarm.o        18      240      600
+    system_lm3s.o         676       92        4
+    tunnel.o            3 974      688      520
+    -------------------------------------------
+    Total:             12 720    2 904    3 073
+
+command line: [2]
+    -------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                  8
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                 12
+
+libqep_cortex-m3.a: [4]
+    qep.o                            8
+    qhsm_dis.o            926       12
+    qhsm_ini.o            288       12
+    qhsm_top.o              4
+    -------------------------------------------
+    Total:              1 218       32
+
+libqf_cortex-m3.a: [5]
+    qa_fifo.o             204        8
+    qa_get_.o             244        8
+    qa_sub.o              152        8
+    qeq_init.o             76
+    qf_act.o              104        8      256
+    qf_gc.o               160        8
+    qf_log2.o                      256
+    qf_new.o              140        8
+    qf_pool.o              96        8       64
+    qf_psini.o             12                 8
+    qf_pspub.o            192       12
+    qf_pwr2.o                      204
+    qf_tick.o             240                 1
+    qmp_get.o             104
+    qmp_init.o            188       12
+    qmp_put.o             116        8
+    qte_arm.o             132        8        4
+    qte_ctor.o             40       12
+    qte_darm.o            160
+    qvanilla.o            176       12       12
+    -------------------------------------------
+    Total:              2 536      580      345
+
+libqs_cortex-m3.a: [6]
+    qs.o                  420                48
+    qs_.o                 828                24
+    qs_blk.o               96
+    -------------------------------------------
+    Total:              1 344                72
+
+rt7M_tl.a: [7]
+    ABImemclr4.o            6
+    ABImemcpy.o           112
+    ABImemmove.o          120
+    ABImemset.o           102
+    ABImemset48.o          56
+    cexit.o                10
+    cmain.o                22
+    cstartup_M.o           12
+    data_init3.o           44
+    zero_init3.o           34
+    -------------------------------------------
+    Total:                518
+
+shb_l.a: [8]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    8
+    Linker created                  16
+-----------------------------------------------
+    Grand Total:       18 376    3 532    3 490
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                    Address   Size  Type      Object
+-----                    -------   ----  ----      ------
+?main                 0x00004f81         Code  Gb  cmain.o [7]
+ADCSeq3_IRQHandler    0x000021df  0x112  Code  Gb  bsp.o [1]
+AO_Missile            0x0000556c    0x4  Data  Gb  missile.o [1]
+AO_Ship               0x00005570    0x4  Data  Gb  ship.o [1]
+AO_Tunnel             0x00005574    0x4  Data  Gb  tunnel.o [1]
+BSP_displayOff        0x00002485    0x8  Code  Gb  bsp.o [1]
+BSP_displayOn         0x0000247d    0x8  Code  Gb  bsp.o [1]
+BSP_drawBitmap        0x00002441   0x22  Code  Gb  bsp.o [1]
+BSP_drawNString       0x00002463   0x18  Code  Gb  bsp.o [1]
+BSP_init              0x000022f1  0x150  Code  Gb  bsp.o [1]
+BSP_updateScore       0x0000247b    0x2  Code  Gb  bsp.o [1]
+Display96x16x1Clear   0x000034a5   0x74  Code  Gb  display96x16x1.o [1]
+Display96x16x1DisplayOff
+                      0x00003905   0x28  Code  Gb  display96x16x1.o [1]
+Display96x16x1DisplayOn
+                      0x000037f1   0x94  Code  Gb  display96x16x1.o [1]
+Display96x16x1ImageDraw
+                      0x000035dd   0x7a  Code  Gb  display96x16x1.o [1]
+Display96x16x1Init    0x00003657  0x19a  Code  Gb  display96x16x1.o [1]
+Display96x16x1StringDraw
+                      0x00003519   0xc4  Code  Gb  display96x16x1.o [1]
+Display96x16x1WriteArray
+                      0x00003431   0x36  Code  Lc  display96x16x1.o [1]
+Display96x16x1WriteByte
+                      0x00003407   0x2a  Code  Lc  display96x16x1.o [1]
+Display96x16x1WriteFinal
+                      0x00003467   0x3e  Code  Lc  display96x16x1.o [1]
+Display96x16x1WriteFirst
+                      0x000033ed   0x1a  Code  Lc  display96x16x1.o [1]
+HardFault_Handler     0x00002eb5   0x10  Code  Gb  startup_ewarm.o [1]
+Mine1_ctor            0x0000105d   0x2a  Code  Gb  mine1.o [1]
+Mine1_exploding       0x00001487   0x72  Code  Lc  mine1.o [1]
+Mine1_initial         0x00001087  0x2c4  Code  Lc  mine1.o [1]
+Mine1_planted         0x000013ab   0xdc  Code  Lc  mine1.o [1]
+Mine1_unused          0x0000134b   0x1e  Code  Lc  mine1.o [1]
+Mine1_used            0x00001369   0x42  Code  Lc  mine1.o [1]
+Mine2_ctor            0x00001581   0x2a  Code  Gb  mine2.o [1]
+Mine2_exploding       0x000019ab   0x72  Code  Lc  mine2.o [1]
+Mine2_initial         0x000015ab  0x2c4  Code  Lc  mine2.o [1]
+Mine2_planted         0x000018cf   0xdc  Code  Lc  mine2.o [1]
+Mine2_unused          0x0000186f   0x1e  Code  Lc  mine2.o [1]
+Mine2_used            0x0000188d   0x42  Code  Lc  mine2.o [1]
+Missile_armed         0x00004369   0x1e  Code  Lc  missile.o [1]
+Missile_ctor          0x000041f9    0x8  Code  Gb  missile.o [1]
+Missile_exploding     0x000043fd   0x72  Code  Lc  missile.o [1]
+Missile_flying        0x00004387   0x76  Code  Lc  missile.o [1]
+Missile_initial       0x00004201  0x168  Code  Lc  missile.o [1]
+NMI_Handler           0x00002eb3    0x2  Code  Gb  startup_ewarm.o [1]
+NVIC_EnableIRQ        0x0000213d   0x1a  Code  Lc  bsp.o [1]
+NVIC_SetPriority      0x00002157   0x26  Code  Lc  bsp.o [1]
+QActive_get_          0x000039f5   0xda  Code  Gb  qa_get_.o [5]
+QActive_postFIFO      0x00002a1d   0xcc  Code  Gb  qa_fifo.o [5]
+QActive_start         0x000028a3   0x44  Code  Gb  qvanilla.o [5]
+QActive_subscribe     0x00001bc5   0x98  Code  Gb  qa_sub.o [5]
+QEP_reservedEvt_      0x00005544    0x8  Data  Gb  qep.o [4]
+QEQueue_init          0x00003b89   0x4c  Code  Gb  qeq_init.o [5]
+QF_active_            0x20000600  0x100  Data  Gb  qf_act.o [5]
+QF_add_               0x00003bd5   0x56  Code  Gb  qf_act.o [5]
+QF_div8Lkup           0x00004e30   0x44  Data  Gb  qf_pwr2.o [5]
+QF_gc                 0x00003ae9   0xa0  Code  Gb  qf_gc.o [5]
+QF_init               0x00002849    0x2  Code  Gb  qvanilla.o [5]
+QF_invPwr2Lkup        0x00004dec   0x44  Data  Gb  qf_pwr2.o [5]
+QF_log2Lkup           0x00004a14  0x100  Data  Gb  qf_log2.o [5]
+QF_maxPool_           0x20000988    0x1  Data  Gb  qf_pool.o [5]
+QF_maxSignal_         0x20000b00    0x1  Data  Gb  qf_psini.o [5]
+QF_new_               0x00002ec5   0x8c  Code  Gb  qf_new.o [5]
+QF_onCleanup          0x000024e3    0x2  Code  Gb  bsp.o [1]
+QF_onIdle             0x000024e5   0x48  Code  Gb  bsp.o [1]
+QF_onStartup          0x0000248d   0x56  Code  Gb  bsp.o [1]
+QF_poolInit           0x00004711   0x60  Code  Gb  qf_pool.o [5]
+QF_pool_              0x2000098c   0x3c  Data  Gb  qf_pool.o [5]
+QF_psInit             0x00004771    0xc  Code  Gb  qf_psini.o [5]
+QF_publish            0x00003081   0xc0  Code  Gb  qf_pspub.o [5]
+QF_pwr2Lkup           0x00004da8   0x44  Data  Gb  qf_pwr2.o [5]
+QF_readySet_          0x20000aec    0xc  Data  Gb  qvanilla.o [5]
+QF_run                0x0000284f   0x54  Code  Gb  qvanilla.o [5]
+QF_stop               0x0000284b    0x4  Code  Gb  qvanilla.o [5]
+QF_subscrList_        0x20000b04    0x4  Data  Gb  qf_psini.o [5]
+QF_tick               0x00002f91   0xf0  Code  Gb  qf_tick.o [5]
+QF_timeEvtListHead_   0x20000b40    0x4  Data  Gb  qte_arm.o [5]
+QHsm_dispatch         0x00002b15  0x35a  Code  Gb  qhsm_dis.o [4]
+QHsm_init             0x00001aa5  0x120  Code  Gb  qhsm_ini.o [4]
+QHsm_top              0x00005591    0x4  Code  Gb  qhsm_top.o [4]
+QMPool_get            0x00003d25   0x5e  Code  Gb  qmp_get.o [5]
+QMPool_init           0x0000477d   0xbc  Code  Gb  qmp_init.o [5]
+QMPool_put            0x00003d8d   0x74  Code  Gb  qmp_put.o [5]
+QS_aoObj_             0x20000b2c    0x4  Data  Gb  qs_.o [6]
+QS_begin              0x00001cbf   0xb2  Code  Gb  qs.o [6]
+QS_chksum_            0x20000ad1    0x1  Data  Gb  qs.o [6]
+QS_end                0x00001d71   0x86  Code  Gb  qs.o [6]
+QS_end_               0x20000ad2    0x2  Data  Gb  qs.o [6]
+QS_eqObj_             0x20000b34    0x4  Data  Gb  qs_.o [6]
+QS_filterOff          0x00001c93   0x2c  Code  Gb  qs.o [6]
+QS_filterOn           0x00001c67   0x2c  Code  Gb  qs.o [6]
+QS_getBlock           0x0000392d   0x60  Code  Gb  qs_blk.o [6]
+QS_glbFilter_         0x20000a94   0x20  Data  Gb  qs.o [6]
+QS_head_              0x20000ad4    0x2  Data  Gb  qs.o [6]
+QS_initBuf            0x00001c5d    0xa  Code  Gb  qs.o [6]
+QS_mpObj_             0x20000b30    0x4  Data  Gb  qs_.o [6]
+QS_onFlush            0x000026f3   0x4a  Code  Gb  bsp.o [1]
+QS_onGetTime          0x000026cd   0x26  Code  Gb  bsp.o [1]
+QS_onStartup          0x00002531  0x19c  Code  Gb  bsp.o [1]
+QS_ring_              0x20000adc    0x4  Data  Gb  qs.o [6]
+QS_seq_               0x20000ad0    0x1  Data  Gb  qs.o [6]
+QS_smObj_             0x20000b28    0x4  Data  Gb  qs_.o [6]
+QS_str_ROM_           0x000020c9   0x6c  Code  Gb  qs_.o [6]
+QS_tail_              0x20000ad6    0x2  Data  Gb  qs.o [6]
+QS_teObj_             0x20000b38    0x4  Data  Gb  qs_.o [6]
+QS_tickCtr_           0x20000b3c    0x4  Data  Gb  qs_.o [6]
+QS_tickPeriod_        0x20000b0c    0x4  Data  Gb  bsp.o [1]
+QS_tickTime_          0x20000b08    0x4  Data  Gb  bsp.o [1]
+QS_u16_               0x00001e5d   0xc0  Code  Gb  qs_.o [6]
+QS_u32_               0x00001f25  0x190  Code  Gb  qs_.o [6]
+QS_u8_                0x00001e01   0x5c  Code  Gb  qs_.o [6]
+QS_used_              0x20000ad8    0x2  Data  Gb  qs.o [6]
+QTimeEvt_arm_         0x000028f9   0x84  Code  Gb  qte_arm.o [5]
+QTimeEvt_ctor         0x00001035   0x28  Code  Gb  qte_ctor.o [5]
+QTimeEvt_disarm       0x0000297d   0xa0  Code  Gb  qte_darm.o [5]
+Q_onAssert            0x0000252d    0x4  Code  Gb  bsp.o [1]
+Region$$Table$$Base   0x00004ed8          --   Gb  - Linker created -
+Region$$Table$$Limit  0x00004ee8          --   Gb  - Linker created -
+Ship_active           0x00004015   0x2a  Code  Lc  ship.o [1]
+Ship_ctor             0x00003e01   0x14  Code  Gb  ship.o [1]
+Ship_exploding        0x00004129   0x7c  Code  Lc  ship.o [1]
+Ship_flying           0x00004055   0xd4  Code  Lc  ship.o [1]
+Ship_initial          0x00003e15  0x200  Code  Lc  ship.o [1]
+Ship_parked           0x0000403f   0x16  Code  Lc  ship.o [1]
+SysCtlDelay           0x000033e5    0x8  Code  Gb  display96x16x1.o [1]
+SysTick_Config        0x0000217d   0x38  Code  Lc  bsp.o [1]
+SysTick_Handler       0x000021b5   0x2a  Code  Gb  bsp.o [1]
+SystemFrequency       0x20000b20    0x4  Data  Gb  system_lm3s.o [1]
+SystemInit            0x00003141  0x2a4  Code  Gb  system_lm3s.o [1]
+Tunnel_active         0x000005af   0x4e  Code  Lc  tunnel.o [1]
+Tunnel_addImageAt     0x00000cc7   0xce  Code  Lc  tunnel.o [1]
+Tunnel_advance        0x00000abf  0x106  Code  Lc  tunnel.o [1]
+Tunnel_ctor           0x000000f1   0x66  Code  Gb  tunnel.o [1]
+Tunnel_demo           0x000005fd   0xe4  Code  Lc  tunnel.o [1]
+Tunnel_dispatchToAllMines
+                      0x00000c97   0x30  Code  Lc  tunnel.o [1]
+Tunnel_final          0x00000579   0x36  Code  Lc  tunnel.o [1]
+Tunnel_game_over      0x000006e1   0xa8  Code  Lc  tunnel.o [1]
+Tunnel_initial        0x00000157  0x422  Code  Lc  tunnel.o [1]
+Tunnel_isWallHit      0x00000d99   0x9c  Code  Lc  tunnel.o [1]
+Tunnel_plantMine      0x00000bc9   0xce  Code  Lc  tunnel.o [1]
+Tunnel_playing        0x00000789  0x1f6  Code  Lc  tunnel.o [1]
+Tunnel_screen_saver   0x0000097f   0x2a  Code  Lc  tunnel.o [1]
+Tunnel_screen_saver_hide
+                      0x000009a9   0x52  Code  Lc  tunnel.o [1]
+Tunnel_screen_saver_show
+                      0x000009fb   0xa0  Code  Lc  tunnel.o [1]
+__aeabi_memclr4       0x00002f89         Code  Gb  ABImemclr4.o [7]
+__aeabi_memcpy        0x00003cb5         Code  Gb  ABImemcpy.o [7]
+__aeabi_memcpy4       0x00003ccf         Code  Gb  ABImemcpy.o [7]
+__aeabi_memcpy8       0x00003ccf         Code  Gb  ABImemcpy.o [7]
+__aeabi_memmove       0x00003c3d         Code  Gb  ABImemmove.o [7]
+__aeabi_memmove4      0x00003c3d         Code  Gb  ABImemmove.o [7]
+__aeabi_memmove8      0x00003c3d         Code  Gb  ABImemmove.o [7]
+__aeabi_memset        0x0000398d         Code  Gb  ABImemset.o [7]
+__aeabi_memset4       0x00002f51         Code  Gb  ABImemset48.o [7]
+__aeabi_memset8       0x00002f51         Code  Gb  ABImemset48.o [7]
+__cmain               0x00004f81         Code  Gb  cmain.o [7]
+__exit                0x00004fb1   0x14  Code  Gb  exit.o [8]
+__iar_Memset          0x0000398d         Code  Gb  ABImemset.o [7]
+__iar_Memset4_word    0x00002f59         Code  Gb  ABImemset48.o [7]
+__iar_Memset8_word    0x00002f59         Code  Gb  ABImemset48.o [7]
+__iar_Memset_word     0x00003995         Code  Gb  ABImemset.o [7]
+__iar_data_init3      0x00004ead   0x2c  Code  Gb  data_init3.o [7]
+__iar_program_start   0x000054a1         Code  Gb  cstartup_M.o [7]
+__iar_zero_init3      0x00002827   0x22  Code  Gb  zero_init3.o [7]
+__low_level_init      0x00004f97    0x4  Code  Gb  low_level_init.o [3]
+__vector_table        0x00000000   0xf0  Data  Gb  startup_ewarm.o [1]
+_call_main            0x00004f8d         Code  Gb  cmain.o [7]
+_exit                 0x00004fa5         Code  Gb  cexit.o [7]
+_main                 0x00004f93         Code  Gb  cmain.o [7]
+do_bitmaps_overlap    0x00000e6d  0x148  Code  Gb  tunnel.o [1]
+exit                  0x00004f9b    0x8  Code  Gb  exit.o [3]
+explosion0_bits       0x000054e4    0x8  Data  Lc  tunnel.o [1]
+explosion1_bits       0x000054ec    0x8  Data  Lc  tunnel.o [1]
+explosion2_bits       0x000054f4    0x8  Data  Lc  tunnel.o [1]
+explosion3_bits       0x000054fc    0x8  Data  Lc  tunnel.o [1]
+g_pucFont             0x00004838  0x1dc  Data  Lc  display96x16x1.o [1]
+g_pucOSRAMInit        0x00004b14   0x74  Data  Lc  display96x16x1.o [1]
+g_pucOSRAMRow1        0x000054ac    0x8  Data  Lc  display96x16x1.o [1]
+g_pucOSRAMRow2        0x000054b4    0x8  Data  Lc  display96x16x1.o [1]
+g_pucRITInit          0x00004be4   0x50  Data  Lc  display96x16x1.o [1]
+g_pucRITRow1          0x000054bc    0x8  Data  Lc  display96x16x1.o [1]
+g_pucRITRow2          0x000054c4    0x8  Data  Lc  display96x16x1.o [1]
+g_ucColumnAdjust      0x20000b46    0x1  Data  Lc  display96x16x1.o [1]
+g_ucDisplayIsRIT      0x20000b45    0x1  Data  Lc  display96x16x1.o [1]
+g_ulDelay             0x20000b1c    0x4  Data  Lc  display96x16x1.o [1]
+l_bitmap              0x00004c34   0x50  Data  Lc  tunnel.o [1]
+l_frame               0x200007c0   0xc0  Data  Lc  tunnel.o [1]
+l_medPoolSto          0x20000904   0x44  Data  Lc  main.o [1]
+l_mine1               0x20000a24   0x28  Data  Lc  mine1.o [1]
+l_mine2               0x20000a4c   0x28  Data  Lc  mine2.o [1]
+l_missile             0x20000ab4   0x1c  Data  Lc  missile.o [1]
+l_missileQueueSto     0x20000af8    0x8  Data  Lc  main.o [1]
+l_pulXtals            0x00004b88   0x5c  Data  Lc  system_lm3s.o [1]
+l_rnd                 0x20000b24    0x4  Data  Lc  tunnel.o [1]
+l_ship                0x20000a74   0x20  Data  Lc  ship.o [1]
+l_shipQueueSto        0x20000ae0    0xc  Data  Lc  main.o [1]
+l_smlPoolSto          0x200009c8   0x34  Data  Lc  main.o [1]
+l_subscrSto           0x20000948   0x40  Data  Lc  main.o [1]
+l_this_file           0x00004cd0   0x48  Data  Lc  bsp.o [1]
+l_this_file           0x00004d18   0x48  Data  Lc  mine1.o [1]
+l_this_file           0x00004d60   0x48  Data  Lc  mine2.o [1]
+l_this_file           0x00004c84   0x4c  Data  Lc  tunnel.o [1]
+l_this_file           0x00005504    0x8  Data  Lc  qa_fifo.o [5]
+l_this_file           0x0000550c    0x8  Data  Lc  qf_new.o [5]
+l_this_file           0x00005458    0xc  Data  Lc  qf_pspub.o [5]
+l_this_file           0x00005464    0xc  Data  Lc  qvanilla.o [5]
+l_this_file           0x00005514    0x8  Data  Lc  qf_pool.o [5]
+l_this_file           0x0000551c    0x8  Data  Lc  qa_sub.o [5]
+l_this_file           0x00005470    0xc  Data  Lc  qhsm_dis.o [4]
+l_this_file           0x0000547c    0xc  Data  Lc  qhsm_ini.o [4]
+l_this_file           0x00005524    0x8  Data  Lc  qte_arm.o [5]
+l_this_file           0x00005488    0xc  Data  Lc  qte_ctor.o [5]
+l_this_file           0x0000552c    0x8  Data  Lc  qf_act.o [5]
+l_this_file           0x00005534    0x8  Data  Lc  qf_gc.o [5]
+l_this_file           0x0000553c    0x8  Data  Lc  qa_get_.o [5]
+l_this_file           0x00005494    0xc  Data  Lc  qmp_init.o [5]
+l_this_file           0x0000554c    0x8  Data  Lc  qmp_put.o [5]
+l_tunnel              0x20000880   0x84  Data  Lc  tunnel.o [1]
+l_tunnelQueueSto      0x200009fc   0x28  Data  Lc  main.o [1]
+l_walls               0x20000700   0xc0  Data  Lc  tunnel.o [1]
+main                  0x000044b5  0x25c  Code  Gb  main.o [1]
+memcpy                0x00002aff   0x16  Code  Gb  tunnel.o [1]
+memmove               0x00002ae9   0x16  Code  Gb  tunnel.o [1]
+memset                0x00002811   0x16  Code  Gb  tunnel.o [1]
+mine1_bits            0x00005584    0x4  Data  Lc  tunnel.o [1]
+mine2_bits            0x00005588    0x4  Data  Lc  tunnel.o [1]
+mine2_missile_bits    0x0000558c    0x4  Data  Lc  tunnel.o [1]
+missile_bits          0x00005580    0x4  Data  Lc  tunnel.o [1]
+press_button_bits     0x00004e74   0x38  Data  Lc  tunnel.o [1]
+pulStack              0x20000b4c  0x258  Data  Lc  startup_ewarm.o [1]
+random                0x00000a9b   0x1c  Code  Lc  tunnel.o [1]
+randomSeed            0x00000ab7    0x8  Code  Lc  tunnel.o [1]
+ship_bits             0x000054dc    0x8  Data  Lc  tunnel.o [1]
+
+
+[1] = D:\software\qpc\examples\arm-cortex\vanilla\iar\game-ev-lm3s811\spy
+[2] = command line
+[3] = dl7M_tln.a
+[4] = libqep_cortex-m3.a
+[5] = libqf_cortex-m3.a
+[6] = libqs_cortex-m3.a
+[7] = rt7M_tl.a
+[8] = shb_l.a
+
+  18 376 bytes of readonly  code memory
+   3 532 bytes of readonly  data memory
+   3 490 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

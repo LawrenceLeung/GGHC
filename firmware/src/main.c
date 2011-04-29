@@ -107,6 +107,11 @@ int main(void)
 {
   /* init hardware */
   Initialize();
+
+  AccelerometerValue_t buffer;
+  Init_Accelerometer();
+  readAccelerometer(&buffer);
+
 #if 0
   /* instantiate active objects */
   AO1_ctor();

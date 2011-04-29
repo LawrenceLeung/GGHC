@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>game/Spy</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>112</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+    <Build><ColumnWidth0>16</ColumnWidth0><ColumnWidth1>1152</ColumnWidth1><ColumnWidth2>307</ColumnWidth2><ColumnWidth3>76</ColumnWidth3></Build><TerminalIO/><Debug-Log><ColumnWidth0>16</ColumnWidth0><ColumnWidth1>1646</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-2071-9080</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>game</ExpandedNode><ExpandedNode>game/CMSIS</ExpandedNode><ExpandedNode>game/QP-Debug</ExpandedNode><ExpandedNode>game/Source</ExpandedNode><ExpandedNode>game/TexasInstruments</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-18340-9185</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab><Tab><Identity>TabID-7479-21949</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>30</YPos><SelStart>1857</SelStart><SelEnd>1857</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\missile.c</Filename><XPos>0</XPos><YPos>82</YPos><SelStart>5565</SelStart><SelEnd>5625</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\qf\source\qvanilla.c</Filename><XPos>0</XPos><YPos>60</YPos><SelStart>3295</SelStart><SelEnd>3295</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\display96x16x1.c</Filename><XPos>0</XPos><YPos>90</YPos><SelStart>15078</SelStart><SelEnd>15078</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\bsp.c</Filename><XPos>0</XPos><YPos>365</YPos><SelStart>15424</SelStart><SelEnd>15424</SelEnd></Tab><ActiveTab>4</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\qf\source\qf_new.c</Filename><XPos>0</XPos><YPos>20</YPos><SelStart>1722</SelStart><SelEnd>1730</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\qs\source\qs_blk.c</Filename><XPos>0</XPos><YPos>9</YPos><SelStart>1562</SelStart><SelEnd>1562</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01d4f358><key>iaridepm.enu1</key></Toolbar-01d4f358></Sizes></Row0><Row1><Sizes/></Row1></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>449</Bottom><Right>203</Right><x>-2</x><y>-2</y><xscreen>126</xscreen><yscreen>127</yscreen><sizeHorzCX>124016</sizeHorzCX><sizeHorzCY>176880</sizeHorzCY><sizeVertCX>201772</sizeVertCX><sizeVertCY>628134</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>224</Bottom><Right>1018</Right><x>-2</x><y>-2</y><xscreen>1020</xscreen><yscreen>226</yscreen><sizeHorzCX>1003937</sizeHorzCX><sizeHorzCY>314763</sizeHorzCY><sizeVertCX>124016</sizeVertCX><sizeVertCY>176880</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

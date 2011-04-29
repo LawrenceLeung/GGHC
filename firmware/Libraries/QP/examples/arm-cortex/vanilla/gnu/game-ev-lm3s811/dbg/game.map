@@ -1,0 +1,1072 @@
+Archive member included because of file (symbol)
+
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+                              dbg/bsp.o (QActive_postFIFO)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+                              dbg/missile.o (QActive_subscribe)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+                              ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o) (QF_active_)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+                              dbg/bsp.o (QF_new_)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+                              dbg/main.o (QF_poolInit)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+                              dbg/main.o (QF_psInit)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+                              dbg/bsp.o (QF_publish)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+                              ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o) (QF_pwr2Lkup)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+                              dbg/bsp.o (QF_tick)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+                              ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o) (QMPool_get)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+                              ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o) (QMPool_init)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+                              dbg/tunnel.o (QTimeEvt_ctor)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+                              dbg/tunnel.o (QTimeEvt_arm_)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+                              dbg/tunnel.o (QTimeEvt_disarm)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+                              dbg/main.o (QF_init)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+                              ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o) (QActive_get_)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+                              ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o) (QEQueue_init)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+                              ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o) (QF_gc)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+                              ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o) (QF_log2Lkup)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+                              ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o) (QMPool_put)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+                              dbg/tunnel.o (QHsm_init)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+                              dbg/tunnel.o (QHsm_dispatch)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+                              dbg/mine1.o (QHsm_top)
+../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+                              ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o) (QEP_reservedEvt_)
+c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-asm-memcpy.o)
+                              dbg/tunnel.o (memcpy)
+c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+                              dbg/startup_lm3s.o (__libc_init_array)
+c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memmove.o)
+                              dbg/tunnel.o (memmove)
+c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+                              dbg/tunnel.o (memset)
+
+Discarded input sections
+
+ .ARM.attributes
+                0x00000000       0x19 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-asm-memcpy.o)
+ .ARM.attributes
+                0x00000000       0x29 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+ .debug_frame   0x00000000       0x2c c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000000       0x29 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memmove.o)
+ .debug_frame   0x00000000       0x2c c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memmove.o)
+ .ARM.attributes
+                0x00000000       0x29 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0x2c c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ROM              0x00000000         0x00010000         xr
+RAM              0x20000000         0x00002000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD dbg/bsp.o
+LOAD dbg/display96x16x1.o
+LOAD dbg/main.o
+LOAD dbg/mine1.o
+LOAD dbg/mine2.o
+LOAD dbg/missile.o
+LOAD dbg/ship.o
+LOAD dbg/tunnel.o
+LOAD dbg/startup_lm3s.o
+LOAD dbg/core_cm3.o
+LOAD dbg/system_lm3s.o
+LOAD ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a
+LOAD ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a
+                0x00000258                STACK_SIZE = 0x258
+                0x00000000                HEAP_SIZE = 0x0
+
+.isr_vector     0x00000000       0xf0
+ *(.isr_vector)
+ .isr_vector    0x00000000       0xf0 dbg/startup_lm3s.o
+                0x00000000                g_pfnVectors
+                0x000000f0                . = ALIGN (0x4)
+
+.text           0x000000f0     0x3af4
+                0x000000f0                . = ALIGN (0x4)
+ *(.text)
+ .text          0x000000f0      0x398 dbg/bsp.o
+                0x000000f0                SysTick_Handler
+                0x00000114                BSP_init
+                0x00000220                BSP_drawBitmap
+                0x0000023c                BSP_drawNString
+                0x00000250                BSP_updateScore
+                0x00000254                BSP_displayOn
+                0x0000025c                BSP_displayOff
+                0x00000264                QF_onStartup
+                0x00000310                QF_onCleanup
+                0x00000314                QF_onIdle
+                0x00000330                Q_onAssert
+                0x00000334                ADCSeq3_IRQHandler
+                0x00000480                assert_failed
+ .text          0x00000488      0x58c dbg/display96x16x1.o
+                0x000004a0                SysCtlDelay
+                0x00000560                Display96x16x1Clear
+                0x000005e8                Display96x16x1StringDraw
+                0x000006dc                Display96x16x1ImageDraw
+                0x00000760                Display96x16x1Init
+                0x00000950                Display96x16x1DisplayOn
+                0x000009e0                Display96x16x1DisplayOff
+ .text          0x00000a14       0xc0 dbg/main.o
+                0x00000a14                main
+ .text          0x00000ad4      0x27c dbg/mine1.o
+                0x00000d18                Mine1_ctor
+ .text          0x00000d50      0x27c dbg/mine2.o
+                0x00000f94                Mine2_ctor
+ .text          0x00000fcc      0x188 dbg/missile.o
+                0x00001140                Missile_ctor
+ .text          0x00001154      0x26c dbg/ship.o
+                0x000013a0                Ship_ctor
+ .text          0x000013c0      0xba0 dbg/tunnel.o
+                0x00001d54                Tunnel_ctor
+                0x00001dc4                do_bitmaps_overlap
+ .text          0x00001f60       0xac dbg/startup_lm3s.o
+                0x00001f60                DebugMon_Handler
+                0x00001f60                FlashCtrl_IRQHandler
+                0x00001f60                Timer0B_IRQHandler
+                0x00001f60                I2C0_IRQHandler
+                0x00001f60                PendSV_Handler
+                0x00001f60                NMI_Handler
+                0x00001f60                I2C1_IRQHandler
+                0x00001f60                PWMGen0_IRQHandler
+                0x00001f60                UART1_IRQHandler
+                0x00001f60                CAN1_IRQHandler
+                0x00001f60                Timer1B_IRQHandler
+                0x00001f60                Watchdog_IRQHandler
+                0x00001f60                UART0_IRQHandler
+                0x00001f60                SSI0_IRQHandler
+                0x00001f60                UsageFault_Handler
+                0x00001f60                ADCSeq1_IRQHandler
+                0x00001f60                PWMFault_IRQHandler
+                0x00001f60                PWMGen1_IRQHandler
+                0x00001f60                SSI1_IRQHandler
+                0x00001f60                SysCtrl_IRQHandler
+                0x00001f60                Spurious_Handler
+                0x00001f60                GPIOPortC_IRQHandler
+                0x00001f60                ADCSeq2_IRQHandler
+                0x00001f60                PWMGen2_IRQHandler
+                0x00001f60                UART2_IRQHandler
+                0x00001f60                QEI1_IRQHandler
+                0x00001f60                QEI0_IRQHandler
+                0x00001f60                GPIOPortD_IRQHandler
+                0x00001f60                MemManage_Handler
+                0x00001f60                Ethernet_IRQHandler
+                0x00001f60                SVC_Handler
+                0x00001f60                Timer3B_IRQHandler
+                0x00001f60                Timer3A_IRQHandler
+                0x00001f60                GPIOPortA_IRQHandler
+                0x00001f60                Timer0A_IRQHandler
+                0x00001f60                ADCSeq0_IRQHandler
+                0x00001f60                Timer1A_IRQHandler
+                0x00001f60                GPIOPortG_IRQHandler
+                0x00001f60                GPIOPortE_IRQHandler
+                0x00001f60                CAN0_IRQHandler
+                0x00001f60                Comp0_IRQHandler
+                0x00001f60                Comp1_IRQHandler
+                0x00001f60                Comp2_IRQHandler
+                0x00001f60                GPIOPortF_IRQHandler
+                0x00001f60                GPIOPortB_IRQHandler
+                0x00001f60                CAN2_IRQHandler
+                0x00001f60                GPIOPortH_IRQHandler
+                0x00001f60                BusFault_Handler
+                0x00001f60                Timer2A_IRQHandler
+                0x00001f60                Timer2B_IRQHandler
+                0x00001f60                Hibernate_IRQHandler
+                0x00001f7c                Reset_Handler
+                0x00002008                _init
+ .text          0x0000200c       0xa4 dbg/core_cm3.o
+                0x0000200c                __get_PSP
+                0x00002014                __set_PSP
+                0x0000201c                __get_MSP
+                0x00002024                __set_MSP
+                0x0000202c                __get_BASEPRI
+                0x00002034                __set_BASEPRI
+                0x0000203c                __get_PRIMASK
+                0x00002044                __set_PRIMASK
+                0x0000204c                __get_FAULTMASK
+                0x00002054                __set_FAULTMASK
+                0x0000205c                __REV
+                0x00002060                __REV16
+                0x00002064                __REVSH
+                0x00002068                __RBIT
+                0x00002070                __LDREXB
+                0x00002078                __LDREXH
+                0x00002080                __LDREXW
+                0x00002088                __STREXB
+                0x00002090                __STREXH
+                0x00002098                __STREXW
+                0x000020a0                __get_CONTROL
+                0x000020a8                __set_CONTROL
+ .text          0x000020b0      0x3d0 dbg/system_lm3s.o
+                0x000020b0                SystemInit
+ .text          0x00002480       0x90 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+                0x00002480                QActive_postFIFO
+ .text          0x00002510       0x7c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+                0x00002510                QActive_subscribe
+ .text          0x0000258c       0x90 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+                0x0000258c                QF_getVersion
+                0x00002598                QF_add_
+                0x000025d8                QF_remove_
+ .text          0x0000261c       0x88 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+                0x0000261c                QF_new_
+ .text          0x000026a4       0x88 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+                0x000026a4                QF_poolInit
+ .text          0x0000272c       0x10 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+                0x0000272c                QF_psInit
+ .text          0x0000273c       0xc0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+                0x0000273c                QF_publish
+ .text          0x000027fc        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+ .text          0x000027fc       0x6c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+                0x000027fc                QF_tick
+ .text          0x00002868       0x64 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+                0x00002868                QMPool_get
+                0x0000288c                QF_getPoolMargin
+ .text          0x000028cc       0xc4 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+                0x000028cc                QMPool_init
+ .text          0x00002990       0x30 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+                0x00002990                QTimeEvt_ctor
+ .text          0x000029c0       0x5c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+                0x000029c0                QTimeEvt_arm_
+ .text          0x00002a1c       0x44 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+                0x00002a1c                QTimeEvt_disarm
+ .text          0x00002a60       0xe4 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+                0x00002a60                QF_getPortVersion
+                0x00002a6c                QF_init
+                0x00002a70                QF_stop
+                0x00002a78                QF_run
+                0x00002ae8                QActive_start
+                0x00002b3c                QActive_stop
+ .text          0x00002b44       0xd0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+                0x00002b44                QActive_get_
+                0x00002bd8                QF_getQueueMargin
+ .text          0x00002c14       0x14 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+                0x00002c14                QEQueue_init
+ .text          0x00002c28       0x60 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+                0x00002c28                QF_gc
+ .text          0x00002c88        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+ .text          0x00002c88       0x40 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+                0x00002c88                QMPool_put
+ .text          0x00002cc8       0xbc ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+                0x00002cc8                QHsm_init
+ .text          0x00002d84      0x264 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+                0x00002d84                QHsm_dispatch
+ .text          0x00002fe8        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+                0x00002fe8                QHsm_top
+ .text          0x00002ff0        0xc ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+                0x00002ff0                QEP_getVersion
+ .text          0x00002ffc      0x2ec c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-asm-memcpy.o)
+                0x00002ffc                memcpy
+ .text          0x000032e8       0x48 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+                0x000032e8                __libc_init_array
+ .text          0x00003330       0xa0 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memmove.o)
+                0x00003330                memmove
+ .text          0x000033d0      0x12c c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+                0x000033d0                memset
+ *(.text*)
+ *(.rodata)
+ .rodata        0x000034fc       0x10 dbg/bsp.o
+ .rodata        0x0000350c      0x2c0 dbg/display96x16x1.o
+ .rodata        0x000037cc       0x10 dbg/mine1.o
+ .rodata        0x000037dc       0x10 dbg/mine2.o
+ .rodata        0x000037ec        0x4 dbg/missile.o
+                0x000037ec                AO_Missile
+ .rodata        0x000037f0        0x4 dbg/ship.o
+                0x000037f0                AO_Ship
+ .rodata        0x000037f4       0xd8 dbg/tunnel.o
+                0x00003858                AO_Tunnel
+ .rodata        0x000038cc       0x5c dbg/system_lm3s.o
+ .rodata        0x00003928        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .rodata        0x00003930        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .rodata        0x00003938       0x10 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .rodata        0x00003948        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .rodata        0x00003950        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .rodata        0x00003958        0xc ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .rodata        0x00003964       0xcc ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+                0x00003964                QF_pwr2Lkup
+                0x000039a8                QF_invPwr2Lkup
+                0x000039ec                QF_div8Lkup
+ .rodata        0x00003a30        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .rodata        0x00003a38        0xc ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .rodata        0x00003a44        0xc ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .rodata        0x00003a50        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .rodata        0x00003a58       0x14 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .rodata        0x00003a6c        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .rodata        0x00003a74        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .rodata        0x00003a7c      0x100 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+                0x00003a7c                QF_log2Lkup
+ .rodata        0x00003b7c        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .rodata        0x00003b84        0xc ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .rodata        0x00003b90        0xc ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .rodata        0x00003b9c       0x10 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+                0x00003ba4                QEP_reservedEvt_
+ *(.rodata*)
+ .rodata.str1.4
+                0x00003bac       0x1f dbg/tunnel.o
+                                 0x20 (size before relaxing)
+ *fill*         0x00003bcb        0x1 00
+ .rodata.str1.4
+                0x00003bcc       0x18 dbg/startup_lm3s.o
+ *(.init)
+ *(.fini)
+                0x00003be4                . = ALIGN (0x4)
+
+.glue_7         0x00003be4        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x00003be4        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x00003be4        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00003be4        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.preinit_array  0x00003be4        0x0
+                0x00003be4                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x00003be4                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x00003be4        0x0
+                0x00003be4                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array*)
+                0x00003be4                PROVIDE (__init_array_end, .)
+
+.fini_array     0x00003be4        0x0
+                0x00003be4                PROVIDE (__fini_array_start, .)
+ *(.fini_array*)
+ *(SORT(.fini_array.*))
+                0x00003be4                PROVIDE (__fini_array_end, .)
+                0x00003be4                _etext = .
+
+.data           0x20000000        0x0 load address 0x00003be4
+                0x00003be4                __data_load = LOADADDR (.data)
+                0x20000000                __data_start = .
+ *(.data)
+ .data          0x20000000        0x0 dbg/bsp.o
+ .data          0x20000000        0x0 dbg/display96x16x1.o
+ .data          0x20000000        0x0 dbg/main.o
+ .data          0x20000000        0x0 dbg/mine1.o
+ .data          0x20000000        0x0 dbg/mine2.o
+ .data          0x20000000        0x0 dbg/missile.o
+ .data          0x20000000        0x0 dbg/ship.o
+ .data          0x20000000        0x0 dbg/tunnel.o
+ .data          0x20000000        0x0 dbg/startup_lm3s.o
+ .data          0x20000000        0x0 dbg/core_cm3.o
+ .data          0x20000000        0x0 dbg/system_lm3s.o
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .data          0x20000000        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+ .data          0x20000000        0x0 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-asm-memcpy.o)
+ .data          0x20000000        0x0 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+ .data          0x20000000        0x0 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memmove.o)
+ .data          0x20000000        0x0 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ *(.data*)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                __data_end__ = .
+                0x20000000                _edata = __data_end__
+
+.bss            0x20000000      0x50c load address 0x00003be4
+                0x20000000                __bss_start__ = .
+ *(.bss)
+ .bss           0x20000000       0x10 dbg/bsp.o
+ .bss           0x20000010        0x8 dbg/display96x16x1.o
+ .bss           0x20000018       0xf4 dbg/main.o
+ .bss           0x2000010c       0x2c dbg/mine1.o
+ .bss           0x20000138       0x2c dbg/mine2.o
+ .bss           0x20000164       0x1c dbg/missile.o
+ .bss           0x20000180       0x20 dbg/ship.o
+ .bss           0x200001a0      0x208 dbg/tunnel.o
+ .bss           0x200003a8        0x0 dbg/startup_lm3s.o
+ .bss           0x200003a8        0x0 dbg/core_cm3.o
+ .bss           0x200003a8        0x4 dbg/system_lm3s.o
+                0x200003a8                SystemFrequency
+ .bss           0x200003ac        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .bss           0x200003ac        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .bss           0x200003ac      0x104 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+                0x200003ac                QF_active_
+                0x200004ac                QF_intLockNest_
+ .bss           0x200004b0        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .bss           0x200004b0       0x40 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+                0x200004b0                QF_maxPool_
+                0x200004b4                QF_pool_
+ .bss           0x200004f0        0x8 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+                0x200004f0                QF_subscrList_
+                0x200004f4                QF_maxSignal_
+ .bss           0x200004f8        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .bss           0x200004f8        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+ .bss           0x200004f8        0x1 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .bss           0x200004f9        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .bss           0x200004f9        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .bss           0x200004f9        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ *fill*         0x200004f9        0x3 00
+ .bss           0x200004fc        0x4 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+                0x200004fc                QF_timeEvtListHead_
+ .bss           0x20000500        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .bss           0x20000500        0xc ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+                0x20000500                QF_readySet_
+ .bss           0x2000050c        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .bss           0x2000050c        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .bss           0x2000050c        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .bss           0x2000050c        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+ .bss           0x2000050c        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .bss           0x2000050c        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .bss           0x2000050c        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .bss           0x2000050c        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .bss           0x2000050c        0x0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+ .bss           0x2000050c        0x0 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-asm-memcpy.o)
+ .bss           0x2000050c        0x0 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+ .bss           0x2000050c        0x0 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memmove.o)
+ .bss           0x2000050c        0x0 c:/tools/codesourcery/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ *(.bss*)
+ *(COMMON)
+                0x2000050c                . = ALIGN (0x4)
+                0x2000050c                _ebss = .
+                0x2000050c                __bss_end__ = .
+                0x2000050c                PROVIDE (end, _ebss)
+                0x2000050c                PROVIDE (_end, _ebss)
+                0x2000050c                PROVIDE (__end__, _ebss)
+
+.heap           0x2000050c        0x0
+                0x2000050c                __heap_start__ = .
+                0x2000050c                . = (. + HEAP_SIZE)
+                0x2000050c                . = ALIGN (0x4)
+                0x2000050c                __heap_end__ = .
+
+.stack          0x2000050c      0x258 load address 0x000040f0
+                0x2000050c                __stack_start__ = .
+                0x20000764                . = (. + STACK_SIZE)
+ *fill*         0x2000050c      0x258 00
+                0x20000764                . = ALIGN (0x4)
+                0x20000764                __c_stack_top__ = .
+                0x20000764                __stack_end__ = .
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+OUTPUT(dbg/game.elf elf32-littlearm)
+
+.debug_abbrev   0x00000000     0x2920
+ .debug_abbrev  0x00000000      0x2c6 dbg/bsp.o
+ .debug_abbrev  0x000002c6      0x19b dbg/display96x16x1.o
+ .debug_abbrev  0x00000461      0x137 dbg/main.o
+ .debug_abbrev  0x00000598      0x16e dbg/mine1.o
+ .debug_abbrev  0x00000706      0x16e dbg/mine2.o
+ .debug_abbrev  0x00000874      0x16f dbg/missile.o
+ .debug_abbrev  0x000009e3      0x192 dbg/ship.o
+ .debug_abbrev  0x00000b75      0x322 dbg/tunnel.o
+ .debug_abbrev  0x00000e97      0x111 dbg/startup_lm3s.o
+ .debug_abbrev  0x00000fa8       0xb2 dbg/core_cm3.o
+ .debug_abbrev  0x0000105a      0x104 dbg/system_lm3s.o
+ .debug_abbrev  0x0000115e       0xfd ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .debug_abbrev  0x0000125b      0x14d ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .debug_abbrev  0x000013a8      0x11e ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .debug_abbrev  0x000014c6       0xf3 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .debug_abbrev  0x000015b9       0xdb ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .debug_abbrev  0x00001694       0xc5 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+ .debug_abbrev  0x00001759      0x145 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .debug_abbrev  0x0000189e       0x61 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+ .debug_abbrev  0x000018ff      0x11b ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .debug_abbrev  0x00001a1a      0x119 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .debug_abbrev  0x00001b33       0xef ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .debug_abbrev  0x00001c22      0x126 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .debug_abbrev  0x00001d48      0x157 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .debug_abbrev  0x00001e9f      0x10f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .debug_abbrev  0x00001fae      0x192 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .debug_abbrev  0x00002140      0x12f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .debug_abbrev  0x0000226f       0xa9 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .debug_abbrev  0x00002318       0xeb ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .debug_abbrev  0x00002403       0x61 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+ .debug_abbrev  0x00002464       0xc2 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .debug_abbrev  0x00002526      0x129 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .debug_abbrev  0x0000264f      0x127 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .debug_abbrev  0x00002776       0xc4 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .debug_abbrev  0x0000283a       0xe6 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+
+.debug_info     0x00000000     0x8fd9
+ .debug_info    0x00000000     0x13fa dbg/bsp.o
+ .debug_info    0x000013fa      0x90f dbg/display96x16x1.o
+ .debug_info    0x00001d09      0x4e4 dbg/main.o
+ .debug_info    0x000021ed      0x731 dbg/mine1.o
+ .debug_info    0x0000291e      0x731 dbg/mine2.o
+ .debug_info    0x0000304f      0x58e dbg/missile.o
+ .debug_info    0x000035dd      0x688 dbg/ship.o
+ .debug_info    0x00003c65      0xeb4 dbg/tunnel.o
+ .debug_info    0x00004b19      0x1c1 dbg/startup_lm3s.o
+ .debug_info    0x00004cda      0x54b dbg/core_cm3.o
+ .debug_info    0x00005225      0x444 dbg/system_lm3s.o
+ .debug_info    0x00005669      0x342 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .debug_info    0x000059ab      0x39c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .debug_info    0x00005d47      0x317 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .debug_info    0x0000605e      0x22d ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .debug_info    0x0000628b      0x1ec ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .debug_info    0x00006477      0x132 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+ .debug_info    0x000065a9      0x398 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .debug_info    0x00006941       0xcc ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+ .debug_info    0x00006a0d      0x2ef ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .debug_info    0x00006cfc      0x238 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .debug_info    0x00006f34      0x1eb ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .debug_info    0x0000711f      0x31c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .debug_info    0x0000743b      0x34a ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .debug_info    0x00007785      0x2e6 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .debug_info    0x00007a6b      0x47c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .debug_info    0x00007ee7      0x3b0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .debug_info    0x00008297      0x191 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .debug_info    0x00008428      0x20f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .debug_info    0x00008637       0x9e ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+ .debug_info    0x000086d5      0x19d ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .debug_info    0x00008872      0x23e ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .debug_info    0x00008ab0      0x262 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .debug_info    0x00008d12      0x156 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .debug_info    0x00008e68      0x171 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+
+.debug_line     0x00000000     0x2b29
+ .debug_line    0x00000000      0x1b5 dbg/bsp.o
+ .debug_line    0x000001b5      0x247 dbg/display96x16x1.o
+ .debug_line    0x000003fc       0xf8 dbg/main.o
+ .debug_line    0x000004f4      0x16a dbg/mine1.o
+ .debug_line    0x0000065e      0x16a dbg/mine2.o
+ .debug_line    0x000007c8      0x149 dbg/missile.o
+ .debug_line    0x00000911      0x13c dbg/ship.o
+ .debug_line    0x00000a4d      0x2d9 dbg/tunnel.o
+ .debug_line    0x00000d26       0x73 dbg/startup_lm3s.o
+ .debug_line    0x00000d99      0x113 dbg/core_cm3.o
+ .debug_line    0x00000eac      0x1e0 dbg/system_lm3s.o
+ .debug_line    0x0000108c      0x127 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .debug_line    0x000011b3      0x133 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .debug_line    0x000012e6      0x11c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .debug_line    0x00001402      0x12c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .debug_line    0x0000152e      0x119 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .debug_line    0x00001647      0x105 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+ .debug_line    0x0000174c      0x145 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .debug_line    0x00001891       0xa7 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+ .debug_line    0x00001938      0x13c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .debug_line    0x00001a74      0x116 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .debug_line    0x00001b8a      0x12f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .debug_line    0x00001cb9      0x105 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .debug_line    0x00001dbe      0x135 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .debug_line    0x00001ef3      0x128 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .debug_line    0x0000201b      0x141 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .debug_line    0x0000215c      0x13f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .debug_line    0x0000229b       0xec ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .debug_line    0x00002387      0x115 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .debug_line    0x0000249c       0xa7 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+ .debug_line    0x00002543      0x111 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .debug_line    0x00002654      0x139 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .debug_line    0x0000278d      0x1b6 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .debug_line    0x00002943       0xe2 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .debug_line    0x00002a25      0x104 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+
+.debug_loc      0x00000000     0x2a28
+ .debug_loc     0x00000000      0x286 dbg/bsp.o
+ .debug_loc     0x00000286      0x392 dbg/display96x16x1.o
+ .debug_loc     0x00000618       0x68 dbg/main.o
+ .debug_loc     0x00000680      0x287 dbg/mine1.o
+ .debug_loc     0x00000907      0x287 dbg/mine2.o
+ .debug_loc     0x00000b8e      0x16e dbg/missile.o
+ .debug_loc     0x00000cfc      0x246 dbg/ship.o
+ .debug_loc     0x00000f42      0x9fd dbg/tunnel.o
+ .debug_loc     0x0000193f       0x5e dbg/startup_lm3s.o
+ .debug_loc     0x0000199d      0x298 dbg/core_cm3.o
+ .debug_loc     0x00001c35      0x156 dbg/system_lm3s.o
+ .debug_loc     0x00001d8b       0x95 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .debug_loc     0x00001e20       0x46 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .debug_loc     0x00001e66       0x71 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .debug_loc     0x00001ed7       0x99 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .debug_loc     0x00001f70       0x6f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .debug_loc     0x00001fdf       0xb5 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .debug_loc     0x00002094       0x4a ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .debug_loc     0x000020de       0x51 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .debug_loc     0x0000212f      0x102 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .debug_loc     0x00002231       0x51 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .debug_loc     0x00002282       0x6f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .debug_loc     0x000022f1       0x3d ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .debug_loc     0x0000232e      0x16b ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .debug_loc     0x00002499       0x90 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .debug_loc     0x00002529       0x51 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .debug_loc     0x0000257a       0x5c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .debug_loc     0x000025d6       0xb0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .debug_loc     0x00002686      0x38f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .debug_loc     0x00002a15       0x13 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+
+.debug_pubnames
+                0x00000000      0x92e
+ .debug_pubnames
+                0x00000000       0xfb dbg/bsp.o
+ .debug_pubnames
+                0x000000fb       0xc3 dbg/display96x16x1.o
+ .debug_pubnames
+                0x000001be       0x1b dbg/main.o
+ .debug_pubnames
+                0x000001d9       0x21 dbg/mine1.o
+ .debug_pubnames
+                0x000001fa       0x21 dbg/mine2.o
+ .debug_pubnames
+                0x0000021b       0x32 dbg/missile.o
+ .debug_pubnames
+                0x0000024d       0x2c dbg/ship.o
+ .debug_pubnames
+                0x00000279       0x47 dbg/tunnel.o
+ .debug_pubnames
+                0x000002c0       0x54 dbg/startup_lm3s.o
+ .debug_pubnames
+                0x00000314      0x159 dbg/core_cm3.o
+ .debug_pubnames
+                0x0000046d       0x35 dbg/system_lm3s.o
+ .debug_pubnames
+                0x000004a2       0x27 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .debug_pubnames
+                0x000004c9       0x28 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .debug_pubnames
+                0x000004f1       0x62 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .debug_pubnames
+                0x00000553       0x1e ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .debug_pubnames
+                0x00000571       0x3f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .debug_pubnames
+                0x000005b0       0x45 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+ .debug_pubnames
+                0x000005f5       0x21 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .debug_pubnames
+                0x00000616       0x45 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+ .debug_pubnames
+                0x0000065b       0x1e ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .debug_pubnames
+                0x00000679       0x36 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .debug_pubnames
+                0x000006af       0x22 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .debug_pubnames
+                0x000006d1       0x24 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .debug_pubnames
+                0x000006f5       0x3c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .debug_pubnames
+                0x00000731       0x26 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .debug_pubnames
+                0x00000757       0x7f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .debug_pubnames
+                0x000007d6       0x39 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .debug_pubnames
+                0x0000080f       0x23 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .debug_pubnames
+                0x00000832       0x1c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .debug_pubnames
+                0x0000084e       0x22 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+ .debug_pubnames
+                0x00000870       0x21 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .debug_pubnames
+                0x00000891       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .debug_pubnames
+                0x000008b1       0x24 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .debug_pubnames
+                0x000008d5       0x1f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .debug_pubnames
+                0x000008f4       0x3a ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+
+.debug_pubtypes
+                0x00000000     0x1c36
+ .debug_pubtypes
+                0x00000000      0x1ba dbg/bsp.o
+ .debug_pubtypes
+                0x000001ba       0x5d dbg/display96x16x1.o
+ .debug_pubtypes
+                0x00000217      0x15b dbg/main.o
+ .debug_pubtypes
+                0x00000372      0x1af dbg/mine1.o
+ .debug_pubtypes
+                0x00000521      0x1af dbg/mine2.o
+ .debug_pubtypes
+                0x000006d0      0x16e dbg/missile.o
+ .debug_pubtypes
+                0x0000083e      0x192 dbg/ship.o
+ .debug_pubtypes
+                0x000009d0      0x204 dbg/tunnel.o
+ .debug_pubtypes
+                0x00000bd4       0x3c dbg/startup_lm3s.o
+ .debug_pubtypes
+                0x00000c10       0x50 dbg/core_cm3.o
+ .debug_pubtypes
+                0x00000c60       0x3b dbg/system_lm3s.o
+ .debug_pubtypes
+                0x00000c9b       0xee ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .debug_pubtypes
+                0x00000d89       0xf2 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .debug_pubtypes
+                0x00000e7b       0xba ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .debug_pubtypes
+                0x00000f35       0x95 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .debug_pubtypes
+                0x00000fca       0x7d ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .debug_pubtypes
+                0x00001047       0x4d ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+ .debug_pubtypes
+                0x00001094       0xdd ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .debug_pubtypes
+                0x00001171       0x1e ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+ .debug_pubtypes
+                0x0000118f       0xf4 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .debug_pubtypes
+                0x00001283       0x8f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .debug_pubtypes
+                0x00001312       0x83 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .debug_pubtypes
+                0x00001395      0x109 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .debug_pubtypes
+                0x0000149e      0x109 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .debug_pubtypes
+                0x000015a7       0xf4 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .debug_pubtypes
+                0x0000169b       0xfb ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .debug_pubtypes
+                0x00001796       0xfb ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .debug_pubtypes
+                0x00001891       0x6d ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .debug_pubtypes
+                0x000018fe       0x86 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .debug_pubtypes
+                0x00001984       0x1e ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+ .debug_pubtypes
+                0x000019a2       0x76 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .debug_pubtypes
+                0x00001a18       0xa2 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .debug_pubtypes
+                0x00001aba       0xa2 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .debug_pubtypes
+                0x00001b5c       0x75 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .debug_pubtypes
+                0x00001bd1       0x65 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+
+.debug_aranges  0x00000000      0x420
+ .debug_aranges
+                0x00000000       0x20 dbg/bsp.o
+ .debug_aranges
+                0x00000020       0x20 dbg/display96x16x1.o
+ .debug_aranges
+                0x00000040       0x20 dbg/main.o
+ .debug_aranges
+                0x00000060       0x20 dbg/mine1.o
+ .debug_aranges
+                0x00000080       0x20 dbg/mine2.o
+ .debug_aranges
+                0x000000a0       0x20 dbg/missile.o
+ .debug_aranges
+                0x000000c0       0x20 dbg/ship.o
+ .debug_aranges
+                0x000000e0       0x20 dbg/tunnel.o
+ .debug_aranges
+                0x00000100       0x20 dbg/startup_lm3s.o
+ .debug_aranges
+                0x00000120       0x20 dbg/core_cm3.o
+ .debug_aranges
+                0x00000140       0x20 dbg/system_lm3s.o
+ .debug_aranges
+                0x00000160       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .debug_aranges
+                0x00000180       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .debug_aranges
+                0x000001a0       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .debug_aranges
+                0x000001c0       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .debug_aranges
+                0x000001e0       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .debug_aranges
+                0x00000200       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+ .debug_aranges
+                0x00000220       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .debug_aranges
+                0x00000240       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .debug_aranges
+                0x00000260       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .debug_aranges
+                0x00000280       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .debug_aranges
+                0x000002a0       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .debug_aranges
+                0x000002c0       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .debug_aranges
+                0x000002e0       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .debug_aranges
+                0x00000300       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .debug_aranges
+                0x00000320       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .debug_aranges
+                0x00000340       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .debug_aranges
+                0x00000360       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .debug_aranges
+                0x00000380       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .debug_aranges
+                0x000003a0       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .debug_aranges
+                0x000003c0       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .debug_aranges
+                0x000003e0       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .debug_aranges
+                0x00000400       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+
+.debug_str      0x00000000     0x1bde
+ .debug_str     0x00000000      0xa86 dbg/bsp.o
+                                0xae8 (size before relaxing)
+ .debug_str     0x00000a86      0x207 dbg/display96x16x1.o
+                                0x43c (size before relaxing)
+ .debug_str     0x00000c8d       0xb5 dbg/main.o
+                                0x41b (size before relaxing)
+ .debug_str     0x00000d42      0x159 dbg/mine1.o
+                                0x50d (size before relaxing)
+ .debug_str     0x00000e9b       0x88 dbg/mine2.o
+                                0x50d (size before relaxing)
+ .debug_str     0x00000f23       0x6b dbg/missile.o
+                                0x4a6 (size before relaxing)
+ .debug_str     0x00000f8e       0x69 dbg/ship.o
+                                0x4c5 (size before relaxing)
+ .debug_str     0x00000ff7      0x2fd dbg/tunnel.o
+                                0x79f (size before relaxing)
+ .debug_str     0x000012f4       0xd5 dbg/startup_lm3s.o
+                                0x139 (size before relaxing)
+ .debug_str     0x000013c9      0x14a dbg/core_cm3.o
+                                0x244 (size before relaxing)
+ .debug_str     0x00001513       0x43 dbg/system_lm3s.o
+                                0x240 (size before relaxing)
+ .debug_str     0x00001556       0xae ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+                                0x214 (size before relaxing)
+ .debug_str     0x00001604       0x59 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+                                0x25d (size before relaxing)
+ .debug_str     0x0000165d       0x58 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+                                0x1f1 (size before relaxing)
+ .debug_str     0x000016b5       0x89 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+                                0x19b (size before relaxing)
+ .debug_str     0x0000173e       0x3d ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+                                0x198 (size before relaxing)
+ .debug_str     0x0000177b       0x35 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+                                0x149 (size before relaxing)
+ .debug_str     0x000017b0       0x47 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+                                0x21d (size before relaxing)
+ .debug_str     0x000017f7       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+                                0x10c (size before relaxing)
+ .debug_str     0x00001817       0x42 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+                                0x1fc (size before relaxing)
+ .debug_str     0x00001859       0x63 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+                                0x1b0 (size before relaxing)
+ .debug_str     0x000018bc       0x35 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+                                0x18f (size before relaxing)
+ .debug_str     0x000018f1       0x2f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+                                0x238 (size before relaxing)
+ .debug_str     0x00001920       0x35 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+                                0x252 (size before relaxing)
+ .debug_str     0x00001955       0x3a ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+                                0x208 (size before relaxing)
+ .debug_str     0x0000198f       0x7e ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+                                0x271 (size before relaxing)
+ .debug_str     0x00001a0d       0x3f ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+                                0x240 (size before relaxing)
+ .debug_str     0x00001a4c       0x2e ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+                                0x160 (size before relaxing)
+ .debug_str     0x00001a7a       0x24 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+                                0x185 (size before relaxing)
+ .debug_str     0x00001a9e       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+                                 0xf1 (size before relaxing)
+ .debug_str     0x00001abe       0x2b ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+                                0x16b (size before relaxing)
+ .debug_str     0x00001ae9       0x6e ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+                                0x1d3 (size before relaxing)
+ .debug_str     0x00001b57       0x30 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+                                0x1d7 (size before relaxing)
+ .debug_str     0x00001b87       0x2b ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+                                0x13a (size before relaxing)
+ .debug_str     0x00001bb2       0x2c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+                                0x19b (size before relaxing)
+
+.comment        0x00000000       0x24
+ .comment       0x00000000       0x24 dbg/bsp.o
+                                 0x25 (size before relaxing)
+ .comment       0x00000000       0x25 dbg/display96x16x1.o
+ .comment       0x00000000       0x25 dbg/main.o
+ .comment       0x00000000       0x25 dbg/mine1.o
+ .comment       0x00000000       0x25 dbg/mine2.o
+ .comment       0x00000000       0x25 dbg/missile.o
+ .comment       0x00000000       0x25 dbg/ship.o
+ .comment       0x00000000       0x25 dbg/tunnel.o
+ .comment       0x00000000       0x25 dbg/startup_lm3s.o
+ .comment       0x00000000       0x25 dbg/core_cm3.o
+ .comment       0x00000000       0x25 dbg/system_lm3s.o
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .comment       0x00000000       0x25 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+
+.ARM.attributes
+                0x00000000       0x2f
+ .ARM.attributes
+                0x00000000       0x31 dbg/bsp.o
+ .ARM.attributes
+                0x00000031       0x31 dbg/display96x16x1.o
+ .ARM.attributes
+                0x00000062       0x31 dbg/main.o
+ .ARM.attributes
+                0x00000093       0x31 dbg/mine1.o
+ .ARM.attributes
+                0x000000c4       0x31 dbg/mine2.o
+ .ARM.attributes
+                0x000000f5       0x31 dbg/missile.o
+ .ARM.attributes
+                0x00000126       0x31 dbg/ship.o
+ .ARM.attributes
+                0x00000157       0x31 dbg/tunnel.o
+ .ARM.attributes
+                0x00000188       0x31 dbg/startup_lm3s.o
+ .ARM.attributes
+                0x000001b9       0x31 dbg/core_cm3.o
+ .ARM.attributes
+                0x000001ea       0x31 dbg/system_lm3s.o
+ .ARM.attributes
+                0x0000021b       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .ARM.attributes
+                0x0000024c       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .ARM.attributes
+                0x0000027d       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .ARM.attributes
+                0x000002ae       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .ARM.attributes
+                0x000002df       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .ARM.attributes
+                0x00000310       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+ .ARM.attributes
+                0x00000341       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .ARM.attributes
+                0x00000372       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pwr2.o)
+ .ARM.attributes
+                0x000003a3       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .ARM.attributes
+                0x000003d4       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .ARM.attributes
+                0x00000405       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .ARM.attributes
+                0x00000436       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .ARM.attributes
+                0x00000467       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .ARM.attributes
+                0x00000498       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .ARM.attributes
+                0x000004c9       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .ARM.attributes
+                0x000004fa       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .ARM.attributes
+                0x0000052b       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .ARM.attributes
+                0x0000055c       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .ARM.attributes
+                0x0000058d       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_log2.o)
+ .ARM.attributes
+                0x000005be       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .ARM.attributes
+                0x000005ef       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .ARM.attributes
+                0x00000620       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .ARM.attributes
+                0x00000651       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .ARM.attributes
+                0x00000682       0x31 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+
+.debug_frame    0x00000000      0xd08
+ .debug_frame   0x00000000      0x130 dbg/bsp.o
+ .debug_frame   0x00000130      0x148 dbg/display96x16x1.o
+ .debug_frame   0x00000278       0x30 dbg/main.o
+ .debug_frame   0x000002a8       0x98 dbg/mine1.o
+ .debug_frame   0x00000340       0x98 dbg/mine2.o
+ .debug_frame   0x000003d8       0x78 dbg/missile.o
+ .debug_frame   0x00000450       0x8c dbg/ship.o
+ .debug_frame   0x000004dc      0x1b4 dbg/tunnel.o
+ .debug_frame   0x00000690       0x58 dbg/startup_lm3s.o
+ .debug_frame   0x000006e8      0x170 dbg/core_cm3.o
+ .debug_frame   0x00000858       0x2c dbg/system_lm3s.o
+ .debug_frame   0x00000884       0x2c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_fifo.o)
+ .debug_frame   0x000008b0       0x2c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_sub.o)
+ .debug_frame   0x000008dc       0x54 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_act.o)
+ .debug_frame   0x00000930       0x34 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_new.o)
+ .debug_frame   0x00000964       0x30 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pool.o)
+ .debug_frame   0x00000994       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_psini.o)
+ .debug_frame   0x000009b4       0x3c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .debug_frame   0x000009f0       0x30 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .debug_frame   0x00000a20       0x38 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_get.o)
+ .debug_frame   0x00000a58       0x30 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_init.o)
+ .debug_frame   0x00000a88       0x2c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_ctor.o)
+ .debug_frame   0x00000ab4       0x2c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_arm.o)
+ .debug_frame   0x00000ae0       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qte_darm.o)
+ .debug_frame   0x00000b00       0xa0 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qvanilla.o)
+ .debug_frame   0x00000ba0       0x44 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qa_get_.o)
+ .debug_frame   0x00000be4       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qeq_init.o)
+ .debug_frame   0x00000c04       0x2c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_gc.o)
+ .debug_frame   0x00000c30       0x2c ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qmp_put.o)
+ .debug_frame   0x00000c5c       0x34 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_ini.o)
+ .debug_frame   0x00000c90       0x38 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)
+ .debug_frame   0x00000cc8       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_top.o)
+ .debug_frame   0x00000ce8       0x20 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qep.o)
+
+.debug_ranges   0x00000000      0x108
+ .debug_ranges  0x00000000       0x18 dbg/ship.o
+ .debug_ranges  0x00000018       0xa8 dbg/tunnel.o
+ .debug_ranges  0x000000c0       0x18 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_pspub.o)
+ .debug_ranges  0x000000d8       0x18 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqf_cortex-m3.a(qf_tick.o)
+ .debug_ranges  0x000000f0       0x18 ../../../../../ports/arm-cortex/vanilla/gnu/dbg\libqep_cortex-m3.a(qhsm_dis.o)

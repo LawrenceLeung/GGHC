@@ -29,6 +29,7 @@
 #include "DDS.h"
 #include "timer.h"
 #include "buttons.h"
+#include "i2c.h"
 
 
 /* PUSH BUTTONS
@@ -128,6 +129,7 @@ extern void abort(void);
 
 typedef enum JigboxSignals {
   // published signals
+	TIME_TICK_SIG,	// at SysTick rate
   EV_BUTTON_PRESSED_SIG = Q_USER_SIG,     /* published by button debouncer to signal the press of a button */
   EV_BUTTON_RELEASED_SIG,
   EV_HIT_SIG,           /* accelerometer listener detected a hit event */
