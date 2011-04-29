@@ -20,7 +20,7 @@ Note notes[NUMBER_OF_NOTES];
 
 static uint32_t metronomePeriod;
 
-audioBuf_t testSound[SampPerFrame] = {
+audioBuf_t metronomeVoice[SampPerFrame] = {
     0, 267, 529, 783, 1023, 1246, 1447, 1623, 1772, 1891, 1977, 2029, 2047,
     2029, 1977, 1891, 1772, 1623, 1447, 1246, 1023, 783, 529, 267, 0, -268,
     -530, -784, -1024, -1247, -1448, -1624, -1773, -1892, -1978, -2030, -2047,
@@ -85,14 +85,14 @@ void SetMetronomePeriod(uint32_t newPeriod)
 void InitAudioDevice(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
+    DDS_Context contextNote0;
     DDS_Context contextNote1;
     DDS_Context contextNote2;
     DDS_Context contextNote3;
     DDS_Context contextNote4;
     DDS_Context contextNote5;
 
-    DDS_initializeContext(&contextNote1, voice1, 16384 );
-
+    int i;
 
     // Audio Device Class
     UsbAudioClassInit();
@@ -105,22 +105,45 @@ void InitAudioDevice(void)
     // Chip on
     GPIO_WriteBit(GPIOC, GPIO_Pin_3, Bit_RESET);
 
-    // TODO Maybe the noteVoiceBuffer is redundant as it is replaced by the context
-
     // Note 0 is the metronome note
-    notes[0].frequency       = 216; // Middle C
-    notes[0].period          = 100; // TODO
-    notes[0].noteVoiceBuffer = testSound; // Sinewave buffer
-    notes[0].noteOn          = true; // TODO start with it on just for test
+    notes[0].frequency       = 261.626; // Middle C
+    notes[0].noteVoiceBuffer = metronomeVoice; // Sinewave buffer
+    notes[0].context = contextNote0; // TODO not yet used
+    notes[0].noteOn = false;
 
     // Note 1 maps to the first button.
-    notes[1].frequency       = 216; // Middle C
-    notes[1].period          = 100; // TODO
-    notes[1].noteVoiceBuffer = voice1; // Sinewave buffer
-    notes[1].noteOn          = true; // TODO start with it on just for test
+    notes[1].frequency       = 261.626; // Middle C
+    notes[1].noteVoiceBuffer = voice1;
     notes[1].context = contextNote1;
 
-    DDS_setFrequency(&(notes[1].context), 216, 216, 8000);
+    // Note 2 maps to the first button.
+    notes[2].frequency       = 311.127; // Middle E-flat
+    notes[2].noteVoiceBuffer = voice1;
+    notes[2].context = contextNote2;
+
+    // Note 3 maps to the first button.
+    notes[3].frequency       = 349.228; // Middle F
+    notes[3].noteVoiceBuffer = voice1;
+    notes[3].context = contextNote3;
+
+    // Note 4 maps to the first button.
+    notes[4].frequency       = 391.995; // Middle G
+    notes[4].noteVoiceBuffer = voice1; // Sinewave buffer
+    notes[4].context = contextNote4;
+
+    // Note 4 maps to the first button.
+    notes[5].frequency       = 466.164; // Middle G
+    notes[5].noteVoiceBuffer = voice1; // Sinewave buffer
+    notes[5].context = contextNote5;
+
+    /* Initialize DDS for the notes but not the metronome (note 0) */
+    for(i=1; i < NUMBER_OF_NOTES; i++)
+      {
+        DDS_initializeContext(&(notes[i].context), notes[i].noteVoiceBuffer, VOICE_SIZE );
+        DDS_setFrequency(&(notes[i].context), 261.626,
+            notes[i].frequency, WAV_SAMPLE_RATE);
+        notes[i].noteOn = false;
+      }
 
     metronomePeriod          = 100;
     playNextFrame = true; // Kick off the audio playing

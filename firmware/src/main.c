@@ -27,11 +27,7 @@
 
 uint32_t CriticalSecCntr;
 
-// TODO check if this even needs to be global.
-bool LedState = 0; // LED is ON when corresponding bit is 1
-
-// TODO Del __IO bool LedUpdate = false; // LED state should be updated if true
-// TODO Del __IO bool ButtonUpdate = false;  // Buttons should be read and variables updated if true
+static bool LedState = 0; // LED is ON when corresponding bit is 1
 
 void LEDsSet (unsigned int);
 
@@ -45,9 +41,7 @@ void LEDsSet (unsigned int);
  *
  *************************************************************************/
 void LEDsSet (unsigned int State)
-{ /* TODO I modified this so the input is a bool instead of a bit map */
-  /* This is incompatible with the example code! */
-  /* TODO Replace this code with the jigbox driver when it is done */
+{
     GPIO_WriteBit(GPIOC,GPIO_Pin_12 ,(State)?Bit_RESET:Bit_SET);
 }
 
@@ -56,23 +50,10 @@ void Initialize(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 
-	/* TODO refactor to move all initialization to a separate function to
-	 * cleanup main()
-	 */
 	// Initialize clock system
 	Clk_Init();
 	InitTimers();
 	Init_SysTick();
-
-	// NVIC initialize
-	#ifndef  EMB_FLASH
-	/* Set the Vector Table base location at 0x20000000 */
-	//  TODO del NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x0);
-	#else  /* VECT_TAB_FLASH  */
-	/* Set the Vector Table base location at 0x08000000 */
-	// TODO del  NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
-	#endif
-	//  TODO del NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
 
 	// GPIO initialize
 	// Enable GPIO clock and release reset
@@ -138,14 +119,14 @@ static int LedCount = 0;
     if (playNextFrame)
     {
       ClearMixBuf();
-      for(i = 0; i < 2 /* TODO NUMBER_OF_NOTES */ ; i++)
+      for(i = 0; i < NUMBER_OF_NOTES; i++)
       {
         MixFrame(i);
       }
       PlayFrame();
       playNextFrame = false;
     }
-    // end TODO
+
 
     if (LedUpdate)
     {

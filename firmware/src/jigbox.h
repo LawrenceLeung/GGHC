@@ -44,11 +44,11 @@
  */
 
 #define BUTTON_1_PORT GPIOC
-#define BUTTON_1_BIT GPIO_Pin_0
+#define BUTTON_1_BIT GPIO_Pin_2
 #define BUTTON_2_PORT GPIOC
 #define BUTTON_2_BIT GPIO_Pin_1
 #define BUTTON_3_PORT GPIOC
-#define BUTTON_3_BIT GPIO_Pin_2
+#define BUTTON_3_BIT GPIO_Pin_0
 #define BUTTON_4_PORT GPIOB
 #define BUTTON_4_BIT GPIO_Pin_13
 #define BUTTON_5_PORT GPIOB
