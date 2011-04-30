@@ -56,7 +56,6 @@ void SetMetronomePeriod(uint32_t newPeriod)
  *************************************************************************/
 void InitAudioDevice(void)
 {
-    GPIO_InitTypeDef GPIO_InitStructure;
     DDS_Context contextNote0;
     DDS_Context contextNote1;
     DDS_Context contextNote2;
@@ -64,18 +63,7 @@ void InitAudioDevice(void)
     DDS_Context contextNote4;
     DDS_Context contextNote5;
 
-    int i;
-
-    // Audio Device Class
-    UsbAudioClassInit();
-    // Set STNBY pin
-    GPIO_InitStructure.GPIO_Pin   =  GPIO_Pin_3;
-    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(GPIOC, &GPIO_InitStructure);
-
-    // Chip on
-    GPIO_WriteBit(GPIOC, GPIO_Pin_3, Bit_RESET);
+    // Reset STNBY pin: done by unsoldering HP_SB_E jumper
 
     // Note 0 is the metronome note
     notes[0].frequency       = 261.626; // Middle C
@@ -109,7 +97,7 @@ void InitAudioDevice(void)
     notes[5].context = contextNote5;
 
     /* Initialize DDS for the notes but not the metronome (note 0) */
-    for(i=1; i < NUMBER_OF_NOTES; i++)
+    for(int i=1; i < NUMBER_OF_NOTES; i++)
       {
         DDS_initializeContext(&(notes[i].context), notes[i].noteVoiceBuffer, VOICE_SIZE );
         DDS_setFrequency(&(notes[i].context), 261.626,

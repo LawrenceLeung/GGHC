@@ -8,10 +8,12 @@ uint32_t volatile systemTime;
 
 void SysTick_Handler(void)
 {
+#if 0
     static QEvent const tickEvt = { TIME_TICK_SIG, 0 };
 
     QF_tick();
     QF_publish(&tickEvt);      /* publish the tick event to all subscribers */
+#endif
     systemTime++;
 }
 

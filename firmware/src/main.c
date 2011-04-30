@@ -46,7 +46,6 @@ void LEDsSet (unsigned int State)
 void Initialize(void)
 {
 	// Initialize clock system
-	Clk_Init();
 	InitTimers();
 
 	// GPIO initialize
@@ -67,13 +66,14 @@ void Initialize(void)
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;  //GPIO_Pin_12
 	GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+	LEDInit();
+
 	LEDsSet(LedState);
 
 	InitAudioDevice();
 
-	LEDInit();
 	ButtonsInit();
-
 }
 
 #define N_ACTIVE_OBJECTS 2
@@ -88,14 +88,37 @@ static union SmallEvent {
     /* other event types to go into this pool */
 } l_smlPoolSto[2*N_ACTIVE_OBJECTS];              /* storage for the small event pool */
 
+
+void delay(int ticks)
+{
+    uint32_t endTime = systemTime + ticks;
+    while (systemTime < endTime)
+        /* spin */;
+}
+
+#define SYS_TICK_HZ 1000
+#define SYS_TICK_USEC (1000000/SYS_TICK_HZ)
+#define MSEC(msec) ((msec)*1000/SYS_TICK_USEC)
+
 int main(void)
 {
   /* init hardware */
   Initialize();
+  SysTick_Config(SystemCoreClock / SYS_TICK_HZ);  // TODO move this
 
-  AccelerometerValue_t buffer;
+  AccelerometerReport_t buffer;
   Init_Accelerometer();
-  readAccelerometer(&buffer);
+  uint8_t brightness = 0;
+  while (true)
+  {
+	  readAccelerometer(&buffer);
+      RGB_LED_On(RGB_LED_1, buffer.x, buffer.y, buffer.z);
+      RGB_LED_On(RGB_LED_2, buffer.x, buffer.y, buffer.z);
+
+      RGB_LED_On(RGB_LED_3, brightness, brightness, brightness);
+      brightness++;
+      delay(MSEC(100));
+  }
 
 #if 0
   /* instantiate active objects */
@@ -117,9 +140,13 @@ int main(void)
                     (void *)0, 0, (QEvent *)0);
   QF_run();                                     /* run the QF application */
 
+#endif
+
   return 0;
 } /* main */
 
+
+#if 0
   // pressing any button turns on a corresponding tone
   // for (i=0; i < nBUTTONS; i++)
   // {
@@ -169,8 +196,3 @@ int main(void)
 
   }
 #endif
-
-
-  return 1;
-}
-

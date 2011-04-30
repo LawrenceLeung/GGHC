@@ -20,3 +20,6 @@ PATH=/usr/local/arm/bin:$PATH
 arm-none-eabi-gdb <elf>
 directory <srcdir>
 target extended-remote 10.211.55.5:61234
+
+in default handler, $cpsr is 0x21000032
+i.e. ISR_NUMBER = 0x32 => interrupt position 0x22 => 34 = I2C2_ER error interrupt

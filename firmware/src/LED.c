@@ -1,51 +1,96 @@
 #include "LED.h"
 
+typedef struct
+{
+    TIM_TypeDef *timer;
+    uint8_t outputChannel;
+} LED_Definition;
 
-GPIO_TypeDef* GPIO_PORTS[nLEDs] = {EXT_LED1_PORT,
-                               EXT_LED2_PORT,
-                               EXT_LED3_PORT, 
-                               EXT_LED4_PORT,
-                               EXT_LED5_PORT,
-                               EXT_LED6_PORT,
-                               EXT_LED7_PORT,
-                               EXT_LED8_PORT,
-                               EXT_LED9_PORT};
+static LED_Definition Single_LED_map[N_LEDS] =
+{
+    { TIM12, 1 },                      // Red1 = TIM12_CH1
+    { TIM2, 4 },                       // Green1 = TIM2_CH4
+    { TIM1, 2 },                       // Blue1 = TIM1_CH2
+    { TIM2, 3 },                        // Red2 = TIM2_CH3
+    { TIM12, 1 },                      // Green2 = TIM12_CH1
+    { TIM3, 4 },                       // Blue2 = TIM3_CH4
+    { TIM4, 3 },                       // Red3 = TIM4_CH3
+    { TIM4, 4 },                       // Green3 = TIM4_CH4
+    { TIM3, 3 },                       // Blue3 = TIM3_CH3
+};
 
-const uint16_t GPIO_PINS[nLEDs] = {EXT_LED1_PIN, 
-                                 EXT_LED2_PIN, 
-                                 EXT_LED3_PIN, 
-                                 EXT_LED4_PIN, 
-                                 EXT_LED5_PIN, 
-                                 EXT_LED6_PIN, 
-                                 EXT_LED7_PIN, 
-                                 EXT_LED8_PIN, 
-                                 EXT_LED9_PIN};
+#define SCALE_BRIGHTNESS(howmuch) (howmuch)
 
 /* Initialize all 9 external LEDs */
 void LEDInit()
 {
-  int i;
-  GPIO_InitTypeDef  GPIO_InitStructure;
-  
-  /* Enable the GPIO_LED Clock */
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
-
-  /* Configure the GPIO_LED pins */
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-
-  for(i = 0; i < nLEDs; i++){
-    GPIO_InitStructure.GPIO_Pin = GPIO_PINS[i];
-    GPIO_Init(GPIO_PORTS[i], &GPIO_InitStructure);
-  }
+	int i;
+    for (i = 0; i < N_LEDS; i++)
+    {
+        Single_LED_On((Single_LED_t) i, 0);
+    }
 }
 
-void LEDOn(int led)
+bool Single_LED_On(Single_LED_t led, LED_Brightness howmuch)
 {
-  GPIO_PORTS[led]->BRR = GPIO_PINS[led];
+    if (led < N_LEDS)
+    {
+        LED_Definition def = Single_LED_map[(int)led];
+        switch (def.outputChannel)
+        {
+            case 1:
+                TIM_SetCompare1(def.timer, SCALE_BRIGHTNESS(howmuch));
+                break;
+
+            case 2:
+                TIM_SetCompare2(def.timer, SCALE_BRIGHTNESS(howmuch));
+                break;
+
+            case 3:
+                TIM_SetCompare3(def.timer, SCALE_BRIGHTNESS(howmuch));
+                break;
+
+            case 4:
+                TIM_SetCompare4(def.timer, SCALE_BRIGHTNESS(howmuch));
+                break;
+
+            default:
+                return false;
+        }
+    }
+    else
+    {
+        return false;
+    }
+
+    return true;
 }
 
-void LEDOff(int led)
+bool RGB_LED_On(RGB_LED_t led, LED_Brightness red, LED_Brightness green, LED_Brightness blue)
 {
-  GPIO_PORTS[led]->BSRR = GPIO_PINS[led];   
+    switch (led)
+    {
+        case RGB_LED_1:
+            Single_LED_On(LED_1_RED, red);
+            Single_LED_On(LED_1_GREEN, green);
+            Single_LED_On(LED_1_BLUE, blue);
+            break;
+
+        case RGB_LED_2:
+            Single_LED_On(LED_2_RED, red);
+            Single_LED_On(LED_2_GREEN, green);
+            Single_LED_On(LED_2_BLUE, blue);
+            break;
+
+        case RGB_LED_3:
+            Single_LED_On(LED_3_RED, red);
+            Single_LED_On(LED_3_GREEN, green);
+            Single_LED_On(LED_3_BLUE, blue);
+            break;
+
+        default:
+            return false;
+    }
+
+    return true;
 }
