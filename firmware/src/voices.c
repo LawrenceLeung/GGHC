@@ -12,7 +12,6 @@
 #include "jigbox.h"
 #include "voices.h"
 
-// TODO defined as int16 but only really int8
 const audioBuf_t voice1[VOICE_SIZE] = {
     -256, -256, -256, -513, -511, -255, -259,   3, // 0-7
      -2,   1,   0,   0, -258, -508, -515, -767, // 8-15

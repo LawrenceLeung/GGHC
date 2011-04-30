@@ -23,10 +23,8 @@ volatile bool ButtonUpdate = false;  // Buttons should be read and variables upd
 void TIM3_IRQHandler(void)
 {
     // Clear update interrupt bit
-    // TODO delete? TIM1_ClearITPendingBit(TIM1_FLAG_Update);
     TIM_ClearITPendingBit(TIM3,TIM_FLAG_Update);
-    // TODO  TIM3->SR &= (uint16_t)~TIM1_FLAG_Update;
-    // TODO sysTime++;
+
     static unsigned int LedTimer = LED_RATE; // LED blinks at this rate
 
     if(LedTimer-- == 0)
@@ -120,23 +118,6 @@ void InitTimers(void)
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
     RCC_APB2PeriphResetCmd(RCC_APB2Periph_TIM1,DISABLE);
 
-#ifdef TODO
-    // Set timer period 0.01 seconds
-    TIM1_TimeBaseInitStruct.TIM1_Prescaler         = 720; // 10us resolution
-    TIM1_TimeBaseInitStruct.TIM1_CounterMode       = TIM1_CounterMode_Up;
-    TIM1_TimeBaseInitStruct.TIM1_Period            = 1000; // 10ms
-    TIM1_TimeBaseInitStruct.TIM1_ClockDivision     = TIM1_CKD_DIV1;
-    TIM1_TimeBaseInitStruct.TIM1_RepetitionCounter = 0;
-    TIM1_TimeBaseInit(&TIM1_TimeBaseInitStruct);
-
-    // Clear update interrupt bit
-    TIM1_ClearITPendingBit(TIM1_FLAG_Update);
-    // Enable update interrupt
-    TIM1_ITConfig(TIM1_FLAG_Update,ENABLE);
-
-    // Enable timer counting
-    TIM1_Cmd(ENABLE);
-#endif // TODO
     // Init Sample Timer - Timer3
     // TIM3 clock enable
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);

@@ -2,13 +2,6 @@
  *
  *    History :
  *       @author      : Alan Widmer
- *
- * @file
- * This example project shows how to use the IAR Embedded Workbench
- * for ARM to develop code for the IAR STM32-SK board.
- * It implements usb audio device with one output and one input.
- *
- *    $Revision: 1.1.2.1 $
  **************************************************************************/
 #include "jigbox.h"
 #include "audio_class.h"
@@ -46,27 +39,6 @@ audioBuf_t mixBuffer[SampPerFrame]=
   0, 0, 0, 0, 0, 0, 0, 0,
   0, 0, 0, 0, 0, 0, 0, 0
 };
-
-/*************************************************************************
- * Function Name: Dly100us
- * Parameters: uint32_t Dly
- *
- * Return: none
- *
- * Description: Delay Dly * 100us
- *
- *************************************************************************/
-void Dly100us(void *arg)
-{
-    uint32_t Dly = (uint32_t)arg;
-    __IO int i;
-    while(Dly--)
-    {
-        for(i = LOOP_DLY_100US; i; i--)
-        {
-        }
-    }
-}
 
 void SetMetronomePeriod(uint32_t newPeriod)
 {
@@ -145,8 +117,9 @@ void InitAudioDevice(void)
         notes[i].noteOn = false;
       }
 
-    metronomePeriod          = 100;
-    playNextFrame = true; // Kick off the audio playing
+
+    metronomePeriod = 100;
+  //  playNextFrame   = true; // Kick off the audio playing
 }
 
 void metronome(void)

@@ -145,7 +145,7 @@ uint8_t AudioRequest,AudioCS,AudioCN,AudioId;
 uint16_t AudioDataSize;
 
 int16_t AudioFeat1Vol;
-uint32_t AudioSpkVolMul = 30;  /* TODO, invent a volume control scheme */
+uint32_t AudioSpkVolMul = 50;  /* TODO, invent a volume control scheme */
 bool AudioFeat1Mute;
 
 int16_t AudioFeat2Vol;
