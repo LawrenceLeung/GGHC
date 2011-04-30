@@ -117,7 +117,7 @@ void metronome(void)
     uint32_t deltaSysTime, currentSysTime;
     const uint32_t metronomeUpPeriod = 10;
 
-    currentSysTime = systemTime();
+    currentSysTime = systemTime;
     deltaSysTime = currentSysTime - previousSysTime;
 
     if (deltaSysTime > metronomePeriod)
