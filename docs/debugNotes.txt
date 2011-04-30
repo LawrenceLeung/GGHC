@@ -10,6 +10,26 @@
 target extended-remote :61234
 load
 
+=== .gdbinit
+target extended-remote localhost:61234
+
+# Set flash parallelism mode to 32, 16, or 8 bit when using STM32F2xx microcontrollers
+# Uncomment next line, 2=32 bit, 1=16 bit and 0=8 bit parallelism mode
+#monitor flash set_parallelism_mode 2
+
+# Load the program executable
+load
+
+# Set a breakpoint at main().
+tbreak main
+
+# Reset to known state
+monitor reset
+
+# Run to the breakpoint.
+continue
+===
+
 # in Windows:
 
 "C:\Program Files\Atollic\TrueSTUDIO STM32 Lite 2.1.0\Servers\ST-LINK_gdbserver\ST-LINK_gdbserver.exe" -p 61234 -l 1 -d -e
@@ -21,5 +41,52 @@ arm-none-eabi-gdb <elf>
 directory <srcdir>
 target extended-remote 10.211.55.5:61234
 
+=== Default handler debugging
+
 in default handler, $cpsr is 0x21000032
 i.e. ISR_NUMBER = 0x32 => interrupt position 0x22 => 34 = I2C2_ER error interrupt
+
+=== Trying to start up timers.
+
+Red1 0x40001800 . 2  TIM12_CH2
+"TIMx"	0x40001800	
+	CR1	0x81	
+	CR2	0x0	
+	SMCR	0x0	
+	DIER	0x0	
+	SR	0x7	1,2 IF flags set
+	EGR	0x0	
+	CCMR1	0x6060	
+	CCMR2	0x0	
+	CCER	0x11	1,2 active high
+	CNT	0x42	
+	PSC	0x2d0	
+	ARR	0x3e8	
+	RCR	0x0	
+	CCR1	0x9c	
+	CCR2	0x0	
+	CCR3	0x0	
+	CCR4	0x0	
+	BDTR	0x0	
+	DCR	0x0	
+	DMAR	0x0	
+
+GPIO PB15
+PORTB 0x40010C00
+(GPIO_TypeDef*)0x40010C00
+
+4 => IN_float
+8 => IN_PU/PD
+B => AF_PP OUT 50MHz
+F => AF_OD OUT 50MHz 
+"(GPIO_TypeDef*)0x40010C00"	0x40010c00	
+	CRL	0x444844bb	    => PB0,1 AF_PP OUT 50MHz, PB4 pulled
+	CRH	0xbb88ffbb	    => PB8,9, 14,15 AF_PP OUT 50MHz ; 12,13 in pulled; 10,11 AF_OD
+	IDR	0x7fd0	
+	ODR	0x3010	
+	BSRR	0x0	
+	BRR	0x0	
+	LCKR	0x0	
+
+
+

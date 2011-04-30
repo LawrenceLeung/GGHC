@@ -43,20 +43,26 @@ void LEDsSet (unsigned int State)
     GPIO_WriteBit(GPIOC,GPIO_Pin_12 ,(State)?Bit_RESET:Bit_SET);
 }
 
+void InitUART()
+{
+	RCC_APB2PeriphClockCmd(RCC_APB1Periph_UART5, ENABLE);
+}
+
 void Initialize(void)
 {
-	// Initialize clock system
-	InitTimers();
-
 	// GPIO initialize
 	// Enable GPIO clock and release reset
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA |
 						   RCC_APB2Periph_GPIOB |
-						   RCC_APB2Periph_GPIOC,
+						   RCC_APB2Periph_GPIOC |
+						   RCC_APB2Periph_GPIOD |
+                           RCC_APB2Periph_AFIO,
 						   ENABLE);
 	RCC_APB2PeriphResetCmd(RCC_APB2Periph_GPIOA |
 						   RCC_APB2Periph_GPIOB |
-						   RCC_APB2Periph_GPIOC,
+						   RCC_APB2Periph_GPIOC |
+						   RCC_APB2Periph_GPIOD |
+                           RCC_APB2Periph_AFIO,
 						   DISABLE);
 
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -66,6 +72,9 @@ void Initialize(void)
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;  //GPIO_Pin_12
 	GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+	// Initialize clock system
+	InitTimers();
 
 	LEDInit();
 
@@ -89,6 +98,8 @@ static union SmallEvent {
 } l_smlPoolSto[2*N_ACTIVE_OBJECTS];              /* storage for the small event pool */
 
 
+// only call from Main thread
+// TODO remove!
 void delay(int ticks)
 {
     uint32_t endTime = systemTime + ticks;
