@@ -74,7 +74,7 @@ bool Init_Accelerometer(void)
     return true;
 }
 
-bool readAccelerometer(AccelerometerValue_t *buffer)
+bool readAccelerometer(AccelerometerReport_t *buffer)
 {
     return readAccelerometerRegister(0x00, (uint8_t*)buffer, 4);
 }

@@ -37,6 +37,6 @@ extern bool Init_Accelerometer(void);
 extern bool readAccelerometerRegister(uint8_t regAddr, uint8_t *buffer, uint8_t nBytes);
 extern bool writeAccelerometerRegister(uint8_t regAddr, uint8_t *buffer, uint8_t nBytes);
 
-extern bool readAccelerometer(AccelerometerValue_t *buffer);
+extern bool readAccelerometer(AccelerometerReport_t *buffer);
 
 #endif
