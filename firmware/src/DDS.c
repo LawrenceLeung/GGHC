@@ -1,7 +1,7 @@
 #include <DDS.h>
 #include <math.h>
 
-void DDS_initializeContext(DDS_Context *context, audioBuf_t const * _src, int16_t _srcSize)
+void DDS_initializeContext(DDS_Context *context, int16_t const * _src, int16_t _srcSize)
 {
     context->source = _src;
     context->sourceSize = _srcSize;

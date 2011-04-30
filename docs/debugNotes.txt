@@ -1,0 +1,22 @@
+"C:\Program Files\Atollic\TrueSTUDIO STM32 Lite 2.1.0\ARMTools\bin\arm-atollic-eabi-gdb" -q -nw -i mi -l 600 X:\src\GGHC\Project\Atollic\Debug\Jigbox.elf 
+-q quiet
+-nw no window
+-i mi  use MI interface
+-l 600 timeout for remote debug
+
+"C:\Program Files\Atollic\TrueSTUDIO STM32 Lite 2.1.0\Servers\ST-LINK_gdbserver\ST-LINK_gdbserver.exe" -p 61234 -l 1 -d
+
+"C:\Program Files\Atollic\TrueSTUDIO STM32 Lite 2.1.0\ARMTools\bin\arm-atollic-eabi-gdb" -l 600 X:\src\GGHC\Project\Atollic\Debug\Jigbox.elf 
+target extended-remote :61234
+load
+
+# in Windows:
+
+"C:\Program Files\Atollic\TrueSTUDIO STM32 Lite 2.1.0\Servers\ST-LINK_gdbserver\ST-LINK_gdbserver.exe" -p 61234 -l 1 -d -e
+
+# in MacOS:
+
+PATH=/usr/local/arm/bin:$PATH
+arm-none-eabi-gdb <elf>
+directory <srcdir>
+target extended-remote 10.211.55.5:61234
