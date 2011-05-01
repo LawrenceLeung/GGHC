@@ -81,12 +81,23 @@ B => AF_PP OUT 50MHz
 F => AF_OD OUT 50MHz 
 "(GPIO_TypeDef*)0x40010C00"	0x40010c00	
 	CRL	0x444844bb	    => PB0,1 AF_PP OUT 50MHz, PB4 pulled
-	CRH	0xbb88ffbb	    => PB8,9, 14,15 AF_PP OUT 50MHz ; 12,13 in pulled; 10,11 AF_OD
+	CRH	0xbb88ffbb	    => PB8,9, 14,15 AF_PP OUT 50MHz ; 12,13 in pulled; 10,11 AF_OD (I2C2)
 	IDR	0x7fd0	
 	ODR	0x3010	
 	BSRR	0x0	
 	BRR	0x0	
 	LCKR	0x0	
 
+G1 20.84usec 10.4%  TIM2_CH4
+R1 stuck low    PB15/TIM1_CH3N/TIM12_CH2
+B1 14.2usec 1.8%
 
+G2 10msec 15.2%         PB14/TIM1_CH2N/TIM12_CH1
+R2 20.85 usec  <0.4%    TIM2_CH3
+B2 10msec 1.8% TIM3_CH4
 
+G3 10msec varying 0-25% TIM4_CH4
+R3 10msec varying 0-25% TIM4_CH3
+B3 10msec varying 0-25% (high) TIM3_CH3
+
+=> inverted logic! must write period-count not just count.

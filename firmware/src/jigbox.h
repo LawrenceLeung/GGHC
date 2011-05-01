@@ -30,15 +30,16 @@
 #include "timer.h"
 #include "buttons.h"
 #include "i2c.h"
+#include "UART.h"
 
 /* PUSH BUTTONS
  * There are 5 buttons for the pentatonic scale notes. As the mapping of 
  * buttons to notes maybe dynamic, the buttons are named 1-5 for the hardware 
  * access firmware.
  * Buttons are connected as follows:
- * BUTTON_1 PC0/ADC10
+ * BUTTON_1 PC2/ADC12/WP
  * BUTTON_2 PC1/ADC11/CP
- * BUTTON_3 PC2/ADC12/WP
+ * BUTTON_3 PC0/ADC10
  * BUTTON_4 PB13/SPI2_SCK
  * BUTTON_5 PB12/SPI2_NSS
  */

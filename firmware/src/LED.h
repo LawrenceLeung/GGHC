@@ -15,7 +15,7 @@ typedef enum
     LED_3_GREEN,    // Green3 = TIM4_CH4
     LED_3_BLUE,     // Blue3 = TIM3_CH3
 
-    N_LEDS          // number of LEDs
+    N_LEDS          // number of off-board LEDs
 } Single_LED_t;
 
 typedef enum

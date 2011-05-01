@@ -25,29 +25,6 @@
 #include "jigbox.h"
 #include "audio_class.h"
 
-bool LedState = 0; // LED is ON when corresponding bit is 1
-
-void LEDsSet (unsigned int);
-
-/*************************************************************************
- * Function Name: LEDsSet
- * Parameters: unsigned int State
- *
- * Return: none
- *
- * Description: Set LEDS State
- *
- *************************************************************************/
-void LEDsSet (unsigned int State)
-{
-    GPIO_WriteBit(GPIOC,GPIO_Pin_12 ,(State)?Bit_RESET:Bit_SET);
-}
-
-void InitUART()
-{
-	RCC_APB2PeriphClockCmd(RCC_APB1Periph_UART5, ENABLE);
-}
-
 void Initialize(void)
 {
 	// GPIO initialize
@@ -76,9 +53,9 @@ void Initialize(void)
 	// Initialize clock system
 	InitTimers();
 
-	LEDInit();
+    UART_Init();
 
-	LEDsSet(LedState);
+	LEDInit();
 
 	InitAudioDevice();
 
@@ -113,46 +90,102 @@ void delay(int ticks)
 
 int main(void)
 {
-  /* init hardware */
-  Initialize();
-  SysTick_Config(SystemCoreClock / SYS_TICK_HZ);  // TODO move this
+    /* init hardware */
+    SysTick_Config(SystemCoreClock / SYS_TICK_HZ); // TODO move this
 
-  AccelerometerReport_t buffer;
-  Init_Accelerometer();
-  uint8_t brightness = 0;
-  while (true)
-  {
-	  readAccelerometer(&buffer);
-      RGB_LED_On(RGB_LED_1, buffer.x, buffer.y, buffer.z);
-      RGB_LED_On(RGB_LED_2, buffer.x, buffer.y, buffer.z);
+    Initialize();
+    UART_printString("Jigbox Lives!\r\n");
 
-      RGB_LED_On(RGB_LED_3, brightness, brightness, brightness);
-      brightness++;
-      delay(MSEC(100));
-  }
+    AccelerometerReport_t buffer;
+    Init_Accelerometer();
+    uint8_t brightness = 0;
+    while (true)
+    {
+        bool ok = readAccelerometer(&buffer);
+
+        UART_printf("ACCEL ST=0x%x x=%d y=%d z=%d\r\n", buffer.status, buffer.x, buffer.y, buffer.z);
+
+        RGB_LED_On(RGB_LED_2, brightness, brightness, brightness);
+        RGB_LED_On(RGB_LED_1, brightness, brightness, brightness);
+        RGB_LED_On(RGB_LED_3, brightness, brightness, brightness);
+
+        brightness++;
+        delay(MSEC(20));
+    }
 
 #if 0
-  /* instantiate active objects */
-  AO1_ctor();
-  AO2_ctor();
-  /* initialize the framework and the underlying RT kernel */
-  QF_init();     
-  // init publish-subscribe
-  QF_psInit(l_subscrSto, Q_DIM(l_subscrSto));
-  // initialize event pools...
-  QF_poolInit(l_smlPoolSto, sizeof(l_smlPoolSto), sizeof(l_smlPoolSto[0]));
+    /* instantiate active objects */
+    AO1_ctor();
+    AO2_ctor();
+    /* initialize the framework and the underlying RT kernel */
+    QF_init();
+    // init publish-subscribe
+    QF_psInit(l_subscrSto, Q_DIM(l_subscrSto));
+    // initialize event pools...
+    QF_poolInit(l_smlPoolSto, sizeof(l_smlPoolSto), sizeof(l_smlPoolSto[0]));
 
-  // start the active objects...
-  QActive_start(AO1, 0, /*priority*/,
-                    l_activeObjQueueSto[0], Q_DIM(l_activeObjQueueSto[0]),
-                    (void *)0, 0, (QEvent *)0);
-  QActive_start(AO2, 1, /*priority*/,
-                    l_activeObjQueueSto[1], Q_DIM(l_activeObjQueueSto[1]),
-                    (void *)0, 0, (QEvent *)0);
-  QF_run();                                     /* run the QF application */
+    // start the active objects...
+    QActive_start(AO1, 0, /*priority*/,
+                  l_activeObjQueueSto[0], Q_DIM(l_activeObjQueueSto[0]),
+                  (void*)0, 0, (QEvent*)0);
+    QActive_start(AO2, 1, /*priority*/,
+                  l_activeObjQueueSto[1], Q_DIM(l_activeObjQueueSto[1]),
+                  (void*)0, 0, (QEvent*)0);
+    QF_run();                          /* run the QF application */
 
 #endif
 
-  return 0;
+    return 0;
 } /* main */
 
+
+#if 0
+  // pressing any button turns on a corresponding tone
+  // for (i=0; i < nBUTTONS; i++)
+  // {
+  //     notes[i+1].noteOn = buttons[i].pressed;
+  // }
+
+  while(1)
+  {
+    metronome();
+
+    int i;
+
+
+    i = 0; // Metronome voice
+
+    if (playNextFrame)
+    {
+      ClearMixBuf();
+      for(i = 0; i < NUMBER_OF_NOTES; i++)
+      {
+        MixFrame(i);
+      }
+      PlayFrame();
+      playNextFrame = false;
+    }
+
+
+    if (LedUpdate)
+    {
+      LEDsSet(LedState);
+      LedState = !LedState; // Toggle the Olimex onboard LED
+      LedUpdate = false;
+      LEDOff(LedCount);
+      LedCount++;
+      if (LedCount == nLEDs)
+      {
+        LedCount = 0;
+      }
+      LEDOn(LedCount);
+    }
+
+    if (ButtonUpdate)
+    {
+      ButtonsRead();
+      ButtonUpdate = false;
+    }
+
+  }
+#endif

@@ -3,30 +3,33 @@
 typedef struct
 {
     TIM_TypeDef *timer;
+    uint32_t fullScale;
     uint8_t outputChannel;
 } LED_Definition;
 
 static LED_Definition Single_LED_map[N_LEDS] =
 {
-    { TIM12, 1 },                      // Red1 = TIM12_CH1
-    { TIM2, 4 },                       // Green1 = TIM2_CH4
-    { TIM1, 2 },                       // Blue1 = TIM1_CH2
-    { TIM2, 3 },                        // Red2 = TIM2_CH3
-    { TIM12, 1 },                      // Green2 = TIM12_CH1
-    { TIM3, 4 },                       // Blue2 = TIM3_CH4
-    { TIM4, 3 },                       // Red3 = TIM4_CH3
-    { TIM4, 4 },                       // Green3 = TIM4_CH4
-    { TIM3, 3 },                       // Blue3 = TIM3_CH3
+    { TIM12, 0, 2 },                      // Red1 = TIM12_CH1
+    { TIM2, 0, 4 },                       // Green1 = TIM2_CH4
+    { TIM1, 0, 2 },                       // Blue1 = TIM1_CH2
+    { TIM2, 0, 3 },                        // Red2 = TIM2_CH3
+    { TIM12, 0, 1 },                      // Green2 = TIM12_CH1
+    { TIM3, 0, 4 },                       // Blue2 = TIM3_CH4
+    { TIM4, 0, 3 },                       // Red3 = TIM4_CH3
+    { TIM4, 0, 4 },                       // Green3 = TIM4_CH4
+    { TIM3, 0, 3 },                       // Blue3 = TIM3_CH3
 };
 
-#define SCALE_BRIGHTNESS(howmuch) (howmuch)
+#define SCALE_BRIGHTNESS(def, howmuch) ((def.fullScale * (howmuch)) >> 8)
 
-/* Initialize all 9 external LEDs */
+// Initialize all 9 external LEDs
+// Must be done after timers initialized
 void LEDInit()
 {
-	int i;
-    for (i = 0; i < N_LEDS; i++)
+    for (int i = 0; i < N_LEDS; i++)
     {
+        LED_Definition *def = Single_LED_map + i;
+        def->fullScale = def->timer->ARR + 1;
         Single_LED_On((Single_LED_t) i, 0);
     }
 }
@@ -39,19 +42,19 @@ bool Single_LED_On(Single_LED_t led, LED_Brightness howmuch)
         switch (def.outputChannel)
         {
             case 1:
-                TIM_SetCompare1(def.timer, SCALE_BRIGHTNESS(howmuch));
+                TIM_SetCompare1(def.timer, SCALE_BRIGHTNESS(def, howmuch));
                 break;
 
             case 2:
-                TIM_SetCompare2(def.timer, SCALE_BRIGHTNESS(howmuch));
+                TIM_SetCompare2(def.timer, SCALE_BRIGHTNESS(def, howmuch));
                 break;
 
             case 3:
-                TIM_SetCompare3(def.timer, SCALE_BRIGHTNESS(howmuch));
+                TIM_SetCompare3(def.timer, SCALE_BRIGHTNESS(def, howmuch));
                 break;
 
             case 4:
-                TIM_SetCompare4(def.timer, SCALE_BRIGHTNESS(howmuch));
+                TIM_SetCompare4(def.timer, SCALE_BRIGHTNESS(def, howmuch));
                 break;
 
             default:

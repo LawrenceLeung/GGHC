@@ -104,40 +104,10 @@ static void InitTimerClocks(void)
     TIM_TimeBaseInit(TIM12, &TIM_TimeBaseStructure);
 }
 
-// Init Sample Timer - Timer2
-static void Init_AudioSampleTimer(void)
+static void InitTimerOutputCompare(void)
 {
-    // Channel 3 and 4 Configuration in PWM mode
-    TIM_OCInitTypeDef TIM_OCInitStructure =
-    {
-        .TIM_OCMode       = TIM_OCMode_PWM1,
-        .TIM_OutputState  = TIM_OutputState_Enable,
-        .TIM_OutputNState = TIM_OutputNState_Disable, // not using complementary outputs!
-        .TIM_Pulse        = 0,
-        .TIM_OCPolarity   = TIM_OCPolarity_High, // LEDs active low
-        .TIM_OCNPolarity  = TIM_OCNPolarity_High,
-        .TIM_OCIdleState  = TIM_OCIdleState_Reset,
-        .TIM_OCNIdleState = TIM_OCNIdleState_Set
-    };
-
-    TIM_OC3Init(TIM2, &TIM_OCInitStructure); // TIM2_CH3 for Red2
-    TIM_OC4Init(TIM2, &TIM_OCInitStructure); // TIM2_CH4 for Green1
-
-    // Disable double buffer of the APR register
-    TIM_ARRPreloadConfig(TIM2, ENABLE);
-    // Clear update interrupt bit
-    TIM_ClearITPendingBit(TIM2,TIM_FLAG_Update);
-    // Enable update interrupt
-    TIM_ITConfig(TIM2,TIM_FLAG_Update,ENABLE);
-
-    // TIM2 enable counter
-    TIM_Cmd(TIM2, ENABLE);
-}
-
-// Timer1 initialize
-static void Init_AudioPWMTimer(void)
-{
-    // Channel 1 Configuration in PWM mode
+    // TIM1
+    // Channel 1 is Audio PWM output
     TIM_OCInitTypeDef TIM_OCInitStructure =
     {
         .TIM_OCMode       = TIM_OCMode_PWM1,
@@ -152,10 +122,48 @@ static void Init_AudioPWMTimer(void)
 
     TIM_OC1Init(TIM1, &TIM_OCInitStructure); // TIM1_CH1 for PWM, TIM1_CH1N not used
 
-    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High; // LEDs are active-low
+    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low; // LEDs are active-low
     TIM_OCInitStructure.TIM_Pulse      = 0;
+
+    // TIM1 Channel2 is LED output
     TIM_OC2Init(TIM1, &TIM_OCInitStructure); // TIM1_CH2 for Blue1, TIM1_CH2N not used
 
+    // TIM2
+    // Channel 3 and 4 Configuration in PWM mode
+    TIM_OC3Init(TIM2, &TIM_OCInitStructure); // TIM2_CH3 for Red2
+    TIM_OC4Init(TIM2, &TIM_OCInitStructure); // TIM2_CH4 for Green1
+
+    // TIM3
+    // Channel 3 and 4 Configuration in PWM mode
+    TIM_OC3Init(TIM3, &TIM_OCInitStructure); // TIM3_CH3 for Blue3
+    TIM_OC4Init(TIM3, &TIM_OCInitStructure); // TIM3_CH4 for Blue2
+
+    // TIM4
+    TIM_OC3Init(TIM4, &TIM_OCInitStructure); // TIM4_CH3 for Red3
+    TIM_OC4Init(TIM4, &TIM_OCInitStructure); // TIM4_CH4 for Green3
+
+    // TIM12
+    TIM_OC1Init(TIM12, &TIM_OCInitStructure); // TIM12_CH1 for Green2
+    TIM_OC2Init(TIM12, &TIM_OCInitStructure); // TIM12_CH2 for Red1
+}
+
+// Init Sample Timer - Timer2
+static void Init_AudioSampleTimer(void)
+{
+    // Disable double buffer of the APR register
+    TIM_ARRPreloadConfig(TIM2, ENABLE);
+    // Clear update interrupt bit
+    TIM_ClearITPendingBit(TIM2,TIM_FLAG_Update);
+    // Enable update interrupt
+    TIM_ITConfig(TIM2,TIM_FLAG_Update,ENABLE);
+
+    // TIM2 enable counter
+    TIM_Cmd(TIM2, ENABLE);
+}
+
+// Timer1 initialize
+static void Init_AudioPWMTimer(void)
+{
     // Double buffered
     TIM_ARRPreloadConfig(TIM1, ENABLE);
     // TIM1 counter enable
@@ -167,22 +175,6 @@ static void Init_AudioPWMTimer(void)
 
 static void Init_Timer3(void)
 {
-    // Channel 3 and 4 Configuration in PWM mode
-    TIM_OCInitTypeDef TIM_OCInitStructure =
-    {
-        .TIM_OCMode       = TIM_OCMode_PWM1,
-        .TIM_OutputState  = TIM_OutputState_Enable,
-        .TIM_OutputNState = TIM_OutputNState_Disable, // not using complementary outputs!
-        .TIM_Pulse        = 0,
-        .TIM_OCPolarity   = TIM_OCPolarity_High, // LEDs active low
-        .TIM_OCNPolarity  = TIM_OCNPolarity_High,
-        .TIM_OCIdleState  = TIM_OCIdleState_Reset,
-        .TIM_OCNIdleState = TIM_OCNIdleState_Set
-    };
-
-    TIM_OC3Init(TIM3, &TIM_OCInitStructure); // TIM3_CH3 for Blue3
-    TIM_OC4Init(TIM3, &TIM_OCInitStructure); // TIM3_CH4 for Blue2
-
     // Disable double buffer of the APR register
     TIM_ARRPreloadConfig(TIM3, ENABLE);
 
@@ -192,22 +184,6 @@ static void Init_Timer3(void)
 
 static void Init_Timer4(void)
 {
-    // Channel 3 and 4 Configuration in PWM mode
-    TIM_OCInitTypeDef TIM_OCInitStructure =
-    {
-        .TIM_OCMode       = TIM_OCMode_PWM1,
-        .TIM_OutputState  = TIM_OutputState_Enable,
-        .TIM_OutputNState = TIM_OutputNState_Disable, // not using complementary outputs!
-        .TIM_Pulse        = 0,
-        .TIM_OCPolarity   = TIM_OCPolarity_High, // LEDs active low
-        .TIM_OCNPolarity  = TIM_OCNPolarity_High,
-        .TIM_OCIdleState  = TIM_OCIdleState_Reset,
-        .TIM_OCNIdleState = TIM_OCNIdleState_Set
-    };
-
-    TIM_OC3Init(TIM4, &TIM_OCInitStructure); // TIM4_CH3 for Red3
-    TIM_OC4Init(TIM4, &TIM_OCInitStructure); // TIM4_CH4 for Green3
-
     // Disable double buffer of the APR register
     TIM_ARRPreloadConfig(TIM4, ENABLE);
 
@@ -217,22 +193,6 @@ static void Init_Timer4(void)
 
 static void Init_Timer12(void)
 {
-    // Channel 3 and 4 Configuration in PWM mode
-    TIM_OCInitTypeDef TIM_OCInitStructure =
-    {
-        .TIM_OCMode       = TIM_OCMode_PWM1,
-        .TIM_OutputState  = TIM_OutputState_Enable,
-        .TIM_OutputNState = TIM_OutputNState_Disable, // not using complementary outputs!
-        .TIM_Pulse        = 0,
-        .TIM_OCPolarity   = TIM_OCPolarity_High, // LEDs active low
-        .TIM_OCNPolarity  = TIM_OCNPolarity_High,
-        .TIM_OCIdleState  = TIM_OCIdleState_Reset,
-        .TIM_OCNIdleState = TIM_OCNIdleState_Set
-    };
-
-    TIM_OC1Init(TIM12, &TIM_OCInitStructure); // TIM12_CH1 for Green2
-    TIM_OC2Init(TIM12, &TIM_OCInitStructure); // TIM12_CH2 for Red1
-
     // Disable double buffer of the APR register
     TIM_ARRPreloadConfig(TIM12, ENABLE);
 
@@ -245,6 +205,7 @@ void InitTimers(void)
     GPIOSetup();
     EnableTimers();
     InitTimerClocks();
+    InitTimerOutputCompare();
     Init_AudioPWMTimer();              // TIM1
     Init_AudioSampleTimer();           // TIM2
     Init_Timer3();
