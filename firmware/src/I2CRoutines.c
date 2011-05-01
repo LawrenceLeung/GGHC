@@ -356,12 +356,11 @@ Status I2C_Master_BufferRead(I2C_TypeDef* I2Cx, uint8_t* pBuffer,  uint32_t NumB
   * @param NumByteToWrite: Number of bytes to be sent by the Master.
   * @param Mode: Polling or DMA or Interrupt having the highest priority in the application.
   * @param SlaveAddress: The address of the slave to be addressed by the Master.
+  * @param nonStop: true to suppress the STOP condition (polling mode only)
   * @retval : None.
   */
-Status I2C_Master_BufferWrite(I2C_TypeDef* I2Cx, uint8_t* pBuffer,  uint32_t NumByteToWrite, I2C_ProgrammingModel Mode, uint8_t SlaveAddress )
-
+Status I2C_Master_BufferWrite(I2C_TypeDef* I2Cx, uint8_t* pBuffer,  uint32_t NumByteToWrite, I2C_ProgrammingModel Mode, uint8_t SlaveAddress, bool nonStop )
 {
-
     __IO uint32_t temp = 0;
     __IO uint32_t Timeout = 0;
 
@@ -419,11 +418,13 @@ Status I2C_Master_BufferWrite(I2C_TypeDef* I2Cx, uint8_t* pBuffer,  uint32_t Num
 
         /* EV8_2: Wait until BTF is set before programming the STOP */
         while ((I2Cx->SR1 & 0x00004) != 0x000004);
-        /* Program the STOP */
-        I2Cx->CR1 |= CR1_STOP_Set;
-        /* Make sure that the STOP bit is cleared by Hardware */
-        while ((I2Cx->CR1&0x200) == 0x200);
-
+        if (!nonStop)
+        {
+            /* Program the STOP */
+            I2Cx->CR1 |= CR1_STOP_Set;
+            /* Make sure that the STOP bit is cleared by Hardware */
+            while ((I2Cx->CR1&0x200) == 0x200);
+        }
     }
     else if (Mode == Polling) /* I2Cx Master Transmission using Polling */
     {
@@ -473,15 +474,16 @@ Status I2C_Master_BufferWrite(I2C_TypeDef* I2Cx, uint8_t* pBuffer,  uint32_t Num
         }
         /* EV8_2: Wait until BTF is set before programming the STOP */
         while ((I2Cx->SR1 & 0x00004) != 0x000004);
-        /* Send STOP condition */
-        I2Cx->CR1 |= CR1_STOP_Set;
-        /* Make sure that the STOP bit is cleared by Hardware */
-        while ((I2Cx->CR1&0x200) == 0x200);
-
+        if (! nonStop)
+        {
+            /* Send STOP condition */
+            I2Cx->CR1 |= CR1_STOP_Set;
+            /* Make sure that the STOP bit is cleared by Hardware */
+            while ((I2Cx->CR1&0x200) == 0x200);
+        }
     }
 
     else /* I2Cx Master Transmission using Interrupt with highest priority in the application */
-
     {
         /* Enable EVT IT*/
         I2Cx->CR2 |= I2C_IT_EVT;
