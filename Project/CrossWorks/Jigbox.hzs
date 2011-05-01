@@ -1,0 +1,78 @@
+<!DOCTYPE CrossStudio_for_ARM_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints/>
+ <ExecutionCountWindow/>
+ <Memory1>
+  <MemoryWindow autoEvaluate="0" addressText="" numColumns="8" sizeText="" dataSize="1" radix="16" addressSpace="" />
+ </Memory1>
+ <Memory2>
+  <MemoryWindow autoEvaluate="0" addressText="" numColumns="8" sizeText="" dataSize="1" radix="16" addressSpace="" />
+ </Memory2>
+ <Memory3>
+  <MemoryWindow autoEvaluate="0" addressText="" numColumns="8" sizeText="" dataSize="1" radix="16" addressSpace="" />
+ </Memory3>
+ <Memory4>
+  <MemoryWindow autoEvaluate="0" addressText="" numColumns="8" sizeText="" dataSize="1" radix="16" addressSpace="" />
+ </Memory4>
+ <Project>
+  <ProjectSessionItem path="Jigbox" name="unnamed" />
+  <ProjectSessionItem path="Jigbox;Externally_Built_Executable_1" name="unnamed" />
+  <ProjectSessionItem path="Jigbox;Externally_Built_Executable_1;System Files" name="unnamed" />
+ </Project>
+ <Register1>
+  <RegisterWindow openNodes="" binaryNodes="" hiddenNodes="" unsignedNodes="" visibleGroups="" decimalNodes="" octalNodes="" asciiNodes="" />
+ </Register1>
+ <Register2>
+  <RegisterWindow openNodes="" binaryNodes="" hiddenNodes="" unsignedNodes="" visibleGroups="" decimalNodes="" octalNodes="" asciiNodes="" />
+ </Register2>
+ <Register3>
+  <RegisterWindow openNodes="" binaryNodes="" hiddenNodes="" unsignedNodes="" visibleGroups="" decimalNodes="" octalNodes="" asciiNodes="" />
+ </Register3>
+ <Register4>
+  <RegisterWindow openNodes="" binaryNodes="" hiddenNodes="" unsignedNodes="" visibleGroups="" decimalNodes="" octalNodes="" asciiNodes="" />
+ </Register4>
+ <TargetWindow programAction="" uploadFileType="" programLoadAddress="" programSize="" uploadFileName="" uploadMemoryInterface="" programFileName="" uploadStartAddress="" programFileType="" uploadSize="" programMemoryInterface="" />
+ <TraceWindow>
+  <Trace enabled="Yes" />
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never" />
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never" />
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never" />
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never" />
+ </Watch4>
+ <Files/>
+ <ARMCrossStudioWindow activeProject="Externally_Built_Executable_1" autoConnectTarget="" debugSearchFileMap="../../gcc-4.5-2010.09/gcc/config/arm/crti.asm
+
+../../gcc-4.5-2010.09/gcc/config/arm/crtn.asm
+
+../gcc-4.5-2010.09/gcc/config/arm/ieee754-df.S
+
+../gcc-4.5-2010.09/gcc/config/arm/ieee754-sf.S
+
+../gcc-4.5-2010.09/gcc/config/arm/lib1funcs.asm
+
+..\..\..\firmware\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\TrueSTUDIO/startup_stm32f10x_xl.s
+/Users/ned/src/GGHC/firmware/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/TrueSTUDIO/startup_stm32f10x_xl.s
+..\..\..\firmware\Libraries\STM32F10x_StdPeriph_Driver\src/misc.c
+/Users/ned/src/GGHC/firmware/Libraries/STM32F10x_StdPeriph_Driver/src/misc.c
+..\..\..\firmware\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_dma.c
+/Users/ned/src/GGHC/firmware/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.c
+..\..\..\firmware\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_gpio.c
+/Users/ned/src/GGHC/firmware/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.c
+..\..\..\firmware\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_i2c.c
+/Users/ned/src/GGHC/firmware/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.c
+..\..\..\firmware\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_rcc.c
+/Users/ned/src/GGHC/firmware/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.c
+..\..\..\firmware\Libraries\STM32F10x_StdPeriph_Driver\src/stm32f10x_tim.c
+/Users/ned/src/GGHC/firmware/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.c
+X:\src\GGHC\firmware\Libraries\CMSIS\CM3\CoreSupport/core_cm3.h
+/Users/ned/src/GGHC/firmware/Libraries/CMSIS/CM3/CoreSupport/core_cm3.h" fileDialogInitialDirectory="/Users/ned/src/GGHC/firmware/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/TrueSTUDIO" fileDialogDefaultFilter="*.asm;*.s;*.inc;*.arm" autoConnectCapabilities="0" debugSearchPath="" buildConfiguration="Common" />
+</session>
