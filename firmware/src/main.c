@@ -63,9 +63,8 @@ void Initialize(void)
 }
 
 #define N_ACTIVE_OBJECTS 2
-#define MAX_EVENTS_PER_ACTIVE_OBJECT 10
+#define MAX_EVENTS_PER_ACTIVE_OBJECT 5
 
-// static QEvent const *l_tableQueueSto[N_PHILO];
 static QSubscrList   l_subscrSto[MAX_PUB_SIG];
 static QEvent const *l_activeObjQueueSto[N_ACTIVE_OBJECTS][MAX_EVENTS_PER_ACTIVE_OBJECT];
 
@@ -103,7 +102,7 @@ int main(void)
     {
         bool ok = readAccelerometer(&buffer);
 
-        UART_printf("ACCEL ST=0x%x x=%d y=%d z=%d\r\n", buffer.status, buffer.x, buffer.y, buffer.z);
+        // UART_printf("ACCEL ST=0x%x x=%d y=%d z=%d\r\n", buffer.status, buffer.x, buffer.y, buffer.z);
 
         RGB_LED_On(RGB_LED_2, brightness, brightness, brightness);
         RGB_LED_On(RGB_LED_1, brightness, brightness, brightness);

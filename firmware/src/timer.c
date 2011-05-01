@@ -87,9 +87,7 @@ static void InitTimerClocks(void)
     TIM_TimeBaseInit(TIM1, &TIM_TimeBaseStructure);
 
     // TIM2: sample timer
-    SempPeriod                       = RCC_Clocks.PCLK2_Frequency/SampFreq;
-    DeltaPer                         = (SempPeriod/(SampPerFrame*2)) + 1;
-    TIM_TimeBaseStructure.TIM_Period = SempPeriod / 1000;
+    TIM_TimeBaseStructure.TIM_Period = (RCC_Clocks.PCLK2_Frequency+SampFreq/2)/SampFreq;
     TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
 
     // TIM3: LED PWM

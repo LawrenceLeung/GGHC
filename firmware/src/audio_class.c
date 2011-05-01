@@ -2,9 +2,9 @@
 #include "audio_class.h"
 
 __IO bool SempEna,MicEna;
-uint32_t SempPeriod,DeltaPer,MicCurrBuffer;
+uint32_t MicCurrBuffer;
 __IO int16_t * pSpkData,pMicData;
-__IO uint32_t SempPerCurrHold,Delta,MicSempCount,SempCount;
+__IO uint32_t Delta,MicSempCount,SempCount;
 
 __IO bool playNextFrame = false;
 
@@ -196,12 +196,7 @@ void TIM2_IRQHandler(void)
         {
             // Disable output stream after emptying the buffer
             SempEna         = false;
-            SempPerCurrHold = SempPeriod;
         }
-    }
-    else
-    {
-        SempPerCurrHold = SempPeriod;
     }
 
     // reload PWM
@@ -212,7 +207,6 @@ void TIM2_IRQHandler(void)
         // TODO
     }
 
-    TIM2->ARR = SempPerCurrHold; // reload output compare
     TIM2->SR &= (uint16_t) ~TIM_FLAG_Update;
 }
 

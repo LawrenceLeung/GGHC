@@ -15,7 +15,7 @@
 
 #define SubFrameSize                    2
 #define SampPerFrame                    48
-#define SampFreq                        48 // 8 kHz
+#define SampFreq                        16000
 #define SpkEp         	                ENP1_OUT
 #define SpkEpMaxSize   	                (SampPerFrame * SubFrameSize)
 #define SpkDDInd                        0
