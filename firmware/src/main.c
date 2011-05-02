@@ -60,23 +60,25 @@ void Initialize(void)
 
     ButtonsInit();
 
-    Init_Accelerometer();
 }
 
 // Quantum Platform
 
-#define MAX_EVENTS_PER_ACTIVE_OBJECT 5
+#define N_ACTIVE_OBJECTS 1
+#define MAX_EVENTS_PER_ACTIVE_OBJECT 20
 
 // static QSubscrList   l_subscrSto[MAX_PUB_SIG];
 static QEvent const *l_IOEQueueSto[MAX_EVENTS_PER_ACTIVE_OBJECT];
 
-static union SmallEvent
+typedef union __attribute__((__packed__))
 {
+    uint8_t bytes[8];
     void *min_size;
     HitEvent hit;
     ButtonEvent button;
-}
-l_smlPoolSto[MAX_EVENTS_PER_ACTIVE_OBJECT];   /* storage for the small event pool */
+} SmallEvent;
+
+static SmallEvent l_smlPoolSto[MAX_EVENTS_PER_ACTIVE_OBJECT*N_ACTIVE_OBJECTS];   /* storage for the small event pool */
 
 int main(void)
 {
@@ -96,11 +98,18 @@ int main(void)
     // initialize event pools...
     QF_poolInit(l_smlPoolSto, sizeof(l_smlPoolSto), sizeof(l_smlPoolSto[0]));
 
+
     // start the active objects...
     QActive_start(AO_IOEventListener,
                   1, /*priority*/
                   l_IOEQueueSto, Q_DIM(l_IOEQueueSto),
                   (void*)0, 0, (QEvent*)0);
+
+    if (!Init_Accelerometer())
+    {
+        UART_printString("Init_Accelerometer failed!\r\n");
+    }
+
     QF_run();                          /* run the QF application */
 
     return 0;

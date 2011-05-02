@@ -8,11 +8,12 @@ void SysTick_Handler(void)
 {
     systemTime++;
 
-    static QEvent const tickEvt = { TIME_TICK_SIG, 0 };
     QF_tick();
+#if 0
+    static QEvent const tickEvt = { TIME_TICK_SIG, 0 };
     QActive_postFIFO(AO_IOEventListener, &tickEvt);
-    // QF_publish(&tickEvt);      /* publish the tick event to all subscribers */
-
+    QF_publish(&tickEvt);      /* publish the tick event to all subscribers */
+#endif
     ButtonsRead();
 }
 
@@ -31,9 +32,9 @@ void QF_onCleanup(void)
 }
 
 void QF_onIdle(void) {              /* NOTE: entered with interrupts LOCKED */
-    // TODO check for sleep mode support
     QF_INT_UNLOCK(dummy);                /* must at least unlock interrupts */
 #if defined(NDEBUG)
+    // TODO check for sleep mode support
     __WFI();                           /* wait for interrupt */
 #endif
 }
@@ -46,8 +47,8 @@ void assert_failed(char const *file, int line)
 
 void Q_onAssert(char const * const file, int line)
 {
-    (void)file;                        /* avoid compiler warning */
-    (void)line;                        /* avoid compiler warning */
+    UART_printf("ERROR: assert in file %s line %d\r\n", file, line);
+    UART_flushTransmittedCharacters();
     QF_INT_LOCK();                     /* make sure that all interrupts are disabled */
     for (;; )                          /* NOTE: replace the loop with reset for final version */
     {
