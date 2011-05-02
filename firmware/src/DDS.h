@@ -2,9 +2,10 @@
 #define __INCLUDED_DDS_H
 
 // define this as non-zero if your buffers will be a power of 2 samples long.
-#define DDS_BUFFERS_POWER_OF_TWO 1
+#define DDS_BUFFERS_POWER_OF_TWO 0
 
 #include <stdint.h>
+#include <stdbool.h>
 #include "voices.h"
 
 // Representation of our accumulator and step values
@@ -37,7 +38,7 @@ void DDS_initializeContext(DDS_Context *context, audioBuf_t const *_src, int16_t
 void DDS_setFrequency(DDS_Context *context, float originalFrequency, float desiredFrequency, float sampleRate);
 
 // Return the next sample for the given context.
-audioBuf_t DDS_nextSample(DDS_Context *context);
+audioBuf_t DDS_nextSample(DDS_Context *context, bool * isEndOfBuf);
 
 // Reset the context back to the start of the source buffer
 void DDS_restart(DDS_Context *context);

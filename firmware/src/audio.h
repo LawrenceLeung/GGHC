@@ -3,7 +3,7 @@
 #include "DDS.h"
 #include "voices.h"
 
-#define NUMBER_OF_NOTES 11 // Metronome plus 5 notes
+#define NUMBER_OF_NOTES 11 // Metronome plus 5 notes for record and 5 for playback
 #define WAV_SAMPLE_RATE 8000 // Want to change to 16000 but need to resample voices
 #define SampFreq 16000
 

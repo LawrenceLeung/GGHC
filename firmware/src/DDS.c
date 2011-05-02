@@ -21,7 +21,7 @@ void DDS_setFrequency(DDS_Context *context, float originalFrequency, float desir
 }
 
 // Return the next sample for the given DDScontext.
-audioBuf_t DDS_nextSample(DDS_Context *context)
+audioBuf_t DDS_nextSample(DDS_Context *context, bool * isEndOfBuf)
 {
     // round index to nearest sample index
     DDS_FixedPoint roundedIndex = context->accumulator;
@@ -35,7 +35,15 @@ audioBuf_t DDS_nextSample(DDS_Context *context)
 #if DDS_BUFFERS_POWER_OF_TWO
     context->accumulator.fixedPoint.integer &= context->sourceIndexMask;
 #else
-    DDScontext->accumulator.fixedPoint.integer %= DDScontext->sourceSize;
+    if (context->accumulator.fixedPoint.integer >= context->sourceSize)
+      {
+        * isEndOfBuf = true;
+        context->accumulator.fixedPoint.integer %= context->sourceSize;
+      }
+    else
+      {
+        * isEndOfBuf = false;
+      }
 #endif
     return retval;
 }
