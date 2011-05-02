@@ -59,7 +59,6 @@ void Initialize(void)
     InitAudioDevice();
 
     ButtonsInit();
-
 }
 
 // Quantum Platform
@@ -85,9 +84,6 @@ int main(void)
     Initialize();
 
     UART_printString("Jigbox Lives!\r\n");
-
-    startNote(0, Continuous, 0);
-    //startNote(2, Continuous, 0);
 
     /* instantiate active objects */
     IOListener_ctor();

@@ -53,11 +53,27 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
         case BUTTON_PRESSED_SIG:
             me->buttonState |= ((ButtonEvent*)e)->buttonMask;
             UART_printf("press 0x%04x now 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask, me->buttonState);
+            switch (((ButtonEvent*)e)->buttonMask)
+            {
+                case 1: startNote(0, Single, 15); break;
+                case 2: startNote(1, Single, 15); break;
+                case 4: startNote(2, Single, 15); break;
+                case 8: startNote(3, Single, 15); break;
+                case 16: startNote(4, Single, 15); break;
+            }
             return Q_HANDLED();
 
         case BUTTON_RELEASED_SIG:
             me->buttonState &= ~((ButtonEvent*)e)->buttonMask;
             UART_printf("release 0x%04x now 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask, me->buttonState);
+            switch (((ButtonEvent*)e)->buttonMask)
+            {
+                case 1: stopNote(0); break;
+                case 2: stopNote(1); break;
+                case 4: stopNote(2); break;
+                case 8: stopNote(3); break;
+                case 16: stopNote(4); break;
+            }
             return Q_HANDLED();
 
         case IOE_TICK_SIG:
