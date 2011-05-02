@@ -13,7 +13,7 @@
 #  define ACCEL_I2C_ADDR        0x38
 #  define ACCEL_I2C_CHANNEL     I2C2
 #  define ACCEL_MAX_WRITE_BYTES 8
-typedef uint8_t AccelerometerValue_t;
+typedef int8_t AccelerometerValue_t;
 
 #else
 
@@ -21,13 +21,12 @@ typedef uint8_t AccelerometerValue_t;
 #  define ACCEL_I2C_ADDR        0x3A
 #  define ACCEL_I2C_CHANNEL     I2C1
 #  define ACCEL_MAX_WRITE_BYTES 1      // ?
-typedef uint8_t AccelerometerValue_t;
+typedef int8_t AccelerometerValue_t;
 
 #endif
 
 typedef struct __attribute__((__packed__))
 {
-    uint8_t status;
     AccelerometerValue_t x;
     AccelerometerValue_t y;
     AccelerometerValue_t z;
@@ -75,6 +74,7 @@ extern void testEXTIInterrupt(void);
 typedef struct
 {
     QEvent super;
+    AccelerometerReport_t xyz;
     TransientSource transient;
     PulseSource pulse;
 } HitEvent;
