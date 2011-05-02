@@ -151,9 +151,16 @@ static void Init_AudioSampleTimer(void)
     // Disable double buffer of the APR register
     TIM_ARRPreloadConfig(TIM2, ENABLE);
     // Clear update interrupt bit
-    TIM_ClearITPendingBit(TIM2,TIM_FLAG_Update);
+    TIM_ClearITPendingBit(TIM2, TIM_FLAG_Update);
     // Enable update interrupt
-    TIM_ITConfig(TIM2,TIM_FLAG_Update,ENABLE);
+    TIM_ITConfig(TIM2, TIM_FLAG_Update, ENABLE);
+
+    NVIC_InitTypeDef NVIC_InitStructure;
+    NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
 
     // TIM2 enable counter
     TIM_Cmd(TIM2, ENABLE);

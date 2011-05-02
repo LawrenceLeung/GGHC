@@ -31,6 +31,11 @@
 #include "buttons.h"
 #include "i2c.h"
 #include "UART.h"
+#include "ioEventListener.h"
+
+#define SYS_TICK_HZ 1000
+#define SYS_TICK_USEC (1000000/SYS_TICK_HZ)
+#define MSEC(msec) ((msec)*1000/SYS_TICK_USEC)
 
 /* PUSH BUTTONS
  * There are 5 buttons for the pentatonic scale notes. As the mapping of
@@ -72,15 +77,10 @@ typedef enum JigboxSignals
     EV_BUTTON_PRESSED_SIG,             /* published by button debouncer to signal the press of a button */
     EV_BUTTON_RELEASED_SIG,
     EV_HIT_SIG,                        /* accelerometer listener detected a hit event */
-    TERMINATE_SIG,                     /* published by BSP to terminate the application */
 
     MAX_PUB_SIG,                       /* the last published signal */
 
-    // non-published signals
-    EV_START_NOTE_SIG,
-    EV_STOP_NOTE_SIG,
-    EV_NOTE_DONE_SIG,
-
+    // non-published
     MAX_SIG                            /* the last signal */
 } JigboxSignal;
 
