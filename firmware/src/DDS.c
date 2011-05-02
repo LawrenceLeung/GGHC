@@ -20,7 +20,7 @@ void DDS_setFrequency(DDS_Context *context, float originalFrequency, float desir
     context->stepSize.full = (uint32_t)fstep;
 }
 
-// Return the next sample for the given context.
+// Return the next sample for the given DDScontext.
 audioBuf_t DDS_nextSample(DDS_Context *context)
 {
     // round index to nearest sample index
@@ -35,7 +35,7 @@ audioBuf_t DDS_nextSample(DDS_Context *context)
 #if DDS_BUFFERS_POWER_OF_TWO
     context->accumulator.fixedPoint.integer &= context->sourceIndexMask;
 #else
-    context->accumulator.fixedPoint.integer %= context->sourceSize;
+    DDScontext->accumulator.fixedPoint.integer %= DDScontext->sourceSize;
 #endif
     return retval;
 }

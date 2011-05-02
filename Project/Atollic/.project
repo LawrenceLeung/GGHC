@@ -77,7 +77,7 @@
 	<variableList>
 		<variable>
 			<name>GGHC_SRC</name>
-			<value>file:/X:/src/GGHC/firmware</value>
+			<value>file:/c:/GGHC/firmware</value>
 		</variable>
 	</variableList>
 </projectDescription>
