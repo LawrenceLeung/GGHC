@@ -81,6 +81,8 @@ typedef enum JigboxSignals
     MAX_PUB_SIG,                       /* the last published signal */
 
     // non-published
+    IOE_TICK_SIG,
+    IOE_ACCEL_LED_OFF_SIG,
     MAX_SIG                            /* the last signal */
 } JigboxSignal;
 

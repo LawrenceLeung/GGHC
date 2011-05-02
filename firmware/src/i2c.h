@@ -9,6 +9,8 @@
 
 #if USE_MMA8452_ACCELEROMETER
 
+#include "mma845x.h"
+
 // MMA8452Q accelerometer, default (read) address
 #  define ACCEL_I2C_ADDR        0x38
 #  define ACCEL_I2C_CHANNEL     I2C2
@@ -33,7 +35,7 @@ typedef struct __attribute__((__packed__))
 } AccelerometerReport_t;
 
 // read from register 0x1E, TRANSIENT_SRC
-typedef struct {
+typedef struct { __attribute__((__packed__))
     uint8_t X_Trans_Pol: 1;     // X event was negative g
     uint8_t X_Trans_Evt: 1;       // there was an X Transient event
     uint8_t Y_Trans_Pol: 1;     // Y event was negative g
@@ -41,11 +43,11 @@ typedef struct {
     uint8_t Z_Trans_Pol: 1;     // Z event was negative g
     uint8_t Z_Trans_Evt: 1;       // there was an Z Transient event
     uint8_t Event_Active: 1;    // there was at least one flag
-    uint8_t unused: 3;
+    uint8_t unused: 1;
 } TransientSource;
 
 // read from register 0x22, PULSE_SRC
-typedef struct {
+typedef struct { __attribute__((__packed__))
     uint8_t NegativePol_X: 1;
     uint8_t NegativePol_Y: 1;
     uint8_t NegativePol_Z: 1;
@@ -55,6 +57,18 @@ typedef struct {
     uint8_t Z_Pulse_Evt: 1;
     uint8_t Event_Active: 1;    // something happened
 } PulseSource;
+
+// read from FF_MT_SRC
+typedef struct { __attribute__((__packed__))
+    uint8_t X_Motion_Pol: 1;
+    uint8_t X_Motion_Evt: 1;
+    uint8_t Y_Motion_Pol: 1;
+    uint8_t Y_Motion_Evt: 1;
+    uint8_t Z_Motion_Pol: 1;
+    uint8_t Z_Motion_Evt: 1;
+    uint8_t unused: 1;
+    uint8_t EventActive: 1;
+} MotionDetectSource;
 
 extern bool Init_Accelerometer(void);
 
@@ -71,12 +85,11 @@ extern void testEXTIInterrupt(void);
 
 // generated on interrupt from Accelerometer
 // EV_HIT_SIG
-typedef struct
+typedef struct  __attribute__((__packed__))
 {
     QEvent super;
     AccelerometerReport_t xyz;
     TransientSource transient;
-    PulseSource pulse;
 } HitEvent;
 
 #endif

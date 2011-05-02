@@ -29,4 +29,7 @@ void UART_printString(const char *s);
 // printf via UART
 int UART_printf(const char *format, ...);
 
+// wait for all characters to finish sending
+void UART_flushTransmittedCharacters(void);
+
 #endif

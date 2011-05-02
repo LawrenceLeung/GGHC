@@ -14,6 +14,7 @@ static volatile uint8_t txBufferOut, txBufferIn;
 
 void UART5_IRQHandler(void)
 {
+    // TODO reading spurious transmitted bytes?
     if(USART_GetITStatus(UART5, USART_IT_RXNE) != RESET)
     {
         /* Read one byte from the receive data register */
@@ -45,6 +46,9 @@ void UART5_IRQHandler(void)
 // PD2 UART5_RX alternate function
 void UART_Init(void)
 {
+    rxBufferOut = rxBufferIn = 0;
+    txBufferOut = txBufferIn = 0;
+
     // enable UART5 and GPIOA/AFIO clocks
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART5, ENABLE);
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD | RCC_APB2Periph_AFIO, ENABLE);
@@ -83,24 +87,14 @@ void UART_Init(void)
 bool UART_transmitByte(uint8_t byte)
 {
     bool retval = false;
-    // if the transmit buffer is empty
-    if (USART_GetFlagStatus(UART5, USART_FLAG_TXE) != RESET)
+    __disable_irq();
+    if (txBufferIn < txBufferSize)
     {
-        /* Write one byte to the transmit data register */
-        USART_SendData(UART5, byte);
-        retval = true;
+        txBuffer[txBufferIn++] = byte;
+        retval                 = true;
+        USART_ITConfig(UART5, USART_IT_TXE, ENABLE);
     }
-    else
-    {
-        __disable_irq();
-        if (txBufferIn < txBufferSize)
-        {
-            txBuffer[txBufferIn++] = byte;
-            retval                 = true;
-            USART_ITConfig(UART5, USART_IT_TXE, ENABLE);
-        }
-        __enable_irq();
-    }
+    __enable_irq();
     return retval;
 }
 
@@ -116,6 +110,10 @@ bool UART_receiveByte(uint8_t *buffer, uint16_t timeout)
         {
             *buffer = rxBuffer[rxBufferOut++];
             done    = true;
+        }
+        if (rxBufferOut >= rxBufferIn)
+        {
+            rxBufferOut = rxBufferIn = 0;
         }
         __enable_irq();
         if (done)
@@ -151,6 +149,11 @@ uint8_t UART_receiveLine(uint8_t *buffer, uint8_t bufsize, uint16_t timeout)
             *buffer++ = c;
             nRead++;
         }
+        if (rxBufferOut >= rxBufferIn)
+        {
+            rxBufferOut = rxBufferIn = 0;
+            break;
+        }
         if ((c == '\n') || (nRead >= bufsize))
             break;
         else
@@ -179,4 +182,10 @@ int UART_printf(const char *format, ...)
     va_end(ap);
     UART_printString(buffer);
     return n;
+}
+
+void UART_flushTransmittedCharacters(void)
+{
+    while (USART_GetFlagStatus(UART5, USART_FLAG_TC) != SET)
+        /* spin */;
 }

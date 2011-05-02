@@ -1,15 +1,15 @@
 #include "jigbox.h"
 
-static void updateLED1FromAccelerometer(void)
-{
-}
+Q_DEFINE_THIS_FILE
 
 typedef struct
 {
     QActive super;
-    QTimeEvt tickEvt;                  // SysTick rate ticker
+    QTimeEvt tickEvt;
+    QTimeEvt accelLEDOffEvt;
+    uint32_t lastHitTime;
     TransientSource lastTransientSource;
-    PulseSource lastPulseSource;
+    uint16_t buttonState;
 } IOEventListener;
 
 static IOEventListener l_eventListener; // the sole instance of the IOEventListener active Object
@@ -24,8 +24,10 @@ static QState IOEventListener_playing(IOEventListener *me, QEvent const *e);
 void IOListener_ctor(void)
 {
     IOEventListener *me = &l_eventListener;
-    QTimeEvt_ctor(&me->tickEvt, TIME_TICK_SIG);
+    QTimeEvt_ctor(&me->tickEvt, IOE_TICK_SIG);
+    QTimeEvt_ctor(&me->accelLEDOffEvt, IOE_ACCEL_LED_OFF_SIG);
     QActive_ctor(&me->super, (QStateHandler)&IOEventListener_initial);
+    me->buttonState = 0;
 }
 
 QState IOEventListener_initial(IOEventListener *me, QEvent const *e)
@@ -38,7 +40,7 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
     switch (e->sig)
     {
         case Q_ENTRY_SIG:
-            QTimeEvt_postEvery(&me->tickEvt,(QActive*)me, 1);
+            QTimeEvt_postEvery(&me->tickEvt,(QActive*)me, 1000);     // 1 per second
             return Q_HANDLED();
 
         case Q_EXIT_SIG:
@@ -49,28 +51,78 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
             return Q_TRAN(&IOEventListener_idle);
 
         case BUTTON_PRESSED_SIG:
-            UART_printf("press 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask);
-            break;
+            me->buttonState |= ((ButtonEvent*)e)->buttonMask;
+            UART_printf("press 0x%04x now 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask, me->buttonState);
+            switch (((ButtonEvent*)e)->buttonMask)
+            {
+                case 1: startNote(0, Single, 15); break;
+                case 2: startNote(1, Single, 15); break;
+                case 4: startNote(2, Single, 15); break;
+                case 8: startNote(3, Single, 15); break;
+                case 16: startNote(4, Single, 15); break;
+            }
+            return Q_HANDLED();
 
         case BUTTON_RELEASED_SIG:
-            UART_printf("release 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask);
-            break;
+            me->buttonState &= ~((ButtonEvent*)e)->buttonMask;
+            UART_printf("release 0x%04x now 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask, me->buttonState);
+            switch (((ButtonEvent*)e)->buttonMask)
+            {
+                case 1: stopNote(0); break;
+                case 2: stopNote(1); break;
+                case 4: stopNote(2); break;
+                case 8: stopNote(3); break;
+                case 16: stopNote(4); break;
+            }
+            return Q_HANDLED();
 
-        case TIME_TICK_SIG:
-            if (systemTime % 100 == 0)
-                updateLED1FromAccelerometer();
-            break;
+        case IOE_TICK_SIG:
+            {
+                AccelerometerReport_t report;
+                if (readAccelerometer(&report))
+                {
+                    UART_printf("accel x=%d y=%d z=%d\r\n", report.x, report.y, report.z);
+                }
+                else
+                {
+                    UART_printf("can't read accel!\r\n");
+                }
+            }
+            return Q_HANDLED();
 
         case HIT_SIG:
-            me->lastTransientSource = ((HitEvent*)e)->transient;
-            me->lastPulseSource     = ((HitEvent*)e)->pulse;
-            UART_printf("hit tr=0x%02x pulse=0x%02x x=%d y=%d z=%d\r\n",
-                        (int)*(uint8_t*)&(((HitEvent*)e)->transient),
-                        (int)*(uint8_t*)&(((HitEvent*)e)->pulse),
-                        ((HitEvent*)e)->xyz.x,
-                        ((HitEvent*)e)->xyz.y,
-                        ((HitEvent*)e)->xyz.z);
-            break;
+            {
+                HitEvent *ev = (HitEvent*)e;
+                me->lastHitTime            = systemTime;
+                me->lastTransientSource    = ev->transient;
+                UART_printf("%08d hit tr=0x%02x",
+                            me->lastHitTime,
+                            (int)*(uint8_t*)&(ev->transient));
+                if (ev->transient.X_Trans_Evt)
+                    UART_printf(" X = %d", ev->xyz.x);
+                else
+                    ev->xyz.x = 0;
+
+                if (ev->transient.Y_Trans_Evt)
+                    UART_printf(" Y = %d", ev->xyz.y);
+                else
+                    ev->xyz.y = 0;
+
+                if (ev->transient.Z_Trans_Evt)
+                    UART_printf(" Z = %d", ev->xyz.z);
+                else
+                    ev->xyz.z = 0;
+                UART_printString("\r\n");
+
+                RGB_LED_On(RGB_LED_3, ev->xyz.x, ev->xyz.y, ev->xyz.z);
+                QTimeEvt_disarm(&me->accelLEDOffEvt);
+                QTimeEvt_postIn(&me->accelLEDOffEvt, (QActive*)me, 50);
+            }
+            return Q_HANDLED();
+
+        case IOE_ACCEL_LED_OFF_SIG:
+            RGB_LED_On(RGB_LED_3, 0, 0, 0);
+            return Q_HANDLED();
     }
     return Q_SUPER(&QHsm_top);
 }
