@@ -1,5 +1,3 @@
-#include "qp_port.h"
-#include "bsp.h"
 #include "jigbox.h"
 
 Q_DEFINE_THIS_FILE
@@ -8,13 +6,14 @@ uint32_t volatile systemTime;
 
 void SysTick_Handler(void)
 {
-#if 0
-    static QEvent const tickEvt = { TIME_TICK_SIG, 0 };
-
-    QF_tick();
-    QF_publish(&tickEvt);      /* publish the tick event to all subscribers */
-#endif
     systemTime++;
+
+    static QEvent const tickEvt = { TIME_TICK_SIG, 0 };
+    QF_tick();
+    QActive_postFIFO(AO_IOEventListener, &tickEvt);
+    // QF_publish(&tickEvt);      /* publish the tick event to all subscribers */
+
+    ButtonsRead();
 }
 
 void QF_onStartup(void)
@@ -31,12 +30,9 @@ void QF_onCleanup(void)
 {
 }
 
-void QK_onIdle(void)
-{
-    QF_INT_LOCK();
-    // do idle-loop processing
-    QF_INT_UNLOCK();
-
+void QF_onIdle(void) {              /* NOTE: entered with interrupts LOCKED */
+    // TODO check for sleep mode support
+    QF_INT_UNLOCK(dummy);                /* must at least unlock interrupts */
 #if defined(NDEBUG)
     __WFI();                           /* wait for interrupt */
 #endif

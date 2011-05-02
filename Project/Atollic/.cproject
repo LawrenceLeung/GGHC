@@ -17,12 +17,12 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator" id="com.atollic.truestudio.exe.debug.177691703" name="Debug" parent="com.atollic.truestudio.exe.debug">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator" id="com.atollic.truestudio.exe.debug.177691703" name="Debug" parent="com.atollic.truestudio.exe.debug" postannouncebuildStep="" postbuildStep="" preannouncebuildStep="" prebuildStep="">
 					<folderInfo id="com.atollic.truestudio.exe.debug.177691703." name="/" resourcePath="">
 						<toolChain errorParsers="" id="com.atollic.truestudio.exe.debug.toolchain.833611073" name="Atollic ARM Tools" superClass="com.atollic.truestudio.exe.debug.toolchain">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.GNU_ELF" id="com.atollic.truestudio.exe.debug.toolchain.platform.232299035" isAbstract="false" name="Debug platform" superClass="com.atollic.truestudio.exe.debug.toolchain.platform"/>
 							<builder buildPath="${workspace_loc:/Jigbox/Debug}" errorParsers="" id="com.atollic.truestudio.mbs.builder1.835002566" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
-							<tool errorParsers="org.eclipse.cdt.core.GASErrorParser" id="com.atollic.truestudio.exe.debug.toolchain.as.1230470400" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as">
+							<tool command="arm-atollic-eabi-gcc -c" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GASErrorParser" id="com.atollic.truestudio.exe.debug.toolchain.as.1230470400" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as">
 								<option id="com.atollic.truestudio.common_options.target.endianess.1150486516" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.514152561" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F100RB" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.instr_set.273197630" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
@@ -34,7 +34,7 @@
 								</option>
 								<inputType id="com.atollic.truestudio.as.input.2039541272" name="Input" superClass="com.atollic.truestudio.as.input"/>
 							</tool>
-							<tool errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="com.atollic.truestudio.exe.debug.toolchain.gcc.927920504" name="C Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gcc">
+							<tool command="arm-atollic-eabi-gcc -c" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="com.atollic.truestudio.exe.debug.toolchain.gcc.927920504" name="C Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gcc">
 								<option id="com.atollic.truestudio.common_options.target.endianess.1403785525" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1110529367" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F100RB" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.instr_set.2102862582" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
@@ -52,10 +52,10 @@
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER=1"/>
 									<listOptionValue builtIn="false" value="STM32F10X_XL=1"/>
 								</option>
-								<option id="com.atollic.truestudio.gcc.misc.otherflags.618789403" superClass="com.atollic.truestudio.gcc.misc.otherflags" value="-std=gnu99" valueType="string"/>
+								<option id="com.atollic.truestudio.gcc.misc.otherflags.618789403" name="Other options" superClass="com.atollic.truestudio.gcc.misc.otherflags" value="-std=gnu99" valueType="string"/>
 								<inputType id="com.atollic.truestudio.gcc.input.1268887800" superClass="com.atollic.truestudio.gcc.input"/>
 							</tool>
-							<tool errorParsers="org.eclipse.cdt.core.GLDErrorParser" id="com.atollic.truestudio.exe.debug.toolchain.ld.498009398" name="C Linker" superClass="com.atollic.truestudio.exe.debug.toolchain.ld">
+							<tool command="arm-atollic-eabi-gcc" commandLinePattern="${COMMAND} ${FLAGS} ${INPUTS} ${OUTPUT_FLAG} ${OUTPUT} " errorParsers="org.eclipse.cdt.core.GLDErrorParser" id="com.atollic.truestudio.exe.debug.toolchain.ld.498009398" name="C Linker" superClass="com.atollic.truestudio.exe.debug.toolchain.ld">
 								<option id="com.atollic.truestudio.common_options.target.endianess.163462182" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1153143503" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F100RB" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.instr_set.1859889161" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
@@ -65,9 +65,11 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Jigbox/GGHC_SRC/Libraries/QP/ports/arm-cortex/vanilla/gnu/dbg}&quot;"/>
 								</option>
 								<option id="com.atollic.truestudio.ld.libraries.list.570190809" name="Libraries" superClass="com.atollic.truestudio.ld.libraries.list" valueType="libs">
-									<listOptionValue builtIn="false" value="qep_cortex-m3"/>
 									<listOptionValue builtIn="false" value="qf_cortex-m3"/>
+									<listOptionValue builtIn="false" value="qep_cortex-m3"/>
 								</option>
+								<option id="com.atollic.truestudio.ld.misc.linkerflags.934179862" name="Other options" superClass="com.atollic.truestudio.ld.misc.linkerflags" value="-Wl,-cref,-u,Reset_Handler" valueType="string"/>
+								<option id="com.atollic.truestudio.ld.misc.genmapfile.579744590" name="Create map file" superClass="com.atollic.truestudio.ld.misc.genmapfile"/>
 								<inputType id="com.atollic.truestudio.ld.input.2000644779" name="Input" superClass="com.atollic.truestudio.ld.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -100,14 +102,15 @@
 								<option id="com.atollic.truestudio.common_options.target.instr_set.896883288" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.ldcc.optimization.do_garbage.1911614559" name="Dead code removal" superClass="com.atollic.truestudio.ldcc.optimization.do_garbage" value="true" valueType="boolean"/>
 								<option id="com.atollic.truestudio.ldcc.general.scriptfile.760336687" name="Linker script" superClass="com.atollic.truestudio.ldcc.general.scriptfile" value="..\stm32_flash.ld" valueType="string"/>
+								<option id="com.atollic.truestudio.ldcc.misc.genmapfile.1636697996" name="Create map file" superClass="com.atollic.truestudio.ldcc.misc.genmapfile"/>
 							</tool>
-							<tool errorParsers="" id="com.atollic.truestudio.exe.debug.toolchain.secoutput.1355931250" name="Other" superClass="com.atollic.truestudio.exe.debug.toolchain.secoutput"/>
+							<tool command="arm-atollic-reports.jar" commandLinePattern="${COMMAND} ${FLAGS} ${INPUTS}" errorParsers="" id="com.atollic.truestudio.exe.debug.toolchain.secoutput.1355931250" name="Other" superClass="com.atollic.truestudio.exe.debug.toolchain.secoutput"/>
 						</toolChain>
 					</folderInfo>
 					<folderInfo id="com.atollic.truestudio.exe.debug.177691703.1119169967" name="/" resourcePath="GGHC_SRC">
-						<toolChain id="com.atollic.truestudio.exe.debug.toolchain.471647108" name="Atollic ARM Tools" superClass="com.atollic.truestudio.exe.debug.toolchain" unusedChildren="">
+						<toolChain errorParsers="" id="com.atollic.truestudio.exe.debug.toolchain.471647108" name="Atollic ARM Tools" superClass="com.atollic.truestudio.exe.debug.toolchain" unusedChildren="">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.debug.toolchain.platform" isAbstract="false" name="Debug platform" superClass="com.atollic.truestudio.exe.debug.toolchain.platform"/>
-							<tool id="com.atollic.truestudio.exe.debug.toolchain.as.360690082" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as.1230470400">
+							<tool errorParsers="org.eclipse.cdt.core.GASErrorParser" id="com.atollic.truestudio.exe.debug.toolchain.as.360690082" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as.1230470400">
 								<option id="com.atollic.truestudio.as.general.incpath.515264209" name="Include path" superClass="com.atollic.truestudio.as.general.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Jigbox/GGHC_SRC/Libraries/STM32F10x_StdPeriph_Driver/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Jigbox/GGHC_SRC/Libraries/CMSIS/CM3/CoreSupport}&quot;"/>
@@ -117,7 +120,7 @@
 								</option>
 								<inputType id="com.atollic.truestudio.as.input.967719798" name="Input" superClass="com.atollic.truestudio.as.input"/>
 							</tool>
-							<tool id="com.atollic.truestudio.exe.debug.toolchain.gcc.563767278" name="C Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gcc.927920504">
+							<tool errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="com.atollic.truestudio.exe.debug.toolchain.gcc.563767278" name="C Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gcc.927920504">
 								<option id="com.atollic.truestudio.gcc.directories.select.1255773128" name="Include path" superClass="com.atollic.truestudio.gcc.directories.select" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Jigbox/GGHC_SRC/Libraries/STM32F10x_StdPeriph_Driver/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Jigbox/GGHC_SRC/Libraries/CMSIS/CM3/CoreSupport}&quot;"/>
@@ -1486,6 +1489,8 @@
 									<listOptionValue builtIn="false" value="libqk_cortex-m3.a"/>
 									<listOptionValue builtIn="false" value="qep-cortex_m3"/>
 									<listOptionValue builtIn="false" value="qf_cortex-m3"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Jigbox/GGHC_SRC/Libraries/QP/ports/arm-cortex/vanilla/gnu/dbg/libqep_cortex-m3.a}&quot;"/>
+									<listOptionValue builtIn="false" value="qep_cortex-m3"/>
 								</option>
 								<option id="com.atollic.truestudio.ld.libraries.searchpath.544836358" name="Library search path" superClass="com.atollic.truestudio.ld.libraries.searchpath" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Jigbox/GGHC_SRC/Libraries/QP/ports/arm-cortex/qk/gnu/dbg}&quot;"/>

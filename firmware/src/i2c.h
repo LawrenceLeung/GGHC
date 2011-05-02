@@ -5,6 +5,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "qp_port.h"
 
 #if USE_MMA8452_ACCELEROMETER
 
@@ -67,12 +68,15 @@ extern bool readAccelerometer(AccelerometerReport_t *buffer);
 extern bool readTransientSource(TransientSource *buffer);
 extern bool readPulseSource(PulseSource *buffer);
 
+extern void testEXTIInterrupt(void);
+
 // generated on interrupt from Accelerometer
 // EV_HIT_SIG
 typedef struct
 {
     QEvent super;
     TransientSource transient;
-} TransientEvent;
+    PulseSource pulse;
+} HitEvent;
 
 #endif

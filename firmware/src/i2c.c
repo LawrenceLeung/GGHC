@@ -69,6 +69,8 @@ bool Init_Accelerometer(void)
     NVIC_Configuration();
     I2C_LowLevel_Init(ACCEL_I2C_CHANNEL);
 
+    EXTI_ClearITPendingBit(EXTI_Line3);
+
     // set up PC3 (INT1) as interrupt pin
     EXTI_InitTypeDef EXTI_InitStruct =
     {
@@ -79,6 +81,8 @@ bool Init_Accelerometer(void)
     };
 
     EXTI_Init(&EXTI_InitStruct);
+
+    GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource3);
 
     // try reading WHO_AM_I 0x0D
     uint8_t whoami;
@@ -125,6 +129,11 @@ void EXTI3_IRQHandler(void)
     if (EXTI_GetITStatus(EXTI_Line3) != RESET)
     {
         EXTI_ClearITPendingBit(EXTI_Line3);
+
+        HitEvent *hit = Q_NEW(HitEvent, EV_HIT_SIG);
+        readTransientSource(&hit->transient);
+        readPulseSource(&hit->pulse);
+        QActive_postFIFO(AO_IOEventListener, (QEvent *)hit);
     }
 }
 
