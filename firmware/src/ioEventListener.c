@@ -8,6 +8,8 @@ typedef struct
 {
     QActive super;
     QTimeEvt tickEvt;                  // SysTick rate ticker
+    TransientSource lastTransientSource;
+    PulseSource lastPulseSource;
 } IOEventListener;
 
 static IOEventListener l_eventListener; // the sole instance of the IOEventListener active Object
@@ -46,15 +48,28 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
         case Q_INIT_SIG:
             return Q_TRAN(&IOEventListener_idle);
 
-        case EV_BUTTON_PRESSED_SIG:
+        case BUTTON_PRESSED_SIG:
+            UART_printf("press 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask);
             break;
 
-        case EV_BUTTON_RELEASED_SIG:
+        case BUTTON_RELEASED_SIG:
+            UART_printf("release 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask);
             break;
 
         case TIME_TICK_SIG:
             if (systemTime % 100 == 0)
                 updateLED1FromAccelerometer();
+            break;
+
+        case HIT_SIG:
+            me->lastTransientSource = ((HitEvent*)e)->transient;
+            me->lastPulseSource     = ((HitEvent*)e)->pulse;
+            UART_printf("hit tr=0x%02x pulse=0x%02x x=%d y=%d z=%d\r\n",
+                        (int)*(uint8_t*)&(((HitEvent*)e)->transient),
+                        (int)*(uint8_t*)&(((HitEvent*)e)->pulse),
+                        ((HitEvent*)e)->xyz.x,
+                        ((HitEvent*)e)->xyz.y,
+                        ((HitEvent*)e)->xyz.z);
             break;
     }
     return Q_SUPER(&QHsm_top);

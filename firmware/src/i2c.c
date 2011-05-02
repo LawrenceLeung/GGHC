@@ -8,24 +8,6 @@
 #  error "LISL3V02 code not written yet!"
 #endif
 
-static void NVIC_Configuration(void)
-{
-    /* 1 bit for pre-emption priority, 3 bits for subpriority */
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
-
-    NVIC_SetPriority(I2C1_EV_IRQn, 0x00);
-    NVIC_EnableIRQ(I2C1_EV_IRQn);
-
-    NVIC_SetPriority(I2C1_ER_IRQn, 0x01);
-    NVIC_EnableIRQ(I2C1_ER_IRQn);
-
-    NVIC_SetPriority(I2C2_EV_IRQn, 0x00);
-    NVIC_EnableIRQ(I2C2_EV_IRQn);
-
-    NVIC_SetPriority(I2C2_ER_IRQn, 0x01);
-    NVIC_EnableIRQ(I2C2_ER_IRQn);
-}
-
 bool readAccelerometerRegister(uint8_t regAddr, uint8_t *buffer, uint8_t nBytes)
 {
     // write register address
@@ -64,12 +46,19 @@ bool readPulseSource(PulseSource *buffer)
     return readAccelerometerRegister(0x22, (uint8_t*)buffer, 1);
 }
 
-bool Init_Accelerometer(void)
+static void Init_Accelerometer_Interrupt(void)
 {
-    NVIC_Configuration();
-    I2C_LowLevel_Init(ACCEL_I2C_CHANNEL);
+    GPIO_InitTypeDef GPIO_InitStructure;
+    
+    // Assign PC3 and PC4 as inputs
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;
+    GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_3 | GPIO_Pin_4;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
 
     EXTI_ClearITPendingBit(EXTI_Line3);
+
+    GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource3);
 
     // set up PC3 (INT1) as interrupt pin
     EXTI_InitTypeDef EXTI_InitStruct =
@@ -82,7 +71,34 @@ bool Init_Accelerometer(void)
 
     EXTI_Init(&EXTI_InitStruct);
 
-    GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource3);
+    NVIC_SetPriority(EXTI3_IRQn, 0x02);
+    NVIC_EnableIRQ(EXTI3_IRQn);
+}
+
+static void NVIC_Configuration(void)
+{
+    /* 1 bit for pre-emption priority, 3 bits for subpriority */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
+
+    NVIC_SetPriority(I2C1_EV_IRQn, 0x00);
+    NVIC_EnableIRQ(I2C1_EV_IRQn);
+
+    NVIC_SetPriority(I2C1_ER_IRQn, 0x01);
+    NVIC_EnableIRQ(I2C1_ER_IRQn);
+
+    NVIC_SetPriority(I2C2_EV_IRQn, 0x00);
+    NVIC_EnableIRQ(I2C2_EV_IRQn);
+
+    NVIC_SetPriority(I2C2_ER_IRQn, 0x01);
+    NVIC_EnableIRQ(I2C2_ER_IRQn);
+
+}
+
+bool Init_Accelerometer(void)
+{
+    NVIC_Configuration();
+    I2C_LowLevel_Init(ACCEL_I2C_CHANNEL);
+    Init_Accelerometer_Interrupt();
 
     // try reading WHO_AM_I 0x0D
     uint8_t whoami;
@@ -129,17 +145,18 @@ void EXTI3_IRQHandler(void)
     if (EXTI_GetITStatus(EXTI_Line3) != RESET)
     {
         EXTI_ClearITPendingBit(EXTI_Line3);
-
-        HitEvent *hit = Q_NEW(HitEvent, EV_HIT_SIG);
+        HitEvent *hit = Q_NEW(HitEvent, HIT_SIG);
+        readAccelerometer(&hit->xyz);
         readTransientSource(&hit->transient);
         readPulseSource(&hit->pulse);
         QActive_postFIFO(AO_IOEventListener, (QEvent *)hit);
     }
 }
 
+// read x,y,z
 bool readAccelerometer(AccelerometerReport_t *buffer)
 {
-    return readAccelerometerRegister(0x00, (uint8_t*)buffer, 4);
+    return readAccelerometerRegister(0x01, (uint8_t*)buffer, 3);
 }
 
 void testEXTIInterrupt(void)

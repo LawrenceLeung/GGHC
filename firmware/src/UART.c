@@ -32,6 +32,12 @@ void UART5_IRQHandler(void)
             /* Write one byte to the transmit data register */
             USART_SendData(UART5, txBuffer[txBufferOut++]);
         }
+
+        if (txBufferOut >= txBufferIn)
+        {
+            txBufferOut = txBufferIn = 0;
+            USART_ITConfig(UART5, USART_IT_TXE, DISABLE);
+        }
     }
 }
 
@@ -66,15 +72,16 @@ void UART_Init(void)
 
     // enable interrupts
     USART_ITConfig(UART5, USART_IT_RXNE, ENABLE);
-    // USART_ITConfig(UART5, USART_IT_TXE, ENABLE); // TODO
+    USART_ITConfig(UART5, USART_IT_TXE, ENABLE);
+
+    NVIC_SetPriority(UART5_IRQn, 0x02);
+    NVIC_EnableIRQ(UART5_IRQn);
 
     USART_Cmd(UART5, ENABLE);          /* enable UART5 */
 }
 
 bool UART_transmitByte(uint8_t byte)
 {
-    // TODO get interrupt-driven transmit to work
-#if 0
     bool retval = false;
     // if the transmit buffer is empty
     if (USART_GetFlagStatus(UART5, USART_FLAG_TXE) != RESET)
@@ -85,22 +92,16 @@ bool UART_transmitByte(uint8_t byte)
     }
     else
     {
-    __disable_irq();
-    if (txBufferIn < txBufferSize)
-    {
-        txBuffer[txBufferIn++] = byte;
-        retval                 = true;
-    }
-    __enable_irq();
+        __disable_irq();
+        if (txBufferIn < txBufferSize)
+        {
+            txBuffer[txBufferIn++] = byte;
+            retval                 = true;
+            USART_ITConfig(UART5, USART_IT_TXE, ENABLE);
+        }
+        __enable_irq();
     }
     return retval;
-#else
-    while (USART_GetFlagStatus(UART5, USART_FLAG_TXE) != SET)
-        /* spin */;
-    USART_SendData(UART5, byte);
-    return true;
-#endif
-
 }
 
 bool UART_receiveByte(uint8_t *buffer, uint16_t timeout)

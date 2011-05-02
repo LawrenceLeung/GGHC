@@ -61,7 +61,7 @@ void ButtonsRead()
         uint16_t buttonMask = changed & buttonStates;
         if (buttonMask)
         {
-            evt = Q_NEW(ButtonEvent, EV_BUTTON_PRESSED_SIG);
+            evt = Q_NEW(ButtonEvent, BUTTON_PRESSED_SIG);
             evt->buttonMask = buttonMask;
             QActive_postFIFO(AO_IOEventListener, (QEvent *)evt);
         }
@@ -70,7 +70,7 @@ void ButtonsRead()
         buttonMask = changed & oldButtonStates;
         if (buttonMask)
         {
-            evt = Q_NEW(ButtonEvent, EV_BUTTON_RELEASED_SIG);
+            evt = Q_NEW(ButtonEvent, BUTTON_RELEASED_SIG);
             evt->buttonMask = buttonMask;
             QActive_postFIFO(AO_IOEventListener, (QEvent *)evt);
         }

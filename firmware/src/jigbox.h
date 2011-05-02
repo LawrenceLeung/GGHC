@@ -74,9 +74,9 @@ typedef enum JigboxSignals
 {
     // published signals
     TIME_TICK_SIG = Q_USER_SIG, // at SysTick rate
-    EV_BUTTON_PRESSED_SIG,             /* published by button debouncer to signal the press of a button */
-    EV_BUTTON_RELEASED_SIG,
-    EV_HIT_SIG,                        /* accelerometer listener detected a hit event */
+    BUTTON_PRESSED_SIG,             /* published by button debouncer to signal the press of a button */
+    BUTTON_RELEASED_SIG,
+    HIT_SIG,                        /* accelerometer listener detected a hit event */
 
     MAX_PUB_SIG,                       /* the last published signal */
 
