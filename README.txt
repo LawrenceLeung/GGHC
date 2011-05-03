@@ -1,25 +1,37 @@
-This readme is for the Jigsaw Renaissance Great Global Hackerspace Challenge (GGHC). The project is for a device that allows groups to make music collaboratively using natural gestures. The product is tentatively called Jigbox.
+This readme is for the Jigsaw Renaissance Great Global Hackerspace Challenge
+(GGHC). The project is for a device that allows groups to make music
+collaboratively using natural gestures. The product is tentatively called
+Jigbox.
 
-Getting Started:
-These instructions assume you are developing in Windows and have a Value-line Discovery board connected via USB. The value-line can be used as the development environment OR as the programmer for the Olimex board.
-Download and install ST Link and IAR Embedded Workbench. The IAR Workbench must be registered with IAR and they will then give you a serial number and a key.
+=== Getting Started:
 
-Get the source code from Github at:
-https://github.com/LawrenceLeung/GGHC
+These instructions assume you are developing in Windows and have a Value-line
+Discovery board connected via USB. The value-line can be used as the
+development environment OR as the programmer for the Olimex board.
 
-To work on the code just load the workspace into IAR Embedded workbench IDE
-File | Open | Workspace...
+Install the Atollic TrueStudio Lite edition.
 
-The code is based on the Olimex examples, that can be downloaded from: http://www.olimex.com/dev/stm32-103stk.html
+(These instructions assume that you clone the git repository into your
+directory "C:\Projects". Change that part of the path if you didn't.)
 
-The base example chosen was the AudioDevice. If you need code from one of the other examples you should be able to merge the folders / files
-.\App
-.\Module
-main.c
-stm32f10x_it.c
+Clone the Github repository at: https://github.com/LawrenceLeung/GGHC
 
-To load the code to your target check that the correct build configuration is selected for your board. The drop down at the top of the Workspace pane should show the options:
-Dscvr 103RB flash debug
-Dscvr 103RG flash debug
-Olimx flash debug
-Select the one that matches your dev board. The standard Discover board should use "Dscvr 103RB flash debug" while the ones that Ned has replaced the processor on should use "Dscvr 103RG flash debug".
+   C:\Projects > git clone git://github.com/LawrenceLeung/GGHC.git
+
+Open a new workspace in Atollic, and import the project from  C:\Projects\GGHC\Project\Atollic
+
+Open the Atollic Project Properties, and go to the page for "Resource/Linked
+Resource", then to the tab for "Path Variables".
+
+Change the value of the "GGHC_SRC" variable to C:\Projects\GGHC\firmware
+
+If you're using a processor other than the STM32F103RGT6, you should change
+that setting in Atollic.  Of course, the code may not work well in that case.
+
+To change the processor type, you will have to:
+  - go to the project properties, under "C/C++ General", "Paths and Symbols", and choose the "Symbols" tab.
+  - change the #define of STM32F10X_XL to one appropriate for your hardware (for instance, STM32F10X_MD_VL for the STM32F100RB on the Value Line Discovery board).
+  - select the "Source Location" tab, then the "/Jigbox/GGHC_SRC" folder; then hit the "Edit Filter..." button.
+  - edit the entry for Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/TrueSTUDIO/startup_stm32f10x_md_vl.s
+    (if you're using the VL Discovery board), and change it to have a filename of "startup_stm32f10x_xl.s"
+
