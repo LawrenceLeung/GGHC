@@ -37,6 +37,7 @@ QState IOEventListener_initial(IOEventListener *me, QEvent const *e)
 
 QState IOEventListener_active(IOEventListener *me, QEvent const *e)
 {
+  uint8_t voiceSelected;
     switch (e->sig)
     {
         case Q_ENTRY_SIG:
@@ -55,11 +56,22 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
             UART_printf("press 0x%04x now 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask, me->buttonState);
             switch (((ButtonEvent*)e)->buttonMask)
             {
-                case 1: startNote(0, Single, 15); break;
-                case 2: startNote(1, Single, 15); break;
-                case 4: startNote(2, Single, 15); break;
-                case 8: startNote(3, Single, 15); break;
-                case 16: startNote(4, Single, 15); break;
+                case 1:
+                  voiceSelected = 0;
+                  startNote(1.0, voiceSelected, Single, 15);
+                  break;
+                case 2:
+                  voiceSelected = 1;
+                  startNote(2.0, voiceSelected, Single, 15); break;
+                case 4:
+                  voiceSelected = 1;
+                  startNote(3.0, voiceSelected, Single, 15); break;
+                case 8:
+                  voiceSelected = 1;
+                  startNote(4.0, voiceSelected, Single, 15); break;
+                case 16:
+                  voiceSelected = 1;
+                  startNote(5.0, voiceSelected, Single, 15); break;
             }
             return Q_HANDLED();
 

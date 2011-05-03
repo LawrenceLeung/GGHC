@@ -5,7 +5,7 @@
 
 #define NUMBER_OF_NOTES 11 // Metronome plus 5 notes for record and 5 for playback
 #define WAV_SAMPLE_RATE 8000 // Want to change to 16000 but need to resample voices
-#define SampFreq 16000
+#define sampFreq 16000
 
 void InitAudioDevice(void);
 void metronome(void);
@@ -35,6 +35,6 @@ typedef enum
 	Continuous
 } noteStyle_t;
 
-void startNote(noteContext_t note, noteStyle_t style, uint16_t attenuation);
+noteContext_t startNote(float pitch, uint8_t voice, noteStyle_t style, uint16_t attenuation);
 void stopNote(noteContext_t note);
-noteContext_t defineNote(float frequency, audioBuf_t * voiceBuffer, uint32_t voiceBufferSize);
+// TODO not implemented noteContext_t defineNote(float frequency, audioBuf_t * voiceBuffer, uint32_t voiceBufferSize);

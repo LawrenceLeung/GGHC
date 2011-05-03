@@ -14,6 +14,9 @@ Note notes[NUMBER_OF_NOTES];
 
 static uint32_t metronomePeriod;
 
+const audioBuf_t const * allVoices[NUMBER_OF_VOICES] = {
+    voice1, voice2};
+
 const uint32_t VolumeMul [] =
 {
     // 256 - 0
@@ -211,23 +214,36 @@ void metronome(void)
  *  note to be played. 0db means play the voice buffer at the volume it was
  *  sampled at.
  */
-void startNote(noteContext_t note, noteStyle_t style, uint16_t attenuation)
+noteContext_t startNote(float pitch, uint8_t voice, noteStyle_t style, uint16_t attenuation)
 {
-
-  notes[note].noteOn = true;
+  int i = 0;
+  /* Find the next free slot in the notes array */
+  while ((notes[i].noteOn) && (i < NUMBER_OF_NOTES))
+    {
+      i++;
+    }
+  if (i == NUMBER_OF_NOTES)
+    {
+      assert(0);
+    }
+  notes[i].noteOn = true;
   /* VolumeMul array is arranged from quietest to loudest but we are using
    * a parameter to specify attenuation so we need to index the array starting
    * at the end.
    */
-  notes[note].volume = VolumeMul[(volumeMulSize - attenuation) - 1];
+  notes[i].volume = VolumeMul[(volumeMulSize - attenuation) - 1];
+  notes[i].noteVoiceBuffer = allVoices[voice];
+  DDS_initializeContext(&(notes[i].DDScontext), allVoices[voice], VOICE_SIZE);
+  DDS_setFrequency(&(notes[i].DDScontext), 1.0f, pitch, sampFreq);
   switch (style)
   {
   case Continuous:
-    notes[note].continuous = true;
+    notes[i].continuous = true;
     break;
   default:
-    notes[note].continuous = false;
+    notes[i].continuous = false;
   }
+  return i;
 }
 
 /** stopNote
