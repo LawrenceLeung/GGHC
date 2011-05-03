@@ -1,12 +1,14 @@
 #ifndef __INCLUDED_DDS_H
 #define __INCLUDED_DDS_H
 
-// define this as non-zero if your buffers will be a power of 2 samples long.
-#define DDS_BUFFERS_POWER_OF_TWO 0
-
 #include <stdint.h>
 #include <stdbool.h>
 #include "voices.h"
+
+// define this as non-zero if your buffers will all be a power of 2 samples long.
+#ifndef DDS_BUFFERS_POWER_OF_TWO
+#   define DDS_BUFFERS_POWER_OF_TWO 0
+#endif
 
 // Representation of our accumulator and step values
 typedef union
