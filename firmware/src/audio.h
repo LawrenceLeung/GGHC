@@ -4,8 +4,10 @@
 #include "voices.h"
 
 #define NUMBER_OF_NOTES 11 // Metronome plus 5 notes for record and 5 for playback
-#define WAV_SAMPLE_RATE 8000 // Want to change to 16000 but need to resample voices
-#define sampFreq 16000
+
+#define SAMPLE_FREQUENCY 16000
+
+#define METRONOME_VOICE 5   // preferred voice index into allVoices[] for metronome
 
 void InitAudioDevice(void);
 void metronome(void);
@@ -14,7 +16,7 @@ void PlayFrame(void);
 void MixFrame(int voice);
 void ClearMixBuf(void);
 
-typedef struct oneNote
+typedef struct
 {
     bool noteOn; // True if note is currently being played
     audioBuf_t const * noteVoiceBuffer; // Points to the wave file
@@ -26,9 +28,9 @@ typedef struct oneNote
 } Note;
 
 extern Note notes[NUMBER_OF_NOTES];
-#endif //__AUDIO_H
 
 typedef uint8_t noteContext_t;
+
 typedef enum
 {
 	Single,
@@ -37,4 +39,5 @@ typedef enum
 
 noteContext_t startNote(float pitch, uint8_t voice, noteStyle_t style, uint16_t attenuation);
 void stopNote(noteContext_t note);
-// TODO not implemented noteContext_t defineNote(float frequency, audioBuf_t * voiceBuffer, uint32_t voiceBufferSize);
+
+#endif //__AUDIO_H
