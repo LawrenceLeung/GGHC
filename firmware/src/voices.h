@@ -3,6 +3,13 @@
 
 typedef int16_t audioBuf_t;
 
+typedef struct {
+    audioBuf_t const *voice_data;
+    uint16_t voice_nsamples;
+    const char *voice_name;
+};
+
+extern voice_t allVoices[7];
 
 // File:            ./bark.wav
 // Channels:        1
@@ -75,5 +82,4 @@ extern audioBuf_t const voice_snare[2239];
 extern audioBuf_t const voice_zithrhit[7264];
 
 // Total bytes: 56706
-
 #endif

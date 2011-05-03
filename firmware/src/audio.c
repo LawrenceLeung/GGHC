@@ -14,43 +14,8 @@ Note notes[NUMBER_OF_NOTES];
 
 static uint32_t metronomePeriod;
 
-#ifdef TwelveBit
-audioBuf_t metronomeVoice[SampPerFrame] = {
-    0, 267, 529, 783, 1023, 1246, 1447, 1623, 1772, 1891, 1977, 2029, 2047,
-    2029, 1977, 1891, 1772, 1623, 1447, 1246, 1023, 783, 529, 267, 0, -268,
-    -530, -784, -1024, -1247, -1448, -1624, -1773, -1892, -1978, -2030, -2047,
-    -2030, -1978, -1892, -1773, -1624, -1448, -1247, -1024, -784, -530, -268
-};
-#endif
-
-#ifdef TODO
-audioBuf_t metronomeVoice[SampPerFrame] =
-  { 0, 4276, 8480, 12539, 16383, 19947, 23169, 25995, 28377, 30272, 31650,
-      32486, 32767, 32486, 31650, 30272, 28377, 25995, 23169, 19947, 16383,
-      12539, 8480, 4276, 0, -4277, -8481, -12540, -16384, -19948, -23170,
-      -25996, -28378, -30273, -31651, -32487, -32767, -32487, -31651, -30273,
-      -28378, -25996, -23170, -19948, -16384, -12540, -8481, -4277 };
-#endif
-audioBuf_t silentSound[SampPerFrame]=
-{
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0
-};
-
-audioBuf_t mixBuffer[SampPerFrame]=
-{
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0
-};
-
+const audioBuf_t const * allVoices[NUMBER_OF_VOICES] = {
+    voice1, voice2};
 
 const uint32_t VolumeMul [] =
 {
@@ -175,48 +140,33 @@ void SetMetronomePeriod(uint32_t newPeriod)
 void InitAudioDevice(void)
 {
     DDS_Context contextNote0;
-    DDS_Context contextNote1;
-    DDS_Context contextNote2;
-    DDS_Context contextNote3;
-    DDS_Context contextNote4;
-    DDS_Context contextNote5;
+    DDS_Context contextNote1, contextNote2, contextNote3, contextNote4;
+    DDS_Context contextNote5, contextNote6, contextNote7, contextNote8;
+    DDS_Context contextNote9, contextNote10;
 
-    // Reset STNBY pin: done by unsoldering HP_SB_E jumper
+    const float defaultFrequencies[NUMBER_OF_NOTES] = {
+        261.626,
+        261.626, 311.127, 349.228, 391.995, 466.164,
+        261.626, 311.127, 349.228, 391.995, 466.164
+    };
 
-    // Note 0 is the metronome note
-    notes[0].frequency       = 261.626; // Middle C
-    notes[0].noteVoiceBuffer = voice2; // Sinewave buffer
-    notes[0].DDScontext = contextNote0;
-    notes[0].noteOn = false;
+    const DDS_Context * defaultDDS[NUMBER_OF_NOTES] = {
+        &contextNote0, &contextNote1, &contextNote2, &contextNote3,
+        &contextNote4, &contextNote5, &contextNote6, &contextNote7,
+        &contextNote8, &contextNote9, &contextNote10
+    };
 
-    // Note 1 maps to the first button.
-    notes[1].frequency       = 261.626; // Middle C
-    notes[1].noteVoiceBuffer = voice1;
-    notes[1].DDScontext = contextNote1;
+    const audioBuf_t const * defaultVoice[NUMBER_OF_NOTES] = {
+        voice2, voice2, voice2, voice2, voice2, voice2,
+        voice1, voice1, voice1, voice1, voice1
+    };
 
-    // Note 2 maps to the first button.
-    notes[2].frequency       = 311.127; // Middle E-flat
-    notes[2].noteVoiceBuffer = voice1;
-    notes[2].DDScontext = contextNote2;
-
-    // Note 3 maps to the first button.
-    notes[3].frequency       = 349.228; // Middle F
-    notes[3].noteVoiceBuffer = voice1;
-    notes[3].DDScontext = contextNote3;
-
-    // Note 4 maps to the first button.
-    notes[4].frequency       = 391.995; // Middle G
-    notes[4].noteVoiceBuffer = voice1; // Sinewave buffer
-    notes[4].DDScontext = contextNote4;
-
-    // Note 4 maps to the first button.
-    notes[5].frequency       = 466.164; // Middle G
-    notes[5].noteVoiceBuffer = voice1; // Sinewave buffer
-    notes[5].DDScontext = contextNote5;
-
-    /* Initialize DDS for the notes but not the metronome (note 0) */
+    /* Initialize DDS for all the notes and the metronome (note 0) */
     for(int i=0; i < NUMBER_OF_NOTES; i++)
       {
+        notes[i].frequency = defaultFrequencies[i];
+        notes[i].DDScontext = * defaultDDS[i];
+        notes[i].noteVoiceBuffer = defaultVoice[i];
         DDS_initializeContext(&(notes[i].DDScontext), notes[i].noteVoiceBuffer, VOICE_SIZE );
         DDS_setFrequency(&(notes[i].DDScontext), 261.626,
             notes[i].frequency, WAV_SAMPLE_RATE);
@@ -254,55 +204,6 @@ void metronome(void)
     }
 }
 
-void ClearMixBuf(void)
-{
-  int i;
-  for (i=0; i < SampPerFrame; i++)
-  {
-    mixBuffer[i] = 0;
-  }
-}
-
-#ifdef TODO /* obsolete */
-void MixFrame(int voice)
-{
-  int i;
-
-    if (voice != 0)
-    {
-      if(notes[voice].noteOn)
-      {
-        for (i=0; i < SampPerFrame; i++)
-        {
-          mixBuffer[i] += DDS_nextSample(&(notes[voice].DDScontext));
-        }
-      }
-      else
-        {
-          DDS_restart(&(notes[voice].DDScontext));
-        }
-    }
-    else
-    { /* Voice 0 is always the metronome */
-      if(notes[voice].noteOn)
-      {
-        for (i=0; i < SampPerFrame; i++)
-        {
-          mixBuffer[i] += notes[voice].noteVoiceBuffer[i];
-        }
-      }
-  }
-}
-#endif
-
-#ifdef TODO
-void PlayFrame(void)
-{
-    AudioMemoryBufPlay(mixBuffer);
-}
-#endif
-
-
 /** startNote
  * @brief Commands a note to start playing immediately
  * @param note The note context previously returned from the defineNote() function
@@ -313,23 +214,36 @@ void PlayFrame(void)
  *  note to be played. 0db means play the voice buffer at the volume it was
  *  sampled at.
  */
-void startNote(noteContext_t note, noteStyle_t style, uint16_t attenuation)
+noteContext_t startNote(float pitch, uint8_t voice, noteStyle_t style, uint16_t attenuation)
 {
-
-  notes[note].noteOn = true;
+  int i = 0;
+  /* Find the next free slot in the notes array */
+  while ((notes[i].noteOn) && (i < NUMBER_OF_NOTES))
+    {
+      i++;
+    }
+  if (i == NUMBER_OF_NOTES)
+    {
+      assert(0);
+    }
+  notes[i].noteOn = true;
   /* VolumeMul array is arranged from quietest to loudest but we are using
    * a parameter to specify attenuation so we need to index the array starting
    * at the end.
    */
-  notes[note].volume = VolumeMul[(volumeMulSize - attenuation) - 1];
+  notes[i].volume = VolumeMul[(volumeMulSize - attenuation) - 1];
+  notes[i].noteVoiceBuffer = allVoices[voice];
+  DDS_initializeContext(&(notes[i].DDScontext), allVoices[voice], VOICE_SIZE);
+  DDS_setFrequency(&(notes[i].DDScontext), 1.0f, pitch, sampFreq);
   switch (style)
   {
   case Continuous:
-    notes[note].continuous = true;
+    notes[i].continuous = true;
     break;
   default:
-    notes[note].continuous = false;
+    notes[i].continuous = false;
   }
+  return i;
 }
 
 /** stopNote
@@ -357,14 +271,6 @@ noteContext_t defineNote(float frequency, audioBuf_t * voiceBuffer, uint32_t voi
 
 #include "jigbox.h"
 
-
-//__IO bool SempEna,MicEna;
-
-__IO int16_t * pSpkData;
-__IO uint32_t SampCount;
-
-__IO bool playNextFrame = false;
-
 static union _Val
 {
     int32_t Data;
@@ -375,20 +281,25 @@ static union _Val
     };
 }
 Val = {0x02000000};
-int16_t AudioSpkData[SampPerFrame * 3];
 
-uint32_t AudioSpkVolMul = 50;  /* TODO, invent a volume control scheme */
 bool AudioFeat1Mute = false;
 
 void TIM2_IRQHandler(void)
 {
-
+  static bool endOfBuf;
   for (int voice = 0; voice < NUMBER_OF_NOTES; voice++)
     {
       if (notes[voice].noteOn)
         {
-          Val.Data += (uint32_t)DDS_nextSample(&(notes[voice].DDScontext))
+          Val.Data += (uint32_t)DDS_nextSample(&(notes[voice].DDScontext),
+              &endOfBuf)
               * notes[voice].volume;
+          if(endOfBuf && !notes[voice].continuous)
+            { /* If the note is to be played only once and the end of buffer
+                 is reached then turn it off */
+              notes[voice].noteOn = false;
+              DDS_restart(&(notes[voice].DDScontext));
+            }
         }
     }
 

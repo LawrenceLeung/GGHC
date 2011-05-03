@@ -5,11 +5,31 @@ require 'wavefile'
 
 MAX_WIDTH = 100
 
+def headerfile_top(n)
+  sprintf(<<EOF, n)
+#ifndef __included_voices_h
+#define __included_voices_h
+
+typedef int16_t audioBuf_t;
+
+typedef struct {
+    audioBuf_t const *voice_data;
+    uint16_t voice_nsamples;
+    const char *voice_name;
+};
+
+extern voice_t allVoices[%d];
+
+EOF
+end
+
+$voices = []
+# $\ = $/ = "\r\n"
+
 File.open("voices.h", 'w') do |headerfile|
-  headerfile.print("#ifndef __included_voices_h\r\n#define __included_voices_h\r\n\r\n")
-  headerfile.print("typedef int16_t audioBuf_t;\r\n\r\n")
+  headerfile.print headerfile_top(ARGV.size)
   File.open("voices.c", 'w') do |srcfile|
-    srcfile.print("#include \"voices.h\"\r\n");
+    srcfile.puts("#include \"voices.h\"")
     bytes = 0
     ARGV.each do |arg|
       dir, fn = File.split(arg)
@@ -25,25 +45,34 @@ File.open("voices.h", 'w') do |headerfile|
 
       puts "OUTPUT: " + w.inspect
 
-      headerfile.print("\r\n// File:            #{arg}\r\n" +
-                       w.inspect.gsub(/^/, '// ').gsub("\n", "\r\n"))
-      headerfile.print("extern audioBuf_t const voice_#{basename}[#{w.sample_data.size}];\r\n")
-      srcfile.print("audioBuf_t const voice_#{basename}[#{w.sample_data.size}] = {\r\n")
+      $voices << [ "voice_" + basename, w.sample_data.size, arg ]
+
+      headerfile.puts("// File:            #{arg}")
+      headerfile.puts(w.inspect.gsub(/^/, '// '))
+      headerfile.puts("extern audioBuf_t const voice_#{basename}[#{w.sample_data.size}];")
+      headerfile.puts
+
+      srcfile.puts
+      srcfile.puts("audioBuf_t const voice_#{basename}[#{w.sample_data.size}] = {")
 
       startofline = srcfile.tell
       w.sample_data.each do |s|
         bytes += 2
         srcfile.printf("%d, ", s)
         if srcfile.tell - startofline >= MAX_WIDTH
-          srcfile.print("\r\n")
+          srcfile.puts
           startofline = srcfile.tell
         end
       end
       srcfile.seek(-2, IO::SEEK_CUR)
-      srcfile.print("\r\n};\r\n")
-      end
-      headerfile.print("\r\n// Total bytes: #{bytes}\r\n\r\n")
-      puts "\nTotal bytes: #{bytes}"
+      srcfile.puts(" };")
     end
-  headerfile.print("#endif\r\n")
+    srcfile.puts("\nvoice_t allVoices[#{ARGV.size}] = {")
+    $voices.each { |v| srcfile.puts("    { #{v[0]}, #{v[1]}, \"#{v[2]}\" },") }
+    srcfile.puts("};")
+    srcfile.puts
+    headerfile.puts("// Total bytes: #{bytes}")
+    puts "\nTotal bytes: #{bytes}"
+  end
+  headerfile.puts("#endif")
 end
