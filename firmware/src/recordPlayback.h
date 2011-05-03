@@ -9,7 +9,7 @@
 // playback with quantization
 
 
-typedef {
+typedef struct {
     Ticks performedTimestamp;
     Ticks quantizedTimestamp;
     TransientSource transient;

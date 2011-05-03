@@ -10,8 +10,6 @@
 #define METRONOME_VOICE 5   // preferred voice index into allVoices[] for metronome
 
 void InitAudioDevice(void);
-void metronome(void);
-void SetMetronomePeriod(unsigned long newPeriod);
 void PlayFrame(void);
 void MixFrame(int voice);
 void ClearMixBuf(void);
@@ -30,6 +28,7 @@ typedef struct
 extern Note notes[NUMBER_OF_NOTES];
 
 typedef uint8_t noteContext_t;
+#define NO_NOTE 0xFF
 
 typedef enum
 {

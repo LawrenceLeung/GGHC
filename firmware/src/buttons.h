@@ -25,7 +25,7 @@ void ButtonsRead(void);
 typedef struct
 {
     QEvent super;
-    uint16_t buttonMask;
+    uint8_t buttonMask;
 } ButtonEvent;
 
 #endif

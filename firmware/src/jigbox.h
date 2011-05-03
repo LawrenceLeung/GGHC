@@ -33,10 +33,6 @@
 #include "UART.h"
 #include "ioEventListener.h"
 
-#define SYS_TICK_HZ 1000
-#define SYS_TICK_USEC (1000000/SYS_TICK_HZ)
-#define MSEC(msec) ((msec)*1000/SYS_TICK_USEC)
-
 /* PUSH BUTTONS
  * There are 5 buttons for the pentatonic scale notes. As the mapping of
  * buttons to notes maybe dynamic, the buttons are named 1-5 for the hardware
@@ -83,6 +79,8 @@ typedef enum JigboxSignals
     // non-published
     IOE_TICK_SIG,
     IOE_ACCEL_LED_OFF_SIG,
+    IOE_METRONOME_SIG,
+    IOE_MODE_SWITCH_SIG,
     MAX_SIG                            /* the last signal */
 } JigboxSignal;
 

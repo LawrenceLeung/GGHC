@@ -8,7 +8,7 @@ void startRecording(Ticks metronomePeriod)
 {
 }
 
-void addEvent(RecordedEvent *)
+void addEvent(RecordedEvent *ev)
 {
 }
 

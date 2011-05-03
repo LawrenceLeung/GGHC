@@ -9,8 +9,6 @@
 
 Note notes[NUMBER_OF_NOTES];
 
-static uint32_t metronomePeriod;
-
 static uint32_t const VolumeMul[] =
 {
     65536, // 0dB
@@ -64,11 +62,6 @@ static uint32_t const VolumeMul[] =
     261, //-48dB
 };
 
-void SetMetronomePeriod(uint32_t newPeriod)
-{
-    metronomePeriod = newPeriod;
-}
-
 /*************************************************************************
  * Function Name: InitAudioDevice
  * Parameters: none
@@ -80,37 +73,10 @@ void SetMetronomePeriod(uint32_t newPeriod)
  *************************************************************************/
 void InitAudioDevice(void)
 {
-    /* Initialize DDS for all the notes and the metronome (note 0) */
+    /* Initialize DDS for all the notes */
     for (int i=0; i < NUMBER_OF_NOTES; i++)
     {
         notes[i].noteOn = false;
-    }
-
-    metronomePeriod = 100;
-}
-
-void metronome(void)
-{
-    static uint32_t previousSysTime;
-    static bool metronomeUpBeat      = false;
-    static uint8_t metronomeNote;
-
-    uint32_t deltaSysTime, currentSysTime;
-    const uint32_t metronomeUpPeriod = 10;
-
-    currentSysTime = systemTime;
-    deltaSysTime = currentSysTime - previousSysTime;
-
-    if (deltaSysTime > metronomePeriod)
-    {
-        metronomeNote = startNote(1.0, METRONOME_VOICE, Single);
-        metronomeUpBeat = true;
-        previousSysTime = currentSysTime;
-    }
-    else if (metronomeUpBeat && (deltaSysTime > metronomeUpPeriod))
-    {
-        stopNote(metronomeNote);
-        metronomeUpBeat = false;
     }
 }
 

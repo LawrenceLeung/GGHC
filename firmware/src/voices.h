@@ -1,13 +1,15 @@
 #ifndef __included_voices_h
 #define __included_voices_h
 
+#include <stdint.h>
+
 typedef int16_t audioBuf_t;
 
 typedef struct {
     audioBuf_t const *voice_data;
     uint16_t voice_nsamples;
     const char *voice_name;
-};
+} voice_t;
 
 extern voice_t allVoices[7];
 

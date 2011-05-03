@@ -2,14 +2,56 @@
 
 Q_DEFINE_THIS_FILE
 
+// UTILITY FUNCTIONS
+//
+// count the bits set in a word
+static uint8_t bitsSetIn(uint16_t w)
+{
+    uint8_t nbits = 0;
+    while (w)
+    {
+        if (w & 1)
+            nbits++;
+        w >>= 1;
+    }
+    return nbits;
+}
+
+// TODO map pressed/released buttons
+static void startOrStopSelectedNotes(uint8_t buttons, bool start)
+{
+    static noteContext_t startedNotes[8] = { NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE };
+
+    for (uint8_t i = 0; buttons; i++, buttons>>=1)
+    {
+        if (buttons & 1)
+        {
+            if (start)
+            {
+                startedNotes[i] = startNote(1.0, i, Single, 15);
+            }
+            else
+            {
+                noteContext_t n = startedNotes[i];
+                if (n != NO_NOTE)
+                {
+                    stopNote(n);
+                    startedNotes[i] = NO_NOTE;
+                }
+            }
+        }
+    }
+}
+
 typedef struct
 {
     QActive super;
     QTimeEvt tickEvt;
     QTimeEvt accelLEDOffEvt;
+    QTimeEvt metronomeEvt;
     Ticks lastHitTime;
     TransientSource lastTransientSource;
-    uint16_t buttonState;
+    uint8_t buttonState;
 } IOEventListener;
 
 static IOEventListener l_eventListener; // the sole instance of the IOEventListener active Object
@@ -26,6 +68,7 @@ void IOListener_ctor(void)
     IOEventListener *me = &l_eventListener;
     QTimeEvt_ctor(&me->tickEvt, IOE_TICK_SIG);
     QTimeEvt_ctor(&me->accelLEDOffEvt, IOE_ACCEL_LED_OFF_SIG);
+    QTimeEvt_ctor(&me->metronomeEvt, IOE_METRONOME_SIG);
     QActive_ctor(&me->super, (QStateHandler)&IOEventListener_initial);
     me->buttonState = 0;
 }
@@ -37,11 +80,10 @@ QState IOEventListener_initial(IOEventListener *me, QEvent const *e)
 
 QState IOEventListener_active(IOEventListener *me, QEvent const *e)
 {
-  uint8_t voiceSelected;
     switch (e->sig)
     {
         case Q_ENTRY_SIG:
-            QTimeEvt_postEvery(&me->tickEvt,(QActive*)me, 1000);     // 1 per second
+            QTimeEvt_postEvery(&me->tickEvt,(QActive*)me, 1000); // 1 per second
             return Q_HANDLED();
 
         case Q_EXIT_SIG:
@@ -54,82 +96,66 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
         case BUTTON_PRESSED_SIG:
             me->buttonState |= ((ButtonEvent*)e)->buttonMask;
             UART_printf("press 0x%04x now 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask, me->buttonState);
-            switch (((ButtonEvent*)e)->buttonMask)
+            // switch modes if necessary
+            // TODO find a good way to signal going into record mode
+            uint8_t nbits = bitsSetIn(me->buttonState);
+            if (nbits >= 3)
             {
-                case 1:
-                  voiceSelected = 0;
-                  startNote(1.0, voiceSelected, Single, 15);
-                  break;
-                case 2:
-                  voiceSelected = 1;
-                  startNote(2.0, voiceSelected, Single, 15); break;
-                case 4:
-                  voiceSelected = 1;
-                  startNote(3.0, voiceSelected, Single, 15); break;
-                case 8:
-                  voiceSelected = 1;
-                  startNote(4.0, voiceSelected, Single, 15); break;
-                case 16:
-                  voiceSelected = 1;
-                  startNote(5.0, voiceSelected, Single, 15); break;
+                static QEvent const modeSwitchEvt = { IOE_MODE_SWITCH_SIG, 0 };
+                QActive_postFIFO((QActive*)me, &modeSwitchEvt);
+            }
+            else
+            {
+                startOrStopSelectedNotes(((ButtonEvent*)e)->buttonMask, true);
             }
             return Q_HANDLED();
 
         case BUTTON_RELEASED_SIG:
             me->buttonState &= ~((ButtonEvent*)e)->buttonMask;
             UART_printf("release 0x%04x now 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask, me->buttonState);
-            switch (((ButtonEvent*)e)->buttonMask)
-            {
-                case 1: stopNote(0); break;
-                case 2: stopNote(1); break;
-                case 4: stopNote(2); break;
-                case 8: stopNote(3); break;
-                case 16: stopNote(4); break;
-            }
+            startOrStopSelectedNotes(((ButtonEvent*)e)->buttonMask, false);
             return Q_HANDLED();
 
         case IOE_TICK_SIG:
+        {
+            AccelerometerReport_t report;
+            if (readAccelerometer(&report))
             {
-                AccelerometerReport_t report;
-                if (readAccelerometer(&report))
-                {
-                    UART_printf("accel x=%d y=%d z=%d\r\n", report.x, report.y, report.z);
-                }
-                else
-                {
-                    UART_printf("can't read accel!\r\n");
-                }
+                UART_printf("accel x=%d y=%d z=%d\r\n", report.x, report.y, report.z);
             }
+            else
+            {
+                UART_printf("can't read accel!\r\n");
+            }
+        }
             return Q_HANDLED();
 
         case HIT_SIG:
-            {
-                HitEvent *ev = (HitEvent*)e;
-                me->lastHitTime            = systemTime;
-                me->lastTransientSource    = ev->transient;
-                UART_printf("%08d hit tr=0x%02x",
-                            me->lastHitTime,
-                            (int)*(uint8_t*)&(ev->transient));
-                if (ev->transient.X_Trans_Evt)
-                    UART_printf(" X = %d", ev->xyz.x);
-                else
-                    ev->xyz.x = 0;
+        {
+            HitEvent *ev = (HitEvent*)e;
+            me->lastHitTime         = systemTime;
+            me->lastTransientSource = ev->transient;
+            UART_printf("%08d hit tr=0x%02x",
+                        me->lastHitTime,
+                        (int)*(uint8_t*)&(ev->transient));
+            if (ev->transient.X_Trans_Evt)
+                UART_printf(" X = %d", ev->xyz.x);
+            else
+                ev->xyz.x = 0;
+            if (ev->transient.Y_Trans_Evt)
+                UART_printf(" Y = %d", ev->xyz.y);
+            else
+                ev->xyz.y = 0;
+            if (ev->transient.Z_Trans_Evt)
+                UART_printf(" Z = %d", ev->xyz.z);
+            else
+                ev->xyz.z = 0;
+            UART_printString("\r\n");
 
-                if (ev->transient.Y_Trans_Evt)
-                    UART_printf(" Y = %d", ev->xyz.y);
-                else
-                    ev->xyz.y = 0;
-
-                if (ev->transient.Z_Trans_Evt)
-                    UART_printf(" Z = %d", ev->xyz.z);
-                else
-                    ev->xyz.z = 0;
-                UART_printString("\r\n");
-
-                RGB_LED_On(RGB_LED_3, ev->xyz.x, ev->xyz.y, ev->xyz.z);
-                QTimeEvt_disarm(&me->accelLEDOffEvt);
-                QTimeEvt_postIn(&me->accelLEDOffEvt, (QActive*)me, 50);
-            }
+            RGB_LED_On(RGB_LED_3, ev->xyz.x, ev->xyz.y, ev->xyz.z);
+            QTimeEvt_disarm(&me->accelLEDOffEvt);
+            QTimeEvt_postIn(&me->accelLEDOffEvt, (QActive*)me, 50);
+        }
             return Q_HANDLED();
 
         case IOE_ACCEL_LED_OFF_SIG:
@@ -151,6 +177,9 @@ QState IOEventListener_idle(IOEventListener *me, QEvent const *e)
 
         case TIME_TICK_SIG:
             break;
+
+        case IOE_MODE_SWITCH_SIG:
+            return Q_TRAN(&IOEventListener_recording);
     }
     return Q_SUPER(&IOEventListener_active);
 }
@@ -160,10 +189,19 @@ QState IOEventListener_recording(IOEventListener *me, QEvent const *e)
     switch (e->sig)
     {
         case Q_ENTRY_SIG:
+            QTimeEvt_postEvery(&me->metronomeEvt,(QActive*)me, 500);     // 2 per second
             break;
 
         case Q_EXIT_SIG:
+            QTimeEvt_disarm(&me->metronomeEvt);
             break;
+
+        case IOE_METRONOME_SIG:
+            startNote(1.0, METRONOME_VOICE, Single, 12);
+            break;
+
+        case IOE_MODE_SWITCH_SIG:
+            return Q_TRAN(&IOEventListener_playing);
 
         case TIME_TICK_SIG:
             break;
@@ -180,6 +218,9 @@ QState IOEventListener_playing(IOEventListener *me, QEvent const *e)
 
         case Q_EXIT_SIG:
             break;
+
+        case IOE_MODE_SWITCH_SIG:
+            return Q_TRAN(&IOEventListener_idle);
 
         case TIME_TICK_SIG:
             break;
