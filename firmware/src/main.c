@@ -71,7 +71,6 @@ static QEvent const *l_IOEQueueSto[MAX_EVENTS_PER_ACTIVE_OBJECT];
 
 typedef union __attribute__((__packed__))
 {
-    uint8_t bytes[8];
     void *min_size;
     HitEvent hit;
     ButtonEvent button;

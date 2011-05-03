@@ -66,6 +66,21 @@
 #define ACCEL_INT1_PORT GPIOC
 #define ACCEL_INT1_PIN  GPIO_Pin_3
 
+// Audio/play preferences
+// preferred voice index into allVoices[] for metronome
+#define METRONOME_VOICE 5 
+// TODO just for testing
+// how loud to play the button sounds
+#define BUTTON_SOUND_ATTENUATION 15
+// how long to flash the LED on a hit event
+#define HIT_FLASH_TIME MSEC(50)
+// which LED to flash
+#define HIT_FLASH_LED RGB_LED_3
+
+// TODO make adaptive
+// 120 BPM fixed for now
+#define RECORDING_METRONOME_PERIOD MSEC(500)
+
 typedef enum JigboxSignals
 {
     // published signals
@@ -77,10 +92,12 @@ typedef enum JigboxSignals
     MAX_PUB_SIG,                       /* the last published signal */
 
     // non-published
-    IOE_TICK_SIG,
-    IOE_ACCEL_LED_OFF_SIG,
-    IOE_METRONOME_SIG,
-    IOE_MODE_SWITCH_SIG,
+    IOE_TICK_SIG,               // internal IOE ticker
+    IOE_PLAYBACK_SIG,           // timer ev posted to self for next playback event
+    IOE_ACCEL_LED_OFF_SIG,      // timer ev posted to self for turning off LED
+    IOE_METRONOME_SIG,          // repeating timer ev posted to self for metronome ticking
+    IOE_MODE_SWITCH_SIG,        // change idle/record/playback modes (from 3-button push, for instance)
+
     MAX_SIG                            /* the last signal */
 } JigboxSignal;
 

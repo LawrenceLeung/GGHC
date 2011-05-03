@@ -4,10 +4,7 @@
 #include "voices.h"
 
 #define NUMBER_OF_NOTES 11 // Metronome plus 5 notes for record and 5 for playback
-
 #define SAMPLE_FREQUENCY 16000
-
-#define METRONOME_VOICE 5   // preferred voice index into allVoices[] for metronome
 
 void InitAudioDevice(void);
 void PlayFrame(void);

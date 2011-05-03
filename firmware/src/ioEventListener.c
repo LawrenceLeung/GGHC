@@ -1,5 +1,5 @@
 #include "jigbox.h"
-
+#include "recordPlayback.h"
 Q_DEFINE_THIS_FILE
 
 // UTILITY FUNCTIONS
@@ -17,7 +17,7 @@ static uint8_t bitsSetIn(uint16_t w)
     return nbits;
 }
 
-// TODO map pressed/released buttons
+// TODO just for testing map pressed/released buttons
 static void startOrStopSelectedNotes(uint8_t buttons, bool start)
 {
     static noteContext_t startedNotes[8] = { NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE };
@@ -28,7 +28,7 @@ static void startOrStopSelectedNotes(uint8_t buttons, bool start)
         {
             if (start)
             {
-                startedNotes[i] = startNote(1.0, i, Single, 15);
+                startedNotes[i] = startNote(1.0, i, Single, BUTTON_SOUND_ATTENUATION);
             }
             else
             {
@@ -49,6 +49,7 @@ typedef struct
     QTimeEvt tickEvt;
     QTimeEvt accelLEDOffEvt;
     QTimeEvt metronomeEvt;
+    QTimeEvt playbackEvt;
     Ticks lastHitTime;
     TransientSource lastTransientSource;
     uint8_t buttonState;
@@ -69,6 +70,7 @@ void IOListener_ctor(void)
     QTimeEvt_ctor(&me->tickEvt, IOE_TICK_SIG);
     QTimeEvt_ctor(&me->accelLEDOffEvt, IOE_ACCEL_LED_OFF_SIG);
     QTimeEvt_ctor(&me->metronomeEvt, IOE_METRONOME_SIG);
+    QTimeEvt_ctor(&me->playbackEvt, IOE_PLAYBACK_SIG);
     QActive_ctor(&me->super, (QStateHandler)&IOEventListener_initial);
     me->buttonState = 0;
 }
@@ -101,8 +103,8 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
             uint8_t nbits = bitsSetIn(me->buttonState);
             if (nbits >= 3)
             {
-                static QEvent const modeSwitchEvt = { IOE_MODE_SWITCH_SIG, 0 };
-                QActive_postFIFO((QActive*)me, &modeSwitchEvt);
+                QEvent *modeSwitchEvt = Q_NEW(QEvent, IOE_MODE_SWITCH_SIG);
+                QActive_postFIFO((QActive*)me, modeSwitchEvt);
             }
             else
             {
@@ -152,14 +154,17 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
                 ev->xyz.z = 0;
             UART_printString("\r\n");
 
-            RGB_LED_On(RGB_LED_3, ev->xyz.x, ev->xyz.y, ev->xyz.z);
+            // flash the HIT_FLASH_LED
+            RGB_LED_On(HIT_FLASH_LED, ev->xyz.x, ev->xyz.y, ev->xyz.z);
             QTimeEvt_disarm(&me->accelLEDOffEvt);
-            QTimeEvt_postIn(&me->accelLEDOffEvt, (QActive*)me, 50);
+            QTimeEvt_postIn(&me->accelLEDOffEvt, (QActive*)me, HIT_FLASH_TIME);
+
+            // TODO play selected notes
         }
             return Q_HANDLED();
 
         case IOE_ACCEL_LED_OFF_SIG:
-            RGB_LED_On(RGB_LED_3, 0, 0, 0);
+            RGB_LED_On(HIT_FLASH_LED, 0, 0, 0);
             return Q_HANDLED();
     }
     return Q_SUPER(&QHsm_top);
@@ -170,10 +175,10 @@ QState IOEventListener_idle(IOEventListener *me, QEvent const *e)
     switch (e->sig)
     {
         case Q_ENTRY_SIG:
-            break;
+            return Q_HANDLED();
 
         case Q_EXIT_SIG:
-            break;
+            return Q_HANDLED();
 
         case TIME_TICK_SIG:
             break;
@@ -189,22 +194,39 @@ QState IOEventListener_recording(IOEventListener *me, QEvent const *e)
     switch (e->sig)
     {
         case Q_ENTRY_SIG:
-            QTimeEvt_postEvery(&me->metronomeEvt,(QActive*)me, 500);     // 2 per second
-            break;
+            QTimeEvt_postEvery(&me->metronomeEvt,(QActive*)me, RECORDING_METRONOME_PERIOD);
+            startRecording(RECORDING_METRONOME_PERIOD);
+            return Q_HANDLED();
 
         case Q_EXIT_SIG:
+            endRecording();
             QTimeEvt_disarm(&me->metronomeEvt);
-            break;
+            return Q_HANDLED();
 
         case IOE_METRONOME_SIG:
             startNote(1.0, METRONOME_VOICE, Single, 12);
-            break;
+            return Q_HANDLED();
 
         case IOE_MODE_SWITCH_SIG:
             return Q_TRAN(&IOEventListener_playing);
 
         case TIME_TICK_SIG:
-            break;
+            return Q_HANDLED();
+
+        case HIT_SIG:
+            {
+                HitEvent *hit = (HitEvent*)e;
+                RecordedEvent rec = {
+                    .performedTimestamp = systemTime,
+                    .quantizedTimestamp = systemTime,
+                    .transient = hit->transient,
+                    .accelValues = hit->xyz };
+                // record the event
+                addEvent(&rec);
+            }
+            // now let the parent state flash the LED and play the sound
+            return Q_SUPER(&IOEventListener_active);
+
     }
     return Q_SUPER(&IOEventListener_active);
 }
@@ -214,16 +236,39 @@ QState IOEventListener_playing(IOEventListener *me, QEvent const *e)
     switch (e->sig)
     {
         case Q_ENTRY_SIG:
-            break;
+            {
+                startPlayback();
+                QTimeEvt_disarm(&me->playbackEvt);
+                QTimeEvt_postIn(&me->playbackEvt, (QActive*)me, 1);
+            }
+            return Q_HANDLED();
 
         case Q_EXIT_SIG:
-            break;
+            QTimeEvt_disarm(&me->playbackEvt);
+            return Q_HANDLED();
 
         case IOE_MODE_SWITCH_SIG:
             return Q_TRAN(&IOEventListener_idle);
 
+        case IOE_PLAYBACK_SIG:
+            {
+                RecordedEvent revt;	// current event
+                Ticks when;			// delay till next one
+                if (getNextPlaybackEvent(&revt, &when))
+                {
+                    QTimeEvt_disarm(&me->playbackEvt);
+                    QTimeEvt_postIn(&me->playbackEvt, (QActive*)me, when);
+                }
+
+                HitEvent *hitEvt = Q_NEW(HitEvent, HIT_SIG);
+                hitEvt->transient = revt.transient;
+                hitEvt->xyz = revt.accelValues;
+                QActive_postFIFO((QActive*)me, (QEvent*)hitEvt);		// let parent play the hit
+            }
+            return Q_HANDLED();
+
         case TIME_TICK_SIG:
-            break;
+            return Q_HANDLED();
     }
     return Q_SUPER(&IOEventListener_active);
 }
