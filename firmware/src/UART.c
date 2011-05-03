@@ -186,6 +186,6 @@ int UART_printf(const char *format, ...)
 
 void UART_flushTransmittedCharacters(void)
 {
-    while (USART_GetFlagStatus(UART5, USART_FLAG_TC) != SET)
+    while ((txBufferOut < txBufferIn) || USART_GetFlagStatus(UART5, USART_FLAG_TC) != SET)
         /* spin */;
 }

@@ -7,7 +7,7 @@ typedef struct
     QActive super;
     QTimeEvt tickEvt;
     QTimeEvt accelLEDOffEvt;
-    uint32_t lastHitTime;
+    Ticks lastHitTime;
     TransientSource lastTransientSource;
     uint16_t buttonState;
 } IOEventListener;

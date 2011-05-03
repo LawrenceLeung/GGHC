@@ -2,7 +2,7 @@
 
 Q_DEFINE_THIS_FILE
 
-uint32_t volatile systemTime;
+Ticks volatile systemTime;
 
 void SysTick_Handler(void)
 {
