@@ -134,6 +134,7 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
 
         case HIT_SIG:
         {
+
             HitEvent *ev = (HitEvent*)e;
             me->lastHitTime         = systemTime;
             me->lastTransientSource = ev->transient;
@@ -159,7 +160,8 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
             QTimeEvt_disarm(&me->accelLEDOffEvt);
             QTimeEvt_postIn(&me->accelLEDOffEvt, (QActive*)me, HIT_FLASH_TIME);
 
-            // TODO play selected notes
+            // play selected notes
+            UART_printString("Play note\r\n");
         }
             return Q_HANDLED();
 
@@ -220,7 +222,9 @@ QState IOEventListener_recording(IOEventListener *me, QEvent const *e)
                     .performedTimestamp = systemTime,
                     .quantizedTimestamp = systemTime,
                     .transient = hit->transient,
-                    .accelValues = hit->xyz };
+                    .accelValues = hit->xyz,
+                	.buttonState = me->buttonState
+                	};
                 // record the event
                 addEvent(&rec);
             }

@@ -8,12 +8,12 @@
 // record events with times
 // playback with quantization
 
-
 typedef struct {
     Ticks performedTimestamp;
     Ticks quantizedTimestamp;
     TransientSource transient;
     AccelerometerReport_t accelValues;
+    uint8_t buttonState;
 } RecordedEvent;
 
 void startRecording(Ticks metronomePeriod);
