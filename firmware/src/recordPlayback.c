@@ -16,7 +16,7 @@ void startRecording(Ticks metronomePeriod)
 	UART_printf("Start recording\r\n");
 }
 
-void addEvent(RecordedEvent *ev)
+void addRecordedEvent(RecordedEvent *ev)
 {
 	lastRecordedEventIdx++;
 

@@ -39,10 +39,11 @@ static uint8_t bitsSetIn(uint16_t w)
     return nbits;
 }
 
-
 // change currentVoice
 static void handleButtonPressed(IOEventListener *me, uint8_t buttonMask)
 {
+	me->buttonState |= buttonMask;
+
 	UART_printf("press 0x%04x now 0x%04x\r\n", buttonMask, me->buttonState);
 	for (int i = 0; buttonMask; i++, buttonMask >>= 1)
 	{
@@ -54,11 +55,9 @@ static void handleButtonPressed(IOEventListener *me, uint8_t buttonMask)
 	}
 }
 
-// remember the hit, log a message, and light the LED.
-static void handleHitEvent(IOEventListener *me, HitEvent *ev)
+// log a message, play a sound, and light the LED.
+static void handleHitEvent(IOEventListener *me, HitEvent *ev, uint8_t voice)
 {
-    me->lastHitTime         = systemTime;
-    me->lastTransientSource = ev->transient;
     UART_printf("%08d hit tr=0x%02x",
                 me->lastHitTime,
                 (int)*(uint8_t*)&(ev->transient));
@@ -86,7 +85,7 @@ static void handleHitEvent(IOEventListener *me, HitEvent *ev)
     QTimeEvt_disarm(&me->accelLEDOffEvt);
     QTimeEvt_postIn(&me->accelLEDOffEvt, (QActive*)me, HIT_FLASH_TIME);
 
-	startNote(1.0, me->currentVoice, Single, HIT_SOUND_ATTENUATION);
+	startNote(1.0, voice, Single, HIT_SOUND_ATTENUATION);
 }
 
 void IOListener_ctor(void)
@@ -123,7 +122,8 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
             return Q_TRAN(&IOEventListener_idle);
 
         case BUTTON_PRESSED_SIG:
-            me->buttonState |= ((ButtonEvent*)e)->buttonMask;
+        {
+		// must call handleButtonPressed() earlier
             // switch modes if necessary
             // TODO find a good way to signal going into record mode
             uint8_t nbits = bitsSetIn(me->buttonState);
@@ -133,11 +133,10 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
                 QActive_postFIFO((QActive*)me, modeSwitchEvt);
             }
             return Q_HANDLED();
+        }
 
         case BUTTON_RELEASED_SIG:
             me->buttonState &= ~((ButtonEvent*)e)->buttonMask;
-            UART_printf("release 0x%04x now 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask, me->buttonState);
-            startOrStopSelectedNotes(((ButtonEvent*)e)->buttonMask, false);
             return Q_HANDLED();
 
         case IOE_TICK_SIG:
@@ -151,19 +150,21 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
             {
                 UART_printf("can't read accel!\r\n");
             }
-        }
             return Q_HANDLED();
+        }
 
         case HIT_SIG:
         {
         	// dedupe subsequent hits shortly after the first
-			if (me->lastHitTime>0 && me->lastHitTime>systemTime-HIT_DEDUPE_MS){
-				return Q_HANDLED();
-			}
+			if (me->lastHitTime > 0 && (systemTime - me->lastHitTime) < HIT_DEDUPE_MS)
+				return Q_IGNORED();
 
             HitEvent *ev = (HitEvent*)e;
-        }
+    		me->lastHitTime         = systemTime;
+    		me->lastTransientSource = ev->transient;
+			handleHitEvent(me, ev, me->currentVoice);
             return Q_HANDLED();
+        }
 
         case IOE_ACCEL_LED_OFF_SIG:
             RGB_LED_On(HIT_FLASH_LED, 0, 0, 0);
@@ -182,12 +183,10 @@ QState IOEventListener_idle(IOEventListener *me, QEvent const *e)
         case Q_EXIT_SIG:
             return Q_HANDLED();
 
-        case TIME_TICK_SIG:
-            break;
-
         case BUTTON_PRESSED_SIG:
-			startOrStopSelectedNotes(((ButtonEvent*)e)->buttonMask, true);
-            return Q_HANDLED();
+			handleButtonPressed(me, ((ButtonEvent*)e)->buttonMask);
+			startNote(1.0, me->currentVoice, Single, BUTTON_SOUND_ATTENUATION);
+    		return Q_SUPER(&IOEventListener_active);
 
         case IOE_MODE_SWITCH_SIG:
             return Q_TRAN(&IOEventListener_recording);
@@ -216,9 +215,6 @@ QState IOEventListener_recording(IOEventListener *me, QEvent const *e)
         case IOE_MODE_SWITCH_SIG:
             return Q_TRAN(&IOEventListener_playing);
 
-        case TIME_TICK_SIG:
-            return Q_HANDLED();
-
         case HIT_SIG:
             {
                 HitEvent *hit = (HitEvent*)e;
@@ -227,13 +223,13 @@ QState IOEventListener_recording(IOEventListener *me, QEvent const *e)
                     .quantizedTimestamp = systemTime,
                     .transient = hit->transient,
                     .accelValues = hit->xyz,
-                	.buttonState = me->buttonState
+                	.currentVoice = me->currentVoice
                 	};
                 // record the event
-                addEvent(&rec);
+                addRecordedEvent(&rec);
+				// now let the parent state flash the LED and play the sound
+				return Q_SUPER(&IOEventListener_active);
             }
-            // now let the parent state flash the LED and play the sound
-            return Q_SUPER(&IOEventListener_active);
 
     }
     return Q_SUPER(&IOEventListener_active);
@@ -268,12 +264,12 @@ QState IOEventListener_playing(IOEventListener *me, QEvent const *e)
                     QTimeEvt_postIn(&me->playbackEvt, (QActive*)me, when);
                 }
 
-                HitEvent *hitEvt = Q_NEW(HitEvent, HIT_SIG);
-                hitEvt->transient = revt.transient;
-                hitEvt->xyz = revt.accelValues;
-                QActive_postFIFO((QActive*)me, (QEvent*)hitEvt);		// let parent play the hit
+				HitEvent hitEvt = {
+                	.transient = revt.transient,
+                	.xyz = revt.accelValues };
+				handleHitEvent(me, &hitEvt, revt.currentVoice);
+            	return Q_HANDLED();
             }
-            return Q_HANDLED();
 
         case TIME_TICK_SIG:
             return Q_HANDLED();

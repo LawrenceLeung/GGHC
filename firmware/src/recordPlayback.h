@@ -13,12 +13,12 @@ typedef struct {
     Ticks quantizedTimestamp;
     TransientSource transient;
     AccelerometerReport_t accelValues;
-    uint8_t buttonState;
+	uint8_t currentVoice;
 } RecordedEvent;
 
 void startRecording(Ticks metronomePeriod);
 
-void addEvent(RecordedEvent *);
+void addRecordedEvent(RecordedEvent *);
 
 void endRecording(void);
 
