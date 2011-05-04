@@ -1791,7 +1791,7 @@ audioBuf_t const voice_bigmaraca[2875] = {
 -2161, 1523, -825, 441, -122, -522, 280, 116, 1158, -1501, -329, 1688, -859, -665, 639, -242, 390, -203, 
 -319, 440, 233, -1144, 682, 430, 115, -1091, 117, 1630, -1321, -148, 320, 304, -186, -318, 419 };
 
-voice_t allVoices[7] = {
+voice_t allVoices[N_VOICES] = {
     { voice_bigmaraca, 2875, "bigmaraca.wav" },
     { voice_bark, 3509, "./bark.wav" },
     { voice_berimbau, 4274, "./berimbau.wav" },

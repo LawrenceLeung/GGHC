@@ -11,8 +11,9 @@ typedef struct {
     const char *voice_name;
 } voice_t;
 
-extern voice_t allVoices[8];
 #define N_VOICES 8
+extern voice_t allVoices[N_VOICES];
+
 
 #define METRONOME_VOICE 5	// snare
 #define DEFAULT_VOICE 0
