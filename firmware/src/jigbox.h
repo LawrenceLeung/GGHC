@@ -68,11 +68,10 @@
 
 // Audio/play preferences
 // preferred voice index into allVoices[] for metronome
-#define METRONOME_VOICE 5 
-// TODO just for testing
 // how loud to play the button sounds
-#define BUTTON_SOUND_ATTENUATION 1
-#define HIT_SOUND_ATTENUATION 1
+#define BUTTON_SOUND_ATTENUATION 3
+#define HIT_SOUND_ATTENUATION 0
+#define METRONOME_ATTENUATION 6
 // how long to flash the LED on a hit event
 #define HIT_FLASH_TIME MSEC(50)
 // which LED to flash

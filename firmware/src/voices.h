@@ -14,7 +14,7 @@ typedef struct {
 #define N_VOICES 8
 extern voice_t allVoices[N_VOICES];
 
-
+#define MODE_VOICE N_VOICES-1
 #define METRONOME_VOICE 5	// snare
 #define DEFAULT_VOICE 0
 
