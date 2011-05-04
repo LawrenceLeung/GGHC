@@ -55,13 +55,17 @@ void startPlayback(void)
 // returns false if no events recorded
 bool getNextPlaybackEvent(RecordedEvent *ev, Ticks *delayBeforePlaying)
 {
-	if (playbackRecordedEventIdx>lastRecordedEventIdx) {return false;}
+
+	if (lastRecordedEventIdx==0) {return false;}
+	if (playbackRecordedEventIdx>lastRecordedEventIdx) {
+		playbackRecordedEventIdx=0;
+	}
 	memcpy(ev,&recordedEvents[playbackRecordedEventIdx],sizeof(RecordedEvent));
 
-	if (playbackRecordedEventIdx==0){
-		*delayBeforePlaying=(ev->quantizedTimestamp - recordStartTime);
+	if (playbackRecordedEventIdx==lastRecordedEventIdx){
+		*delayBeforePlaying=RECORDING_METRONOME_PERIOD;
 	} else {
-		*delayBeforePlaying=(ev->quantizedTimestamp - recordedEvents[playbackRecordedEventIdx-1].quantizedTimestamp);
+		*delayBeforePlaying=(recordedEvents[playbackRecordedEventIdx+1].quantizedTimestamp- ev->quantizedTimestamp);
 	}
 
 

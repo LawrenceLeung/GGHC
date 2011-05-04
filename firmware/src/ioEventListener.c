@@ -129,9 +129,9 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
         {
             QEvent *modeSwitchEvt = Q_NEW(QEvent, IOE_MODE_SWITCH_SIG);
             QActive_postFIFO((QActive*)me, modeSwitchEvt);
+        	startNote(1.0, MODE_VOICE, Single, HIT_SOUND_ATTENUATION);
         }
 
-    	startNote(1.0, MODE_VOICE, Single, HIT_SOUND_ATTENUATION);
 
         return Q_HANDLED();
     }
