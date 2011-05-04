@@ -208,6 +208,10 @@ QState IOEventListener_recording(IOEventListener *me, QEvent const *e)
             QTimeEvt_disarm(&me->metronomeEvt);
             return Q_HANDLED();
 
+        case BUTTON_PRESSED_SIG:
+			handleButtonPressed(me, ((ButtonEvent*)e)->buttonMask);
+    		return Q_SUPER(&IOEventListener_active);
+
         case IOE_METRONOME_SIG:
             startNote(1.0, METRONOME_VOICE, Single, 12);
             return Q_HANDLED();
@@ -250,6 +254,10 @@ QState IOEventListener_playing(IOEventListener *me, QEvent const *e)
         case Q_EXIT_SIG:
             QTimeEvt_disarm(&me->playbackEvt);
             return Q_HANDLED();
+
+        case BUTTON_PRESSED_SIG:
+			handleButtonPressed(me, ((ButtonEvent*)e)->buttonMask);
+    		return Q_SUPER(&IOEventListener_active);
 
         case IOE_MODE_SWITCH_SIG:
             return Q_TRAN(&IOEventListener_idle);
