@@ -71,7 +71,7 @@
 #define METRONOME_VOICE 5 
 // TODO just for testing
 // how loud to play the button sounds
-#define BUTTON_SOUND_ATTENUATION 15
+#define BUTTON_SOUND_ATTENUATION 1
 // how long to flash the LED on a hit event
 #define HIT_FLASH_TIME MSEC(50)
 // which LED to flash
