@@ -59,6 +59,6 @@ bool getNextPlaybackEvent(RecordedEvent *ev, Ticks *delayBeforePlaying)
 	memcpy(ev,&recordedEvents[playbackRecordedEventIdx],sizeof(RecordedEvent));
     *delayBeforePlaying=(ev->quantizedTimestamp - recordStartTime);
 
-
+    playbackRecordedEventIdx++;
 	return true;
 }
