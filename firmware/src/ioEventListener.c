@@ -224,6 +224,10 @@ QState IOEventListener_recording(IOEventListener *me, QEvent const *e)
 
     case HIT_SIG:
     {
+    	 /* dedupe subsequent hits shortly after the first */
+    	if (me->lastHitTime > 0 && (systemTime - me->lastHitTime) < HIT_DEDUPE_MS)
+    	          return Q_IGNORED();
+
         HitEvent *hit = (HitEvent*)e;
         RecordedEvent rec = {
             .performedTimestamp = systemTime,

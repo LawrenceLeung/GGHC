@@ -71,7 +71,7 @@
 // how loud to play the button sounds
 #define BUTTON_SOUND_ATTENUATION 3
 #define HIT_SOUND_ATTENUATION 0
-#define METRONOME_ATTENUATION 6
+#define METRONOME_ATTENUATION 3
 // how long to flash the LED on a hit event
 #define HIT_FLASH_TIME MSEC(50)
 // which LED to flash
@@ -81,7 +81,7 @@
 // 120 BPM fixed for now
 #define RECORDING_METRONOME_PERIOD MSEC(500)
 
-#define HIT_DEDUPE_MS MSEC(100)
+#define HIT_DEDUPE_MS MSEC(150)
 
 typedef enum JigboxSignals
 {
