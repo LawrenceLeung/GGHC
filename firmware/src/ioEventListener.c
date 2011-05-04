@@ -2,6 +2,28 @@
 #include "recordPlayback.h"
 Q_DEFINE_THIS_FILE
 
+typedef struct
+{
+    QActive super;
+    QTimeEvt tickEvt;
+    QTimeEvt accelLEDOffEvt;
+    QTimeEvt metronomeEvt;
+    QTimeEvt playbackEvt;
+    Ticks lastHitTime;
+    TransientSource lastTransientSource;
+    uint8_t buttonState;
+	uint8_t currentVoice;
+} IOEventListener;
+
+static IOEventListener l_eventListener; // the sole instance of the IOEventListener active Object
+QActive * const AO_IOEventListener = (QActive*)&l_eventListener; // opaque pointer to that instance
+
+static QState IOEventListener_initial(IOEventListener *me, QEvent const *e);
+static QState IOEventListener_active(IOEventListener *me, QEvent const *e);
+static QState IOEventListener_idle(IOEventListener *me, QEvent const *e);
+static QState IOEventListener_recording(IOEventListener *me, QEvent const *e);
+static QState IOEventListener_playing(IOEventListener *me, QEvent const *e);
+
 // UTILITY FUNCTIONS
 //
 // count the bits set in a word
@@ -17,52 +39,55 @@ static uint8_t bitsSetIn(uint16_t w)
     return nbits;
 }
 
-// TODO just for testing map pressed/released buttons
-static void startOrStopSelectedNotes(uint8_t buttons, bool start)
-{
-    static noteContext_t startedNotes[8] = { NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE, NO_NOTE };
 
-    for (uint8_t i = 0; buttons; i++, buttons>>=1)
-    {
-        if (buttons & 1)
-        {
-            if (start)
-            {
-                startedNotes[i] = startNote(1.0, i, Single, BUTTON_SOUND_ATTENUATION);
-            }
-            else
-            {
-                noteContext_t n = startedNotes[i];
-                if (n != NO_NOTE)
-                {
-                    stopNote(n);
-                    startedNotes[i] = NO_NOTE;
-                }
-            }
-        }
-    }
+// change currentVoice
+static void handleButtonPressed(IOEventListener *me, uint8_t buttonMask)
+{
+	UART_printf("press 0x%04x now 0x%04x\r\n", buttonMask, me->buttonState);
+	for (int i = 0; buttonMask; i++, buttonMask >>= 1)
+	{
+		if (buttonMask & 1)
+		{
+			me->currentVoice = i;
+			return;
+		}
+	}
 }
 
-typedef struct
+// remember the hit, log a message, and light the LED.
+static void handleHitEvent(IOEventListener *me, HitEvent *ev)
 {
-    QActive super;
-    QTimeEvt tickEvt;
-    QTimeEvt accelLEDOffEvt;
-    QTimeEvt metronomeEvt;
-    QTimeEvt playbackEvt;
-    Ticks lastHitTime;
-    TransientSource lastTransientSource;
-    uint8_t buttonState;
-} IOEventListener;
+    me->lastHitTime         = systemTime;
+    me->lastTransientSource = ev->transient;
+    UART_printf("%08d hit tr=0x%02x",
+                me->lastHitTime,
+                (int)*(uint8_t*)&(ev->transient));
 
-static IOEventListener l_eventListener; // the sole instance of the IOEventListener active Object
-QActive * const AO_IOEventListener = (QActive*)&l_eventListener; // opaque pointer to that instance
+    if (ev->transient.X_Trans_Evt)
+        UART_printf(" X = %d", ev->xyz.x);
+    else
+        ev->xyz.x = 0;
 
-static QState IOEventListener_initial(IOEventListener *me, QEvent const *e);
-static QState IOEventListener_active(IOEventListener *me, QEvent const *e);
-static QState IOEventListener_idle(IOEventListener *me, QEvent const *e);
-static QState IOEventListener_recording(IOEventListener *me, QEvent const *e);
-static QState IOEventListener_playing(IOEventListener *me, QEvent const *e);
+    if (ev->transient.Y_Trans_Evt)
+        UART_printf(" Y = %d", ev->xyz.y);
+    else
+        ev->xyz.y = 0;
+
+    if (ev->transient.Z_Trans_Evt)
+        UART_printf(" Z = %d", ev->xyz.z);
+    else
+        ev->xyz.z = 0;
+
+    UART_printString("\r\n");
+
+    /* flash the HIT_FLASH_LED */
+    RGB_LED_On(HIT_FLASH_LED, ev->xyz.x, ev->xyz.y, ev->xyz.z);
+
+    QTimeEvt_disarm(&me->accelLEDOffEvt);
+    QTimeEvt_postIn(&me->accelLEDOffEvt, (QActive*)me, HIT_FLASH_TIME);
+
+	startNote(1.0, me->currentVoice, Single, HIT_SOUND_ATTENUATION);
+}
 
 void IOListener_ctor(void)
 {
@@ -73,6 +98,7 @@ void IOListener_ctor(void)
     QTimeEvt_ctor(&me->playbackEvt, IOE_PLAYBACK_SIG);
     QActive_ctor(&me->super, (QStateHandler)&IOEventListener_initial);
     me->buttonState = 0;
+	me->currentVoice = DEFAULT_VOICE;
 }
 
 QState IOEventListener_initial(IOEventListener *me, QEvent const *e)
@@ -97,7 +123,6 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
 
         case BUTTON_PRESSED_SIG:
             me->buttonState |= ((ButtonEvent*)e)->buttonMask;
-            UART_printf("press 0x%04x now 0x%04x\r\n", (int)((ButtonEvent*)e)->buttonMask, me->buttonState);
             // switch modes if necessary
             // TODO find a good way to signal going into record mode
             uint8_t nbits = bitsSetIn(me->buttonState);
@@ -105,10 +130,6 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
             {
                 QEvent *modeSwitchEvt = Q_NEW(QEvent, IOE_MODE_SWITCH_SIG);
                 QActive_postFIFO((QActive*)me, modeSwitchEvt);
-            }
-            else
-            {
-                startOrStopSelectedNotes(((ButtonEvent*)e)->buttonMask, true);
             }
             return Q_HANDLED();
 
@@ -134,34 +155,7 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
 
         case HIT_SIG:
         {
-
             HitEvent *ev = (HitEvent*)e;
-            me->lastHitTime         = systemTime;
-            me->lastTransientSource = ev->transient;
-            UART_printf("%08d hit tr=0x%02x",
-                        me->lastHitTime,
-                        (int)*(uint8_t*)&(ev->transient));
-            if (ev->transient.X_Trans_Evt)
-                UART_printf(" X = %d", ev->xyz.x);
-            else
-                ev->xyz.x = 0;
-            if (ev->transient.Y_Trans_Evt)
-                UART_printf(" Y = %d", ev->xyz.y);
-            else
-                ev->xyz.y = 0;
-            if (ev->transient.Z_Trans_Evt)
-                UART_printf(" Z = %d", ev->xyz.z);
-            else
-                ev->xyz.z = 0;
-            UART_printString("\r\n");
-
-            // flash the HIT_FLASH_LED
-            RGB_LED_On(HIT_FLASH_LED, ev->xyz.x, ev->xyz.y, ev->xyz.z);
-            QTimeEvt_disarm(&me->accelLEDOffEvt);
-            QTimeEvt_postIn(&me->accelLEDOffEvt, (QActive*)me, HIT_FLASH_TIME);
-
-            // play selected notes
-            UART_printString("Play note\r\n");
         }
             return Q_HANDLED();
 
@@ -184,6 +178,10 @@ QState IOEventListener_idle(IOEventListener *me, QEvent const *e)
 
         case TIME_TICK_SIG:
             break;
+
+        case BUTTON_PRESSED_SIG:
+			startOrStopSelectedNotes(((ButtonEvent*)e)->buttonMask, true);
+            return Q_HANDLED();
 
         case IOE_MODE_SWITCH_SIG:
             return Q_TRAN(&IOEventListener_recording);

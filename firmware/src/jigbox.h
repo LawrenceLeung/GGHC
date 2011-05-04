@@ -72,6 +72,7 @@
 // TODO just for testing
 // how loud to play the button sounds
 #define BUTTON_SOUND_ATTENUATION 1
+#define HIT_SOUND_ATTENUATION 1
 // how long to flash the LED on a hit event
 #define HIT_FLASH_TIME MSEC(50)
 // which LED to flash

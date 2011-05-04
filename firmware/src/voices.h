@@ -11,7 +11,21 @@ typedef struct {
     const char *voice_name;
 } voice_t;
 
-extern voice_t allVoices[7];
+extern voice_t allVoices[8];
+#define N_VOICES 8
+
+#define METRONOME_VOICE 5	// snare
+#define DEFAULT_VOICE 0
+
+// File:            bigmaraca.wav
+// Channels:        1
+// Sample rate:     16000
+// Bits per sample: 16
+// Block align:     2
+// Byte rate:       32000
+// Sample count:    2875
+// Duration:        0h:0m:0s:179ms
+extern audioBuf_t const voice_bigmaraca[2875];
 
 // File:            ./bark.wav
 // Channels:        1
