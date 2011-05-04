@@ -73,6 +73,7 @@ void IOListener_ctor(void)
     QTimeEvt_ctor(&me->playbackEvt, IOE_PLAYBACK_SIG);
     QActive_ctor(&me->super, (QStateHandler)&IOEventListener_initial);
     me->buttonState = 0;
+    me->lastHitTime=0;
 }
 
 QState IOEventListener_initial(IOEventListener *me, QEvent const *e)
@@ -134,6 +135,11 @@ QState IOEventListener_active(IOEventListener *me, QEvent const *e)
 
         case HIT_SIG:
         {
+
+        	// dedupe subsequent hits shortly after the first
+        	if (me->lastHitTime>0 && me->lastHitTime>systemTime-HIT_DEDUPE_MS){
+        		return Q_HANDLED();
+        	}
 
             HitEvent *ev = (HitEvent*)e;
             me->lastHitTime         = systemTime;

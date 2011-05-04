@@ -81,6 +81,8 @@
 // 120 BPM fixed for now
 #define RECORDING_METRONOME_PERIOD MSEC(500)
 
+#define HIT_DEDUPE_MS MSEC(30)
+
 typedef enum JigboxSignals
 {
     // published signals

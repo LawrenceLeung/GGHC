@@ -133,8 +133,8 @@ registerSetting initSequence[] =
 
     // transient detect interrupt
     { TRANSIENT_CFG, TELE_MASK | ZTEFE_MASK | YTEFE_MASK | XTEFE_MASK },    // all 3 axes, latched into TRANSIENT_SRC
-    { TRANSIENT_THS, 10 },   // 10/16g detect
-    { TRANSIENT_COUNT, 4 }, // 5 msec debounce
+    { TRANSIENT_THS, 6 },   // 10/16g detect
+    { TRANSIENT_COUNT, 15 }, // 5 msec debounce
     { CTRL_REG4, INT_EN_TRANS_MASK }, // enable INT on transient detect
     { CTRL_REG5, INT_CFG_TRANS_MASK }, // on INT1
 
